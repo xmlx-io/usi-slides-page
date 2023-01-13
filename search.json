@@ -56,11 +56,18 @@
     "text": "Method Properties    \n\n\n\n\n\n\n\n\nProperty\nMarginal Effect\n\n\n\n\ndata\ntabular\n\n\nfeatures\nnumerical and categorical\n\n\nexplanation\nfeature influence (visualisation)\n\n\ncaveats\nfeature correlation, heterogeneous model response"
   },
   {
+    "objectID": "slides/3_feature-based/me.html#computing-me",
+    "href": "slides/3_feature-based/me.html#computing-me",
+    "title": "Marginal Effect (ME)/Marginal Plots or M-Plots/",
+    "section": "Computing ME",
+    "text": "Computing ME\nTODO"
+  },
+  {
     "objectID": "slides/3_feature-based/me.html#notes-1",
     "href": "slides/3_feature-based/me.html#notes-1",
     "title": "Marginal Effect (ME)/Marginal Plots or M-Plots/",
     "section": "Notes",
-    "text": "Notes\naverage prediction based on conditional distribution \\(f(x \\; | \\; x_i = v_i)\\)\ndiscuss the strict \\(f(x \\; | \\; x_i = v_i)\\) and relaxed \\(f(x \\; | \\; x_i = v_i \\pm \\delta)\\) versions\nalternative (to fixed-width binning) relaxation criteria: quartile-based binning\nthe result reports the effect of the selected feature, but is heavily influenced by all the other correlated features (combined effect) since we’re working on a conditional distribution show this on a model whose one coefficient is 0 – no effect but effect due to correlation display params of a linear model; and then show how the influence is still visible despite feature-parameter being 0\nplot the rug – density or distribution of each individual value / bins"
+    "text": "Notes\naverage prediction based on conditional distribution \\(f(x \\; | \\; x_i = v_i)\\)\ndiscuss the strict \\(f(x \\; | \\; x_i = v_i)\\) and relaxed \\(f(x \\; | \\; x_i = v_i \\pm \\delta)\\) versions\nalternative (to fixed-width binning) relaxation criteria: quartile-based binning\nthe result reports the effect of the selected feature, but is heavily influenced by all the other correlated features (combined effect) since we’re working on a conditional distribution show this on a model whose one coefficient is 0 – no effect but effect due to correlation display params of a linear model; and then show how the influence is still visible despite feature-parameter being 0\nplot the rug – density or distribution of each individual value / bins\n— low number of points per value or per bin may impact the reliability of estimates plot an additional “rug lot” by using v-lines ended with a circle to represent count for strict and histogram for relaxed"
   },
   {
     "objectID": "slides/3_feature-based/me.html#bibliography",
