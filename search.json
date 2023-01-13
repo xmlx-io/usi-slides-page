@@ -1,0 +1,1017 @@
+[
+  {
+    "objectID": "slides/index.html",
+    "href": "slides/index.html",
+    "title": "Machine Learning Explainability",
+    "section": "",
+    "text": "See the sidebar for an index of slides and demos."
+  },
+  {
+    "objectID": "slides/3_feature-based/me.html#explanation-synopsis",
+    "href": "slides/3_feature-based/me.html#explanation-synopsis",
+    "title": "Marginal Effect (ME)/Marginal Plots or M-Plots/",
+    "section": "Explanation Synopsis",
+    "text": "Explanation Synopsis\n\n\nME captures the average response of a predictive model across a collection of instances (taken from a designated data set) for a specific value of a selected feature (found in the aforementioned data set). This measure can be relaxed by including similar feature values determined by a fixed interval around the selected value.\n\n\n\nIt communicates global (with respect to the entire explained model) feature influence."
+  },
+  {
+    "objectID": "slides/3_feature-based/me.html#rationale",
+    "href": "slides/3_feature-based/me.html#rationale",
+    "title": "Marginal Effect (ME)/Marginal Plots or M-Plots/",
+    "section": "Rationale",
+    "text": "Rationale\n\n\nME improves upon  Partial Dependence (PD) (Friedman 2001) by ensuring that the influence estimates are based on realistic instances (thus respecting feature correlation), making the explanatory insights more truthful.\n\n\n\n\n\n\n\n\nMethod’s Name\n\n\nNote that even though the Marginal Effect name suggests that these explanations are based on the marginal distribution of the selected feature, they are actually derived from its conditional distribution."
+  },
+  {
+    "objectID": "slides/3_feature-based/me.html#toy-example-strict-me-numerical-feature",
+    "href": "slides/3_feature-based/me.html#toy-example-strict-me-numerical-feature",
+    "title": "Marginal Effect (ME)/Marginal Plots or M-Plots/",
+    "section": "Toy Example – Strict ME – Numerical Feature",
+    "text": "Toy Example – Strict ME – Numerical Feature"
+  },
+  {
+    "objectID": "slides/3_feature-based/me.html#toy-example-relaxed-me-numerical-feature",
+    "href": "slides/3_feature-based/me.html#toy-example-relaxed-me-numerical-feature",
+    "title": "Marginal Effect (ME)/Marginal Plots or M-Plots/",
+    "section": "Toy Example – Relaxed ME – Numerical Feature",
+    "text": "Toy Example – Relaxed ME – Numerical Feature"
+  },
+  {
+    "objectID": "slides/3_feature-based/me.html#toy-example-strict-me-categorical-feature",
+    "href": "slides/3_feature-based/me.html#toy-example-strict-me-categorical-feature",
+    "title": "Marginal Effect (ME)/Marginal Plots or M-Plots/",
+    "section": "Toy Example – Strict ME – Categorical Feature",
+    "text": "Toy Example – Strict ME – Categorical Feature"
+  },
+  {
+    "objectID": "slides/3_feature-based/me.html#method-properties",
+    "href": "slides/3_feature-based/me.html#method-properties",
+    "title": "Marginal Effect (ME)/Marginal Plots or M-Plots/",
+    "section": "Method Properties",
+    "text": "Method Properties\n\n\n\n\n\n\n\n\nProperty\nMarginal Effect\n\n\n\n\nrelation\npost-hoc\n\n\ncompatibility\nmodel-agnostic\n\n\nmodelling\nregression, crisp and probabilistic classification\n\n\nscope\nglobal (per data set; generalises to cohort)\n\n\ntarget\nmodel (set of predictions)"
+  },
+  {
+    "objectID": "slides/3_feature-based/me.html#method-properties-meta-subs.ctd",
+    "href": "slides/3_feature-based/me.html#method-properties-meta-subs.ctd",
+    "title": "Marginal Effect (ME)/Marginal Plots or M-Plots/",
+    "section": "Method Properties    ",
+    "text": "Method Properties    \n\n\n\n\n\n\n\n\nProperty\nMarginal Effect\n\n\n\n\ndata\ntabular\n\n\nfeatures\nnumerical and categorical\n\n\nexplanation\nfeature influence (visualisation)\n\n\ncaveats\nfeature correlation, heterogeneous model response"
+  },
+  {
+    "objectID": "slides/3_feature-based/me.html#notes-1",
+    "href": "slides/3_feature-based/me.html#notes-1",
+    "title": "Marginal Effect (ME)/Marginal Plots or M-Plots/",
+    "section": "Notes",
+    "text": "Notes\naverage prediction based on conditional distribution \\(f(x \\; | \\; x_i = v_i)\\)\ndiscuss the strict \\(f(x \\; | \\; x_i = v_i)\\) and relaxed \\(f(x \\; | \\; x_i = v_i \\pm \\delta)\\) versions\nalternative (to fixed-width binning) relaxation criteria: quartile-based binning\nthe result reports the effect of the selected feature, but is heavily influenced by all the other correlated features (combined effect) since we’re working on a conditional distribution show this on a model whose one coefficient is 0 – no effect but effect due to correlation display params of a linear model; and then show how the influence is still visible despite feature-parameter being 0\nplot the rug – density or distribution of each individual value / bins"
+  },
+  {
+    "objectID": "slides/3_feature-based/me.html#bibliography",
+    "href": "slides/3_feature-based/me.html#bibliography",
+    "title": "Marginal Effect (ME)/Marginal Plots or M-Plots/",
+    "section": "Bibliography",
+    "text": "Bibliography\n\n\nFriedman, Jerome H. 2001. “Greedy Function Approximation: A Gradient Boosting Machine.” Annals of Statistics, 1189–1232."
+  },
+  {
+    "objectID": "slides/3_feature-based/pd.html#explanation-synopsis",
+    "href": "slides/3_feature-based/pd.html#explanation-synopsis",
+    "title": "Partial Dependence (PD)",
+    "section": "Explanation Synopsis",
+    "text": "Explanation Synopsis\n\n\nPD captures the average response of a predictive model for a collection of instances when varying one of their features (Friedman 2001).\n\n\n\nIt communicates global (with respect to the entire explained model) feature influence."
+  },
+  {
+    "objectID": "slides/3_feature-based/pd.html#toy-example-numerical-feature",
+    "href": "slides/3_feature-based/pd.html#toy-example-numerical-feature",
+    "title": "Partial Dependence (PD)",
+    "section": "Toy Example – Numerical Feature",
+    "text": "Toy Example – Numerical Feature"
+  },
+  {
+    "objectID": "slides/3_feature-based/pd.html#toy-example-categorical-feature",
+    "href": "slides/3_feature-based/pd.html#toy-example-categorical-feature",
+    "title": "Partial Dependence (PD)",
+    "section": "Toy Example – Categorical Feature",
+    "text": "Toy Example – Categorical Feature\n\n\n\nSometimes you will see this visualised as a bar chart.\nYou could also use box plots."
+  },
+  {
+    "objectID": "slides/3_feature-based/pd.html#method-properties",
+    "href": "slides/3_feature-based/pd.html#method-properties",
+    "title": "Partial Dependence (PD)",
+    "section": "Method Properties",
+    "text": "Method Properties\n\n\n\n\n\n\n\n\nProperty\nPartial Dependence\n\n\n\n\nrelation\npost-hoc\n\n\ncompatibility\nmodel-agnostic\n\n\nmodelling\nregression, crisp and probabilistic classification\n\n\nscope\nglobal (per data set; generalises to cohort)\n\n\ntarget\nmodel (set of predictions)"
+  },
+  {
+    "objectID": "slides/3_feature-based/pd.html#method-properties-meta-subs.ctd",
+    "href": "slides/3_feature-based/pd.html#method-properties-meta-subs.ctd",
+    "title": "Partial Dependence (PD)",
+    "section": "Method Properties    ",
+    "text": "Method Properties    \n\n\n\n\n\n\n\n\nProperty\nIndividual Conditional Expectation\n\n\n\n\ndata\ntabular\n\n\nfeatures\nnumerical and categorical\n\n\nexplanation\nfeature influence (visualisation)\n\n\ncaveats\nfeature correlation, unrealistic instances, heterogeneous model response"
+  },
+  {
+    "objectID": "slides/3_feature-based/pd.html#computing-pd",
+    "href": "slides/3_feature-based/pd.html#computing-pd",
+    "title": "Partial Dependence (PD)",
+    "section": "Computing PD",
+    "text": "Computing PD\n\n\n\n\n\n\n\nInput\n\n\n\nSelect a feature to explain\nSelect the explanation target\n\ncrisp classifiers → one-vs.-the-rest or all classes\nprobabilistic classifiers → (probabilities of) one class\nregressors → numerical values\n\nSelect a collection of instances to generate the explanation"
+  },
+  {
+    "objectID": "slides/3_feature-based/pd.html#computing-pd-meta-subs.ctd",
+    "href": "slides/3_feature-based/pd.html#computing-pd-meta-subs.ctd",
+    "title": "Partial Dependence (PD)",
+    "section": "Computing PD    ",
+    "text": "Computing PD    \n\n\n\n\n\n\n\nParameters\n\n\n\nDefine granularity of the explained feature\n\nnumerical attributes → select the range – minimum and maximum value – and the step size of the feature\ncategorical attributes → the full set or a subset of possible values"
+  },
+  {
+    "objectID": "slides/3_feature-based/pd.html#computing-pd-meta-subs.ctd-1",
+    "href": "slides/3_feature-based/pd.html#computing-pd-meta-subs.ctd-1",
+    "title": "Partial Dependence (PD)",
+    "section": "Computing PD    ",
+    "text": "Computing PD    \n\n\n\n\n\n\n\nProcedure\n\n\n\nFor each instance in the designated data set create its copy with the value of the explained feature replaced by the range of values determined by the explanation granularity\nPredict the augmented data\nGenerate and plot Partial Dependence\n\nFor crisp classifiers count the number of each unique prediction at each value of the explained feature across all the instances; visualise PD either as a count or proportion using separate line for each class or using a stacked bar chart\nFor probabilistic classifiers (per class) and regressors average the response of the model at each value of the explained feature across all the instances; visualise PD as a line\n\n\n    Since the values of the explained feature may not be uniformly distributed in the underlying data set, a rug plot showing the distribution of its feature values can help in interpreting the explanation."
+  },
+  {
+    "objectID": "slides/3_feature-based/pd.html#formulation-fa-square-root-alt",
+    "href": "slides/3_feature-based/pd.html#formulation-fa-square-root-alt",
+    "title": "Partial Dependence (PD)",
+    "section": "Formulation    ",
+    "text": "Formulation    \n\\[\nX_{\\mathit{PD}} \\subseteq \\mathcal{X}\n\\]\n\\[\nV_i = \\{ v_i^{\\mathit{min}} , \\ldots , v_i^{\\mathit{max}} \\}\n\\]\n\\[\n\\mathit{PD}_i =\n\\mathbb{E}_{X_{\\mathit{PD}}} \\left[ f \\left( X_{\\mathit{PD} {\\;\\setminus i}} , x_i=v_i \\right) \\right] =\n\\int f \\left( X_{\\mathit{PD} {\\;\\setminus i}} , x_i=v_i \\right) \\; d \\mathbb{P} ( X_{\\mathit{PD} {\\;\\setminus i}} )\n\\;\\; \\forall \\; v_i \\in V_i\n\\]\n\n\\[\n\\mathit{PD}_i =\n\\mathbb{E}_{X_{\\mathit{PD}}} \\left[ f \\left( X_{\\mathit{PD} {\\;\\setminus i}} , x_i=V_i \\right) \\right] =\n\\int f \\left( X_{\\mathit{PD} {\\;\\setminus i}} , x_i=V_i \\right) \\; d \\mathbb{P} ( X_{\\mathit{PD} {\\;\\setminus i}} )\n\\]"
+  },
+  {
+    "objectID": "slides/3_feature-based/pd.html#formulation-fa-square-root-alt-meta-subs.ctd",
+    "href": "slides/3_feature-based/pd.html#formulation-fa-square-root-alt-meta-subs.ctd",
+    "title": "Partial Dependence (PD)",
+    "section": "Formulation        ",
+    "text": "Formulation        \n\nBased on the ICE notation (Goldstein et al. 2015)\n\n\\[\n\\left\\{ \\left( x_{S}^{(i)} , x_{C}^{(i)} \\right) \\right\\}_{i=1}^N\n\\]\n\n\\[\n\\hat{f}_S =\n\\mathbb{E}_{X_{C}} \\left[ \\hat{f} \\left( x_{S} , X_{C} \\right) \\right] =\n\\int \\hat{f} \\left( x_{S} , X_{C} \\right) \\; d \\mathbb{P} ( X_{C} )\n\\]\n\n\n\\(x_S\\) is stepped through – the explained feature\n\\(x_C\\) are the given feature values\n\\(X_C\\) is the random variable\nMarginalising the predictions over the distribution of the given features yields dependence between the explained feature(s) (including any interactions) and predictions."
+  },
+  {
+    "objectID": "slides/3_feature-based/pd.html#approximation-fa-desktop",
+    "href": "slides/3_feature-based/pd.html#approximation-fa-desktop",
+    "title": "Partial Dependence (PD)",
+    "section": "Approximation    ",
+    "text": "Approximation    \n\n(Monte Carlo approximation)\n\n\\[\n\\mathit{PD}_i \\approx\n\\frac{1}{|X_{\\mathit{PD}}|} \\sum_{x \\in X_{\\mathit{PD}}}\nf \\left( x_ {\\setminus i} , x_i=v_i \\right)\n\\]\n\n\\[\n\\hat{f}_S \\approx\n\\frac{1}{N} \\sum_{i = 1}^N\n\\hat{f} \\left( x_{S} , x_{C}^{(i)} \\right)\n\\]"
+  },
+  {
+    "objectID": "slides/3_feature-based/pd.html#centred-pd",
+    "href": "slides/3_feature-based/pd.html#centred-pd",
+    "title": "Partial Dependence (PD)",
+    "section": "Centred PD",
+    "text": "Centred PD\n\n\nCentres PD curve by anchoring it at a fixed point, usually the lower end of the explained feature range. It is helpful when working with  Centred ICE.\n\n\\[\n\\mathbb{E}_{X_{\\mathit{PD}}} \\left[ f \\left( X_{\\mathit{PD} {\\;\\setminus i}} , x_i=V_i \\right) \\right] -\n\\mathbb{E}_{X_{\\mathit{PD}}} \\left[ f \\left( X_{\\mathit{PD} {\\;\\setminus i}} , x_i=v_i^{\\mathit{min}} \\right) \\right]\n\\]\n\nor\n\n\\[\n\\mathbb{E}_{X_{C}} \\left[ \\hat{f} \\left( x_{S}^{(i)} , X_{C} \\right) \\right] -\n\\mathbb{E}_{X_{C}} \\left[ \\hat{f} \\left( x^{\\star} , X_{C} \\right) \\right]\n\\]\n\n\nHelps to see whether the underlying ICE curves of individual instances behave differently."
+  },
+  {
+    "objectID": "slides/3_feature-based/pd.html#pd-based-feature-importance",
+    "href": "slides/3_feature-based/pd.html#pd-based-feature-importance",
+    "title": "Partial Dependence (PD)",
+    "section": "PD-based Feature Importance",
+    "text": "PD-based Feature Importance\n\n\nImportance of a feature can be derived from a PD curve by assessing its flatness (Greenwell, Boehmke, and McCarthy 2018). A flat PD line indicates that the model is not overly sensitive to the values of the selected feature, hence it is not important for the model’s decisions.\n\n\n\n\n\n\n\n\nCaveat\n\n\nSimilar to PD plots, this formulation of feature importance will not capture heterogeneity of individual instances that underlie the PD calculation."
+  },
+  {
+    "objectID": "slides/3_feature-based/pd.html#pd-based-feature-importance-meta-subs.ctd",
+    "href": "slides/3_feature-based/pd.html#pd-based-feature-importance-meta-subs.ctd",
+    "title": "Partial Dependence (PD)",
+    "section": "PD-based Feature Importance    ",
+    "text": "PD-based Feature Importance    \n\nFor example, for numerical features, it can be defined as the (standard) deviation of PD measurement for each unique value of the explained feature from the average PD.\n\n\\[\nI_{\\mathit{PD}} (i) = \\sqrt{\n    \\frac{1}{|V_i| - 1}\n    \\sum_{v_i \\in V_i} \\left(\n        \\mathit{PD}_i - \\underbrace{\n            \\frac{1}{|V_i|}\n            \\sum_{v_i \\in V_i} \\mathit{PD}_i\n        }_{\\text{average PD}}\n    \\right)^2\n}\n\\]"
+  },
+  {
+    "objectID": "slides/3_feature-based/pd.html#pd-based-feature-importance-meta-subs.ctd-1",
+    "href": "slides/3_feature-based/pd.html#pd-based-feature-importance-meta-subs.ctd-1",
+    "title": "Partial Dependence (PD)",
+    "section": "PD-based Feature Importance    ",
+    "text": "PD-based Feature Importance    \n\nFor categorical features, it can be defined as the range statistic divided by four (range rule) of PD values, which provides a rough estimate of the standard deviation.\n\n\\[\nI_{\\mathit{PD}} (i) = \\frac{\n    \\max_{V_i} \\; \\mathit{PD}_i - \\min_{V_i} \\; \\mathit{PD}_i\n}{\n    4\n}\n\\]\n\n\n\n\n\n\n\nFormula\n\n\nFor the normal distribution, 95% of data is within ±2 standard deviations. Assuming a relatively small sample size, the range is likely to come from within this 95% interval. Therefore, the range divided by 4 roughly (under)estimates the standard deviation."
+  },
+  {
+    "objectID": "slides/3_feature-based/pd.html#pd-based-feature-importance-meta-subs.ctd-2",
+    "href": "slides/3_feature-based/pd.html#pd-based-feature-importance-meta-subs.ctd-2",
+    "title": "Partial Dependence (PD)",
+    "section": "PD-based Feature Importance    ",
+    "text": "PD-based Feature Importance    \n\nBased on the ICE notation (Goldstein et al. 2015), where \\(K\\) is the number of unique values \\(x_S^{(k)}\\) of the explained feature \\(x_S\\)\n\n\\[\nI_{\\mathit{PD}} (x_S) = \\sqrt{\n    \\frac{1}{K - 1}\n    \\sum_{k=1}^K \\left(\n        \\hat{f}_S(x^{(k)}_S) - \\underbrace{\n            \\frac{1}{K}\n            \\sum_{k=1}^K \\hat{f}_S(x^{(k)}_S)\n        }_{\\text{average PD}}\n    \\right)^2\n}\n\\]\n\\[\nI_{\\mathit{PD}} (x_S) = \\frac{\n    \\max_{k} \\; \\hat{f}_S(x^{(k)}_S) - \\min_{k} \\; \\hat{f}_S(x^{(k)}_S)\n}{\n    4\n}\n\\]"
+  },
+  {
+    "objectID": "slides/3_feature-based/pd.html#pd",
+    "href": "slides/3_feature-based/pd.html#pd",
+    "title": "Partial Dependence (PD)",
+    "section": "PD",
+    "text": "PD"
+  },
+  {
+    "objectID": "slides/3_feature-based/pd.html#pd-with-standard-deviation",
+    "href": "slides/3_feature-based/pd.html#pd-with-standard-deviation",
+    "title": "Partial Dependence (PD)",
+    "section": "PD with Standard Deviation",
+    "text": "PD with Standard Deviation"
+  },
+  {
+    "objectID": "slides/3_feature-based/pd.html#pd-with-ice",
+    "href": "slides/3_feature-based/pd.html#pd-with-ice",
+    "title": "Partial Dependence (PD)",
+    "section": "PD with ICE",
+    "text": "PD with ICE"
+  },
+  {
+    "objectID": "slides/3_feature-based/pd.html#pd-with-standard-deviation-ice",
+    "href": "slides/3_feature-based/pd.html#pd-with-standard-deviation-ice",
+    "title": "Partial Dependence (PD)",
+    "section": "PD with Standard Deviation & ICE",
+    "text": "PD with Standard Deviation & ICE"
+  },
+  {
+    "objectID": "slides/3_feature-based/pd.html#centred-pd-with-standard-deviation-ice",
+    "href": "slides/3_feature-based/pd.html#centred-pd-with-standard-deviation-ice",
+    "title": "Partial Dependence (PD)",
+    "section": "Centred PD (with Standard Deviation & ICE)",
+    "text": "Centred PD (with Standard Deviation & ICE)"
+  },
+  {
+    "objectID": "slides/3_feature-based/pd.html#pd-for-two-numerical-features",
+    "href": "slides/3_feature-based/pd.html#pd-for-two-numerical-features",
+    "title": "Partial Dependence (PD)",
+    "section": "PD for Two (Numerical) Features",
+    "text": "PD for Two (Numerical) Features"
+  },
+  {
+    "objectID": "slides/3_feature-based/pd.html#pd-for-crisp-classifiers",
+    "href": "slides/3_feature-based/pd.html#pd-for-crisp-classifiers",
+    "title": "Partial Dependence (PD)",
+    "section": "PD for Crisp Classifiers",
+    "text": "PD for Crisp Classifiers"
+  },
+  {
+    "objectID": "slides/3_feature-based/pd.html#pd-for-crisp-classifiers-meta-subs.ctd",
+    "href": "slides/3_feature-based/pd.html#pd-for-crisp-classifiers-meta-subs.ctd",
+    "title": "Partial Dependence (PD)",
+    "section": "PD for Crisp Classifiers    ",
+    "text": "PD for Crisp Classifiers    \n\n\n\nGaps are there because scikit-learn does not sample the explained feature uniformly."
+  },
+  {
+    "objectID": "slides/3_feature-based/pd.html#pd-based-feature-importance-1",
+    "href": "slides/3_feature-based/pd.html#pd-based-feature-importance-1",
+    "title": "Partial Dependence (PD)",
+    "section": "PD-based Feature Importance",
+    "text": "PD-based Feature Importance"
+  },
+  {
+    "objectID": "slides/3_feature-based/pd.html#out-of-distribution-impossible-instances",
+    "href": "slides/3_feature-based/pd.html#out-of-distribution-impossible-instances",
+    "title": "Partial Dependence (PD)",
+    "section": "Out-of-distribution (Impossible) Instances",
+    "text": "Out-of-distribution (Impossible) Instances\n\n\n\n\n\n\n\n\n\n\n\nFor more exmaples see the  Out-of-distribution (Impossible) Instances topic for ICE."
+  },
+  {
+    "objectID": "slides/3_feature-based/pd.html#feature-correlation",
+    "href": "slides/3_feature-based/pd.html#feature-correlation",
+    "title": "Partial Dependence (PD)",
+    "section": "Feature Correlation",
+    "text": "Feature Correlation"
+  },
+  {
+    "objectID": "slides/3_feature-based/pd.html#feature-correlation-meta-subs.ctd",
+    "href": "slides/3_feature-based/pd.html#feature-correlation-meta-subs.ctd",
+    "title": "Partial Dependence (PD)",
+    "section": "Feature Correlation    ",
+    "text": "Feature Correlation"
+  },
+  {
+    "objectID": "slides/3_feature-based/pd.html#feature-correlation-meta-subs.ctd-1",
+    "href": "slides/3_feature-based/pd.html#feature-correlation-meta-subs.ctd-1",
+    "title": "Partial Dependence (PD)",
+    "section": "Feature Correlation    ",
+    "text": "Feature Correlation"
+  },
+  {
+    "objectID": "slides/3_feature-based/pd.html#feature-correlation-meta-subs.ctd-2",
+    "href": "slides/3_feature-based/pd.html#feature-correlation-meta-subs.ctd-2",
+    "title": "Partial Dependence (PD)",
+    "section": "Feature Correlation    ",
+    "text": "Feature Correlation    \n\n\n\n\n\n\n\n\n\n\n\nFor more exmaples see the  Feature Correlation topic for ICE."
+  },
+  {
+    "objectID": "slides/3_feature-based/pd.html#heterogeneous-influence",
+    "href": "slides/3_feature-based/pd.html#heterogeneous-influence",
+    "title": "Partial Dependence (PD)",
+    "section": "Heterogeneous Influence",
+    "text": "Heterogeneous Influence"
+  },
+  {
+    "objectID": "slides/3_feature-based/pd.html#heterogeneous-influence-meta-subs.ctd",
+    "href": "slides/3_feature-based/pd.html#heterogeneous-influence-meta-subs.ctd",
+    "title": "Partial Dependence (PD)",
+    "section": "Heterogeneous Influence    ",
+    "text": "Heterogeneous Influence"
+  },
+  {
+    "objectID": "slides/3_feature-based/pd.html#pros-fa-plus-square",
+    "href": "slides/3_feature-based/pd.html#pros-fa-plus-square",
+    "title": "Partial Dependence (PD)",
+    "section": "Pros    ",
+    "text": "Pros    \n\nEasy to generate and interpret\nCan be derived from ICEs\nCan be used to compute feature importance"
+  },
+  {
+    "objectID": "slides/3_feature-based/pd.html#cons-fa-minus-square",
+    "href": "slides/3_feature-based/pd.html#cons-fa-minus-square",
+    "title": "Partial Dependence (PD)",
+    "section": "Cons    ",
+    "text": "Cons    \n\nAssumes feature independence, which is often unreasonable\nPD may not reflect the true behaviour of the model since it based upon the behaviour of the model for unrealistic instances\nMay be unreliable for certain values of the explained feature when its values are not uniformly distributed (abated by a rug plot)\nLimited to explaining two feature at a time\nDoes not capture the diversity (heterogeneity) of the model’s behaviour for the individual instances used for PD calculation (abated by displaying the underlying ICE lines)"
+  },
+  {
+    "objectID": "slides/3_feature-based/pd.html#caveats-fa-skull",
+    "href": "slides/3_feature-based/pd.html#caveats-fa-skull",
+    "title": "Partial Dependence (PD)",
+    "section": "Caveats    ",
+    "text": "Caveats    \n\nPD is derived by averaging ICEs\nGenerating PD may be computational expensive for large sets of data and wide feature intervals with a small “inspection” step\nComputational complexity: \\(\\mathcal{O} \\left( n \\times d \\right)\\), where\n\n\\(n\\) is the number of instances in the designated data set and\n\\(d\\) is the number of steps within the designated feature interval"
+  },
+  {
+    "objectID": "slides/3_feature-based/pd.html#causal-interpretation",
+    "href": "slides/3_feature-based/pd.html#causal-interpretation",
+    "title": "Partial Dependence (PD)",
+    "section": "Causal Interpretation",
+    "text": "Causal Interpretation\n\nZhao and Hastie (2021) noticed similarity in the formulation of Partial Dependence and Pearl’s back-door criterion (Pearl, Glymour, and Jewell 2016), allowing for a causal interpretation of PD under quite restrictive assumptions:\n\nthe explained predictive model is a good (truthful) approximation of the underlying data generation process;\ndetailed domain knowledge is available, allowing us to assess the causal structure of the problem and verify the back-door criterion (see below); and\nthe set of features complementary to the explained attribute satisfies the back-door criterion, i.e., none of the complementary features are causal descendant of the explained attribute."
+  },
+  {
+    "objectID": "slides/3_feature-based/pd.html#causal-interpretation-meta-subs.ctd",
+    "href": "slides/3_feature-based/pd.html#causal-interpretation-meta-subs.ctd",
+    "title": "Partial Dependence (PD)",
+    "section": "Causal Interpretation    ",
+    "text": "Causal Interpretation    \n\nBy interveening on the explained feature, we measure the change in the model’s output, allowing us to analyse the causal relationship between the two.\n\n\n\n\n\n\n\nCaveat\n\n\nIn principle, the causal relationship is with respect to the explained model, and not the underlying phenomenon (that generates the data)."
+  },
+  {
+    "objectID": "slides/3_feature-based/pd.html#related-techniques",
+    "href": "slides/3_feature-based/pd.html#related-techniques",
+    "title": "Partial Dependence (PD)",
+    "section": "Related Techniques",
+    "text": "Related Techniques\n\nIndividual Conditional Expectation (ICE)\n\n     Instance-focused (local) “version” of Partial Dependence, which communicates the influence of a specific feature value on the model’s prediction by fixing the value of this feature for a single data point (Goldstein et al. 2015)."
+  },
+  {
+    "objectID": "slides/3_feature-based/pd.html#related-techniques-meta-subs.ctd",
+    "href": "slides/3_feature-based/pd.html#related-techniques-meta-subs.ctd",
+    "title": "Partial Dependence (PD)",
+    "section": "Related Techniques    ",
+    "text": "Related Techniques    \n\nMarginal Effect (Marginal Plots or M-Plots)\n\n     It communicates the influence of a specific feature value – or similar values, i.e., an interval around the selected value – on the model’s prediction by only considering relevant instances found in the designated data set. It is calculated as the average prediction of these instances."
+  },
+  {
+    "objectID": "slides/3_feature-based/pd.html#related-techniques-meta-subs.ctd-1",
+    "href": "slides/3_feature-based/pd.html#related-techniques-meta-subs.ctd-1",
+    "title": "Partial Dependence (PD)",
+    "section": "Related Techniques    ",
+    "text": "Related Techniques    \n\nAccumulated Local Effect (ALE)\n\n     It communicates the influence of a specific feature value on the model’s prediction by quantifying the average (accumulated) difference between the predictions at the boundaries of a (small) fixed interval around the selected feature value (Apley and Zhu 2020). It is calculated by replacing the value of the explained feature with the interval boundaries for instances found in the designated data set whose value of this feature is within the specified range."
+  },
+  {
+    "objectID": "slides/3_feature-based/pd.html#implementations",
+    "href": "slides/3_feature-based/pd.html#implementations",
+    "title": "Partial Dependence (PD)",
+    "section": "Implementations",
+    "text": "Implementations\n\n\n\n\n\n\n\n Python\n R\n\n\n\n\nscikit-learn (>=0.24.0)\niml\n\n\nPyCEbox\nICEbox\n\n\nPDPbox\npdp\n\n\nInterpretML\nDALEX\n\n\nSkater"
+  },
+  {
+    "objectID": "slides/3_feature-based/pd.html#further-reading",
+    "href": "slides/3_feature-based/pd.html#further-reading",
+    "title": "Partial Dependence (PD)",
+    "section": "Further Reading",
+    "text": "Further Reading\n\nPD paper (Friedman 2001)\nInterpretable Machine Learning book\nExplanatory Model Analysis book\nKaggle course\nscikit-learn example\nFAT Forensics example and tutorial\nInterpretML example"
+  },
+  {
+    "objectID": "slides/3_feature-based/pd.html#bibliography",
+    "href": "slides/3_feature-based/pd.html#bibliography",
+    "title": "Partial Dependence (PD)",
+    "section": "Bibliography",
+    "text": "Bibliography\n\n\nApley, Daniel W, and Jingyu Zhu. 2020. “Visualizing the Effects of Predictor Variables in Black Box Supervised Learning Models.” Journal of the Royal Statistical Society: Series B (Statistical Methodology) 82 (4): 1059–86.\n\n\nFriedman, Jerome H. 2001. “Greedy Function Approximation: A Gradient Boosting Machine.” Annals of Statistics, 1189–1232.\n\n\nGoldstein, Alex, Adam Kapelner, Justin Bleich, and Emil Pitkin. 2015. “Peeking Inside the Black Box: Visualizing Statistical Learning with Plots of Individual Conditional Expectation.” Journal of Computational and Graphical Statistics 24 (1): 44–65.\n\n\nGreenwell, Brandon M, Bradley C Boehmke, and Andrew J McCarthy. 2018. “A Simple and Effective Model-Based Variable Importance Measure.” arXiv Preprint arXiv:1805.04755.\n\n\nPearl, Judea, Madelyn Glymour, and Nicholas P Jewell. 2016. Causal Inference in Statistics: A Primer. John Wiley & Sons.\n\n\nZhao, Qingyuan, and Trevor Hastie. 2021. “Causal Interpretations of Black-Box Models.” Journal of Business & Economic Statistics 39 (1): 272–81."
+  },
+  {
+    "objectID": "slides/3_feature-based/ice.html#explanation-synopsis",
+    "href": "slides/3_feature-based/ice.html#explanation-synopsis",
+    "title": "Individual Conditional Expectation (ICE)",
+    "section": "Explanation Synopsis",
+    "text": "Explanation Synopsis\n\n\nICE captures the response of a predictive model for a single instance when varying one of its features (Goldstein et al. 2015).\n\n\n\nIt communicates local (with respect to a single instance) feature influence."
+  },
+  {
+    "objectID": "slides/3_feature-based/ice.html#toy-example-numerical-feature",
+    "href": "slides/3_feature-based/ice.html#toy-example-numerical-feature",
+    "title": "Individual Conditional Expectation (ICE)",
+    "section": "Toy Example – Numerical Feature",
+    "text": "Toy Example – Numerical Feature"
+  },
+  {
+    "objectID": "slides/3_feature-based/ice.html#toy-example-categorical-feature",
+    "href": "slides/3_feature-based/ice.html#toy-example-categorical-feature",
+    "title": "Individual Conditional Expectation (ICE)",
+    "section": "Toy Example – Categorical Feature",
+    "text": "Toy Example – Categorical Feature\n\n\n\nThe lines don’t show trajectories as these are meaningless for unordered categories.\nThe lines are only useful to discern changes for individual instances."
+  },
+  {
+    "objectID": "slides/3_feature-based/ice.html#method-properties",
+    "href": "slides/3_feature-based/ice.html#method-properties",
+    "title": "Individual Conditional Expectation (ICE)",
+    "section": "Method Properties",
+    "text": "Method Properties\n\n\n\n\n\n\n\n\nProperty\nIndividual Conditional Expectation\n\n\n\n\nrelation\npost-hoc\n\n\ncompatibility\nmodel-agnostic\n\n\nmodelling\nregression, crisp and probabilistic classification\n\n\nscope\nlocal (per instance; generalises to cohort or global)\n\n\ntarget\nprediction (generalises to model)"
+  },
+  {
+    "objectID": "slides/3_feature-based/ice.html#method-properties-meta-subs.ctd",
+    "href": "slides/3_feature-based/ice.html#method-properties-meta-subs.ctd",
+    "title": "Individual Conditional Expectation (ICE)",
+    "section": "Method Properties    ",
+    "text": "Method Properties    \n\n\n\n\n\n\n\n\nProperty\nIndividual Conditional Expectation\n\n\n\n\ndata\ntabular\n\n\nfeatures\nnumerical and categorical\n\n\nexplanation\nfeature influence (visualisation)\n\n\ncaveats\nfeature correlation, unrealistic instances"
+  },
+  {
+    "objectID": "slides/3_feature-based/ice.html#computing-ice",
+    "href": "slides/3_feature-based/ice.html#computing-ice",
+    "title": "Individual Conditional Expectation (ICE)",
+    "section": "Computing ICE",
+    "text": "Computing ICE\n\n\n\n\n\n\n\nInput\n\n\n\nSelect a feature to explain\nSelect the explanation target\n\ncrisp classifiers → one-vs.-the-rest or all classes\nprobabilistic classifiers → (probabilities of) one class\nregressors → numerical values\n\nSelect an instance to be explained (or collection thereof)"
+  },
+  {
+    "objectID": "slides/3_feature-based/ice.html#computing-ice-meta-subs.ctd",
+    "href": "slides/3_feature-based/ice.html#computing-ice-meta-subs.ctd",
+    "title": "Individual Conditional Expectation (ICE)",
+    "section": "Computing ICE    ",
+    "text": "Computing ICE    \n\n\n\n\n\n\n\nParameters\n\n\n\nDefine granularity of the explained feature\n\nnumerical attributes → select the range – minimum and maximum value – and the step size of the feature\ncategorical attributes → the full set or a subset of possible values"
+  },
+  {
+    "objectID": "slides/3_feature-based/ice.html#computing-ice-meta-subs.ctd-1",
+    "href": "slides/3_feature-based/ice.html#computing-ice-meta-subs.ctd-1",
+    "title": "Individual Conditional Expectation (ICE)",
+    "section": "Computing ICE    ",
+    "text": "Computing ICE    \n\n\n\n\n\n\n\nProcedure\n\n\n\nFor each explained instance create its copy with the value of the explained feature replaced by the range of values determined by the explanation granularity\nPredict the augmented data\nFor each explained instance plot a line that represents the response of the explained model across the entire spectrum of the explained feature\n\n    Since the values of the explained feature may not be uniformly distributed in the underlying data set, a rug plot showing the distribution of its feature values can help in interpreting the explanation."
+  },
+  {
+    "objectID": "slides/3_feature-based/ice.html#formulation-fa-square-root-alt",
+    "href": "slides/3_feature-based/ice.html#formulation-fa-square-root-alt",
+    "title": "Individual Conditional Expectation (ICE)",
+    "section": "Formulation    ",
+    "text": "Formulation    \n\\[\nX_{\\mathit{ICE}} \\subseteq \\mathcal{X}\n\\]\n\\[\nV_i = \\{ v_i^{\\mathit{min}} , \\ldots , v_i^{\\mathit{max}} \\}\n\\]\n\\[\nf \\left( x_{\\setminus i} , x_i=v_i \\right) \\;\\; \\forall \\; x \\in X_{\\mathit{ICE}} \\; \\forall \\; v_i \\in V_i\n\\]\n\n\\[\nf \\left( x_{\\setminus i} , x_i=V_i \\right) \\;\\; \\forall \\; x \\in X_{\\mathit{ICE}}\n\\]"
+  },
+  {
+    "objectID": "slides/3_feature-based/ice.html#formulation-fa-square-root-alt-meta-subs.ctd",
+    "href": "slides/3_feature-based/ice.html#formulation-fa-square-root-alt-meta-subs.ctd",
+    "title": "Individual Conditional Expectation (ICE)",
+    "section": "Formulation        ",
+    "text": "Formulation        \n\nOriginal notation (Goldstein et al. 2015)\n\n\\[\n\\left\\{ \\left( x_{S}^{(i)} , x_{C}^{(i)} \\right) \\right\\}_{i=1}^N\n\\]\n\n\\[\n\\hat{f}_S^{(i)} = \\hat{f} \\left( x_{S}^{(i)} , x_{C}^{(i)} \\right)\n\\]\n\n\n\\(x_S\\) is stepped through – the explained feature\n\\(x_C\\) are the given feature values"
+  },
+  {
+    "objectID": "slides/3_feature-based/ice.html#centred-ice",
+    "href": "slides/3_feature-based/ice.html#centred-ice",
+    "title": "Individual Conditional Expectation (ICE)",
+    "section": "Centred ICE",
+    "text": "Centred ICE\n\n\nCentres ICE curves by anchoring them at a fixed point, usually the lower end of the explained feature range.\n\n\\[\nf \\left( x_{\\setminus i} , x_i=V_i \\right) -\nf \\left( x_{\\setminus i} , x_i=v_i^{\\mathit{min}} \\right)\n\\;\\; \\forall \\; x \\in X_{\\mathit{ICE}}\n\\]\n\nor\n\n\\[\n\\hat{f} \\left( x_{S}^{(i)} , x_{C}^{(i)} \\right) -\n\\hat{f} \\left( x^{\\star} , x_{C}^{(i)} \\right)\n\\]\n\nHelps to see whether the ICE curves of individual instances behave differently."
+  },
+  {
+    "objectID": "slides/3_feature-based/ice.html#derivative-ice",
+    "href": "slides/3_feature-based/ice.html#derivative-ice",
+    "title": "Individual Conditional Expectation (ICE)",
+    "section": "Derivative ICE",
+    "text": "Derivative ICE\n\n\nVisualises interaction effects between the explained and remaining features by calculating the partial derivative of the explained model \\(f\\) with respect to the explained feature \\(x_i\\).\n\nWhen no interactions are present, all curves overlap.\nWhen interactions exist, the lines will be heterogeneous."
+  },
+  {
+    "objectID": "slides/3_feature-based/ice.html#derivative-ice-meta-subs.ctd",
+    "href": "slides/3_feature-based/ice.html#derivative-ice-meta-subs.ctd",
+    "title": "Individual Conditional Expectation (ICE)",
+    "section": "Derivative ICE    ",
+    "text": "Derivative ICE    \n\n\\[\nf \\left( x_{\\setminus i} , x_i \\right) =\ng \\left( x_i \\right) + h \\left( x_{\\setminus i} \\right)\n\\;\\; \\text{so that} \\;\\;\n\\frac{\\partial f(x)}{\\partial x_i} = g^\\prime(x_i)\n\\]\n\nor\n\n\\[\n\\hat{f} \\left( x_{S} , x_{C} \\right) =\ng \\left( x_{S} \\right) + h \\left( x_{C} \\right)\n\\;\\; \\text{so that} \\;\\;\n\\frac{\\partial \\hat{f}(x)}{\\partial x_{S}} = g^\\prime(x_{S})\n\\]\n\n\nThis assumes no interaction (correlation) between the inspected / explained and the remaining features.\n(Derivatives) communicates the rate and direction of changes in each ICE line."
+  },
+  {
+    "objectID": "slides/3_feature-based/ice.html#ice-of-a-single-instance",
+    "href": "slides/3_feature-based/ice.html#ice-of-a-single-instance",
+    "title": "Individual Conditional Expectation (ICE)",
+    "section": "ICE of a Single Instance",
+    "text": "ICE of a Single Instance"
+  },
+  {
+    "objectID": "slides/3_feature-based/ice.html#ice-of-a-data-collection",
+    "href": "slides/3_feature-based/ice.html#ice-of-a-data-collection",
+    "title": "Individual Conditional Expectation (ICE)",
+    "section": "ICE of a Data Collection",
+    "text": "ICE of a Data Collection"
+  },
+  {
+    "objectID": "slides/3_feature-based/ice.html#centred-ice-1",
+    "href": "slides/3_feature-based/ice.html#centred-ice-1",
+    "title": "Individual Conditional Expectation (ICE)",
+    "section": "Centred ICE",
+    "text": "Centred ICE"
+  },
+  {
+    "objectID": "slides/3_feature-based/ice.html#derivative-ice-1",
+    "href": "slides/3_feature-based/ice.html#derivative-ice-1",
+    "title": "Individual Conditional Expectation (ICE)",
+    "section": "Derivative ICE",
+    "text": "Derivative ICE"
+  },
+  {
+    "objectID": "slides/3_feature-based/ice.html#out-of-distribution-impossible-instances",
+    "href": "slides/3_feature-based/ice.html#out-of-distribution-impossible-instances",
+    "title": "Individual Conditional Expectation (ICE)",
+    "section": "Out-of-distribution (Impossible) Instances",
+    "text": "Out-of-distribution (Impossible) Instances"
+  },
+  {
+    "objectID": "slides/3_feature-based/ice.html#out-of-distribution-impossible-instances-meta-subs.ctd",
+    "href": "slides/3_feature-based/ice.html#out-of-distribution-impossible-instances-meta-subs.ctd",
+    "title": "Individual Conditional Expectation (ICE)",
+    "section": "Out-of-distribution (Impossible) Instances    ",
+    "text": "Out-of-distribution (Impossible) Instances"
+  },
+  {
+    "objectID": "slides/3_feature-based/ice.html#out-of-distribution-impossible-instances-meta-subs.ctd-1",
+    "href": "slides/3_feature-based/ice.html#out-of-distribution-impossible-instances-meta-subs.ctd-1",
+    "title": "Individual Conditional Expectation (ICE)",
+    "section": "Out-of-distribution (Impossible) Instances    ",
+    "text": "Out-of-distribution (Impossible) Instances    \n\n\nNote the gaps in the feature range, which is due to how scikit-learn computes the range for ICE calculation."
+  },
+  {
+    "objectID": "slides/3_feature-based/ice.html#out-of-distribution-impossible-instances-meta-subs.ctd-2",
+    "href": "slides/3_feature-based/ice.html#out-of-distribution-impossible-instances-meta-subs.ctd-2",
+    "title": "Individual Conditional Expectation (ICE)",
+    "section": "Out-of-distribution (Impossible) Instances    ",
+    "text": "Out-of-distribution (Impossible) Instances"
+  },
+  {
+    "objectID": "slides/3_feature-based/ice.html#feature-correlation",
+    "href": "slides/3_feature-based/ice.html#feature-correlation",
+    "title": "Individual Conditional Expectation (ICE)",
+    "section": "Feature Correlation",
+    "text": "Feature Correlation"
+  },
+  {
+    "objectID": "slides/3_feature-based/ice.html#feature-correlation-meta-subs.ctd",
+    "href": "slides/3_feature-based/ice.html#feature-correlation-meta-subs.ctd",
+    "title": "Individual Conditional Expectation (ICE)",
+    "section": "Feature Correlation    ",
+    "text": "Feature Correlation    \n\n\n\nGo back to the previous plot and show that for negative coefficient features the probability decreases; but for positive coefficient features it increases.\nThe rate of chagne depends on the magnitude of the coefficient.\nCaveat: The features were not normalised to the same range so these aren’t really directly comparable."
+  },
+  {
+    "objectID": "slides/3_feature-based/ice.html#feature-correlation-meta-subs.ctd-1",
+    "href": "slides/3_feature-based/ice.html#feature-correlation-meta-subs.ctd-1",
+    "title": "Individual Conditional Expectation (ICE)",
+    "section": "Feature Correlation    ",
+    "text": "Feature Correlation"
+  },
+  {
+    "objectID": "slides/3_feature-based/ice.html#target-correlation",
+    "href": "slides/3_feature-based/ice.html#target-correlation",
+    "title": "Individual Conditional Expectation (ICE)",
+    "section": "Target Correlation",
+    "text": "Target Correlation"
+  },
+  {
+    "objectID": "slides/3_feature-based/ice.html#feature-2-1-correlation-small",
+    "href": "slides/3_feature-based/ice.html#feature-2-1-correlation-small",
+    "title": "Individual Conditional Expectation (ICE)",
+    "section": "Feature 2 & 1 Correlation (small)",
+    "text": "Feature 2 & 1 Correlation (small)"
+  },
+  {
+    "objectID": "slides/3_feature-based/ice.html#feature-2-1-correlation-small-meta-subs.ctd",
+    "href": "slides/3_feature-based/ice.html#feature-2-1-correlation-small-meta-subs.ctd",
+    "title": "Individual Conditional Expectation (ICE)",
+    "section": "Feature 2 & 1 Correlation (small)    ",
+    "text": "Feature 2 & 1 Correlation (small)    \n\n\n\nWhen using the features with least correlation, the behaviour is most unlike the full 4 feature plot.\nAs we will see with the other (correlated) figures, the behaviour is almost unchanged."
+  },
+  {
+    "objectID": "slides/3_feature-based/ice.html#feature-2-3-correlation-medium",
+    "href": "slides/3_feature-based/ice.html#feature-2-3-correlation-medium",
+    "title": "Individual Conditional Expectation (ICE)",
+    "section": "Feature 2 & 3 Correlation (medium)",
+    "text": "Feature 2 & 3 Correlation (medium)"
+  },
+  {
+    "objectID": "slides/3_feature-based/ice.html#feature-2-3-correlation-medium-meta-subs.ctd",
+    "href": "slides/3_feature-based/ice.html#feature-2-3-correlation-medium-meta-subs.ctd",
+    "title": "Individual Conditional Expectation (ICE)",
+    "section": "Feature 2 & 3 Correlation (medium)    ",
+    "text": "Feature 2 & 3 Correlation (medium)"
+  },
+  {
+    "objectID": "slides/3_feature-based/ice.html#feature-2-4-correlation-medium",
+    "href": "slides/3_feature-based/ice.html#feature-2-4-correlation-medium",
+    "title": "Individual Conditional Expectation (ICE)",
+    "section": "Feature 2 & 4 Correlation (medium)",
+    "text": "Feature 2 & 4 Correlation (medium)"
+  },
+  {
+    "objectID": "slides/3_feature-based/ice.html#feature-2-4-correlation-medium-meta-subs.ctd",
+    "href": "slides/3_feature-based/ice.html#feature-2-4-correlation-medium-meta-subs.ctd",
+    "title": "Individual Conditional Expectation (ICE)",
+    "section": "Feature 2 & 4 Correlation (medium)    ",
+    "text": "Feature 2 & 4 Correlation (medium)"
+  },
+  {
+    "objectID": "slides/3_feature-based/ice.html#feature-3-4-correlation-high",
+    "href": "slides/3_feature-based/ice.html#feature-3-4-correlation-high",
+    "title": "Individual Conditional Expectation (ICE)",
+    "section": "Feature 3 & 4 Correlation (high)",
+    "text": "Feature 3 & 4 Correlation (high)"
+  },
+  {
+    "objectID": "slides/3_feature-based/ice.html#feature-3-4-correlation-high-meta-subs.ctd",
+    "href": "slides/3_feature-based/ice.html#feature-3-4-correlation-high-meta-subs.ctd",
+    "title": "Individual Conditional Expectation (ICE)",
+    "section": "Feature 3 & 4 Correlation (high)    ",
+    "text": "Feature 3 & 4 Correlation (high)"
+  },
+  {
+    "objectID": "slides/3_feature-based/ice.html#pros-fa-plus-square",
+    "href": "slides/3_feature-based/ice.html#pros-fa-plus-square",
+    "title": "Individual Conditional Expectation (ICE)",
+    "section": "Pros    ",
+    "text": "Pros    \n\nEasy to generate and interpret\nSpanning multiple instances allows to capture the diversity (heterogeneity) of the model’s behaviour"
+  },
+  {
+    "objectID": "slides/3_feature-based/ice.html#cons-fa-minus-square",
+    "href": "slides/3_feature-based/ice.html#cons-fa-minus-square",
+    "title": "Individual Conditional Expectation (ICE)",
+    "section": "Cons    ",
+    "text": "Cons    \n\nAssumes feature independence, which is often unreasonable\nICE may not reflect the true behaviour of the model since it displays the behaviour of the model for unrealistic instances\nMay be unreliable for certain values of the explained feature when its values are not uniformly distributed (abated by a rug plot)\nLimited to explaining one feature at a time"
+  },
+  {
+    "objectID": "slides/3_feature-based/ice.html#caveats-fa-skull",
+    "href": "slides/3_feature-based/ice.html#caveats-fa-skull",
+    "title": "Individual Conditional Expectation (ICE)",
+    "section": "Caveats    ",
+    "text": "Caveats    \n\nAveraging ICEs gives Partial Dependence (PD)\nGenerating ICEs may be computational expensive for large sets of data and wide feature intervals with a small “inspection” step\nComputational complexity: \\(\\mathcal{O} \\left( n \\times d \\right)\\), where\n\n\\(n\\) is the number of instances in the designated data set and\n\\(d\\) is the number of steps within the designated feature interval"
+  },
+  {
+    "objectID": "slides/3_feature-based/ice.html#causal-interpretation",
+    "href": "slides/3_feature-based/ice.html#causal-interpretation",
+    "title": "Individual Conditional Expectation (ICE)",
+    "section": "Causal Interpretation",
+    "text": "Causal Interpretation\nUnder certain (quite restrictive) assumptions, ICE is admissible to a causal interpretation (Zhao and Hastie 2021).\nSee  Causal Interpretation of Partial Dependence (PD) for more detail."
+  },
+  {
+    "objectID": "slides/3_feature-based/ice.html#related-techniques",
+    "href": "slides/3_feature-based/ice.html#related-techniques",
+    "title": "Individual Conditional Expectation (ICE)",
+    "section": "Related Techniques",
+    "text": "Related Techniques\n\nPartial Dependence (PD)\n\n     Model-focused (global) “version” of Individual Conditional Expectation, which is calculated by averaging ICE across a collection of data points (Friedman 2001). It communicates the average influence of a specific feature value on the model’s prediction by fixing the value of this feature across a designated set of instances."
+  },
+  {
+    "objectID": "slides/3_feature-based/ice.html#related-techniques-meta-subs.ctd",
+    "href": "slides/3_feature-based/ice.html#related-techniques-meta-subs.ctd",
+    "title": "Individual Conditional Expectation (ICE)",
+    "section": "Related Techniques    ",
+    "text": "Related Techniques    \n\nMarginal Effect (Marginal Plots or M-Plots)\n\n     It communicates the influence of a specific feature value – or similar values, i.e., an interval around the selected value – on the model’s prediction by only considering relevant instances found in the designated data set. It is calculated as the average prediction of these instances."
+  },
+  {
+    "objectID": "slides/3_feature-based/ice.html#related-techniques-meta-subs.ctd-1",
+    "href": "slides/3_feature-based/ice.html#related-techniques-meta-subs.ctd-1",
+    "title": "Individual Conditional Expectation (ICE)",
+    "section": "Related Techniques    ",
+    "text": "Related Techniques    \n\nAccumulated Local Effect (ALE)\n\n     It communicates the influence of a specific feature value on the model’s prediction by quantifying the average (accumulated) difference between the predictions at the boundaries of a (small) fixed interval around the selected feature value (Apley and Zhu 2020). It is calculated by replacing the value of the explained feature with the interval boundaries for instances found in the designated data set whose value of this feature is within the specified range."
+  },
+  {
+    "objectID": "slides/3_feature-based/ice.html#implementations",
+    "href": "slides/3_feature-based/ice.html#implementations",
+    "title": "Individual Conditional Expectation (ICE)",
+    "section": "Implementations",
+    "text": "Implementations\n\n\n\n\n\n\n\n Python\n R\n\n\n\n\nscikit-learn (>=0.24.0)\niml\n\n\nPyCEbox\nICEbox\n\n\n\npdp"
+  },
+  {
+    "objectID": "slides/3_feature-based/ice.html#further-reading",
+    "href": "slides/3_feature-based/ice.html#further-reading",
+    "title": "Individual Conditional Expectation (ICE)",
+    "section": "Further Reading",
+    "text": "Further Reading\n\nICE paper (Goldstein et al. 2015)\nInterpretable Machine Learning book\nscikit-learn example\nFAT Forensics example and tutorial"
+  },
+  {
+    "objectID": "slides/3_feature-based/ice.html#bibliography",
+    "href": "slides/3_feature-based/ice.html#bibliography",
+    "title": "Individual Conditional Expectation (ICE)",
+    "section": "Bibliography",
+    "text": "Bibliography\n\n\nApley, Daniel W, and Jingyu Zhu. 2020. “Visualizing the Effects of Predictor Variables in Black Box Supervised Learning Models.” Journal of the Royal Statistical Society: Series B (Statistical Methodology) 82 (4): 1059–86.\n\n\nFriedman, Jerome H. 2001. “Greedy Function Approximation: A Gradient Boosting Machine.” Annals of Statistics, 1189–1232.\n\n\nGoldstein, Alex, Adam Kapelner, Justin Bleich, and Emil Pitkin. 2015. “Peeking Inside the Black Box: Visualizing Statistical Learning with Plots of Individual Conditional Expectation.” Journal of Computational and Graphical Statistics 24 (1): 44–65.\n\n\nZhao, Qingyuan, and Trevor Hastie. 2021. “Causal Interpretations of Black-Box Models.” Journal of Business & Economic Statistics 39 (1): 272–81."
+  },
+  {
+    "objectID": "slides/1_introduction/intro.html#expert-systems-1970s-1980s",
+    "href": "slides/1_introduction/intro.html#expert-systems-1970s-1980s",
+    "title": "Introduction to Machine Learning Explainability",
+    "section": "Expert Systems (1970s & 1980s)",
+    "text": "Expert Systems (1970s & 1980s)"
+  },
+  {
+    "objectID": "slides/1_introduction/intro.html#transparent-machine-learning-models",
+    "href": "slides/1_introduction/intro.html#transparent-machine-learning-models",
+    "title": "Introduction to Machine Learning Explainability",
+    "section": "Transparent Machine Learning Models",
+    "text": "Transparent Machine Learning Models"
+  },
+  {
+    "objectID": "slides/1_introduction/intro.html#rise-of-the-dark-side-deep-neural-networks",
+    "href": "slides/1_introduction/intro.html#rise-of-the-dark-side-deep-neural-networks",
+    "title": "Introduction to Machine Learning Explainability",
+    "section": "Rise of the Dark Side (Deep Neural Networks)",
+    "text": "Rise of the Dark Side (Deep Neural Networks)\n\n\n\n\n\n\n\n\n\nNo need to engineer features (by hand)\nHigh predictive power\nBlack-box modelling"
+  },
+  {
+    "objectID": "slides/1_introduction/intro.html#darpas-xai-concept",
+    "href": "slides/1_introduction/intro.html#darpas-xai-concept",
+    "title": "Introduction to Machine Learning Explainability",
+    "section": "DARPA’s XAI Concept",
+    "text": "DARPA’s XAI Concept\n\n\n\n\n\n\n\nhttps://www.darpa.mil/program/explainable-artificial-intelligence"
+  },
+  {
+    "objectID": "slides/1_introduction/intro.html#benefits",
+    "href": "slides/1_introduction/intro.html#benefits",
+    "title": "Introduction to Machine Learning Explainability",
+    "section": "Benefits",
+    "text": "Benefits\n\n\n\nTrustworthiness\n\nNo silly mistakes\n\nFairness\n\nDoes not discriminate\n\n\n\n\nNew knowledge\n\nAids in scientific discovery\n\nLegislation\n\nDoes not break the law\n\n\nEU’s General Data Protection Regulation\nCalifornia Consumer Privacy Act"
+  },
+  {
+    "objectID": "slides/1_introduction/intro.html#stakeholders",
+    "href": "slides/1_introduction/intro.html#stakeholders",
+    "title": "Introduction to Machine Learning Explainability",
+    "section": "Stakeholders",
+    "text": "Stakeholders\n\n\n\n\n\n\n\nBelle and Papantonis, 2021. Principles and Practice of Explainable Machine Learning"
+  },
+  {
+    "objectID": "slides/1_introduction/intro.html#where-is-the-human-circa-2017",
+    "href": "slides/1_introduction/intro.html#where-is-the-human-circa-2017",
+    "title": "Introduction to Machine Learning Explainability",
+    "section": "Where Is the Human? (circa 2017)",
+    "text": "Where Is the Human? (circa 2017)\n \n\n\nMiller, 2019. Explanation in artificial intelligence: Insights from the social sciences"
+  },
+  {
+    "objectID": "slides/1_introduction/intro.html#exploding-complexity-2019",
+    "href": "slides/1_introduction/intro.html#exploding-complexity-2019",
+    "title": "Introduction to Machine Learning Explainability",
+    "section": "Exploding Complexity (2019)",
+    "text": "Exploding Complexity (2019)\n \n\n\nRudin, 2019. Stop explaining black box machine learning models for high stakes decisions and use interpretable models instead"
+  },
+  {
+    "objectID": "slides/1_introduction/intro.html#xai-process",
+    "href": "slides/1_introduction/intro.html#xai-process",
+    "title": "Introduction to Machine Learning Explainability",
+    "section": "XAI process",
+    "text": "XAI process\n A generic eXplainable Artificial Intelligence process is beyond our reach at the moment\n\nXAI Taxonomy spanning social and technical desiderata:\n• Functional • Operational • Usability • Safety • Validation •\n(Sokol and Flach, 2020. Explainability Fact Sheets: A Framework for Systematic Assessment of Explainable Approaches)\nFramework for black-box explainers\n(Henin and Le Métayer, 2019. Towards a generic framework for black-box explanations of algorithmic decision systems)"
+  },
+  {
+    "objectID": "slides/1_introduction/intro.html#running-example-counterfactual-explanations",
+    "href": "slides/1_introduction/intro.html#running-example-counterfactual-explanations",
+    "title": "Introduction to Machine Learning Explainability",
+    "section": "Running Example: Counterfactual Explanations",
+    "text": "Running Example: Counterfactual Explanations\n\n\n\nHad you been 10 years younger, your loan application would be accepted."
+  },
+  {
+    "objectID": "slides/1_introduction/intro.html#f-functional-requirements",
+    "href": "slides/1_introduction/intro.html#f-functional-requirements",
+    "title": "Introduction to Machine Learning Explainability",
+    "section": "(F) Functional Requirements",
+    "text": "(F) Functional Requirements\n\n\n\nF1 Problem Supervision Level\nF2 Problem Type\nF3 Explanation Target\nF4 Explanation Breadth/Scope\nF5 Computational Complexity\n\n\n\nF6 Applicable Model Class\nF7 Relation to the Predictive System\nF8 Compatible Feature Types\nF9 Caveats and Assumptions"
+  },
+  {
+    "objectID": "slides/1_introduction/intro.html#section",
+    "href": "slides/1_introduction/intro.html#section",
+    "title": "Introduction to Machine Learning Explainability",
+    "section": "",
+    "text": "F1 Problem Supervision Level\n\n\n\nunsupervised\nsemi-supervised\nsupervised\nreinforcement\n\n\n\n\n\nF2 Problem Type\n\n\n\nclassification\n\nprobabilistic / non-probabilistic\nbinary / multi-class\nmulti-label\n\nregression\nclustering"
+  },
+  {
+    "objectID": "slides/1_introduction/intro.html#section-1",
+    "href": "slides/1_introduction/intro.html#section-1",
+    "title": "Introduction to Machine Learning Explainability",
+    "section": "",
+    "text": "F6 Applicable Model Class\n\n\n\nmodel-agnostic\nmodel class-specific\nmodel-specific\n\n\n\n\n\nF7 Relation to the Predictive System\n\n\n\nante-hoc (based on endogenous information)\npost-hoc (based on exogenous information)"
+  },
+  {
+    "objectID": "slides/1_introduction/intro.html#section-2",
+    "href": "slides/1_introduction/intro.html#section-2",
+    "title": "Introduction to Machine Learning Explainability",
+    "section": "",
+    "text": "F5 Computational Complexity\n\n\n\noff-line explanations\nreal-time explanations\n\n\n\n\n\nF8 Compatible Feature Types\n\n\n\nnumerical\ncategorical (one-hot encoding)\n\n\n\n\n\nF9 Caveats and Assumptions\n\n\n\nany underlying assumptions, e.g., black box linearity"
+  },
+  {
+    "objectID": "slides/1_introduction/intro.html#section-3",
+    "href": "slides/1_introduction/intro.html#section-3",
+    "title": "Introduction to Machine Learning Explainability",
+    "section": "",
+    "text": "F3 Explanation Target\n\n\n\ndata (both raw data and features)\nmodels\npredictions\n\n\n\n\n\nF4 Explanation Breadth/Scope\n\n\n\nlocal – data point / prediction\ncohort – subgroup / subspace\nglobal"
+  },
+  {
+    "objectID": "slides/1_introduction/intro.html#u-usability-requirements",
+    "href": "slides/1_introduction/intro.html#u-usability-requirements",
+    "title": "Introduction to Machine Learning Explainability",
+    "section": "(U) Usability Requirements",
+    "text": "(U) Usability Requirements\n\n\n\nU1 Soundness\nU2 Completeness\nU3 Contextfullness\nU4 Interactiveness\nU5 Actionability\nU6 Chronology\n\n\n\nU7 Coherence\nU8 Novelty\nU9 Complexity\nU10 Personalisation\nU11 Parsimony"
+  },
+  {
+    "objectID": "slides/1_introduction/intro.html#section-4",
+    "href": "slides/1_introduction/intro.html#section-4",
+    "title": "Introduction to Machine Learning Explainability",
+    "section": "",
+    "text": "U1 Soundness\n\n\nHow truthful it is with respect to the black box?\n\n\n(✔)\n\n\n\n\nU2 Completeness\n\n\nHow well does it generalise?\n\n\n(✗)\n\n\n\n\nU3 Contextfullness\n\n\n“It only holds for people older than 25.”\n\n\n\n\n\n\nU11 Parsimony\n\n\nHow short is it?\n\n\n(✔)"
+  },
+  {
+    "objectID": "slides/1_introduction/intro.html#section-5",
+    "href": "slides/1_introduction/intro.html#section-5",
+    "title": "Introduction to Machine Learning Explainability",
+    "section": "",
+    "text": "U6 Chronology\n\n\nMore recent events first.\n\n\n\n\nU7 Coherence\n\n\nComply with the natural laws (mental model).\n\n\n\n\nU8 Novelty\n\n\nAvoid stating obvious / being a truism.\n\n\n\n\n\n\nU9 Complexity\n\n\nAppropriate for the audience."
+  },
+  {
+    "objectID": "slides/1_introduction/intro.html#section-6",
+    "href": "slides/1_introduction/intro.html#section-6",
+    "title": "Introduction to Machine Learning Explainability",
+    "section": "",
+    "text": "U5 Actionability\n\n\nActionable foil.\n\n\n(✔)\n\n\n\n\nU4 Interactiveness\n\n\nUser-defined foil.\n\n\n(✔)\n\n\n\n\nU10 Personalisation\n\n\nUser-defined foil.\n\n\n(✔)"
+  },
+  {
+    "objectID": "slides/1_introduction/intro.html#o-operational-requirements",
+    "href": "slides/1_introduction/intro.html#o-operational-requirements",
+    "title": "Introduction to Machine Learning Explainability",
+    "section": "(O) Operational Requirements",
+    "text": "(O) Operational Requirements\n\n\n\nO1 Explanation Family\nO2 Explanatory Medium\nO3 System Interaction\nO4 Explanation Domain\nO5 Data and Model Transparency\n\n\n\nO6 Explanation Audience\nO7 Function of the Explanation\nO8 Causality vs. Actionability\nO9 Trust vs. Performance\nO10 Provenance"
+  },
+  {
+    "objectID": "slides/1_introduction/intro.html#section-7",
+    "href": "slides/1_introduction/intro.html#section-7",
+    "title": "Introduction to Machine Learning Explainability",
+    "section": "",
+    "text": "O1 Explanation Family\n\n\n\nassociations between antecedent and consequent\ncontrasts and differences\ncausal mechanisms\n\n\n\n\n\nO2 Explanatory Medium\n\n\n\n(statistical / numerical) summarisation\nvisualisation\ntextualisation\nformal argumentation\n\n\n\n\n\nO3 System Interaction\n\n\n\nstatic – one-directional\ninteractive – bi-directional"
+  },
+  {
+    "objectID": "slides/1_introduction/intro.html#section-8",
+    "href": "slides/1_introduction/intro.html#section-8",
+    "title": "Introduction to Machine Learning Explainability",
+    "section": "",
+    "text": "O4 Explanation Domain\n\n\n\noriginal domain (exemplars, model parameters)\ntransformed domain (interpretable representation)\n\n\n\n\n\nO5 Data and Model Transparency\n\n\n\ntransparent/opaque data\ntransparent/opaque model\n\n\n\n\n\nO6 Explanation Audience\n\n\n\ndomain experts\nlay audience"
+  },
+  {
+    "objectID": "slides/1_introduction/intro.html#section-9",
+    "href": "slides/1_introduction/intro.html#section-9",
+    "title": "Introduction to Machine Learning Explainability",
+    "section": "",
+    "text": "O7 Function of the Explanation\n\n\n\ninterpretability\nfairness (disparate impact)\naccountability (model robustness / adversarial examples)\n\n\n\n\n\nO8 Causality vs. Actionability\n\n\n\nlook like causal insights but aren’t\n\n\n\n\n\nO9 Trust and Performance\n\n\n\ntruthful to the black-box (perfect fidelity)\npredictive performance is not affected"
+  },
+  {
+    "objectID": "slides/1_introduction/intro.html#section-10",
+    "href": "slides/1_introduction/intro.html#section-10",
+    "title": "Introduction to Machine Learning Explainability",
+    "section": "",
+    "text": "O10 Provenance\n\n\n\npredictive model\ndata set\npredictive model and data set (explainability trace)"
+  },
+  {
+    "objectID": "slides/1_introduction/intro.html#s-safety-requirements",
+    "href": "slides/1_introduction/intro.html#s-safety-requirements",
+    "title": "Introduction to Machine Learning Explainability",
+    "section": "(S) Safety Requirements",
+    "text": "(S) Safety Requirements\n\nS1 Information Leakage\nS2 Explanation Misuse\nS3 Explanation Invariance\nS4 Explanation Quality"
+  },
+  {
+    "objectID": "slides/1_introduction/intro.html#section-11",
+    "href": "slides/1_introduction/intro.html#section-11",
+    "title": "Introduction to Machine Learning Explainability",
+    "section": "",
+    "text": "S1 Information Leakage\n\n\nContrastive explanation leak precise values.\n\n\n\n\nS2 Explanation Misuse\n\n\nCan be used to reverse-engineer the black box.\n\n\n\n\nS3 Explanation Invariance\n\n\nDoes it always output the same explanation (stochasticity / stability)?\n\n\n\n\nS4 Explanation Quality\n\n\nIs it from the data distribution?  How far from a decision boundary (confidence)?"
+  },
+  {
+    "objectID": "slides/1_introduction/intro.html#v-validation-requirements",
+    "href": "slides/1_introduction/intro.html#v-validation-requirements",
+    "title": "Introduction to Machine Learning Explainability",
+    "section": "(V) Validation Requirements",
+    "text": "(V) Validation Requirements\n\nV1 User Studies\nV2 Synthetic Experiments"
+  },
+  {
+    "objectID": "slides/1_introduction/intro.html#section-12",
+    "href": "slides/1_introduction/intro.html#section-12",
+    "title": "Introduction to Machine Learning Explainability",
+    "section": "",
+    "text": "V1 User Studies\n\n\n\nTechnical correctness\nHuman biases\nUnfounded generalisation\nUsefulness\n\n\n\n\n\nV2 Synthetic Experiments"
+  },
+  {
+    "objectID": "slides/1_introduction/intro.html#examples",
+    "href": "slides/1_introduction/intro.html#examples",
+    "title": "Introduction to Machine Learning Explainability",
+    "section": "Examples",
+    "text": "Examples"
+  },
+  {
+    "objectID": "slides/1_introduction/intro.html#lime-explainability-fact-sheet",
+    "href": "slides/1_introduction/intro.html#lime-explainability-fact-sheet",
+    "title": "Introduction to Machine Learning Explainability",
+    "section": "LIME Explainability Fact Sheet",
+    "text": "LIME Explainability Fact Sheet"
+  },
+  {
+    "objectID": "slides/1_introduction/intro.html#challenges",
+    "href": "slides/1_introduction/intro.html#challenges",
+    "title": "Introduction to Machine Learning Explainability",
+    "section": "Challenges",
+    "text": "Challenges\n\nThe desiderata list is neither exhaustive nor prescriptive\nSome properties are incompatible or competing – choose wisely and justify your choices\n\nShould I focus more on property F42 or F44?\nFor O13, should I go for X or Y?\n\nOther properties cannot be answered uniquely\n\nE.g., coherence with the user’s mental model\n\nThe taxonomy does not define explainability"
+  },
+  {
+    "objectID": "slides/1_introduction/intro.html#lack-of-a-universally-accepted-definition",
+    "href": "slides/1_introduction/intro.html#lack-of-a-universally-accepted-definition",
+    "title": "Introduction to Machine Learning Explainability",
+    "section": "Lack of a universally accepted definition",
+    "text": "Lack of a universally accepted definition\n\n\nSimulatability\n(Lipton, 2018. The mythos of model interpretability)\nThe Chinese Room Theorem\n(Searle, 1980. Minds, brains, and programs)\nMental Models\n(Kulesza et al., 2013. Too much, too little, or just right? Ways explanations impact end users’ mental models)\n\nFunctional – operationalisation without understanding\nStructural – appreciation of the underlying mechanism"
+  },
+  {
+    "objectID": "slides/1_introduction/intro.html#defining-explainability",
+    "href": "slides/1_introduction/intro.html#defining-explainability",
+    "title": "Introduction to Machine Learning Explainability",
+    "section": "Defining explainability",
+    "text": "Defining explainability\n\\[\n\\texttt{Explainability} \\; =\n\\] \\[\n\\underbrace{ \\texttt{Reasoning} \\left( \\texttt{Transparency} \\; | \\; \\texttt{Background Knowledge} \\right)}_{\\textit{understanding}}\n\\]\n\nTransparency – insight (of arbitrary complexity) into operation of a system\nBackground Knowledge – implicit or explicit exogenous information\nReasoning – algorithmic or mental processing of information\n\n\n\nSokol and Flach, 2021. Explainability Is in the Mind of the Beholder: Establishing the Foundations of Explainable Artificial Intelligence"
+  },
+  {
+    "objectID": "slides/1_introduction/intro.html#understanding-explainability-transparency",
+    "href": "slides/1_introduction/intro.html#understanding-explainability-transparency",
+    "title": "Introduction to Machine Learning Explainability",
+    "section": "Understanding, explainability & transparency",
+    "text": "Understanding, explainability & transparency\n\n\nA continuous spectrum rather than a binary property"
+  },
+  {
+    "objectID": "slides/1_introduction/intro.html#automated-decision-making",
+    "href": "slides/1_introduction/intro.html#automated-decision-making",
+    "title": "Introduction to Machine Learning Explainability",
+    "section": "Automated Decision-making",
+    "text": "Automated Decision-making"
+  },
+  {
+    "objectID": "slides/1_introduction/intro.html#naïve-view",
+    "href": "slides/1_introduction/intro.html#naïve-view",
+    "title": "Introduction to Machine Learning Explainability",
+    "section": "Naïve view",
+    "text": "Naïve view"
+  },
+  {
+    "objectID": "slides/1_introduction/intro.html#evaluation-tiers",
+    "href": "slides/1_introduction/intro.html#evaluation-tiers",
+    "title": "Introduction to Machine Learning Explainability",
+    "section": "Evaluation Tiers",
+    "text": "Evaluation Tiers\n\n\n\n\nHumans\nTask\n\n\n\n\nApplication-grounded Evaluation\nReal Humans\nReal Tasks\n\n\nHuman-grounded Evaluation\nReal Humans\nSimple Tasks\n\n\nFunctionally-grounded Evaluation\nNo Real Humans\nProxy Tasks\n\n\n\n\n\nKim and Doshi-Velez, 2017. Towards A Rigorous Science of Interpretable Machine Learning"
+  },
+  {
+    "objectID": "slides/1_introduction/intro.html#explanatory-insight-presentation-medium",
+    "href": "slides/1_introduction/intro.html#explanatory-insight-presentation-medium",
+    "title": "Introduction to Machine Learning Explainability",
+    "section": "Explanatory insight & presentation medium",
+    "text": "Explanatory insight & presentation medium"
+  },
+  {
+    "objectID": "slides/1_introduction/intro.html#phenomenon-explanation",
+    "href": "slides/1_introduction/intro.html#phenomenon-explanation",
+    "title": "Introduction to Machine Learning Explainability",
+    "section": "Phenomenon & explanation",
+    "text": "Phenomenon & explanation"
+  },
+  {
+    "objectID": "slides/1_introduction/intro.html#books",
+    "href": "slides/1_introduction/intro.html#books",
+    "title": "Introduction to Machine Learning Explainability",
+    "section": "📖   Books",
+    "text": "📖   Books\n\nSurvey of machine learning interpretability in form of an online book\nOverview of explanatory model analysis published as an online book\nHands-on machine learning explainability online book (URL to follow)"
+  },
+  {
+    "objectID": "slides/1_introduction/intro.html#papers",
+    "href": "slides/1_introduction/intro.html#papers",
+    "title": "Introduction to Machine Learning Explainability",
+    "section": "📝   Papers",
+    "text": "📝   Papers\n\nGeneral introduction to interpretability\nIntroduction to human-centred explainability\nCritique of post-hoc explainability\nSurvey of interpretability techniques\nTaxonomy of explainability approaches"
+  },
+  {
+    "objectID": "slides/1_introduction/intro.html#software",
+    "href": "slides/1_introduction/intro.html#software",
+    "title": "Introduction to Machine Learning Explainability",
+    "section": "💽   Software",
+    "text": "💽   Software\n\nLIME (Python, R)\nSHAP (Python, R)\nMicrosoft’s Interpret\nOracle’s Skater\nIBM’s Explainability 360\nFAT Forensics"
+  },
+  {
+    "objectID": "slides/1_introduction/intro_deux.html#associations-between-antecedent-and-consequent",
+    "href": "slides/1_introduction/intro_deux.html#associations-between-antecedent-and-consequent",
+    "title": "Introduction to Machine Learning Explainability",
+    "section": "Associations Between Antecedent and Consequent",
+    "text": "Associations Between Antecedent and Consequent\n\n\n\nfeature importance\nfeature attribution / influence\nrules\n\n\n\nexemplars (prototypes & criticisms)"
+  },
+  {
+    "objectID": "slides/1_introduction/intro_deux.html#contrasts-and-differences",
+    "href": "slides/1_introduction/intro_deux.html#contrasts-and-differences",
+    "title": "Introduction to Machine Learning Explainability",
+    "section": "Contrasts and Differences",
+    "text": "Contrasts and Differences\n\n(non-causal) counterfactuals\ni.e., contrastive statements\nprototypes & criticisms"
+  },
+  {
+    "objectID": "slides/1_introduction/intro_deux.html#causal-mechanisms",
+    "href": "slides/1_introduction/intro_deux.html#causal-mechanisms",
+    "title": "Introduction to Machine Learning Explainability",
+    "section": "Causal Mechanisms",
+    "text": "Causal Mechanisms\n\ncausal counterfactuals\ncausal chains\nfull causal model"
+  },
+  {
+    "objectID": "slides/1_introduction/intro_deux.html#permutation-feature-importance",
+    "href": "slides/1_introduction/intro_deux.html#permutation-feature-importance",
+    "title": "Introduction to Machine Learning Explainability",
+    "section": "Permutation Feature Importance",
+    "text": "Permutation Feature Importance\n\n\n\n\n\n\n\nhttps://www.kaggle.com/code/dansbecker/permutation-importance"
+  },
+  {
+    "objectID": "slides/1_introduction/intro_deux.html#individual-conditional-expectation-partial-dependence",
+    "href": "slides/1_introduction/intro_deux.html#individual-conditional-expectation-partial-dependence",
+    "title": "Introduction to Machine Learning Explainability",
+    "section": "Individual Conditional Expectation &  Partial Dependence",
+    "text": "Individual Conditional Expectation &  Partial Dependence"
+  },
+  {
+    "objectID": "slides/1_introduction/intro_deux.html#face-counterfactuals",
+    "href": "slides/1_introduction/intro_deux.html#face-counterfactuals",
+    "title": "Introduction to Machine Learning Explainability",
+    "section": "FACE Counterfactuals",
+    "text": "FACE Counterfactuals\n\n\n\n\n\n\n\nPoyiadzi, Sokol, Santos-Rodriguez, De Bie and Flach, 2020. FACE: Feasible and actionable counterfactual explanations"
+  },
+  {
+    "objectID": "slides/1_introduction/intro_deux.html#rulefit",
+    "href": "slides/1_introduction/intro_deux.html#rulefit",
+    "title": "Introduction to Machine Learning Explainability",
+    "section": "RuleFit",
+    "text": "RuleFit\n\n\n\n\n\n\n\nhttps://christophm.github.io/interpretable-ml-book/rulefit.html"
+  }
+]
