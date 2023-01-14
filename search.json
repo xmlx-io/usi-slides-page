@@ -60,7 +60,119 @@
     "href": "slides/3_feature-based/me.html#computing-me",
     "title": "Marginal Effect (ME)/Marginal Plots or M-Plots/",
     "section": "Computing ME",
-    "text": "Computing ME\nTODO"
+    "text": "Computing ME\n\n\n\n\n\n\n\nInput\n\n\n\nSelect a feature to explain\nSelect the explanation target\n\ncrisp classifiers → one(-vs.-the-rest) or all classes\nprobabilistic classifiers → (probabilities of) one class\nregressors → numerical values\n\nSelect a collection of instances to generate the explanation"
+  },
+  {
+    "objectID": "slides/3_feature-based/me.html#computing-me-meta-subs.ctd",
+    "href": "slides/3_feature-based/me.html#computing-me-meta-subs.ctd",
+    "title": "Marginal Effect (ME)/Marginal Plots or M-Plots/",
+    "section": "Computing ME    ",
+    "text": "Computing ME    \n\n\n\n\n\n\n\nParameters\n\n\n\nIf using the relaxed ME, define binning of the explained feature\n\nnumerical attributes → specify (quantile) binning or values of interest with a allowed variation\ncategorical attributes → the full set, a subset or grouping of possible values"
+  },
+  {
+    "objectID": "slides/3_feature-based/me.html#computing-me-meta-subs.ctd-1",
+    "href": "slides/3_feature-based/me.html#computing-me-meta-subs.ctd-1",
+    "title": "Marginal Effect (ME)/Marginal Plots or M-Plots/",
+    "section": "Computing ME    ",
+    "text": "Computing ME    \n\n\n\n\n\n\n\nProcedure\n\n\n\nIf unavailable, collect predictions of the designated data set\nFor each instance in this set\n\nfor exact ME, assign it to a collection based on its value of the explained feature (possibly multiple instance per value)\nfor relaxed ME, assign it to a bin that spans the range to which the value of its explained feature belongs\n\nGenerate and plot Marginal Effect\n\nfor crisp classifiers count the number of each unique prediction across all the instances collected for every value (exact) or bin (relaxed) of the explained feature; visualise ME either as a count or proportion using separate line for each class or using a stacked bar chart\nfor probabilistic classifiers (per class) and regressors average the response of the model across all the instances collected for each value (exact) or bin (relaxed) of the explained feature; visualise ME as a line\n\n\n    Since the values of the explained feature may not be uniformly distributed in the underlying data set, a rug plot showing the distribution of its feature values for strict ME or a histogram representing the number of instances per bin in relaxed ME can help in interpreting the explanation."
+  },
+  {
+    "objectID": "slides/3_feature-based/me.html#formulation-fa-square-root-alt",
+    "href": "slides/3_feature-based/me.html#formulation-fa-square-root-alt",
+    "title": "Marginal Effect (ME)/Marginal Plots or M-Plots/",
+    "section": "Formulation    ",
+    "text": "Formulation    \n\\[\nX_{\\mathit{ME}} \\subseteq \\mathcal{X}\n\\]\n\\[\nV_i = \\{ x_i : x \\in X_{\\mathit{ME}} \\}\n\\]\n\\[\n\\mathit{ME}_i =\n\\mathbb{E}_{X_{\\setminus i} | X_{i}} \\left[ f \\left( X_{\\setminus i} , X_{i} \\right) | X_{i}=v_i \\right] =\n\\int_{X_{\\setminus i}} f \\left( X_{\\mathit{PD} {\\;\\setminus i}} , x_i=v_i \\right) \\; d \\mathbb{P} ( X_{\\mathit{PD} {\\;\\setminus i}} )\n\\;\\; \\forall \\; v_i \\in V_i\n\\]\n\n\\[\n\\mathit{PD}_i =\n\\mathbb{E}_{X_{\\mathit{PD}}} \\left[ f \\left( X_{\\mathit{PD} {\\;\\setminus i}} , x_i=V_i \\right) \\right] =\n\\int f \\left( X_{\\mathit{PD} {\\;\\setminus i}} , x_i=V_i \\right) \\; d \\mathbb{P} ( X_{\\mathit{PD} {\\;\\setminus i}} )\n\\]"
+  },
+  {
+    "objectID": "slides/3_feature-based/me.html#formulation-fa-square-root-alt-meta-subs.ctd",
+    "href": "slides/3_feature-based/me.html#formulation-fa-square-root-alt-meta-subs.ctd",
+    "title": "Marginal Effect (ME)/Marginal Plots or M-Plots/",
+    "section": "Formulation        ",
+    "text": "Formulation        \n\nBased on the ICE notation (Goldstein et al. 2015)\n\n\\[\n\\left\\{ \\left( x_{S}^{(i)} , x_{C}^{(i)} \\right) \\right\\}_{i=1}^N\n\\]\n\n\\[\n\\hat{f}_S =\n\\mathbb{E}_{X_{C}} \\left[ \\hat{f} \\left( x_{S} , X_{C} \\right) \\right] =\n\\int \\hat{f} \\left( x_{S} , X_{C} \\right) \\; d \\mathbb{P} ( X_{C} )\n\\]\n\n\n\\(x_S\\) is stepped through – the explained feature\n\\(x_C\\) are the given feature values\n\\(X_C\\) is the random variable\nMarginalising the predictions over the distribution of the given features yields dependence between the explained feature(s) (including any interactions) and predictions."
+  },
+  {
+    "objectID": "slides/3_feature-based/me.html#approximation-fa-desktop",
+    "href": "slides/3_feature-based/me.html#approximation-fa-desktop",
+    "title": "Marginal Effect (ME)/Marginal Plots or M-Plots/",
+    "section": "Approximation    ",
+    "text": "Approximation    \n\n(Monte Carlo approximation)\n\n\\[\n\\mathit{PD}_i \\approx\n\\frac{1}{|X_{\\mathit{PD}}|} \\sum_{x \\in X_{\\mathit{PD}}}\nf \\left( x_ {\\setminus i} , x_i=v_i \\right)\n\\]\n\n\\[\n\\hat{f}_S \\approx\n\\frac{1}{N} \\sum_{i = 1}^N\n\\hat{f} \\left( x_{S} , x_{C}^{(i)} \\right)\n\\]"
+  },
+  {
+    "objectID": "slides/3_feature-based/me.html#strict-me",
+    "href": "slides/3_feature-based/me.html#strict-me",
+    "title": "Marginal Effect (ME)/Marginal Plots or M-Plots/",
+    "section": "Strict ME",
+    "text": "Strict ME"
+  },
+  {
+    "objectID": "slides/3_feature-based/me.html#strict-me-with-standard-deviation",
+    "href": "slides/3_feature-based/me.html#strict-me-with-standard-deviation",
+    "title": "Marginal Effect (ME)/Marginal Plots or M-Plots/",
+    "section": "Strict ME with Standard Deviation",
+    "text": "Strict ME with Standard Deviation"
+  },
+  {
+    "objectID": "slides/3_feature-based/me.html#centred-strict-me-with-standard-deviation",
+    "href": "slides/3_feature-based/me.html#centred-strict-me-with-standard-deviation",
+    "title": "Marginal Effect (ME)/Marginal Plots or M-Plots/",
+    "section": "Centred Strict ME (with Standard Deviation)",
+    "text": "Centred Strict ME (with Standard Deviation)"
+  },
+  {
+    "objectID": "slides/3_feature-based/me.html#strict-me-for-two-numerical-features",
+    "href": "slides/3_feature-based/me.html#strict-me-for-two-numerical-features",
+    "title": "Marginal Effect (ME)/Marginal Plots or M-Plots/",
+    "section": "Strict ME for Two (Numerical) Features",
+    "text": "Strict ME for Two (Numerical) Features"
+  },
+  {
+    "objectID": "slides/3_feature-based/me.html#strict-me-for-crisp-classifiers",
+    "href": "slides/3_feature-based/me.html#strict-me-for-crisp-classifiers",
+    "title": "Marginal Effect (ME)/Marginal Plots or M-Plots/",
+    "section": "Strict ME for Crisp Classifiers",
+    "text": "Strict ME for Crisp Classifiers"
+  },
+  {
+    "objectID": "slides/3_feature-based/me.html#relaxed-me",
+    "href": "slides/3_feature-based/me.html#relaxed-me",
+    "title": "Marginal Effect (ME)/Marginal Plots or M-Plots/",
+    "section": "Relaxed ME",
+    "text": "Relaxed ME"
+  },
+  {
+    "objectID": "slides/3_feature-based/me.html#relaxed-me-with-standard-deviation",
+    "href": "slides/3_feature-based/me.html#relaxed-me-with-standard-deviation",
+    "title": "Marginal Effect (ME)/Marginal Plots or M-Plots/",
+    "section": "Relaxed ME with Standard Deviation",
+    "text": "Relaxed ME with Standard Deviation"
+  },
+  {
+    "objectID": "slides/3_feature-based/me.html#feature-correlation",
+    "href": "slides/3_feature-based/me.html#feature-correlation",
+    "title": "Marginal Effect (ME)/Marginal Plots or M-Plots/",
+    "section": "Feature Correlation",
+    "text": "Feature Correlation"
+  },
+  {
+    "objectID": "slides/3_feature-based/me.html#feature-correlation-meta-subs.ctd",
+    "href": "slides/3_feature-based/me.html#feature-correlation-meta-subs.ctd",
+    "title": "Marginal Effect (ME)/Marginal Plots or M-Plots/",
+    "section": "Feature Correlation    ",
+    "text": "Feature Correlation"
+  },
+  {
+    "objectID": "slides/3_feature-based/me.html#feature-correlation-meta-subs.ctd-1",
+    "href": "slides/3_feature-based/me.html#feature-correlation-meta-subs.ctd-1",
+    "title": "Marginal Effect (ME)/Marginal Plots or M-Plots/",
+    "section": "Feature Correlation    ",
+    "text": "Feature Correlation"
+  },
+  {
+    "objectID": "slides/3_feature-based/me.html#feature-correlation-meta-subs.ctd-2",
+    "href": "slides/3_feature-based/me.html#feature-correlation-meta-subs.ctd-2",
+    "title": "Marginal Effect (ME)/Marginal Plots or M-Plots/",
+    "section": "Feature Correlation    ",
+    "text": "Feature Correlation"
   },
   {
     "objectID": "slides/3_feature-based/me.html#notes-1",
@@ -74,7 +186,7 @@
     "href": "slides/3_feature-based/me.html#bibliography",
     "title": "Marginal Effect (ME)/Marginal Plots or M-Plots/",
     "section": "Bibliography",
-    "text": "Bibliography\n\n\nFriedman, Jerome H. 2001. “Greedy Function Approximation: A Gradient Boosting Machine.” Annals of Statistics, 1189–1232."
+    "text": "Bibliography\n\n\nFriedman, Jerome H. 2001. “Greedy Function Approximation: A Gradient Boosting Machine.” Annals of Statistics, 1189–1232.\n\n\nGoldstein, Alex, Adam Kapelner, Justin Bleich, and Emil Pitkin. 2015. “Peeking Inside the Black Box: Visualizing Statistical Learning with Plots of Individual Conditional Expectation.” Journal of Computational and Graphical Statistics 24 (1): 44–65."
   },
   {
     "objectID": "slides/3_feature-based/pd.html#explanation-synopsis",
@@ -116,7 +228,7 @@
     "href": "slides/3_feature-based/pd.html#computing-pd",
     "title": "Partial Dependence (PD)",
     "section": "Computing PD",
-    "text": "Computing PD\n\n\n\n\n\n\n\nInput\n\n\n\nSelect a feature to explain\nSelect the explanation target\n\ncrisp classifiers → one-vs.-the-rest or all classes\nprobabilistic classifiers → (probabilities of) one class\nregressors → numerical values\n\nSelect a collection of instances to generate the explanation"
+    "text": "Computing PD\n\n\n\n\n\n\n\nInput\n\n\n\nSelect a feature to explain\nSelect the explanation target\n\ncrisp classifiers → one(-vs.-the-rest) or all classes\nprobabilistic classifiers → (probabilities of) one class\nregressors → numerical values\n\nSelect a collection of instances to generate the explanation"
   },
   {
     "objectID": "slides/3_feature-based/pd.html#computing-pd-meta-subs.ctd",
@@ -130,7 +242,7 @@
     "href": "slides/3_feature-based/pd.html#computing-pd-meta-subs.ctd-1",
     "title": "Partial Dependence (PD)",
     "section": "Computing PD    ",
-    "text": "Computing PD    \n\n\n\n\n\n\n\nProcedure\n\n\n\nFor each instance in the designated data set create its copy with the value of the explained feature replaced by the range of values determined by the explanation granularity\nPredict the augmented data\nGenerate and plot Partial Dependence\n\nFor crisp classifiers count the number of each unique prediction at each value of the explained feature across all the instances; visualise PD either as a count or proportion using separate line for each class or using a stacked bar chart\nFor probabilistic classifiers (per class) and regressors average the response of the model at each value of the explained feature across all the instances; visualise PD as a line\n\n\n    Since the values of the explained feature may not be uniformly distributed in the underlying data set, a rug plot showing the distribution of its feature values can help in interpreting the explanation."
+    "text": "Computing PD    \n\n\n\n\n\n\n\nProcedure\n\n\n\nFor each instance in the designated data set create its copy with the value of the explained feature replaced by the range of values determined by the explanation granularity\nPredict the augmented data\nGenerate and plot Partial Dependence\n\nfor crisp classifiers count the number of each unique prediction at each value of the explained feature across all the instances; visualise PD either as a count or proportion using separate line for each class or using a stacked bar chart\nfor probabilistic classifiers (per class) and regressors average the response of the model at each value of the explained feature across all the instances; visualise PD as a line\n\n\n    Since the values of the explained feature may not be uniformly distributed in the underlying data set, a rug plot showing the distribution of its feature values can help in interpreting the explanation."
   },
   {
     "objectID": "slides/3_feature-based/pd.html#formulation-fa-square-root-alt",

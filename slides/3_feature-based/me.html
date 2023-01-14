@@ -363,6 +363,9 @@ Kacper Sokol
 <ul>
 <li><a href="#/method-overview" id="/toc-method-overview">Method Overview</a></li>
 <li><a href="#/algorithmic-building-blocks" id="/toc-algorithmic-building-blocks">(Algorithmic) Building Blocks</a></li>
+<li><a href="#/theoretical-underpinning" id="/toc-theoretical-underpinning">Theoretical Underpinning</a></li>
+<li><a href="#/examples" id="/toc-examples">Examples</a></li>
+<li><a href="#/case-studies-gotchas" id="/toc-case-studies-gotchas">Case Studies &amp; Gotchas!</a></li>
 <li><a href="#/notes" id="/toc-notes">Notes</a></li>
 </ul>
 </nav>
@@ -496,9 +499,217 @@ Kacper Sokol
 </section>
 <section id="computing-me" class="slide level2">
 <h2>Computing ME</h2>
-<p>TODO</p>
+<p><br></p>
+<div class="callout callout-note callout-captioned callout-style-default">
+<div class="callout-body">
+<div class="callout-caption">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Input</strong></p>
+</div>
+<div class="callout-content">
+<ol type="1">
+<li><p>Select a <strong>feature to explain</strong></p></li>
+<li><p>Select the <strong>explanation target</strong></p>
+<ul>
+<li>crisp classifiers → one(-vs.-the-rest) or all classes</li>
+<li>probabilistic classifiers → (probabilities of) one class</li>
+<li>regressors → numerical values</li>
+</ul></li>
+<li><p>Select a <strong>collection of instances</strong> to generate the explanation</p></li>
+</ol>
+</div>
+</div>
+</div>
+</section>
+<section id="computing-me-meta-subs.ctd" class="slide level2">
+<h2>Computing ME &nbsp;&nbsp;&nbsp;</h2>
+<p><br></p>
+<div class="callout callout-caution callout-captioned callout-style-default">
+<div class="callout-body">
+<div class="callout-caption">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Parameters</strong></p>
+</div>
+<div class="callout-content">
+<ol type="1">
+<li><p>If using the <strong>relaxed</strong> ME, define <strong>binning</strong> of the explained feature</p>
+<ul>
+<li>numerical attributes → specify (quantile) binning or values of interest with a allowed variation</li>
+<li>categorical attributes → the full set, a subset or grouping of possible values</li>
+</ul></li>
+</ol>
+</div>
+</div>
+</div>
+</section>
+<section id="computing-me-meta-subs.ctd-1" class="slide level2">
+<h2>Computing ME &nbsp;&nbsp;&nbsp;</h2>
+<p><br></p>
+<div class="callout callout-tip callout-captioned callout-style-default">
+<div class="callout-body">
+<div class="callout-caption">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Procedure</strong></p>
+</div>
+<div class="callout-content">
+<ol type="1">
+<li><p>If unavailable, collect predictions of the designated data set</p></li>
+<li><p>For each instance in this set</p>
+<ul>
+<li>for <strong>exact</strong> ME, assign it to a collection based on its value of the explained feature (possibly multiple instance per value)</li>
+<li>for <strong>relaxed</strong> ME, assign it to a bin that spans the range to which the value of its explained feature belongs</li>
+</ul></li>
+<li><p>Generate and plot <em>Marginal Effect</em></p>
+<ul>
+<li>for <strong>crisp classifiers</strong> <strong>count</strong> the number of each unique prediction across all the instances collected for every value (<strong>exact</strong>) or bin (<strong>relaxed</strong>) of the explained feature; visualise ME either as a <em>count</em> or <em>proportion</em> using separate line for each class or using a stacked bar chart</li>
+<li>for <strong>probabilistic classifiers</strong> (per class) and <strong>regressors</strong> <strong>average</strong> the response of the model across all the instances collected for each value (<strong>exact</strong>) or bin (<strong>relaxed</strong>) of the explained feature; visualise ME as a line</li>
+</ul></li>
+</ol>
+<p>&nbsp;&nbsp;&nbsp; Since the values of the explained feature may <strong>not be uniformly distributed</strong> in the underlying data set, a <strong>rug plot</strong> showing the distribution of its feature values for <strong>strict</strong> ME or a <strong>histogram</strong> representing the number of instances per bin in <strong>relaxed</strong> ME can help in interpreting the explanation.</p>
+</div>
+</div>
+</div>
 <!-- #%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#% --->
 </section></section>
+<section>
+<section id="theoretical-underpinning" class="title-slide slide level1 center">
+<h1>Theoretical Underpinning</h1>
+
+</section>
+<section id="formulation-fa-square-root-alt" class="slide level2">
+<h2>Formulation &nbsp;&nbsp;&nbsp;</h2>
+<p><span class="math display">\[
+X_{\mathit{ME}} \subseteq \mathcal{X}
+\]</span></p>
+<p><span class="math display">\[
+V_i = \{ x_i : x \in X_{\mathit{ME}} \}
+\]</span></p>
+<p><span class="math display">\[
+\mathit{ME}_i =
+\mathbb{E}_{X_{\setminus i} | X_{i}} \left[ f \left( X_{\setminus i} , X_{i} \right) | X_{i}=v_i \right] =
+\int_{X_{\setminus i}} f \left( X_{\mathit{PD} {\;\setminus i}} , x_i=v_i \right) \; d \mathbb{P} ( X_{\mathit{PD} {\;\setminus i}} )
+\;\; \forall \; v_i \in V_i
+\]</span></p>
+<p><br></p>
+<p><span class="math display">\[
+\mathit{PD}_i =
+\mathbb{E}_{X_{\mathit{PD}}} \left[ f \left( X_{\mathit{PD} {\;\setminus i}} , x_i=V_i \right) \right] =
+\int f \left( X_{\mathit{PD} {\;\setminus i}} , x_i=V_i \right) \; d \mathbb{P} ( X_{\mathit{PD} {\;\setminus i}} )
+\]</span></p>
+</section>
+<section id="formulation-fa-square-root-alt-meta-subs.ctd" class="slide level2">
+<h2>Formulation &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;</h2>
+<p><br></p>
+<p>Based on the ICE notation <span class="citation" data-cites="goldstein2015peeking">(<a href="#/bibliography" role="doc-biblioref" onclick="">Goldstein et al. 2015</a>)</span></p>
+<p><br></p>
+<p><span class="math display">\[
+\left\{ \left( x_{S}^{(i)} , x_{C}^{(i)} \right) \right\}_{i=1}^N
+\]</span></p>
+<p><br></p>
+<p><span class="math display">\[
+\hat{f}_S =
+\mathbb{E}_{X_{C}} \left[ \hat{f} \left( x_{S} , X_{C} \right) \right] =
+\int \hat{f} \left( x_{S} , X_{C} \right) \; d \mathbb{P} ( X_{C} )
+\]</span></p>
+<aside class="notes">
+<ul>
+<li><p><span class="math inline">\(x_S\)</span> is <strong>stepped</strong> through – the explained feature</p></li>
+<li><p><span class="math inline">\(x_C\)</span> are the <strong>given</strong> feature values</p></li>
+<li><p><span class="math inline">\(X_C\)</span> is the <strong>random variable</strong></p></li>
+<li><p>Marginalising the predictions over the distribution of the <strong>given</strong> features yields dependence between the explained feature(s) (<em>including any interactions</em>) and predictions.</p></li>
+</ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="approximation-fa-desktop" class="slide level2">
+<h2>Approximation &nbsp;&nbsp;&nbsp;</h2>
+<p><br></p>
+<p>(Monte Carlo approximation)</p>
+<p><br></p>
+<p><span class="math display">\[
+\mathit{PD}_i \approx
+\frac{1}{|X_{\mathit{PD}}|} \sum_{x \in X_{\mathit{PD}}}
+f \left( x_ {\setminus i} , x_i=v_i \right)
+\]</span></p>
+<p><br></p>
+<p><span class="math display">\[
+\hat{f}_S \approx
+\frac{1}{N} \sum_{i = 1}^N
+\hat{f} \left( x_{S} , x_{C}^{(i)} \right)
+\]</span></p>
+<!-- #%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#% --->
+</section></section>
+<section>
+<section id="examples" class="title-slide slide level1 center">
+<h1>Examples</h1>
+
+</section>
+<section id="strict-me" class="slide level2">
+<h2>Strict ME</h2>
+
+<img data-src="me_files/figure-revealjs/cell-13-output-1.png" alt="Strict ME" class="r-stretch quarto-figure-center"></section>
+<section id="strict-me-with-standard-deviation" class="slide level2">
+<h2>Strict ME with Standard Deviation</h2>
+
+<img data-src="me_files/figure-revealjs/cell-14-output-1.png" alt="Strict ME with Standard Deviation" class="r-stretch quarto-figure-center"></section>
+<section id="centred-strict-me-with-standard-deviation" class="slide level2">
+<h2>Centred Strict ME (with Standard Deviation)</h2>
+
+<img data-src="me_files/figure-revealjs/cell-16-output-1.png" alt="Centred Strict ME with Standard Deviation" class="r-stretch quarto-figure-center"></section>
+<section id="strict-me-for-two-numerical-features" class="slide level2">
+<h2>Strict ME for Two (Numerical) Features</h2>
+
+<img data-src="me_files/figure-revealjs/cell-18-output-1.png" alt="Two-dimensional Strict ME for the Iris data set" class="r-stretch quarto-figure-center"></section>
+<section id="strict-me-for-crisp-classifiers" class="slide level2">
+<h2>Strict ME for Crisp Classifiers</h2>
+
+<img data-src="me_files/figure-revealjs/cell-20-output-1.png" alt="Crisp classification strict ME for the Iris data set" class="r-stretch quarto-figure-center"></section>
+<section id="relaxed-me" class="slide level2">
+<h2>Relaxed ME</h2>
+
+<img data-src="me_files/figure-revealjs/cell-22-output-1.png" alt="Relaxed ME" class="r-stretch quarto-figure-center"></section>
+<section id="relaxed-me-with-standard-deviation" class="slide level2">
+<h2>Relaxed ME with Standard Deviation</h2>
+
+<!-- #%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#% --->
+<img data-src="me_files/figure-revealjs/cell-23-output-1.png" alt="Relaxed ME with Standard Deviation" class="r-stretch quarto-figure-center"></section></section>
+<section>
+<section id="case-studies-gotchas" class="title-slide slide level1 center">
+<h1>Case Studies &amp; Gotchas!</h1>
+
+</section>
+<section id="feature-correlation" class="slide level2">
+<h2>Feature Correlation</h2>
+
+<img data-src="me_files/figure-revealjs/cell-26-output-1.png" alt="Relaxed ME of a single class for two correlated features" class="r-stretch quarto-figure-center"></section>
+<section id="feature-correlation-meta-subs.ctd" class="slide level2">
+<h2>Feature Correlation &nbsp;&nbsp;&nbsp;</h2>
+
+<img data-src="me_files/figure-revealjs/cell-27-output-1.png" alt="PD of a single class for two correlated features" class="r-stretch quarto-figure-center"></section>
+<section id="feature-correlation-meta-subs.ctd-1" class="slide level2">
+<h2>Feature Correlation &nbsp;&nbsp;&nbsp;</h2>
+
+<img data-src="me_files/figure-revealjs/cell-28-output-1.png" alt="Model coefficients for the selected class" class="r-stretch quarto-figure-center"></section>
+<section id="feature-correlation-meta-subs.ctd-2" class="slide level2">
+<h2>Feature Correlation &nbsp;&nbsp;&nbsp;</h2>
+
+<!-- #%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#% --->
+<img data-src="me_files/figure-revealjs/cell-29-output-1.png" alt="Iris feature correlation" class="r-stretch quarto-figure-center"></section></section>
 <section>
 <section id="notes" class="title-slide slide level1 center">
 <h1>Notes</h1>
@@ -518,6 +729,9 @@ Kacper Sokol
 <div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography">
 <div id="ref-friedman2001greedy" class="csl-entry" role="doc-biblioentry">
 Friedman, Jerome H. 2001. <span>“Greedy Function Approximation: <span>A</span> Gradient Boosting Machine.”</span> <em>Annals of Statistics</em>, 1189–1232.
+</div>
+<div id="ref-goldstein2015peeking" class="csl-entry" role="doc-biblioentry">
+Goldstein, Alex, Adam Kapelner, Justin Bleich, and Emil Pitkin. 2015. <span>“Peeking Inside the Black Box: <span>V</span>isualizing Statistical Learning with Plots of Individual Conditional Expectation.”</span> <em>Journal of Computational and Graphical Statistics</em> 24 (1): 44–65.
 </div>
 </div>
 </section>

@@ -506,7 +506,7 @@ Kacper Sokol
 <li><p>Select a <strong>feature to explain</strong></p></li>
 <li><p>Select the <strong>explanation target</strong></p>
 <ul>
-<li>crisp classifiers → one-vs.-the-rest or all classes</li>
+<li>crisp classifiers → one(-vs.-the-rest) or all classes</li>
 <li>probabilistic classifiers → (probabilities of) one class</li>
 <li>regressors → numerical values</li>
 </ul></li>
@@ -556,8 +556,8 @@ Kacper Sokol
 <li><p>Predict the augmented data</p></li>
 <li><p>Generate and plot <em>Partial Dependence</em></p>
 <ul>
-<li>For <strong>crisp classifiers</strong> count the number of each unique prediction at each value of the explained feature across all the instances; visualise PD either as a <em>count</em> or <em>proportion</em> using separate line for each class or using a stacked bar chart</li>
-<li>For probabilistic classifiers (per class) and regressors average the response of the model at each value of the explained feature across all the instances; visualise PD as a line</li>
+<li>for <strong>crisp classifiers</strong> count the number of each unique prediction at each value of the explained feature across all the instances; visualise PD either as a <em>count</em> or <em>proportion</em> using separate line for each class or using a stacked bar chart</li>
+<li>for probabilistic classifiers (per class) and regressors average the response of the model at each value of the explained feature across all the instances; visualise PD as a line</li>
 </ul></li>
 </ol>
 <p>&nbsp;&nbsp;&nbsp; Since the values of the explained feature may <strong>not be uniformly distributed</strong> in the underlying data set, a <strong>rug plot</strong> showing the distribution of its feature values can help in interpreting the explanation.</p>
