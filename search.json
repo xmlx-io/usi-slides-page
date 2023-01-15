@@ -9,184 +9,240 @@
   {
     "objectID": "slides/3_feature-based/me.html#explanation-synopsis",
     "href": "slides/3_feature-based/me.html#explanation-synopsis",
-    "title": "Marginal Effect (ME)/Marginal Plots or M-Plots/",
+    "title": "Marginal Effect (ME)/Marginal Plots, M-Plots orLocal Dependence Profiles/",
     "section": "Explanation Synopsis",
-    "text": "Explanation Synopsis\n\n\nME captures the average response of a predictive model across a collection of instances (taken from a designated data set) for a specific value of a selected feature (found in the aforementioned data set). This measure can be relaxed by including similar feature values determined by a fixed interval around the selected value.\n\n\n\nIt communicates global (with respect to the entire explained model) feature influence."
+    "text": "Explanation Synopsis\n\n\nME captures the average response of a predictive model across a collection of instances (taken from a designated data set) for a specific value of a selected feature (found in the aforementioned data set) (Apley and Zhu 2020). This measure can be relaxed by including similar feature values determined by a fixed interval around the selected value.\n\n\n\nIt communicates global (with respect to the entire explained model) feature influence."
   },
   {
     "objectID": "slides/3_feature-based/me.html#rationale",
     "href": "slides/3_feature-based/me.html#rationale",
-    "title": "Marginal Effect (ME)/Marginal Plots or M-Plots/",
+    "title": "Marginal Effect (ME)/Marginal Plots, M-Plots orLocal Dependence Profiles/",
     "section": "Rationale",
     "text": "Rationale\n\n\nME improves upon  Partial Dependence (PD) (Friedman 2001) by ensuring that the influence estimates are based on realistic instances (thus respecting feature correlation), making the explanatory insights more truthful.\n\n\n\n\n\n\n\n\nMethod’s Name\n\n\nNote that even though the Marginal Effect name suggests that these explanations are based on the marginal distribution of the selected feature, they are actually derived from its conditional distribution."
   },
   {
     "objectID": "slides/3_feature-based/me.html#toy-example-strict-me-numerical-feature",
     "href": "slides/3_feature-based/me.html#toy-example-strict-me-numerical-feature",
-    "title": "Marginal Effect (ME)/Marginal Plots or M-Plots/",
+    "title": "Marginal Effect (ME)/Marginal Plots, M-Plots orLocal Dependence Profiles/",
     "section": "Toy Example – Strict ME – Numerical Feature",
     "text": "Toy Example – Strict ME – Numerical Feature"
   },
   {
     "objectID": "slides/3_feature-based/me.html#toy-example-relaxed-me-numerical-feature",
     "href": "slides/3_feature-based/me.html#toy-example-relaxed-me-numerical-feature",
-    "title": "Marginal Effect (ME)/Marginal Plots or M-Plots/",
+    "title": "Marginal Effect (ME)/Marginal Plots, M-Plots orLocal Dependence Profiles/",
     "section": "Toy Example – Relaxed ME – Numerical Feature",
     "text": "Toy Example – Relaxed ME – Numerical Feature"
   },
   {
     "objectID": "slides/3_feature-based/me.html#toy-example-strict-me-categorical-feature",
     "href": "slides/3_feature-based/me.html#toy-example-strict-me-categorical-feature",
-    "title": "Marginal Effect (ME)/Marginal Plots or M-Plots/",
+    "title": "Marginal Effect (ME)/Marginal Plots, M-Plots orLocal Dependence Profiles/",
     "section": "Toy Example – Strict ME – Categorical Feature",
     "text": "Toy Example – Strict ME – Categorical Feature"
   },
   {
     "objectID": "slides/3_feature-based/me.html#method-properties",
     "href": "slides/3_feature-based/me.html#method-properties",
-    "title": "Marginal Effect (ME)/Marginal Plots or M-Plots/",
+    "title": "Marginal Effect (ME)/Marginal Plots, M-Plots orLocal Dependence Profiles/",
     "section": "Method Properties",
     "text": "Method Properties\n\n\n\n\n\n\n\n\nProperty\nMarginal Effect\n\n\n\n\nrelation\npost-hoc\n\n\ncompatibility\nmodel-agnostic\n\n\nmodelling\nregression, crisp and probabilistic classification\n\n\nscope\nglobal (per data set; generalises to cohort)\n\n\ntarget\nmodel (set of predictions)"
   },
   {
     "objectID": "slides/3_feature-based/me.html#method-properties-meta-subs.ctd",
     "href": "slides/3_feature-based/me.html#method-properties-meta-subs.ctd",
-    "title": "Marginal Effect (ME)/Marginal Plots or M-Plots/",
+    "title": "Marginal Effect (ME)/Marginal Plots, M-Plots orLocal Dependence Profiles/",
     "section": "Method Properties    ",
     "text": "Method Properties    \n\n\n\n\n\n\n\n\nProperty\nMarginal Effect\n\n\n\n\ndata\ntabular\n\n\nfeatures\nnumerical and categorical\n\n\nexplanation\nfeature influence (visualisation)\n\n\ncaveats\nfeature correlation, heterogeneous model response"
   },
   {
     "objectID": "slides/3_feature-based/me.html#computing-me",
     "href": "slides/3_feature-based/me.html#computing-me",
-    "title": "Marginal Effect (ME)/Marginal Plots or M-Plots/",
+    "title": "Marginal Effect (ME)/Marginal Plots, M-Plots orLocal Dependence Profiles/",
     "section": "Computing ME",
     "text": "Computing ME\n\n\n\n\n\n\n\nInput\n\n\n\nSelect a feature to explain\nSelect the explanation target\n\ncrisp classifiers → one(-vs.-the-rest) or all classes\nprobabilistic classifiers → (probabilities of) one class\nregressors → numerical values\n\nSelect a collection of instances to generate the explanation"
   },
   {
     "objectID": "slides/3_feature-based/me.html#computing-me-meta-subs.ctd",
     "href": "slides/3_feature-based/me.html#computing-me-meta-subs.ctd",
-    "title": "Marginal Effect (ME)/Marginal Plots or M-Plots/",
+    "title": "Marginal Effect (ME)/Marginal Plots, M-Plots orLocal Dependence Profiles/",
     "section": "Computing ME    ",
-    "text": "Computing ME    \n\n\n\n\n\n\n\nParameters\n\n\n\nIf using the relaxed ME, define binning of the explained feature\n\nnumerical attributes → specify (quantile) binning or values of interest with a allowed variation\ncategorical attributes → the full set, a subset or grouping of possible values"
+    "text": "Computing ME    \n\n\n\n\n\n\n\nParameters\n\n\n\nIf using the relaxed ME, define binning of the explained feature\n\nnumerical attributes → specify (fixed-width or quantile) binning or values of interest with a allowed variation\ncategorical attributes → the full set, a subset or grouping of possible values"
   },
   {
     "objectID": "slides/3_feature-based/me.html#computing-me-meta-subs.ctd-1",
     "href": "slides/3_feature-based/me.html#computing-me-meta-subs.ctd-1",
-    "title": "Marginal Effect (ME)/Marginal Plots or M-Plots/",
+    "title": "Marginal Effect (ME)/Marginal Plots, M-Plots orLocal Dependence Profiles/",
     "section": "Computing ME    ",
     "text": "Computing ME    \n\n\n\n\n\n\n\nProcedure\n\n\n\nIf unavailable, collect predictions of the designated data set\nFor each instance in this set\n\nfor exact ME, assign it to a collection based on its value of the explained feature (possibly multiple instance per value)\nfor relaxed ME, assign it to a bin that spans the range to which the value of its explained feature belongs\n\nGenerate and plot Marginal Effect\n\nfor crisp classifiers count the number of each unique prediction across all the instances collected for every value (exact) or bin (relaxed) of the explained feature; visualise ME either as a count or proportion using separate line for each class or using a stacked bar chart\nfor probabilistic classifiers (per class) and regressors average the response of the model across all the instances collected for each value (exact) or bin (relaxed) of the explained feature; visualise ME as a line\n\n\n    Since the values of the explained feature may not be uniformly distributed in the underlying data set, a rug plot showing the distribution of its feature values for strict ME or a histogram representing the number of instances per bin in relaxed ME can help in interpreting the explanation."
   },
   {
     "objectID": "slides/3_feature-based/me.html#formulation-fa-square-root-alt",
     "href": "slides/3_feature-based/me.html#formulation-fa-square-root-alt",
-    "title": "Marginal Effect (ME)/Marginal Plots or M-Plots/",
+    "title": "Marginal Effect (ME)/Marginal Plots, M-Plots orLocal Dependence Profiles/",
     "section": "Formulation    ",
-    "text": "Formulation    \n\\[\nX_{\\mathit{ME}} \\subseteq \\mathcal{X}\n\\]\n\\[\nV_i = \\{ x_i : x \\in X_{\\mathit{ME}} \\}\n\\]\n\\[\n\\mathit{ME}_i =\n\\mathbb{E}_{X_{\\setminus i} | X_{i}} \\left[ f \\left( X_{\\setminus i} , X_{i} \\right) | X_{i}=v_i \\right] =\n\\int_{X_{\\setminus i}} f \\left( X_{\\mathit{PD} {\\;\\setminus i}} , x_i=v_i \\right) \\; d \\mathbb{P} ( X_{\\mathit{PD} {\\;\\setminus i}} )\n\\;\\; \\forall \\; v_i \\in V_i\n\\]\n\n\\[\n\\mathit{PD}_i =\n\\mathbb{E}_{X_{\\mathit{PD}}} \\left[ f \\left( X_{\\mathit{PD} {\\;\\setminus i}} , x_i=V_i \\right) \\right] =\n\\int f \\left( X_{\\mathit{PD} {\\;\\setminus i}} , x_i=V_i \\right) \\; d \\mathbb{P} ( X_{\\mathit{PD} {\\;\\setminus i}} )\n\\]"
+    "text": "Formulation    \n\\[\nX_{\\mathit{ME}} \\subseteq \\mathcal{X}\n\\]\n\\[\nV_i = \\{ x_i : x \\in X_{\\mathit{ME}} \\}\n\\]\n\\[\n\\mathit{ME}_i =\n\\mathbb{E}_{X_{\\setminus i} | X_{i}} \\left[ f \\left( X_{\\setminus i} , X_{i} \\right) | X_{i}=v_i \\right] =\n\\int_{X_{\\setminus i}} f \\left( X_{\\setminus i} , x_i \\right) \\; d \\mathbb{P} ( X_{\\setminus i} | X_i = v_i )\n\\;\\; \\forall \\; v_i \\in V_i\n\\]\n\n\\[\n\\mathit{ME}_i =\n\\mathbb{E}_{X_{\\setminus i} | X_{i}} \\left[ f \\left( X_{\\setminus i} , X_{i} \\right) | X_{i}=V_i \\right] =\n\\int_{X_{\\setminus i}} f \\left( X_{\\setminus i} , x_i \\right) \\; d \\mathbb{P} ( X_{\\setminus i} | X_i = V_i )\n\\]"
   },
   {
     "objectID": "slides/3_feature-based/me.html#formulation-fa-square-root-alt-meta-subs.ctd",
     "href": "slides/3_feature-based/me.html#formulation-fa-square-root-alt-meta-subs.ctd",
-    "title": "Marginal Effect (ME)/Marginal Plots or M-Plots/",
+    "title": "Marginal Effect (ME)/Marginal Plots, M-Plots orLocal Dependence Profiles/",
     "section": "Formulation        ",
-    "text": "Formulation        \n\nBased on the ICE notation (Goldstein et al. 2015)\n\n\\[\n\\left\\{ \\left( x_{S}^{(i)} , x_{C}^{(i)} \\right) \\right\\}_{i=1}^N\n\\]\n\n\\[\n\\hat{f}_S =\n\\mathbb{E}_{X_{C}} \\left[ \\hat{f} \\left( x_{S} , X_{C} \\right) \\right] =\n\\int \\hat{f} \\left( x_{S} , X_{C} \\right) \\; d \\mathbb{P} ( X_{C} )\n\\]\n\n\n\\(x_S\\) is stepped through – the explained feature\n\\(x_C\\) are the given feature values\n\\(X_C\\) is the random variable\nMarginalising the predictions over the distribution of the given features yields dependence between the explained feature(s) (including any interactions) and predictions."
+    "text": "Formulation        \n\nBased on the ICE notation (Goldstein et al. 2015)\n\n\\[\n\\left\\{ \\left( x_{S}^{(i)} , x_{C}^{(i)} \\right) \\right\\}_{i=1}^N\n\\]\n\n\\[\n\\hat{f}_S =\n\\mathbb{E}_{X_{C} | X_S} \\left[ \\hat{f} \\left( X_{S} , X_{C} \\right) | X_S = x_S \\right] =\n\\int_{X_C} \\hat{f} \\left( x_{S} , X_{C} \\right) \\; d \\mathbb{P} ( X_{C} | X_S = x_S )\n\\]\n\n\n\\(x_S\\) is fixed – the explained feature\n\\(x_C\\) are the given feature values\n\\(X_C\\) and \\(X_S\\) are the random variables\nConditioning the predictions on the distribution of the explained feature(s) yields (average) dependence between the explained feature(s) (including any interactions) and predictions."
   },
   {
     "objectID": "slides/3_feature-based/me.html#approximation-fa-desktop",
     "href": "slides/3_feature-based/me.html#approximation-fa-desktop",
-    "title": "Marginal Effect (ME)/Marginal Plots or M-Plots/",
+    "title": "Marginal Effect (ME)/Marginal Plots, M-Plots orLocal Dependence Profiles/",
     "section": "Approximation    ",
-    "text": "Approximation    \n\n(Monte Carlo approximation)\n\n\\[\n\\mathit{PD}_i \\approx\n\\frac{1}{|X_{\\mathit{PD}}|} \\sum_{x \\in X_{\\mathit{PD}}}\nf \\left( x_ {\\setminus i} , x_i=v_i \\right)\n\\]\n\n\\[\n\\hat{f}_S \\approx\n\\frac{1}{N} \\sum_{i = 1}^N\n\\hat{f} \\left( x_{S} , x_{C}^{(i)} \\right)\n\\]"
+    "text": "Approximation    \n\n\\[\n\\mathit{ME}_i \\approx\n\\frac{1}{\\sum_{x \\in X_{\\mathit{ME}}} \\mathbb{1} (x_i = v_i)} \\sum_{x \\in X_{\\mathit{ME}}}\nf \\left( x | x_i=v_i \\right)\n\\]"
+  },
+  {
+    "objectID": "slides/3_feature-based/me.html#relaxed-me",
+    "href": "slides/3_feature-based/me.html#relaxed-me",
+    "title": "Marginal Effect (ME)/Marginal Plots, M-Plots orLocal Dependence Profiles/",
+    "section": "Relaxed ME",
+    "text": "Relaxed ME\n\n\nMeasures ME for a range of values \\(v_i \\pm \\delta\\) around a selected value \\(v_i\\), instead of doing so precisely at that point.\n\n\\[\n\\mathit{ME}_i^{\\pm\\delta} =\n\\mathbb{E}_{X_{\\setminus i} | X_{i}} \\left[ f \\left( X_{\\setminus i} , X_{i} \\right) | X_{i}=v_i \\pm \\delta \\right] =\n\\int_{X_{\\setminus i}} f \\left( X_{\\setminus i} , x_i \\right) \\; d \\mathbb{P} ( X_{\\setminus i} | X_i = v_i \\pm \\delta )\n\\;\\; \\forall \\; v_i \\in V_i\n\\]\n\nor\n\n\\[\n\\hat{f}_S^{\\pm\\delta} =\n\\mathbb{E}_{X_{C} | X_S} \\left[ \\hat{f} \\left( X_{S} , X_{C} \\right) | X_S = x_S \\pm \\delta \\right] =\n\\int_{X_C} \\hat{f} \\left( x_{S} , X_{C} \\right) \\; d \\mathbb{P} ( X_{C} | X_S = x_S \\pm \\delta )\n\\]\n\n\nWe can get a more robust measurement of feature influence by relaxing the value for which ME is computed."
   },
   {
     "objectID": "slides/3_feature-based/me.html#strict-me",
     "href": "slides/3_feature-based/me.html#strict-me",
-    "title": "Marginal Effect (ME)/Marginal Plots or M-Plots/",
+    "title": "Marginal Effect (ME)/Marginal Plots, M-Plots orLocal Dependence Profiles/",
     "section": "Strict ME",
     "text": "Strict ME"
   },
   {
     "objectID": "slides/3_feature-based/me.html#strict-me-with-standard-deviation",
     "href": "slides/3_feature-based/me.html#strict-me-with-standard-deviation",
-    "title": "Marginal Effect (ME)/Marginal Plots or M-Plots/",
+    "title": "Marginal Effect (ME)/Marginal Plots, M-Plots orLocal Dependence Profiles/",
     "section": "Strict ME with Standard Deviation",
     "text": "Strict ME with Standard Deviation"
   },
   {
     "objectID": "slides/3_feature-based/me.html#centred-strict-me-with-standard-deviation",
     "href": "slides/3_feature-based/me.html#centred-strict-me-with-standard-deviation",
-    "title": "Marginal Effect (ME)/Marginal Plots or M-Plots/",
+    "title": "Marginal Effect (ME)/Marginal Plots, M-Plots orLocal Dependence Profiles/",
     "section": "Centred Strict ME (with Standard Deviation)",
     "text": "Centred Strict ME (with Standard Deviation)"
   },
   {
     "objectID": "slides/3_feature-based/me.html#strict-me-for-two-numerical-features",
     "href": "slides/3_feature-based/me.html#strict-me-for-two-numerical-features",
-    "title": "Marginal Effect (ME)/Marginal Plots or M-Plots/",
+    "title": "Marginal Effect (ME)/Marginal Plots, M-Plots orLocal Dependence Profiles/",
     "section": "Strict ME for Two (Numerical) Features",
     "text": "Strict ME for Two (Numerical) Features"
   },
   {
     "objectID": "slides/3_feature-based/me.html#strict-me-for-crisp-classifiers",
     "href": "slides/3_feature-based/me.html#strict-me-for-crisp-classifiers",
-    "title": "Marginal Effect (ME)/Marginal Plots or M-Plots/",
+    "title": "Marginal Effect (ME)/Marginal Plots, M-Plots orLocal Dependence Profiles/",
     "section": "Strict ME for Crisp Classifiers",
     "text": "Strict ME for Crisp Classifiers"
   },
   {
-    "objectID": "slides/3_feature-based/me.html#relaxed-me",
-    "href": "slides/3_feature-based/me.html#relaxed-me",
-    "title": "Marginal Effect (ME)/Marginal Plots or M-Plots/",
+    "objectID": "slides/3_feature-based/me.html#relaxed-me-1",
+    "href": "slides/3_feature-based/me.html#relaxed-me-1",
+    "title": "Marginal Effect (ME)/Marginal Plots, M-Plots orLocal Dependence Profiles/",
     "section": "Relaxed ME",
     "text": "Relaxed ME"
   },
   {
     "objectID": "slides/3_feature-based/me.html#relaxed-me-with-standard-deviation",
     "href": "slides/3_feature-based/me.html#relaxed-me-with-standard-deviation",
-    "title": "Marginal Effect (ME)/Marginal Plots or M-Plots/",
+    "title": "Marginal Effect (ME)/Marginal Plots, M-Plots orLocal Dependence Profiles/",
     "section": "Relaxed ME with Standard Deviation",
     "text": "Relaxed ME with Standard Deviation"
   },
   {
     "objectID": "slides/3_feature-based/me.html#feature-correlation",
     "href": "slides/3_feature-based/me.html#feature-correlation",
-    "title": "Marginal Effect (ME)/Marginal Plots or M-Plots/",
+    "title": "Marginal Effect (ME)/Marginal Plots, M-Plots orLocal Dependence Profiles/",
     "section": "Feature Correlation",
     "text": "Feature Correlation"
   },
   {
     "objectID": "slides/3_feature-based/me.html#feature-correlation-meta-subs.ctd",
     "href": "slides/3_feature-based/me.html#feature-correlation-meta-subs.ctd",
-    "title": "Marginal Effect (ME)/Marginal Plots or M-Plots/",
+    "title": "Marginal Effect (ME)/Marginal Plots, M-Plots orLocal Dependence Profiles/",
     "section": "Feature Correlation    ",
     "text": "Feature Correlation"
   },
   {
     "objectID": "slides/3_feature-based/me.html#feature-correlation-meta-subs.ctd-1",
     "href": "slides/3_feature-based/me.html#feature-correlation-meta-subs.ctd-1",
-    "title": "Marginal Effect (ME)/Marginal Plots or M-Plots/",
+    "title": "Marginal Effect (ME)/Marginal Plots, M-Plots orLocal Dependence Profiles/",
     "section": "Feature Correlation    ",
     "text": "Feature Correlation"
   },
   {
     "objectID": "slides/3_feature-based/me.html#feature-correlation-meta-subs.ctd-2",
     "href": "slides/3_feature-based/me.html#feature-correlation-meta-subs.ctd-2",
-    "title": "Marginal Effect (ME)/Marginal Plots or M-Plots/",
+    "title": "Marginal Effect (ME)/Marginal Plots, M-Plots orLocal Dependence Profiles/",
     "section": "Feature Correlation    ",
-    "text": "Feature Correlation"
+    "text": "Feature Correlation    \n\n\n\nME reports feature influence, but beacause of averaging only similar points the measurement gets distorted by feature correlation, therefore reporting the combined effect\nRemember that we are working with conditional distributions\nIn this example, feature #1 (sepal length) – whose coefficient is close to 0 (-0.06) – shows strong influence, whcih is due to it being heavily correlated (0.87) with feature #3 (petal length) – whose coefficient has the largest magnitude (close to -1.0)\nPD, which is largely immune to this effect, does not display this behaviour"
   },
   {
-    "objectID": "slides/3_feature-based/me.html#notes-1",
-    "href": "slides/3_feature-based/me.html#notes-1",
-    "title": "Marginal Effect (ME)/Marginal Plots or M-Plots/",
-    "section": "Notes",
-    "text": "Notes\naverage prediction based on conditional distribution \\(f(x \\; | \\; x_i = v_i)\\)\ndiscuss the strict \\(f(x \\; | \\; x_i = v_i)\\) and relaxed \\(f(x \\; | \\; x_i = v_i \\pm \\delta)\\) versions\nalternative (to fixed-width binning) relaxation criteria: quartile-based binning\nthe result reports the effect of the selected feature, but is heavily influenced by all the other correlated features (combined effect) since we’re working on a conditional distribution show this on a model whose one coefficient is 0 – no effect but effect due to correlation display params of a linear model; and then show how the influence is still visible despite feature-parameter being 0\nplot the rug – density or distribution of each individual value / bins\n— low number of points per value or per bin may impact the reliability of estimates plot an additional “rug lot” by using v-lines ended with a circle to represent count for strict and histogram for relaxed"
+    "objectID": "slides/3_feature-based/me.html#pros-fa-plus-square",
+    "href": "slides/3_feature-based/me.html#pros-fa-plus-square",
+    "title": "Marginal Effect (ME)/Marginal Plots, M-Plots orLocal Dependence Profiles/",
+    "section": "Pros    ",
+    "text": "Pros    \n\nEasy to generate and interpret\nBased on real data"
+  },
+  {
+    "objectID": "slides/3_feature-based/me.html#cons-fa-minus-square",
+    "href": "slides/3_feature-based/me.html#cons-fa-minus-square",
+    "title": "Marginal Effect (ME)/Marginal Plots, M-Plots orLocal Dependence Profiles/",
+    "section": "Cons    ",
+    "text": "Cons    \n\nAssumes feature independence, which is often unreasonable and heavily biases the influence measurements\nMay be unreliable for certain values of the explained feature when there is a low number of data points with that value (strict) or in a relevant bin (relaxed); this impacts the reliability of influence estimates (average perdiction of the explained model for that value or range of values)\nReliability of estimates can only be communicated by displaying a rug plot or distribution of instances per value or bin\nDiversity (heterogeneity) of the model’s behaviour for each particular value or bin can only be communicated by prediction variance\nLimited to explaining two feature at a time"
+  },
+  {
+    "objectID": "slides/3_feature-based/me.html#caveats-fa-skull",
+    "href": "slides/3_feature-based/me.html#caveats-fa-skull",
+    "title": "Marginal Effect (ME)/Marginal Plots, M-Plots orLocal Dependence Profiles/",
+    "section": "Caveats    ",
+    "text": "Caveats    \n\nThe measurements may be sensitive to different binning approaches for relaxed ME\nComputational complexity: \\(\\mathcal{O} \\left( n \\right)\\), where \\(n\\) is the number of instances in the designated data set"
+  },
+  {
+    "objectID": "slides/3_feature-based/me.html#related-techniques",
+    "href": "slides/3_feature-based/me.html#related-techniques",
+    "title": "Marginal Effect (ME)/Marginal Plots, M-Plots orLocal Dependence Profiles/",
+    "section": "Related Techniques",
+    "text": "Related Techniques\n\nAccumulated Local Effect (ALE)\n\n     An evolved version of (relaxed) ME that is less prone to being affected by feature correlation. It communicates the influence of a specific feature value on the model’s prediction by quantifying the average (accumulated) difference between the predictions at the boundaries of a (small) fixed interval around the selected feature value (Apley and Zhu 2020). It is calculated by replacing the value of the explained feature with the interval boundaries for instances found in the designated data set whose value of this feature is within the specified range."
+  },
+  {
+    "objectID": "slides/3_feature-based/me.html#related-techniques-meta-subs.ctd",
+    "href": "slides/3_feature-based/me.html#related-techniques-meta-subs.ctd",
+    "title": "Marginal Effect (ME)/Marginal Plots, M-Plots orLocal Dependence Profiles/",
+    "section": "Related Techniques    ",
+    "text": "Related Techniques    \n\nIndividual Conditional Expectation (ICE)\n\n     It communicates the influence of a specific feature value on the model’s prediction by fixing the value of this feature across a designated range for a selected data point (Goldstein et al. 2015). It is an instance-focused (local) “variant” of Partial Dependence."
+  },
+  {
+    "objectID": "slides/3_feature-based/me.html#related-techniques-meta-subs.ctd-1",
+    "href": "slides/3_feature-based/me.html#related-techniques-meta-subs.ctd-1",
+    "title": "Marginal Effect (ME)/Marginal Plots, M-Plots orLocal Dependence Profiles/",
+    "section": "Related Techniques    ",
+    "text": "Related Techniques    \n\nPartial Dependence (PD)\n\n     It communicates the average influence of a specific feature value on the model’s prediction by fixing the value of this feature across a designated range for a set of instances. It is a model-focused (global) “variant” of Individual Conditional Expectation, which is calculated by averaging ICE across a collection of data points (Friedman 2001)."
+  },
+  {
+    "objectID": "slides/3_feature-based/me.html#implementations",
+    "href": "slides/3_feature-based/me.html#implementations",
+    "title": "Marginal Effect (ME)/Marginal Plots, M-Plots orLocal Dependence Profiles/",
+    "section": "Implementations",
+    "text": "Implementations\n\n\n\n\n\n\n\n Python\n R\n\n\n\n\nN/A\nDALEX"
+  },
+  {
+    "objectID": "slides/3_feature-based/me.html#further-reading",
+    "href": "slides/3_feature-based/me.html#further-reading",
+    "title": "Marginal Effect (ME)/Marginal Plots, M-Plots orLocal Dependence Profiles/",
+    "section": "Further Reading",
+    "text": "Further Reading\n\nInterpretable Machine Learning book\nExplanatory Model Analysis book"
   },
   {
     "objectID": "slides/3_feature-based/me.html#bibliography",
     "href": "slides/3_feature-based/me.html#bibliography",
-    "title": "Marginal Effect (ME)/Marginal Plots or M-Plots/",
+    "title": "Marginal Effect (ME)/Marginal Plots, M-Plots orLocal Dependence Profiles/",
     "section": "Bibliography",
-    "text": "Bibliography\n\n\nFriedman, Jerome H. 2001. “Greedy Function Approximation: A Gradient Boosting Machine.” Annals of Statistics, 1189–1232.\n\n\nGoldstein, Alex, Adam Kapelner, Justin Bleich, and Emil Pitkin. 2015. “Peeking Inside the Black Box: Visualizing Statistical Learning with Plots of Individual Conditional Expectation.” Journal of Computational and Graphical Statistics 24 (1): 44–65."
+    "text": "Bibliography\n\n\nApley, Daniel W, and Jingyu Zhu. 2020. “Visualizing the Effects of Predictor Variables in Black Box Supervised Learning Models.” Journal of the Royal Statistical Society: Series B (Statistical Methodology) 82 (4): 1059–86.\n\n\nFriedman, Jerome H. 2001. “Greedy Function Approximation: A Gradient Boosting Machine.” Annals of Statistics, 1189–1232.\n\n\nGoldstein, Alex, Adam Kapelner, Justin Bleich, and Emil Pitkin. 2015. “Peeking Inside the Black Box: Visualizing Statistical Learning with Plots of Individual Conditional Expectation.” Journal of Computational and Graphical Statistics 24 (1): 44–65."
   },
   {
     "objectID": "slides/3_feature-based/pd.html#explanation-synopsis",
@@ -249,7 +305,7 @@
     "href": "slides/3_feature-based/pd.html#formulation-fa-square-root-alt",
     "title": "Partial Dependence (PD)",
     "section": "Formulation    ",
-    "text": "Formulation    \n\\[\nX_{\\mathit{PD}} \\subseteq \\mathcal{X}\n\\]\n\\[\nV_i = \\{ v_i^{\\mathit{min}} , \\ldots , v_i^{\\mathit{max}} \\}\n\\]\n\\[\n\\mathit{PD}_i =\n\\mathbb{E}_{X_{\\mathit{PD}}} \\left[ f \\left( X_{\\mathit{PD} {\\;\\setminus i}} , x_i=v_i \\right) \\right] =\n\\int f \\left( X_{\\mathit{PD} {\\;\\setminus i}} , x_i=v_i \\right) \\; d \\mathbb{P} ( X_{\\mathit{PD} {\\;\\setminus i}} )\n\\;\\; \\forall \\; v_i \\in V_i\n\\]\n\n\\[\n\\mathit{PD}_i =\n\\mathbb{E}_{X_{\\mathit{PD}}} \\left[ f \\left( X_{\\mathit{PD} {\\;\\setminus i}} , x_i=V_i \\right) \\right] =\n\\int f \\left( X_{\\mathit{PD} {\\;\\setminus i}} , x_i=V_i \\right) \\; d \\mathbb{P} ( X_{\\mathit{PD} {\\;\\setminus i}} )\n\\]"
+    "text": "Formulation    \n\\[\nX_{\\mathit{PD}} \\subseteq \\mathcal{X}\n\\]\n\\[\nV_i = \\{ v_i^{\\mathit{min}} , \\ldots , v_i^{\\mathit{max}} \\}\n\\]\n\\[\n\\mathit{PD}_i =\n\\mathbb{E}_{X_{\\setminus i}} \\left[ f \\left( X_{\\setminus i} , x_i=v_i \\right) \\right] =\n\\int f \\left( X_{\\setminus i} , x_i=v_i \\right) \\; d \\mathbb{P} ( X_{\\setminus i} )\n\\;\\; \\forall \\; v_i \\in V_i\n\\]\n\n\\[\n\\mathit{PD}_i =\n\\mathbb{E}_{X_{\\setminus i}} \\left[ f \\left( X_{\\setminus i} , x_i=V_i \\right) \\right] =\n\\int f \\left( X_{\\setminus i} , x_i=V_i \\right) \\; d \\mathbb{P} ( X_{\\setminus i} )\n\\]"
   },
   {
     "objectID": "slides/3_feature-based/pd.html#formulation-fa-square-root-alt-meta-subs.ctd",
@@ -270,7 +326,7 @@
     "href": "slides/3_feature-based/pd.html#centred-pd",
     "title": "Partial Dependence (PD)",
     "section": "Centred PD",
-    "text": "Centred PD\n\n\nCentres PD curve by anchoring it at a fixed point, usually the lower end of the explained feature range. It is helpful when working with  Centred ICE.\n\n\\[\n\\mathbb{E}_{X_{\\mathit{PD}}} \\left[ f \\left( X_{\\mathit{PD} {\\;\\setminus i}} , x_i=V_i \\right) \\right] -\n\\mathbb{E}_{X_{\\mathit{PD}}} \\left[ f \\left( X_{\\mathit{PD} {\\;\\setminus i}} , x_i=v_i^{\\mathit{min}} \\right) \\right]\n\\]\n\nor\n\n\\[\n\\mathbb{E}_{X_{C}} \\left[ \\hat{f} \\left( x_{S}^{(i)} , X_{C} \\right) \\right] -\n\\mathbb{E}_{X_{C}} \\left[ \\hat{f} \\left( x^{\\star} , X_{C} \\right) \\right]\n\\]\n\n\nHelps to see whether the underlying ICE curves of individual instances behave differently."
+    "text": "Centred PD\n\n\nCentres PD curve by anchoring it at a fixed point, usually the lower end of the explained feature range. It is helpful when working with  Centred ICE.\n\n\\[\n\\mathbb{E}_{X_{\\setminus i}} \\left[ f \\left( X_{\\setminus i} , x_i=V_i \\right) \\right] -\n\\mathbb{E}_{X_{\\setminus i}} \\left[ f \\left( X_{\\setminus i} , x_i=v_i^{\\mathit{min}} \\right) \\right]\n\\]\n\nor\n\n\\[\n\\mathbb{E}_{X_{C}} \\left[ \\hat{f} \\left( x_{S}^{(i)} , X_{C} \\right) \\right] -\n\\mathbb{E}_{X_{C}} \\left[ \\hat{f} \\left( x^{\\star} , X_{C} \\right) \\right]\n\\]\n\n\nHelps to see whether the underlying ICE curves of individual instances behave differently."
   },
   {
     "objectID": "slides/3_feature-based/pd.html#pd-based-feature-importance",
@@ -473,7 +529,7 @@
     "href": "slides/3_feature-based/pd.html#implementations",
     "title": "Partial Dependence (PD)",
     "section": "Implementations",
-    "text": "Implementations\n\n\n\n\n\n\n\n Python\n R\n\n\n\n\nscikit-learn (>=0.24.0)\niml\n\n\nPyCEbox\nICEbox\n\n\nPDPbox\npdp\n\n\nInterpretML\nDALEX\n\n\nSkater"
+    "text": "Implementations\n\n\n\n\n\n\n\n Python\n R\n\n\n\n\nscikit-learn (>=0.24.0)\niml\n\n\nPyCEbox\nICEbox\n\n\nPDPbox\npdp\n\n\nInterpretML\nDALEX\n\n\nSkater\n\n\n\nalibi"
   },
   {
     "objectID": "slides/3_feature-based/pd.html#further-reading",
@@ -774,7 +830,7 @@
     "href": "slides/3_feature-based/ice.html#implementations",
     "title": "Individual Conditional Expectation (ICE)",
     "section": "Implementations",
-    "text": "Implementations\n\n\n\n\n\n\n\n Python\n R\n\n\n\n\nscikit-learn (>=0.24.0)\niml\n\n\nPyCEbox\nICEbox\n\n\n\npdp"
+    "text": "Implementations\n\n\n\n\n\n\n\n Python\n R\n\n\n\n\nscikit-learn (>=0.24.0)\niml\n\n\nPyCEbox\nICEbox\n\n\nalibi\npdp\n\n\n\nDALEX"
   },
   {
     "objectID": "slides/3_feature-based/ice.html#further-reading",

@@ -581,15 +581,15 @@ V_i = \{ v_i^{\mathit{min}} , \ldots , v_i^{\mathit{max}} \}
 \]</span></p>
 <p><span class="math display">\[
 \mathit{PD}_i =
-\mathbb{E}_{X_{\mathit{PD}}} \left[ f \left( X_{\mathit{PD} {\;\setminus i}} , x_i=v_i \right) \right] =
-\int f \left( X_{\mathit{PD} {\;\setminus i}} , x_i=v_i \right) \; d \mathbb{P} ( X_{\mathit{PD} {\;\setminus i}} )
+\mathbb{E}_{X_{\setminus i}} \left[ f \left( X_{\setminus i} , x_i=v_i \right) \right] =
+\int f \left( X_{\setminus i} , x_i=v_i \right) \; d \mathbb{P} ( X_{\setminus i} )
 \;\; \forall \; v_i \in V_i
 \]</span></p>
 <p><br></p>
 <p><span class="math display">\[
 \mathit{PD}_i =
-\mathbb{E}_{X_{\mathit{PD}}} \left[ f \left( X_{\mathit{PD} {\;\setminus i}} , x_i=V_i \right) \right] =
-\int f \left( X_{\mathit{PD} {\;\setminus i}} , x_i=V_i \right) \; d \mathbb{P} ( X_{\mathit{PD} {\;\setminus i}} )
+\mathbb{E}_{X_{\setminus i}} \left[ f \left( X_{\setminus i} , x_i=V_i \right) \right] =
+\int f \left( X_{\setminus i} , x_i=V_i \right) \; d \mathbb{P} ( X_{\setminus i} )
 \]</span></p>
 </section>
 <section id="formulation-fa-square-root-alt-meta-subs.ctd" class="slide level2">
@@ -655,8 +655,8 @@ f \left( x_ {\setminus i} , x_i=v_i \right)
 <p>Centres PD curve by anchoring it at a fixed point, usually the lower end of the explained feature range. It is helpful when working with <a href="ice.html#/centred-ice"> Centred ICE</a>.</p>
 </blockquote>
 <p><span class="math display">\[
-\mathbb{E}_{X_{\mathit{PD}}} \left[ f \left( X_{\mathit{PD} {\;\setminus i}} , x_i=V_i \right) \right] -
-\mathbb{E}_{X_{\mathit{PD}}} \left[ f \left( X_{\mathit{PD} {\;\setminus i}} , x_i=v_i^{\mathit{min}} \right) \right]
+\mathbb{E}_{X_{\setminus i}} \left[ f \left( X_{\setminus i} , x_i=V_i \right) \right] -
+\mathbb{E}_{X_{\setminus i}} \left[ f \left( X_{\setminus i} , x_i=v_i^{\mathit{min}} \right) \right]
 \]</span></p>
 <p style="text-align: center;">
 or
@@ -1032,6 +1032,10 @@ I_{\mathit{PD}} (x_S) = \frac{
 </tr>
 <tr class="odd">
 <td style="text-align: left;"><a href="https://github.com/oracle/Skater">Skater</a></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><a href="https://github.com/SeldonIO/alibi">alibi</a></td>
 <td style="text-align: left;"></td>
 </tr>
 </tbody>

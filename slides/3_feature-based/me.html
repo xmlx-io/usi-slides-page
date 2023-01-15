@@ -10,7 +10,7 @@
   <meta name="generator" content="quarto-1.2.313">
 
   <meta name="author" content="Kacper Sokol">
-  <title>Machine Learning Explainability: Exploring Automated Decision-Making Through Transparent Modelling and Peeking Inside Black Boxes - Marginal Effect (ME)/Marginal Plots or M-Plots/</title>
+  <title>Machine Learning Explainability: Exploring Automated Decision-Making Through Transparent Modelling and Peeking Inside Black Boxes - Marginal Effect (ME)/Marginal Plots, M-Plots orLocal Dependence Profiles/</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -346,7 +346,7 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">Marginal Effect (ME)<br>/Marginal Plots or M-Plots/</h1>
+  <h1 class="title">Marginal Effect (ME)<br>/Marginal Plots, M-Plots or<br>Local Dependence Profiles/</h1>
   <p class="subtitle">(Feature Influence)</p>
 
 <div class="quarto-title-authors">
@@ -364,9 +364,11 @@ Kacper Sokol
 <li><a href="#/method-overview" id="/toc-method-overview">Method Overview</a></li>
 <li><a href="#/algorithmic-building-blocks" id="/toc-algorithmic-building-blocks">(Algorithmic) Building Blocks</a></li>
 <li><a href="#/theoretical-underpinning" id="/toc-theoretical-underpinning">Theoretical Underpinning</a></li>
+<li><a href="#/variants" id="/toc-variants">Variants</a></li>
 <li><a href="#/examples" id="/toc-examples">Examples</a></li>
 <li><a href="#/case-studies-gotchas" id="/toc-case-studies-gotchas">Case Studies &amp; Gotchas!</a></li>
-<li><a href="#/notes" id="/toc-notes">Notes</a></li>
+<li><a href="#/properties" id="/toc-properties">Properties</a></li>
+<li><a href="#/further-considerations" id="/toc-further-considerations">Further Considerations</a></li>
 </ul>
 </nav>
 </section>
@@ -379,7 +381,7 @@ Kacper Sokol
 <h2>Explanation Synopsis</h2>
 <p><br></p>
 <blockquote>
-<p>ME captures the <strong>average response of a predictive model</strong> across a <strong>collection of instances</strong> (taken from a designated data set) for a <strong>specific value of a selected feature</strong> (found in the aforementioned data set). This measure can be <strong>relaxed</strong> by including <strong>similar feature values</strong> determined by a fixed interval around the selected value.</p>
+<p>ME captures the <strong>average response of a predictive model</strong> across a <strong>collection of instances</strong> (taken from a designated data set) for a <strong>specific value of a selected feature</strong> (found in the aforementioned data set) <span class="citation" data-cites="apley2020visualizing">(<a href="#/bibliography" role="doc-biblioref" onclick="">Apley and Zhu 2020</a>)</span>. This measure can be <strong>relaxed</strong> by including <strong>similar feature values</strong> determined by a fixed interval around the selected value.</p>
 </blockquote>
 <p><br></p>
 <blockquote>
@@ -538,7 +540,7 @@ Kacper Sokol
 <ol type="1">
 <li><p>If using the <strong>relaxed</strong> ME, define <strong>binning</strong> of the explained feature</p>
 <ul>
-<li>numerical attributes → specify (quantile) binning or values of interest with a allowed variation</li>
+<li>numerical attributes → specify (fixed-width or quantile) binning or values of interest with a allowed variation</li>
 <li>categorical attributes → the full set, a subset or grouping of possible values</li>
 </ul></li>
 </ol>
@@ -593,14 +595,14 @@ V_i = \{ x_i : x \in X_{\mathit{ME}} \}
 <p><span class="math display">\[
 \mathit{ME}_i =
 \mathbb{E}_{X_{\setminus i} | X_{i}} \left[ f \left( X_{\setminus i} , X_{i} \right) | X_{i}=v_i \right] =
-\int_{X_{\setminus i}} f \left( X_{\mathit{PD} {\;\setminus i}} , x_i=v_i \right) \; d \mathbb{P} ( X_{\mathit{PD} {\;\setminus i}} )
+\int_{X_{\setminus i}} f \left( X_{\setminus i} , x_i \right) \; d \mathbb{P} ( X_{\setminus i} | X_i = v_i )
 \;\; \forall \; v_i \in V_i
 \]</span></p>
 <p><br></p>
 <p><span class="math display">\[
-\mathit{PD}_i =
-\mathbb{E}_{X_{\mathit{PD}}} \left[ f \left( X_{\mathit{PD} {\;\setminus i}} , x_i=V_i \right) \right] =
-\int f \left( X_{\mathit{PD} {\;\setminus i}} , x_i=V_i \right) \; d \mathbb{P} ( X_{\mathit{PD} {\;\setminus i}} )
+\mathit{ME}_i =
+\mathbb{E}_{X_{\setminus i} | X_{i}} \left[ f \left( X_{\setminus i} , X_{i} \right) | X_{i}=V_i \right] =
+\int_{X_{\setminus i}} f \left( X_{\setminus i} , x_i \right) \; d \mathbb{P} ( X_{\setminus i} | X_i = V_i )
 \]</span></p>
 </section>
 <section id="formulation-fa-square-root-alt-meta-subs.ctd" class="slide level2">
@@ -614,15 +616,15 @@ V_i = \{ x_i : x \in X_{\mathit{ME}} \}
 <p><br></p>
 <p><span class="math display">\[
 \hat{f}_S =
-\mathbb{E}_{X_{C}} \left[ \hat{f} \left( x_{S} , X_{C} \right) \right] =
-\int \hat{f} \left( x_{S} , X_{C} \right) \; d \mathbb{P} ( X_{C} )
+\mathbb{E}_{X_{C} | X_S} \left[ \hat{f} \left( X_{S} , X_{C} \right) | X_S = x_S \right] =
+\int_{X_C} \hat{f} \left( x_{S} , X_{C} \right) \; d \mathbb{P} ( X_{C} | X_S = x_S )
 \]</span></p>
 <aside class="notes">
 <ul>
-<li><p><span class="math inline">\(x_S\)</span> is <strong>stepped</strong> through – the explained feature</p></li>
+<li><p><span class="math inline">\(x_S\)</span> is <strong>fixed</strong> – the explained feature</p></li>
 <li><p><span class="math inline">\(x_C\)</span> are the <strong>given</strong> feature values</p></li>
-<li><p><span class="math inline">\(X_C\)</span> is the <strong>random variable</strong></p></li>
-<li><p>Marginalising the predictions over the distribution of the <strong>given</strong> features yields dependence between the explained feature(s) (<em>including any interactions</em>) and predictions.</p></li>
+<li><p><span class="math inline">\(X_C\)</span> and <span class="math inline">\(X_S\)</span> are the <strong>random variables</strong></p></li>
+<li><p><strong>Conditioning</strong> the predictions on the distribution of the <strong>explained</strong> feature(s) yields (<strong>average</strong>) dependence between the explained feature(s) (<em>including any interactions</em>) and predictions.</p></li>
 </ul>
 <style type="text/css">
         span.MJX_Assistive_MathML {
@@ -639,19 +641,53 @@ V_i = \{ x_i : x \in X_{\mathit{ME}} \}
 <section id="approximation-fa-desktop" class="slide level2">
 <h2>Approximation &nbsp;&nbsp;&nbsp;</h2>
 <p><br></p>
-<p>(Monte Carlo approximation)</p>
-<p><br></p>
 <p><span class="math display">\[
-\mathit{PD}_i \approx
-\frac{1}{|X_{\mathit{PD}}|} \sum_{x \in X_{\mathit{PD}}}
-f \left( x_ {\setminus i} , x_i=v_i \right)
+\mathit{ME}_i \approx
+\frac{1}{\sum_{x \in X_{\mathit{ME}}} \mathbb{1} (x_i = v_i)} \sum_{x \in X_{\mathit{ME}}}
+f \left( x | x_i=v_i \right)
 \]</span></p>
+<!-- #%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#% --->
+</section></section>
+<section>
+<section id="variants" class="title-slide slide level1 center">
+<h1>Variants</h1>
+
+</section>
+<section id="relaxed-me" class="slide level2">
+<h2>Relaxed ME</h2>
 <p><br></p>
+<blockquote>
+<p>Measures ME for a range of values <span class="math inline">\(v_i \pm \delta\)</span> around a selected value <span class="math inline">\(v_i\)</span>, instead of doing so precisely at that point.</p>
+</blockquote>
 <p><span class="math display">\[
-\hat{f}_S \approx
-\frac{1}{N} \sum_{i = 1}^N
-\hat{f} \left( x_{S} , x_{C}^{(i)} \right)
+\mathit{ME}_i^{\pm\delta} =
+\mathbb{E}_{X_{\setminus i} | X_{i}} \left[ f \left( X_{\setminus i} , X_{i} \right) | X_{i}=v_i \pm \delta \right] =
+\int_{X_{\setminus i}} f \left( X_{\setminus i} , x_i \right) \; d \mathbb{P} ( X_{\setminus i} | X_i = v_i \pm \delta )
+\;\; \forall \; v_i \in V_i
 \]</span></p>
+<p style="text-align: center;">
+or
+</p>
+<p><span class="math display">\[
+\hat{f}_S^{\pm\delta} =
+\mathbb{E}_{X_{C} | X_S} \left[ \hat{f} \left( X_{S} , X_{C} \right) | X_S = x_S \pm \delta \right] =
+\int_{X_C} \hat{f} \left( x_{S} , X_{C} \right) \; d \mathbb{P} ( X_{C} | X_S = x_S \pm \delta )
+\]</span></p>
+<aside class="notes">
+<ul>
+<li>We can get a more robust measurement of feature influence by relaxing the value for which ME is computed.</li>
+</ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 <!-- #%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#% --->
 </section></section>
 <section>
@@ -679,7 +715,7 @@ f \left( x_ {\setminus i} , x_i=v_i \right)
 <h2>Strict ME for Crisp Classifiers</h2>
 
 <img data-src="me_files/figure-revealjs/cell-20-output-1.png" alt="Crisp classification strict ME for the Iris data set" class="r-stretch quarto-figure-center"></section>
-<section id="relaxed-me" class="slide level2">
+<section id="relaxed-me-1" class="slide level2">
 <h2>Relaxed ME</h2>
 
 <img data-src="me_files/figure-revealjs/cell-22-output-1.png" alt="Relaxed ME" class="r-stretch quarto-figure-center"></section>
@@ -708,25 +744,119 @@ f \left( x_ {\setminus i} , x_i=v_i \right)
 <section id="feature-correlation-meta-subs.ctd-2" class="slide level2">
 <h2>Feature Correlation &nbsp;&nbsp;&nbsp;</h2>
 
+<img data-src="me_files/figure-revealjs/cell-29-output-1.png" alt="Iris feature correlation" class="r-stretch quarto-figure-center"><aside class="notes">
+<ul>
+<li>ME reports feature influence, but beacause of averaging only similar points the measurement gets distorted by feature correlation, therefore reporting the <strong>combined effect</strong></li>
+<li>Remember that we are working with <strong>conditional distributions</strong></li>
+<li>In this example, feature #1 (<em>sepal length</em>) – whose coefficient is close to 0 (-0.06) – shows strong influence, whcih is due to it being heavily correlated (0.87) with feature #3 (<em>petal length</em>) – whose coefficient has the largest magnitude (close to -1.0)</li>
+<li>PD, which is largely immune to this effect, does not display this behaviour</li>
+</ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 <!-- #%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#% --->
-<img data-src="me_files/figure-revealjs/cell-29-output-1.png" alt="Iris feature correlation" class="r-stretch quarto-figure-center"></section></section>
+</section></section>
 <section>
-<section id="notes" class="title-slide slide level1 center">
-<h1>Notes</h1>
+<section id="properties" class="title-slide slide level1 center">
+<h1>Properties</h1>
 
 </section>
-<section id="notes-1" class="slide level2">
-<h2>Notes</h2>
-<p>average prediction based on conditional distribution <span class="math inline">\(f(x \; | \; x_i = v_i)\)</span></p>
-<p>discuss the strict <span class="math inline">\(f(x \; | \; x_i = v_i)\)</span> and relaxed <span class="math inline">\(f(x \; | \; x_i = v_i \pm \delta)\)</span> versions</p>
-<p>alternative (to fixed-width binning) relaxation criteria: quartile-based binning</p>
-<p>the result reports the effect of the selected feature, but is heavily influenced by all the other correlated features (combined effect) since we’re working on a conditional distribution show this on a model whose one coefficient is 0 – no effect but effect due to correlation display params of a linear model; and then show how the influence is still visible despite feature-parameter being 0</p>
-<p>plot the rug – density or distribution of each individual value / bins</p>
-<p>— low number of points per value or per bin may impact the reliability of estimates plot an additional “rug lot” by using v-lines ended with a circle to represent count for strict and histogram for relaxed</p>
+<section id="pros-fa-plus-square" class="slide level2">
+<h2>Pros &nbsp;&nbsp;&nbsp;</h2>
+<ul>
+<li><strong>Easy to generate and interpret</strong></li>
+<li>Based on <strong>real data</strong></li>
+</ul>
+</section>
+<section id="cons-fa-minus-square" class="slide level2">
+<h2>Cons &nbsp;&nbsp;&nbsp;</h2>
+<ul>
+<li>Assumes <strong>feature independence</strong>, which is often unreasonable and heavily biases the influence measurements</li>
+<li>May be <strong>unreliable for certain values</strong> of the explained feature when there is a low number of data points with that value (<strong>strict</strong>) or in a relevant bin (<strong>relaxed</strong>); this impacts the reliability of influence estimates (average perdiction of the explained model for that value or range of values)</li>
+<li>Reliability of estimates can only be communicated by displaying a rug plot or distribution of instances per value or bin</li>
+<li>Diversity (heterogeneity) of the model’s behaviour for each particular value or bin can only be communicated by <strong>prediction variance</strong></li>
+<li>Limited to explaining <strong>two feature at a time</strong></li>
+</ul>
+</section>
+<section id="caveats-fa-skull" class="slide level2">
+<h2>Caveats &nbsp;&nbsp;&nbsp;</h2>
+<ul>
+<li>The measurements may be sensitive to different binning approaches for <strong>relaxed</strong> ME</li>
+<li>Computational complexity: <span class="math inline">\(\mathcal{O} \left( n \right)\)</span>, where <span class="math inline">\(n\)</span> is the number of instances in the designated data set</li>
+</ul>
+<!-- #%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#% --->
+</section></section>
+<section>
+<section id="further-considerations" class="title-slide slide level1 center">
+<h1>Further Considerations</h1>
+
+</section>
+<section id="related-techniques" class="slide level2">
+<h2>Related Techniques</h2>
+<p><br></p>
+<h3 id="accumulated-local-effect-ale">Accumulated Local Effect (ALE)</h3>
+<blockquote>
+<p><a href="ale.html"></a> &nbsp;&nbsp;&nbsp; An evolved version of (relaxed) ME that is less prone to being affected by feature correlation. It communicates the influence of a specific feature value on the model’s prediction by quantifying the average (accumulated) difference between the predictions at the boundaries of a (small) <strong>fixed interval</strong> around the selected feature value <span class="citation" data-cites="apley2020visualizing">(<a href="#/bibliography" role="doc-biblioref" onclick="">Apley and Zhu 2020</a>)</span>. It is calculated by replacing the value of the explained feature with the interval boundaries for <strong>instances found in the designated data set</strong> whose value of this feature is within the specified range.</p>
+</blockquote>
+</section>
+<section id="related-techniques-meta-subs.ctd" class="slide level2">
+<h2>Related Techniques &nbsp;&nbsp;&nbsp;</h2>
+<p><br></p>
+<h3 id="individual-conditional-expectation-ice">Individual Conditional Expectation (ICE)</h3>
+<blockquote>
+<p><a href="ice.html"></a> &nbsp;&nbsp;&nbsp; It communicates the influence of a specific feature value on the model’s prediction by <strong>fixing the value of this feature</strong> across a designated range for a selected data point <span class="citation" data-cites="goldstein2015peeking">(<a href="#/bibliography" role="doc-biblioref" onclick="">Goldstein et al. 2015</a>)</span>. It is an instance-focused (local) “variant” of <em>Partial Dependence</em>.</p>
+</blockquote>
+</section>
+<section id="related-techniques-meta-subs.ctd-1" class="slide level2">
+<h2>Related Techniques &nbsp;&nbsp;&nbsp;</h2>
+<p><br></p>
+<h3 id="partial-dependence-pd">Partial Dependence (PD)</h3>
+<blockquote>
+<p><a href="pd.html"></a> &nbsp;&nbsp;&nbsp; It communicates the average influence of a specific feature value on the model’s prediction by <strong>fixing the value of this feature</strong> across a designated range for a set of instances. It is a model-focused (global) “variant” of <em>Individual Conditional Expectation</em>, which is calculated by <strong>averaging</strong> ICE across a collection of data points <span class="citation" data-cites="friedman2001greedy">(<a href="#/bibliography" role="doc-biblioref" onclick="">Friedman 2001</a>)</span>.</p>
+</blockquote>
+</section>
+<section id="implementations" class="slide level2">
+<h2>Implementations</h2>
+<table>
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;"> Python</th>
+<th style="text-align: left;"> R</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">N/A</td>
+<td style="text-align: left;"><a href="https://github.com/ModelOriented/DALEX">DALEX</a></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="further-reading" class="slide level2">
+<h2>Further Reading</h2>
+<ul>
+<li><a href="https://christophm.github.io/interpretable-ml-book/ale.html"><em>Interpretable Machine Learning</em> book</a></li>
+<li><a href="https://ema.drwhy.ai/accumulatedLocalProfiles.html#local-dependence-profile"><em>Explanatory Model Analysis</em> book</a></li>
+</ul>
 </section>
 <section id="bibliography" class="slide level2 smaller scrollable">
 <h2>Bibliography</h2>
 <div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography">
+<div id="ref-apley2020visualizing" class="csl-entry" role="doc-biblioentry">
+Apley, Daniel W, and Jingyu Zhu. 2020. <span>“Visualizing the Effects of Predictor Variables in Black Box Supervised Learning Models.”</span> <em>Journal of the Royal Statistical Society: Series B (Statistical Methodology)</em> 82 (4): 1059–86.
+</div>
 <div id="ref-friedman2001greedy" class="csl-entry" role="doc-biblioentry">
 Friedman, Jerome H. 2001. <span>“Greedy Function Approximation: <span>A</span> Gradient Boosting Machine.”</span> <em>Annals of Statistics</em>, 1189–1232.
 </div>
