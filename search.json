@@ -81,7 +81,7 @@
     "href": "slides/1_introduction/preliminaries.html#explainability-source",
     "title": "XML Preliminaries",
     "section": "Explainability Source",
-    "text": "Explainability Source\n\nante-hoc – intrinsically transparent predictive models (transparency by design)\npost-hoc – derived from a pre-existing predictive models that may themselves be unintelligible (usually requires an additional explanatory modelling step)\n\n\n\nThese techniques can be model-specific or model-agnostic (based on input–output paris / observations)"
+    "text": "Explainability Source\n\nante-hoc – intrinsically transparent predictive models (transparency by design)\npost-hoc – derived from a pre-existing predictive models that may themselves be unintelligible (usually requires an additional explanatory modelling step)\n\n\n\nPost-hoc build an understandable model of the relation between inputs and outputs\nThese techniques can be model-specific or model-agnostic (based on input–output paris / observations)"
   },
   {
     "objectID": "slides/1_introduction/preliminaries.html#explanation-provenance",
@@ -91,11 +91,53 @@
     "text": "Explanation Provenance\n\n     Ante-hoc does not necessarily entail explainable or human-understandable\n\n\nendogenous explanation – based on human-comprehensible concepts operated on by a transparent model\nexogenous explanation – based on human-comprehensible concepts constructed outside of the predictive model (by the additional modelling step)\n\n\n\nInformation lineage – the sources of explanatory information\nIn the definition module, we will see why ante-hoc transparency may not entail explainability / interpretability (human understanding)\nJust a brief note: We may preserve all the desired properties of ante-hoc interpretability (intrinsic transparency of the model) but still derive explanations not directly from its transparency\nFor example, process a complex decision tree – transparent by design – to extract a counterfactual from adjacent leaves, thus making it explainable"
   },
   {
+    "objectID": "slides/1_introduction/preliminaries.html#explanation-domain",
+    "href": "slides/1_introduction/preliminaries.html#explanation-domain",
+    "title": "XML Preliminaries",
+    "section": "Explanation Domain",
+    "text": "Explanation Domain\n\n\nOriginal domain\n\n\nTransformed domain\n\n\n\n\n\nExplanation domain is linked to explanation provenance"
+  },
+  {
     "objectID": "slides/1_introduction/preliminaries.html#explanation-types-1",
     "href": "slides/1_introduction/preliminaries.html#explanation-types-1",
     "title": "XML Preliminaries",
     "section": "Explanation Types",
-    "text": "Explanation Types\n\nmodel-based – derived from model internals\nfeature-based – regarding importance or influence of data features\ninstance-based – carried by rael or fictitious data point\n\n\n\n\nmeta-explainers – one of the above, but not extracted directly from the predictive model being explained (using an additional explainability modelling step, e.g., surrogate)\n\n\n\nThe categories are not clear cut; a linear model explained through its coefficients is both model-based and feature-based\nThese insights can be communicated via different media (as we will see later)\n\nnumerical summarisation – a single number or their collection (e.g., a table)\nvisualisation\ntextualisation"
+    "text": "Explanation Types\n\nmodel-based – derived from model internals\nfeature-based – regarding importance or influence of data features\ninstance-based – carried by rael or fictitious data point\n\n\n\n\nmeta-explainers – one of the above, but not extracted directly from the predictive model being explained (using an additional explainability modelling step, e.g., surrogate)\n\n\n\nThe categories are not clear cut; a linear model explained through its coefficients is both model-based and feature-based"
+  },
+  {
+    "objectID": "slides/1_introduction/preliminaries.html#explanation-family",
+    "href": "slides/1_introduction/preliminaries.html#explanation-family",
+    "title": "XML Preliminaries",
+    "section": "Explanation Family",
+    "text": "Explanation Family\n\nassociations between antecedent and consequent\n\n\n\n\nfeature importance\nfeature attribution / influence\nrules\n\n\n\nexemplars (prototypes & criticisms)\n\n\n\n\n\nAlternative classification of explanation types"
+  },
+  {
+    "objectID": "slides/1_introduction/preliminaries.html#explanation-family-meta-subs.ctd",
+    "href": "slides/1_introduction/preliminaries.html#explanation-family-meta-subs.ctd",
+    "title": "XML Preliminaries",
+    "section": "Explanation Family    ",
+    "text": "Explanation Family    \n\ncontrasts and differences\n\n(non-causal) counterfactuals\ni.e., contrastive statements\nprototypes & criticisms"
+  },
+  {
+    "objectID": "slides/1_introduction/preliminaries.html#explanation-family-meta-subs.ctd-1",
+    "href": "slides/1_introduction/preliminaries.html#explanation-family-meta-subs.ctd-1",
+    "title": "XML Preliminaries",
+    "section": "Explanation Family    ",
+    "text": "Explanation Family    \n\ncausal mechanisms\n\ncausal counterfactuals\ncausal chains\nfull causal model"
+  },
+  {
+    "objectID": "slides/1_introduction/preliminaries.html#explanatory-medium",
+    "href": "slides/1_introduction/preliminaries.html#explanatory-medium",
+    "title": "XML Preliminaries",
+    "section": "Explanatory Medium",
+    "text": "Explanatory Medium\n\n(statistical / numerical) summarisation\nvisualisation\ntextualisation\nformal argumentation\n\n\n\nThese insights can be communicated via different media (as we will see later)\n\nnumerical summarisation – a single number or their collection (e.g., a table)\nvisualisation\ntextualisation"
+  },
+  {
+    "objectID": "slides/1_introduction/preliminaries.html#communication-of-explanations",
+    "href": "slides/1_introduction/preliminaries.html#communication-of-explanations",
+    "title": "XML Preliminaries",
+    "section": "Communication of Explanations",
+    "text": "Communication of Explanations\n\nStatic artefact\nInteractive (explanatory) protocol\n\ninteractive interface\ninteractive explanation"
   },
   {
     "objectID": "slides/1_introduction/preliminaries.html#explainability-scope",
@@ -175,263 +217,599 @@
     "text": "Questions\n\n\n\n\n\nkacper.sokol@rmit.edu.au  k.sokol@bristol.ac.uk"
   },
   {
-    "objectID": "slides/1_introduction/intro.html#running-example-counterfactual-explanations",
-    "href": "slides/1_introduction/intro.html#running-example-counterfactual-explanations",
-    "title": "Introduction to Machine Learning Explainability",
+    "objectID": "slides/1_introduction/definitions.html#black-box",
+    "href": "slides/1_introduction/definitions.html#black-box",
+    "title": "Defining Explainability",
+    "section": "Black Box",
+    "text": "Black Box\n\nA system or automated process whose internal workings are opaque to the observer – its operation may only be traced by analysing its behaviour through its inputs and outputs"
+  },
+  {
+    "objectID": "slides/1_introduction/definitions.html#black-box-meta-subs.ctd",
+    "href": "slides/1_introduction/definitions.html#black-box-meta-subs.ctd",
+    "title": "Defining Explainability",
+    "section": "Black Box    ",
+    "text": "Black Box    \nSources of opaqueness:\n\na proprietary system, which may be transparent to its creators, but operates as a black box\na system that is too complex to be comprehend by any human\n\n\n\n(Rudin 2019)"
+  },
+  {
+    "objectID": "slides/1_introduction/definitions.html#black-box-meta-subs.ctd-1",
+    "href": "slides/1_introduction/definitions.html#black-box-meta-subs.ctd-1",
+    "title": "Defining Explainability",
+    "section": "Black Box    ",
+    "text": "Black Box    \n\nSpectrum of opaqueness determined by the context (audience, purpose, etc.)\n\n\n\n\n\nInstead of binary yes/no opaque, it seems more appropriate to have a continuous scale\n\n\n\n(Sokol and Flach 2021)"
+  },
+  {
+    "objectID": "slides/1_introduction/definitions.html#transparency-interpretability-explainability",
+    "href": "slides/1_introduction/definitions.html#transparency-interpretability-explainability",
+    "title": "Defining Explainability",
+    "section": "Transparency, Interpretability, Explainability, …",
+    "text": "Transparency, Interpretability, Explainability, …"
+  },
+  {
+    "objectID": "slides/1_introduction/definitions.html#transparency-interpretability-explainability-meta-subs.ctd",
+    "href": "slides/1_introduction/definitions.html#transparency-interpretability-explainability-meta-subs.ctd",
+    "title": "Defining Explainability",
+    "section": "Transparency, Interpretability, Explainability, …    ",
+    "text": "Transparency, Interpretability, Explainability, …    \n\n\n\nexplainability\nintelligibility\nsimulatability\nsensemaking\ncause\n\n\n\nobservability\ncomprehensibility\nexplicitness\ninsight\n\n\n\ntransparency\nunderstandability\njustification\nevidence\n\n\n\nexplicability\ninterpretability\nrationalisation\nreason\n\n\n\n\n\nA lot of different terms are used interchangeably\nThey are (re)defined in a large number of papers\nWe will try to organise this catalogue of words"
+  },
+  {
+    "objectID": "slides/1_introduction/definitions.html#lack-of-a-universally-accepted-definition",
+    "href": "slides/1_introduction/definitions.html#lack-of-a-universally-accepted-definition",
+    "title": "Defining Explainability",
+    "section": "Lack of a universally accepted definition",
+    "text": "Lack of a universally accepted definition\n\nInterpretability is the degree to which a human can understand the cause of a decision\n\n\nExplanation is an answer to a “Why?” question\n\n\n\n(Miller 2019; Biran and Cotton 2017)"
+  },
+  {
+    "objectID": "slides/1_introduction/definitions.html#lack-of-a-universally-accepted-definition-meta-subs.ctd",
+    "href": "slides/1_introduction/definitions.html#lack-of-a-universally-accepted-definition-meta-subs.ctd",
+    "title": "Defining Explainability",
+    "section": "Lack of a universally accepted definition    ",
+    "text": "Lack of a universally accepted definition    \n\nExplanations should answer “Why?” and “Why-should?” questions until such questions can no longer be asked\n\n\n\n(Gilpin et al. 2018)"
+  },
+  {
+    "objectID": "slides/1_introduction/definitions.html#lack-of-a-universally-accepted-definition-meta-subs.ctd-1",
+    "href": "slides/1_introduction/definitions.html#lack-of-a-universally-accepted-definition-meta-subs.ctd-1",
+    "title": "Defining Explainability",
+    "section": "Lack of a universally accepted definition    ",
+    "text": "Lack of a universally accepted definition    \n\nExplanations “giv[e] a reason for a prediction” and answer “how a system arrives at its prediction”\n\n\nJustifications “put an explanation in a context” and convey “why we should believe that the prediction is correct”\n\n\n\n\njustifications do not necessarily communicate how the system truly works\n\n\n\n(Biran and McKeown 2014)"
+  },
+  {
+    "objectID": "slides/1_introduction/definitions.html#lack-of-a-universally-accepted-definition-meta-subs.ctd-2",
+    "href": "slides/1_introduction/definitions.html#lack-of-a-universally-accepted-definition-meta-subs.ctd-2",
+    "title": "Defining Explainability",
+    "section": "Lack of a universally accepted definition    ",
+    "text": "Lack of a universally accepted definition    \n\nTransparency is a passive characteristic of a model that allows humans to make sense of it on different levels\n\n\nExplainability is an active characteristic of a model that is achieved through actions and procedures employed (by the model) to clarify its functioning for a certain audience\n\n\n\n(Arrieta et al. 2020)"
+  },
+  {
+    "objectID": "slides/1_introduction/definitions.html#lack-of-a-universally-accepted-definition-meta-subs.ctd-3",
+    "href": "slides/1_introduction/definitions.html#lack-of-a-universally-accepted-definition-meta-subs.ctd-3",
+    "title": "Defining Explainability",
+    "section": "Lack of a universally accepted definition    ",
+    "text": "Lack of a universally accepted definition    \n\nInterpretability is the degree to which a human can consistently predict the model’s result\n\n\n\n(Kim, Khanna, and Koyejo 2016)"
+  },
+  {
+    "objectID": "slides/1_introduction/definitions.html#lack-of-a-universally-accepted-definition-meta-subs.ctd-4",
+    "href": "slides/1_introduction/definitions.html#lack-of-a-universally-accepted-definition-meta-subs.ctd-4",
+    "title": "Defining Explainability",
+    "section": "Lack of a universally accepted definition    ",
+    "text": "Lack of a universally accepted definition    \n\nTransparency is the ability of a human to comprehend the (ante-hoc) mechanism employed by a predictive model on three levels\n\n\n\n\ndecomposability – appreciation of individual components (input, parameterisation and computation) that constitute a predictive system\nalgorithmic transparency – understanding the modelling process embodied by a predictive algorithm\nsimulatability enables humans to simulate a decisive process in vivo at the level of the entire model\n\n\n\n(Lipton 2018)"
+  },
+  {
+    "objectID": "slides/1_introduction/definitions.html#lack-of-a-universally-accepted-definition-meta-subs.ctd-5",
+    "href": "slides/1_introduction/definitions.html#lack-of-a-universally-accepted-definition-meta-subs.ctd-5",
+    "title": "Defining Explainability",
+    "section": "Lack of a universally accepted definition    ",
+    "text": "Lack of a universally accepted definition    \nMarr’s three-level hierarchy of understanding information processing devices\n\ncomputational theory – abstract specification of the problem at hand and the overall goal.\nrepresentation and algorithm – implementation details and selection of an appropriate representation\nhardware implementation – physical realisation of the explained problem\n\n\n\n\nThese three tiers are only loosely related\nSome phenomena may be explained at only one or two of them\nIdentify which of these levels need to be covered in each individual case to arrive at understanding\n\n\n\n(Marr 1982)"
+  },
+  {
+    "objectID": "slides/1_introduction/definitions.html#lack-of-a-universally-accepted-definition-meta-subs.ctd-6",
+    "href": "slides/1_introduction/definitions.html#lack-of-a-universally-accepted-definition-meta-subs.ctd-6",
+    "title": "Defining Explainability",
+    "section": "Lack of a universally accepted definition    ",
+    "text": "Lack of a universally accepted definition    \nUnderstanding why birds fly cannot be achieved by only studying their feathers:\n\nIn order to understand bird flight, we have to understand aerodynamics; only then do the structure of feathers and the different shapes of birds’ wings make sense."
+  },
+  {
+    "objectID": "slides/1_introduction/definitions.html#lack-of-a-universally-accepted-definition-meta-subs.ctd-7",
+    "href": "slides/1_introduction/definitions.html#lack-of-a-universally-accepted-definition-meta-subs.ctd-7",
+    "title": "Defining Explainability",
+    "section": "Lack of a universally accepted definition    ",
+    "text": "Lack of a universally accepted definition    \nFidelity-based understanding\n\ncompleteness – how truthful the understanding is overall (generality)\nsoundness – how accurate the understanding is for a particular phenomenon (specificity)\n\n\n\n\nComplete understanding can be applied to other domains\nThe depth of understanding, i.e., the level of (over)simplification\ncompleteness without soundness is likely to be too broad, hence uninformative\nthe opposite can be too specific to the same effect\n\n\n\n(Kulesza et al. 2013)"
+  },
+  {
+    "objectID": "slides/1_introduction/definitions.html#lack-of-a-universally-accepted-definition-meta-subs.ctd-8",
+    "href": "slides/1_introduction/definitions.html#lack-of-a-universally-accepted-definition-meta-subs.ctd-8",
+    "title": "Defining Explainability",
+    "section": "Lack of a universally accepted definition    ",
+    "text": "Lack of a universally accepted definition    \nMental models withing the completeness–soundness landscape\n\nfunctional – operationalisation without understanding\nstructural – appreciation of the underlying mechanism\n\n\n\n\nElectricity and light bulb scenario\n\n\n\n(Kulesza et al. 2013)"
+  },
+  {
+    "objectID": "slides/1_introduction/definitions.html#approaches-to-defining-xml-concepts",
+    "href": "slides/1_introduction/definitions.html#approaches-to-defining-xml-concepts",
+    "title": "Defining Explainability",
+    "section": "Approaches to defining XML concepts",
+    "text": "Approaches to defining XML concepts\n\nno definition\ninherently intuitive – You know it when you see it!\nassuming terms are synonymous"
+  },
+  {
+    "objectID": "slides/1_introduction/definitions.html#approaches-to-defining-xml-concepts-meta-subs.ctd",
+    "href": "slides/1_introduction/definitions.html#approaches-to-defining-xml-concepts-meta-subs.ctd",
+    "title": "Defining Explainability",
+    "section": "Approaches to defining XML concepts    ",
+    "text": "Approaches to defining XML concepts    \n\ncircular or tautological definitions\n\n“something is explainable when we can interpret it”\n“interpretability is making sense of ML models”\n“interpretable systems are explainable if their operations can be understood by humans”\n“intelligibility is the possibility to comprehended something”\n\ndictionary definitions\n\nto interpret is “to explain […] the meaning of”\nto explain is to “present in understandable terms”"
+  },
+  {
+    "objectID": "slides/1_introduction/definitions.html#approaches-to-defining-xml-concepts-meta-subs.ctd-1",
+    "href": "slides/1_introduction/definitions.html#approaches-to-defining-xml-concepts-meta-subs.ctd-1",
+    "title": "Defining Explainability",
+    "section": "Approaches to defining XML concepts    ",
+    "text": "Approaches to defining XML concepts    \n\nhierarchical and ontological definitions\n\ncreating a web of connections\n\ncomponent-based – pairings between keywords and technical component or properties\n\ndata are understandable; models are transparent; predictions are explainable\ninterpretability is determined by fidelity, brevity and relevance of the insights\n\n\n\n\nhierarchies and ontologies are difficult to parse, follow and apply"
+  },
+  {
+    "objectID": "slides/1_introduction/definitions.html#human-agnostic-definitions",
+    "href": "slides/1_introduction/definitions.html#human-agnostic-definitions",
+    "title": "Defining Explainability",
+    "section": "Human-agnostic definitions",
+    "text": "Human-agnostic definitions\n\n(technical) desiderata of explainers\n(abstract) properties of explanations"
+  },
+  {
+    "objectID": "slides/1_introduction/definitions.html#human-centred-definitions",
+    "href": "slides/1_introduction/definitions.html#human-centred-definitions",
+    "title": "Defining Explainability",
+    "section": "Human-centred definitions",
+    "text": "Human-centred definitions\n\nthe role and needs of (human) explainees\nthe goal of explanations (with respect to explainees)\n\n\n\n\n\n\nThe Chinese Room Theorem (Searle 1980)\n\n\n\nproblem with simulatability\nreplication-based definitions, more broadly"
+  },
+  {
+    "objectID": "slides/1_introduction/definitions.html#terminology-key-concepts",
+    "href": "slides/1_introduction/definitions.html#terminology-key-concepts",
+    "title": "Defining Explainability",
+    "section": "Terminology & Key Concepts",
+    "text": "Terminology & Key Concepts\n\nTransparency – insight (of arbitrary complexity) into operation of a system\nBackground Knowledge – implicit or explicit exogenous information encompassing (operational) context such as application area, stakeholder and audience (domain expertise)\nReasoning – algorithmic or mental processing of information"
+  },
+  {
+    "objectID": "slides/1_introduction/definitions.html#definition",
+    "href": "slides/1_introduction/definitions.html#definition",
+    "title": "Defining Explainability",
+    "section": "Definition",
+    "text": "Definition\n\\[\n\\texttt{Explainability} \\; =\n\\] \\[\n\\underbrace{ \\texttt{Reasoning} \\left( \\texttt{Transparency} \\; | \\; \\texttt{Background Knowledge} \\right)}_{\\textit{understanding}}\n\\]\n\n\n\nExplainability is a socially-grounded technology\nIt provides insights that lead to understanding\nUnderstanding largely depends upon the explanation recipients, who come with a diverse range of background knowledge, experience, mental models and expectations (context)\nIt is a process – a loop\n\n\n\n(Sokol and Flach 2021)"
+  },
+  {
+    "objectID": "slides/1_introduction/definitions.html#goal",
+    "href": "slides/1_introduction/definitions.html#goal",
+    "title": "Defining Explainability",
+    "section": "Goal",
+    "text": "Goal\n\n\nExplainability → explainee walking away with understanding\n\n\n\nThis notion both conceptualises explainability and fixes its evaluation criterion (as we will see in the next module)\nNote that it is not about task completion but understanding\nRecall The Chinese Room Argument"
+  },
+  {
+    "objectID": "slides/1_introduction/definitions.html#understanding-explainability-transparency",
+    "href": "slides/1_introduction/definitions.html#understanding-explainability-transparency",
+    "title": "Defining Explainability",
+    "section": "Understanding, explainability & transparency",
+    "text": "Understanding, explainability & transparency\n\n\nA continuous spectrum rather than a binary property\n\n\n\n\n\nExplainability is not a binary property; it is a continuous spectrum"
+  },
+  {
+    "objectID": "slides/1_introduction/definitions.html#linear-models",
+    "href": "slides/1_introduction/definitions.html#linear-models",
+    "title": "Defining Explainability",
+    "section": "Linear Models",
+    "text": "Linear Models\n\\[\nf(\\mathbf{x}) = 0.2 \\;\\; + \\;\\; 0.25 \\times x_1 \\;\\; + \\;\\; 0.7 \\times x_4 \\;\\; - \\;\\; 0.2 \\times x_5 \\;\\; - \\;\\; 0.9 \\times x_7\n\\]\n\n\\[\n\\mathbf{x} = (0.4, \\ldots, 1, \\frac{1}{2}, \\ldots \\frac{1}{3})\n\\]\n\n\n\\[\nf(\\mathbf{x}) = 0.2 \\;\\; \\underbrace{+0.1}_{x_1} \\;\\; \\underbrace{+0.7}_{x_4} \\;\\; \\underbrace{-0.1}_{x_5} \\;\\; \\underbrace{-0.3}_{x_7} \\;\\; = \\;\\; 0.6\n\\]\n\n\nlinear models are transparent given a reasonable number of features\nwith the right ML and domain background knowledge they become explainable\n\nnormalised features\neffect of feature correlation\nmeaning of features and coefficients\n\n\n– the explainee can reason about their properties, leading to an explanation based on understanding - visualisation can help – refer back to XXX"
+  },
+  {
+    "objectID": "slides/1_introduction/definitions.html#linear-models-meta-subs.ctd",
+    "href": "slides/1_introduction/definitions.html#linear-models-meta-subs.ctd",
+    "title": "Defining Explainability",
+    "section": "Linear Models    ",
+    "text": "Linear Models"
+  },
+  {
+    "objectID": "slides/1_introduction/definitions.html#linear-models-meta-subs.ctd-1",
+    "href": "slides/1_introduction/definitions.html#linear-models-meta-subs.ctd-1",
+    "title": "Defining Explainability",
+    "section": "Linear Models    ",
+    "text": "Linear Models"
+  },
+  {
+    "objectID": "slides/1_introduction/definitions.html#decision-trees",
+    "href": "slides/1_introduction/definitions.html#decision-trees",
+    "title": "Defining Explainability",
+    "section": "Decision Trees",
+    "text": "Decision Trees\n\n\n\n\n\n\n\n\n\n\n\nvisualisation of a shallow decision tree can be considered both transparent, and arguably explainable assuming that the explainee understands how to navigate its structure (ML background knowledge) and the features are meaningful (domain background knowledge);\npeople were shown to believe that the feature used by the root-node split is the most important attribute (Bell et al. 2022)\nit is up to the explainee to reason about these insights"
+  },
+  {
+    "objectID": "slides/1_introduction/definitions.html#decision-trees-meta-subs.ctd",
+    "href": "slides/1_introduction/definitions.html#decision-trees-meta-subs.ctd",
+    "title": "Defining Explainability",
+    "section": "Decision Trees    ",
+    "text": "Decision Trees    \n\n\n\n\n\n\n\n\n\n\n\nwhen the size of a tree increases, its visualisation loses the explanatory power because many explainees become unable to process and reason about its structure\nrestoring the explainability of a deep tree requires delegating the reasoning process to an algorithm that can digest its structure and output sought after insights in a concise representation\nfor explaining a prediction, the tree structure can be traversed to identify a similar instance with a different prediction, e.g., as encoded by two neighbouring leaves with a shared parent"
+  },
+  {
+    "objectID": "slides/1_introduction/definitions.html#summary",
+    "href": "slides/1_introduction/definitions.html#summary",
+    "title": "Defining Explainability",
+    "section": "Summary",
+    "text": "Summary\n\nExplainability is an elusive concept\nIts definition relies on the broadly-understood context\nIt should be human-centred and goal-driven\nIt should lead to understanding"
+  },
+  {
+    "objectID": "slides/1_introduction/definitions.html#bibliography",
+    "href": "slides/1_introduction/definitions.html#bibliography",
+    "title": "Defining Explainability",
+    "section": "Bibliography",
+    "text": "Bibliography\n\n\nArrieta, Alejandro Barredo, Natalia Dı́az-Rodrı́guez, Javier Del Ser, Adrien Bennetot, Siham Tabik, Alberto Barbado, Salvador Garcı́a, et al. 2020. “Explainable Artificial Intelligence (XAI): Concepts, Taxonomies, Opportunities and Challenges Toward Responsible AI.” Information Fusion 58: 82–115.\n\n\nBell, Andrew, Ian Solano-Kamaiko, Oded Nov, and Julia Stoyanovich. 2022. “It’s Just Not That Simple: An Empirical Study of the Accuracy-Explainability Trade-Off in Machine Learning for Public Policy.” In 2022 ACM Conference on Fairness, Accountability, and Transparency, 248–66.\n\n\nBiran, Or, and Courtenay Cotton. 2017. “Explanation and Justification in Machine Learning: A Survey.” In IJCAI-17 Workshop on Explainable AI (XAI), 8:8–13. 1.\n\n\nBiran, Or, and Kathleen McKeown. 2014. “Justification Narratives for Individual Classifications.” In Proceedings of the AutoML Workshop at ICML, 2014:1–7.\n\n\nGilpin, Leilani H, David Bau, Ben Z Yuan, Ayesha Bajwa, Michael Specter, and Lalana Kagal. 2018. “Explaining Explanations: An Overview of Interpretability of Machine Learning.” In 2018 IEEE 5th International Conference on Data Science and Advanced Analytics (DSAA), 80–89. IEEE.\n\n\nKim, Been, Rajiv Khanna, and Oluwasanmi O Koyejo. 2016. “Examples Are Not Enough, Learn to Criticize! Criticism for Interpretability.” In Advances in Neural Information Processing Systems, 2280–88.\n\n\nKulesza, Todd, Simone Stumpf, Margaret Burnett, Sherry Yang, Irwin Kwan, and Weng-Keen Wong. 2013. “Too Much, Too Little, or Just Right? Ways Explanations Impact End Users’ Mental Models.” In Visual Languages and Human-Centric Computing (VL/HCC), 2013 IEEE Symposium on, 3–10. IEEE.\n\n\nLipton, Zachary C. 2018. “The Mythos of Model Interpretability.” Communications of the ACM 16 (3): 30:31–57. https://doi.org/10.1145/3236386.3241340.\n\n\nMarr, David. 1982. Vision: A Computational Investigation into the Human Representation and Processing of Visual Information. The MIT Press.\n\n\nMiller, Tim. 2019. “Explanation in Artificial Intelligence: Insights from the Social Sciences.” Artificial Intelligence 267: 1–38.\n\n\nRudin, Cynthia. 2019. “Stop Explaining Black Box Machine Learning Models for High Stakes Decisions and Use Interpretable Models Instead.” Nature Machine Intelligence 1 (5): 206–15.\n\n\nSearle, John R. 1980. “Minds, Brains, and Programs.” Behavioral and Brain Sciences 3 (3): 417–24.\n\n\nSokol, Kacper, and Peter Flach. 2021. “Explainability Is in the Mind of the Beholder: Establishing the Foundations of Explainable Artificial Intelligence.” arXiv Preprint arXiv:2112.14466."
+  },
+  {
+    "objectID": "slides/1_introduction/definitions.html#questions",
+    "href": "slides/1_introduction/definitions.html#questions",
+    "title": "Defining Explainability",
+    "section": "Questions",
+    "text": "Questions\n\n\n\n\n\nkacper.sokol@rmit.edu.au  k.sokol@bristol.ac.uk"
+  },
+  {
+    "objectID": "slides/1_introduction/taxonomy.html#running-example-counterfactual-explanations",
+    "href": "slides/1_introduction/taxonomy.html#running-example-counterfactual-explanations",
+    "title": "Taxonomy of Explainable ML",
     "section": "Running Example: Counterfactual Explanations",
-    "text": "Running Example: Counterfactual Explanations\n\n\n\nHad you been 10 years younger, your loan application would be accepted."
+    "text": "Running Example: Counterfactual Explanations\n\n\n\n\n\nHad you been 10 years younger,\nyour loan application would be accepted."
   },
   {
-    "objectID": "slides/1_introduction/intro.html#f-functional-requirements",
-    "href": "slides/1_introduction/intro.html#f-functional-requirements",
-    "title": "Introduction to Machine Learning Explainability",
-    "section": "(F) Functional Requirements",
-    "text": "(F) Functional Requirements\n\n\n\nF1 Problem Supervision Level\nF2 Problem Type\nF3 Explanation Target\nF4 Explanation Breadth/Scope\nF5 Computational Complexity\n\n\n\nF6 Applicable Model Class\nF7 Relation to the Predictive System\nF8 Compatible Feature Types\nF9 Caveats and Assumptions"
-  },
-  {
-    "objectID": "slides/1_introduction/intro.html#section",
-    "href": "slides/1_introduction/intro.html#section",
-    "title": "Introduction to Machine Learning Explainability",
+    "objectID": "slides/1_introduction/taxonomy.html#section",
+    "href": "slides/1_introduction/taxonomy.html#section",
+    "title": "Taxonomy of Explainable ML",
     "section": "",
     "text": "F1 Problem Supervision Level\n\n\n\nunsupervised\nsemi-supervised\nsupervised\nreinforcement\n\n\n\n\n\nF2 Problem Type\n\n\n\nclassification\n\nprobabilistic / non-probabilistic\nbinary / multi-class\nmulti-label\n\nregression\nclustering"
   },
   {
-    "objectID": "slides/1_introduction/intro.html#section-1",
-    "href": "slides/1_introduction/intro.html#section-1",
-    "title": "Introduction to Machine Learning Explainability",
+    "objectID": "slides/1_introduction/taxonomy.html#section-1",
+    "href": "slides/1_introduction/taxonomy.html#section-1",
+    "title": "Taxonomy of Explainable ML",
     "section": "",
     "text": "F6 Applicable Model Class\n\n\n\nmodel-agnostic\nmodel class-specific\nmodel-specific\n\n\n\n\n\nF7 Relation to the Predictive System\n\n\n\nante-hoc (based on endogenous information)\npost-hoc (based on exogenous information)"
   },
   {
-    "objectID": "slides/1_introduction/intro.html#section-2",
-    "href": "slides/1_introduction/intro.html#section-2",
-    "title": "Introduction to Machine Learning Explainability",
+    "objectID": "slides/1_introduction/taxonomy.html#section-2",
+    "href": "slides/1_introduction/taxonomy.html#section-2",
+    "title": "Taxonomy of Explainable ML",
     "section": "",
     "text": "F5 Computational Complexity\n\n\n\noff-line explanations\nreal-time explanations\n\n\n\n\n\nF8 Compatible Feature Types\n\n\n\nnumerical\ncategorical (one-hot encoding)\n\n\n\n\n\nF9 Caveats and Assumptions\n\n\n\nany underlying assumptions, e.g., black box linearity"
   },
   {
-    "objectID": "slides/1_introduction/intro.html#section-3",
-    "href": "slides/1_introduction/intro.html#section-3",
-    "title": "Introduction to Machine Learning Explainability",
+    "objectID": "slides/1_introduction/taxonomy.html#section-3",
+    "href": "slides/1_introduction/taxonomy.html#section-3",
+    "title": "Taxonomy of Explainable ML",
     "section": "",
     "text": "F3 Explanation Target\n\n\n\ndata (both raw data and features)\nmodels\npredictions\n\n\n\n\n\nF4 Explanation Breadth/Scope\n\n\n\nlocal – data point / prediction\ncohort – subgroup / subspace\nglobal"
   },
   {
-    "objectID": "slides/1_introduction/intro.html#u-usability-requirements",
-    "href": "slides/1_introduction/intro.html#u-usability-requirements",
-    "title": "Introduction to Machine Learning Explainability",
-    "section": "(U) Usability Requirements",
-    "text": "(U) Usability Requirements\n\n\n\nU1 Soundness\nU2 Completeness\nU3 Contextfullness\nU4 Interactiveness\nU5 Actionability\nU6 Chronology\n\n\n\nU7 Coherence\nU8 Novelty\nU9 Complexity\nU10 Personalisation\nU11 Parsimony"
-  },
-  {
-    "objectID": "slides/1_introduction/intro.html#section-4",
-    "href": "slides/1_introduction/intro.html#section-4",
-    "title": "Introduction to Machine Learning Explainability",
+    "objectID": "slides/1_introduction/taxonomy.html#section-4",
+    "href": "slides/1_introduction/taxonomy.html#section-4",
+    "title": "Taxonomy of Explainable ML",
     "section": "",
     "text": "U1 Soundness\n\n\nHow truthful it is with respect to the black box?\n\n\n(✔)\n\n\n\n\nU2 Completeness\n\n\nHow well does it generalise?\n\n\n(✗)\n\n\n\n\nU3 Contextfullness\n\n\n“It only holds for people older than 25.”\n\n\n\n\n\n\nU11 Parsimony\n\n\nHow short is it?\n\n\n(✔)"
   },
   {
-    "objectID": "slides/1_introduction/intro.html#section-5",
-    "href": "slides/1_introduction/intro.html#section-5",
-    "title": "Introduction to Machine Learning Explainability",
+    "objectID": "slides/1_introduction/taxonomy.html#section-5",
+    "href": "slides/1_introduction/taxonomy.html#section-5",
+    "title": "Taxonomy of Explainable ML",
     "section": "",
     "text": "U6 Chronology\n\n\nMore recent events first.\n\n\n\n\nU7 Coherence\n\n\nComply with the natural laws (mental model).\n\n\n\n\nU8 Novelty\n\n\nAvoid stating obvious / being a truism.\n\n\n\n\n\n\nU9 Complexity\n\n\nAppropriate for the audience."
   },
   {
-    "objectID": "slides/1_introduction/intro.html#section-6",
-    "href": "slides/1_introduction/intro.html#section-6",
-    "title": "Introduction to Machine Learning Explainability",
+    "objectID": "slides/1_introduction/taxonomy.html#section-6",
+    "href": "slides/1_introduction/taxonomy.html#section-6",
+    "title": "Taxonomy of Explainable ML",
     "section": "",
     "text": "U5 Actionability\n\n\nActionable foil.\n\n\n(✔)\n\n\n\n\nU4 Interactiveness\n\n\nUser-defined foil.\n\n\n(✔)\n\n\n\n\nU10 Personalisation\n\n\nUser-defined foil.\n\n\n(✔)"
   },
   {
-    "objectID": "slides/1_introduction/intro.html#o-operational-requirements",
-    "href": "slides/1_introduction/intro.html#o-operational-requirements",
-    "title": "Introduction to Machine Learning Explainability",
-    "section": "(O) Operational Requirements",
-    "text": "(O) Operational Requirements\n\n\n\nO1 Explanation Family\nO2 Explanatory Medium\nO3 System Interaction\nO4 Explanation Domain\nO5 Data and Model Transparency\n\n\n\nO6 Explanation Audience\nO7 Function of the Explanation\nO8 Causality vs. Actionability\nO9 Trust vs. Performance\nO10 Provenance"
-  },
-  {
-    "objectID": "slides/1_introduction/intro.html#section-7",
-    "href": "slides/1_introduction/intro.html#section-7",
-    "title": "Introduction to Machine Learning Explainability",
+    "objectID": "slides/1_introduction/taxonomy.html#section-7",
+    "href": "slides/1_introduction/taxonomy.html#section-7",
+    "title": "Taxonomy of Explainable ML",
     "section": "",
     "text": "O1 Explanation Family\n\n\n\nassociations between antecedent and consequent\ncontrasts and differences\ncausal mechanisms\n\n\n\n\n\nO2 Explanatory Medium\n\n\n\n(statistical / numerical) summarisation\nvisualisation\ntextualisation\nformal argumentation\n\n\n\n\n\nO3 System Interaction\n\n\n\nstatic – one-directional\ninteractive – bi-directional"
   },
   {
-    "objectID": "slides/1_introduction/intro.html#section-8",
-    "href": "slides/1_introduction/intro.html#section-8",
-    "title": "Introduction to Machine Learning Explainability",
+    "objectID": "slides/1_introduction/taxonomy.html#section-8",
+    "href": "slides/1_introduction/taxonomy.html#section-8",
+    "title": "Taxonomy of Explainable ML",
     "section": "",
     "text": "O4 Explanation Domain\n\n\n\noriginal domain (exemplars, model parameters)\ntransformed domain (interpretable representation)\n\n\n\n\n\nO5 Data and Model Transparency\n\n\n\ntransparent/opaque data\ntransparent/opaque model\n\n\n\n\n\nO6 Explanation Audience\n\n\n\ndomain experts\nlay audience"
   },
   {
-    "objectID": "slides/1_introduction/intro.html#section-9",
-    "href": "slides/1_introduction/intro.html#section-9",
-    "title": "Introduction to Machine Learning Explainability",
+    "objectID": "slides/1_introduction/taxonomy.html#section-9",
+    "href": "slides/1_introduction/taxonomy.html#section-9",
+    "title": "Taxonomy of Explainable ML",
     "section": "",
     "text": "O7 Function of the Explanation\n\n\n\ninterpretability\nfairness (disparate impact)\naccountability (model robustness / adversarial examples)\n\n\n\n\n\nO8 Causality vs. Actionability\n\n\n\nlook like causal insights but aren’t\n\n\n\n\n\nO9 Trust and Performance\n\n\n\ntruthful to the black-box (perfect fidelity)\npredictive performance is not affected"
   },
   {
-    "objectID": "slides/1_introduction/intro.html#section-10",
-    "href": "slides/1_introduction/intro.html#section-10",
-    "title": "Introduction to Machine Learning Explainability",
+    "objectID": "slides/1_introduction/taxonomy.html#section-10",
+    "href": "slides/1_introduction/taxonomy.html#section-10",
+    "title": "Taxonomy of Explainable ML",
     "section": "",
     "text": "O10 Provenance\n\n\n\npredictive model\ndata set\npredictive model and data set (explainability trace)"
   },
   {
-    "objectID": "slides/1_introduction/intro.html#s-safety-requirements",
-    "href": "slides/1_introduction/intro.html#s-safety-requirements",
-    "title": "Introduction to Machine Learning Explainability",
-    "section": "(S) Safety Requirements",
-    "text": "(S) Safety Requirements\n\nS1 Information Leakage\nS2 Explanation Misuse\nS3 Explanation Invariance\nS4 Explanation Quality"
-  },
-  {
-    "objectID": "slides/1_introduction/intro.html#section-11",
-    "href": "slides/1_introduction/intro.html#section-11",
-    "title": "Introduction to Machine Learning Explainability",
+    "objectID": "slides/1_introduction/taxonomy.html#section-11",
+    "href": "slides/1_introduction/taxonomy.html#section-11",
+    "title": "Taxonomy of Explainable ML",
     "section": "",
     "text": "S1 Information Leakage\n\n\nContrastive explanation leak precise values.\n\n\n\n\nS2 Explanation Misuse\n\n\nCan be used to reverse-engineer the black box.\n\n\n\n\nS3 Explanation Invariance\n\n\nDoes it always output the same explanation (stochasticity / stability)?\n\n\n\n\nS4 Explanation Quality\n\n\nIs it from the data distribution?  How far from a decision boundary (confidence)?"
   },
   {
-    "objectID": "slides/1_introduction/intro.html#v-validation-requirements",
-    "href": "slides/1_introduction/intro.html#v-validation-requirements",
-    "title": "Introduction to Machine Learning Explainability",
-    "section": "(V) Validation Requirements",
-    "text": "(V) Validation Requirements\n\nV1 User Studies\nV2 Synthetic Experiments"
-  },
-  {
-    "objectID": "slides/1_introduction/intro.html#section-12",
-    "href": "slides/1_introduction/intro.html#section-12",
-    "title": "Introduction to Machine Learning Explainability",
+    "objectID": "slides/1_introduction/taxonomy.html#section-12",
+    "href": "slides/1_introduction/taxonomy.html#section-12",
+    "title": "Taxonomy of Explainable ML",
     "section": "",
     "text": "V1 User Studies\n\n\n\nTechnical correctness\nHuman biases\nUnfounded generalisation\nUsefulness\n\n\n\n\n\nV2 Synthetic Experiments"
   },
   {
-    "objectID": "slides/1_introduction/intro.html#examples",
-    "href": "slides/1_introduction/intro.html#examples",
-    "title": "Introduction to Machine Learning Explainability",
-    "section": "Examples",
-    "text": "Examples"
+    "objectID": "slides/1_introduction/taxonomy.html#researchers",
+    "href": "slides/1_introduction/taxonomy.html#researchers",
+    "title": "Taxonomy of Explainable ML",
+    "section": "👩‍🔬   Researcher’s   🎩",
+    "text": "👩‍🔬   Researcher’s   🎩\n\n\n🔍 only works with predictive models that output numbers (F2 Problem Type)\n\nIs 🔍 intended for regressors?\nCan 🔍 be used with probabilistic classifiers?"
   },
   {
-    "objectID": "slides/1_introduction/intro.html#lime-explainability-fact-sheet",
-    "href": "slides/1_introduction/intro.html#lime-explainability-fact-sheet",
-    "title": "Introduction to Machine Learning Explainability",
+    "objectID": "slides/1_introduction/taxonomy.html#researchers-meta-subs.ctd",
+    "href": "slides/1_introduction/taxonomy.html#researchers-meta-subs.ctd",
+    "title": "Taxonomy of Explainable ML",
+    "section": "👩‍🔬   Researcher’s   🎩    ",
+    "text": "👩‍🔬   Researcher’s   🎩    \n\n\n🔍 only works with numerical features (F8 Compatible Feature Types)\n\nIf data have categorical features, is applying one-hot encoding suitable?"
+  },
+  {
+    "objectID": "slides/1_introduction/taxonomy.html#researchers-meta-subs.ctd-1",
+    "href": "slides/1_introduction/taxonomy.html#researchers-meta-subs.ctd-1",
+    "title": "Taxonomy of Explainable ML",
+    "section": "👩‍🔬   Researcher’s   🎩    ",
+    "text": "👩‍🔬   Researcher’s   🎩    \n\n\n🔍 is model agnostic (F6 Applicable Model Class)\n\nCan 🔍 be used with any predictive model?"
+  },
+  {
+    "objectID": "slides/1_introduction/taxonomy.html#researchers-meta-subs.ctd-2",
+    "href": "slides/1_introduction/taxonomy.html#researchers-meta-subs.ctd-2",
+    "title": "Taxonomy of Explainable ML",
+    "section": "👩‍🔬   Researcher’s   🎩    ",
+    "text": "👩‍🔬   Researcher’s   🎩    \n\n\n🔍 has nice theoretical properties (F9 Caveats and Assumptions)\n\nThe explanation is always [insert your favourite claim here].\n\n\nThis claim may not hold for every black-box model (model agnostic explainer)\nThe implementation does not adhere to the claim"
+  },
+  {
+    "objectID": "slides/1_introduction/taxonomy.html#engineers",
+    "href": "slides/1_introduction/taxonomy.html#engineers",
+    "title": "Taxonomy of Explainable ML",
+    "section": "👨‍💻   Engineer’s   🎩",
+    "text": "👨‍💻   Engineer’s   🎩\n\n\n🔍 explains song recommendations (O7 Function of the Explanation)\n🔍 explains how users’ listening habits and interactions with the service influence the recommendations (O10 Provenance & U5 Actionability)"
+  },
+  {
+    "objectID": "slides/1_introduction/taxonomy.html#engineers-meta-subs.ctd",
+    "href": "slides/1_introduction/taxonomy.html#engineers-meta-subs.ctd",
+    "title": "Taxonomy of Explainable ML",
+    "section": "👨‍💻   Engineer’s   🎩    ",
+    "text": "👨‍💻   Engineer’s   🎩    \n\n\nHow does 🔍 scale? (F5 Computational Complexity)\n\nRequired to serve explanations in real time\nWill the computational complexity of the algorithm introduce any lags?"
+  },
+  {
+    "objectID": "slides/1_introduction/taxonomy.html#engineers-meta-subs.ctd-1",
+    "href": "slides/1_introduction/taxonomy.html#engineers-meta-subs.ctd-1",
+    "title": "Taxonomy of Explainable ML",
+    "section": "👨‍💻   Engineer’s   🎩    ",
+    "text": "👨‍💻   Engineer’s   🎩    \n\n\nMusic listeners are the recipients of the explanations (O6 Explanation Audience)\n\nThey are not expected to have any ML experience or background (U9 Complexity)\n\nThey should be familiar with general music concepts (genre, pace, etc.) to appreciate the explanations (O4 Explanation Domain)"
+  },
+  {
+    "objectID": "slides/1_introduction/taxonomy.html#engineers-meta-subs.ctd-2",
+    "href": "slides/1_introduction/taxonomy.html#engineers-meta-subs.ctd-2",
+    "title": "Taxonomy of Explainable ML",
+    "section": "👨‍💻   Engineer’s   🎩    ",
+    "text": "👨‍💻   Engineer’s   🎩    \n\n\nThe explanations will be delivered as snippets of text (O2 Explanatory Medium)\nThey will include a single piece of information (U11 Parsimony)\nThey are one-directional communication (O3 System Interaction & U4 Interactiveness)"
+  },
+  {
+    "objectID": "slides/1_introduction/taxonomy.html#auditors-meta-subs.ctd",
+    "href": "slides/1_introduction/taxonomy.html#auditors-meta-subs.ctd",
+    "title": "Taxonomy of Explainable ML",
+    "section": "🕵️‍♀️   Auditor’s   🎩    ",
+    "text": "🕵️‍♀️   Auditor’s   🎩    \n\n\nAre the explanations sound (U1) and complete (U2)?\n\nDo they agree with the predictive model?\nAre they coherent with the overall behaviour of the model?\n\nAre the explanations placed in a context? (U3 Contextfullness)\n\n“This explanation only applies to songs of this particular band.”"
+  },
+  {
+    "objectID": "slides/1_introduction/taxonomy.html#auditors-meta-subs.ctd-1",
+    "href": "slides/1_introduction/taxonomy.html#auditors-meta-subs.ctd-1",
+    "title": "Taxonomy of Explainable ML",
+    "section": "🕵️‍♀️   Auditor’s   🎩    ",
+    "text": "🕵️‍♀️   Auditor’s   🎩    \n\n\nWill I get the same explanation tomorrow? (S3 Explanation Invariance)\n\nConfidence of the predictive model\nRandom effects within the 🔍 algorithm"
+  },
+  {
+    "objectID": "slides/1_introduction/taxonomy.html#auditors-meta-subs.ctd-2",
+    "href": "slides/1_introduction/taxonomy.html#auditors-meta-subs.ctd-2",
+    "title": "Taxonomy of Explainable ML",
+    "section": "🕵️‍♀️   Auditor’s   🎩    ",
+    "text": "🕵️‍♀️   Auditor’s   🎩    \n\n\nDoes the explainer leak any sensitive information? (S1 Information Leakage)\n\n→explanation←\n“Had you been older than 30, your loan application would have been approved.”\n→context←\n“This age threshold applies to people whose annual income is upwards of £25,000.”\n\nWhy don’t I “round up” my income the next time? (S2 Explanation Misuse)"
+  },
+  {
+    "objectID": "slides/1_introduction/taxonomy.html#auditors-meta-subs.ctd-3",
+    "href": "slides/1_introduction/taxonomy.html#auditors-meta-subs.ctd-3",
+    "title": "Taxonomy of Explainable ML",
+    "section": "🕵️‍♀️   Auditor’s   🎩    ",
+    "text": "🕵️‍♀️   Auditor’s   🎩    \n\n\nWas 🔍 validated for the problem class that it is being deployed on? (V2 Synthetic Validation)\nDoes 🔍 improve users’ understanding? (V1 User Studies)"
+  },
+  {
+    "objectID": "slides/1_introduction/taxonomy.html#lime-explainability-fact-sheet",
+    "href": "slides/1_introduction/taxonomy.html#lime-explainability-fact-sheet",
+    "title": "Taxonomy of Explainable ML",
     "section": "LIME Explainability Fact Sheet",
     "text": "LIME Explainability Fact Sheet"
   },
   {
-    "objectID": "slides/1_introduction/intro.html#challenges",
-    "href": "slides/1_introduction/intro.html#challenges",
-    "title": "Introduction to Machine Learning Explainability",
+    "objectID": "slides/1_introduction/taxonomy.html#challenges",
+    "href": "slides/1_introduction/taxonomy.html#challenges",
+    "title": "Taxonomy of Explainable ML",
     "section": "Challenges",
-    "text": "Challenges\n\nThe desiderata list is neither exhaustive nor prescriptive\nSome properties are incompatible or competing – choose wisely and justify your choices\n\nShould I focus more on property F42 or F44?\nFor O13, should I go for X or Y?\n\nOther properties cannot be answered uniquely\n\nE.g., coherence with the user’s mental model\n\nThe taxonomy does not define explainability"
+    "text": "Challenges\n\nThe desiderata list is neither exhaustive nor prescriptive\n\n\n\nSome properties are incompatible or competing – choose wisely and justify your choices\n\nShould I focus more on property F42 or F44?\nFor O13, should I go for X or Y?\n\nOther properties cannot be answered uniquely\n\nE.g., coherence with the user’s mental model\n\n\n\n\n\nThe taxonomy does not define explainability\n\n\n\nWe will try to define explainability in a separate module"
   },
   {
-    "objectID": "slides/1_introduction/intro.html#lack-of-a-universally-accepted-definition",
-    "href": "slides/1_introduction/intro.html#lack-of-a-universally-accepted-definition",
-    "title": "Introduction to Machine Learning Explainability",
-    "section": "Lack of a universally accepted definition",
-    "text": "Lack of a universally accepted definition\n\n\nSimulatability\n(Lipton, 2018. The mythos of model interpretability)\nThe Chinese Room Theorem\n(Searle, 1980. Minds, brains, and programs)\nMental Models\n(Kulesza et al., 2013. Too much, too little, or just right? Ways explanations impact end users’ mental models)\n\nFunctional – operationalisation without understanding\nStructural – appreciation of the underlying mechanism"
+    "objectID": "slides/1_introduction/taxonomy.html#summary",
+    "href": "slides/1_introduction/taxonomy.html#summary",
+    "title": "Taxonomy of Explainable ML",
+    "section": "Summary",
+    "text": "Summary\n\nExplainability is characterised by a broad range of diverse properties\nDesiderata include social and technical aspects of explainability\nHaving a readily available list of properties helps to better design XML systems"
   },
   {
-    "objectID": "slides/1_introduction/intro.html#defining-explainability",
-    "href": "slides/1_introduction/intro.html#defining-explainability",
-    "title": "Introduction to Machine Learning Explainability",
-    "section": "Defining explainability",
-    "text": "Defining explainability\n\\[\n\\texttt{Explainability} \\; =\n\\] \\[\n\\underbrace{ \\texttt{Reasoning} \\left( \\texttt{Transparency} \\; | \\; \\texttt{Background Knowledge} \\right)}_{\\textit{understanding}}\n\\]\n\nTransparency – insight (of arbitrary complexity) into operation of a system\nBackground Knowledge – implicit or explicit exogenous information\nReasoning – algorithmic or mental processing of information\n\n\n\nSokol and Flach, 2021. Explainability Is in the Mind of the Beholder: Establishing the Foundations of Explainable Artificial Intelligence"
+    "objectID": "slides/1_introduction/taxonomy.html#bibliography",
+    "href": "slides/1_introduction/taxonomy.html#bibliography",
+    "title": "Taxonomy of Explainable ML",
+    "section": "Bibliography",
+    "text": "Bibliography\n\n\nSokol, Kacper, and Peter Flach. 2020. “Explainability Fact Sheets: A Framework for Systematic Assessment of Explainable Approaches.” In Proceedings of the 2020 Conference on Fairness, Accountability, and Transparency, 56–67."
   },
   {
-    "objectID": "slides/1_introduction/intro.html#understanding-explainability-transparency",
-    "href": "slides/1_introduction/intro.html#understanding-explainability-transparency",
-    "title": "Introduction to Machine Learning Explainability",
-    "section": "Understanding, explainability & transparency",
-    "text": "Understanding, explainability & transparency\n\n\nA continuous spectrum rather than a binary property"
+    "objectID": "slides/1_introduction/taxonomy.html#questions",
+    "href": "slides/1_introduction/taxonomy.html#questions",
+    "title": "Taxonomy of Explainable ML",
+    "section": "Questions",
+    "text": "Questions\n\n\n\n\n\nkacper.sokol@rmit.edu.au  k.sokol@bristol.ac.uk"
   },
   {
-    "objectID": "slides/1_introduction/intro.html#automated-decision-making",
-    "href": "slides/1_introduction/intro.html#automated-decision-making",
-    "title": "Introduction to Machine Learning Explainability",
-    "section": "Automated Decision-making",
-    "text": "Automated Decision-making"
+    "objectID": "slides/1_introduction/humans.html#operational-vacuum",
+    "href": "slides/1_introduction/humans.html#operational-vacuum",
+    "title": "Human-Centred Explainability",
+    "section": "Operational Vacuum",
+    "text": "Operational Vacuum\n\nFocused on technology\nLittle consideration for the real world\nImplicit target audience – researchers and technologists\n\n\nExample use case: explanatory debugging (Kulesza et al. 2015)\n\n\n\n(Miller, Howe, and Sonenberg 2017)"
   },
   {
-    "objectID": "slides/1_introduction/intro.html#naïve-view",
-    "href": "slides/1_introduction/intro.html#naïve-view",
-    "title": "Introduction to Machine Learning Explainability",
-    "section": "Naïve view",
-    "text": "Naïve view"
+    "objectID": "slides/1_introduction/humans.html#whos-at-the-other-end",
+    "href": "slides/1_introduction/humans.html#whos-at-the-other-end",
+    "title": "Human-Centred Explainability",
+    "section": "Who’s at the Other End?",
+    "text": "Who’s at the Other End?\n\nExplanations arise to\n\naddress inconsistency with the explainee’s beliefs, expectations or mental model, e.g., an unexpected ML prediction causing a disagreement\nsupport learning or provide information needed by an explainee to solve a problem or complete a task\n\nDelivered at a request of a human explainee\n\n\nAn explanation is an answer to a “Why?” question (Miller 2019)\n\n\n\nBuilding up on the human-centred revolution mentioned in the preliminaries and the collection of human-centred properties listed in the taxonomy\nMore definitions of explainability to follow in the definitions section\nWho the recipient is – making explanations human-centred"
   },
   {
-    "objectID": "slides/1_introduction/intro.html#evaluation-tiers",
-    "href": "slides/1_introduction/intro.html#evaluation-tiers",
-    "title": "Introduction to Machine Learning Explainability",
-    "section": "Evaluation Tiers",
-    "text": "Evaluation Tiers\n\n\n\n\nHumans\nTask\n\n\n\n\nApplication-grounded Evaluation\nReal Humans\nReal Tasks\n\n\nHuman-grounded Evaluation\nReal Humans\nSimple Tasks\n\n\nFunctionally-grounded Evaluation\nNo Real Humans\nProxy Tasks\n\n\n\n\n\nKim and Doshi-Velez, 2017. Towards A Rigorous Science of Interpretable Machine Learning"
+    "objectID": "slides/1_introduction/humans.html#enter-human-centred-agenda",
+    "href": "slides/1_introduction/humans.html#enter-human-centred-agenda",
+    "title": "Human-Centred Explainability",
+    "section": "Enter Human-Centred Agenda",
+    "text": "Enter Human-Centred Agenda\nHumans expect the explanations to be (Miller 2019)\n\ncontrastive\nselective\nnot overly technical\nsocial\n\n\n\nselective – just enough information to address the explanatory needs, as opposed to a full causal account\nnon-technical – communicating specific probabilities of events may not be helpful\nexplanations as a social process – bidirectional, interactive, communication-based"
   },
   {
-    "objectID": "slides/1_introduction/intro.html#explanatory-insight-presentation-medium",
-    "href": "slides/1_introduction/intro.html#explanatory-insight-presentation-medium",
-    "title": "Introduction to Machine Learning Explainability",
-    "section": "Explanatory insight & presentation medium",
-    "text": "Explanatory insight & presentation medium"
+    "objectID": "slides/1_introduction/humans.html#composing-an-explanation",
+    "href": "slides/1_introduction/humans.html#composing-an-explanation",
+    "title": "Human-Centred Explainability",
+    "section": "Composing an Explanation",
+    "text": "Composing an Explanation\n\ntopic – what should be explained\nstakeholder – to whom something should be explained\ngoal – why something should be explained\ninstrument – how something should be explained\n\n\n\n(Buchholz 2022)"
   },
   {
-    "objectID": "slides/1_introduction/intro.html#phenomenon-explanation",
-    "href": "slides/1_introduction/intro.html#phenomenon-explanation",
-    "title": "Introduction to Machine Learning Explainability",
-    "section": "Phenomenon & explanation",
-    "text": "Phenomenon & explanation"
+    "objectID": "slides/1_introduction/humans.html#complications",
+    "href": "slides/1_introduction/humans.html#complications",
+    "title": "Human-Centred Explainability",
+    "section": "Complications",
+    "text": "Complications\n\nDiversity of human goals and expectations\nHuman biases, e.g., The Illusion of Explanatory Depth (Rozenblit and Keil 2002)\n\n\n\nCounterfactual explanations are specific to a data point\n\nHave you been 5 years older, your loan application would be accepted.\n\n\n\nPeople believe that they understand more than they actually do\nOverconfidence may lead people to generalise a counterfactual explanation beyond the instance for which it was generated (to unseen and possibly unrelated cases)"
   },
   {
-    "objectID": "slides/1_introduction/intro_deux.html#associations-between-antecedent-and-consequent",
-    "href": "slides/1_introduction/intro_deux.html#associations-between-antecedent-and-consequent",
-    "title": "Introduction to Machine Learning Explainability",
-    "section": "Associations Between Antecedent and Consequent",
-    "text": "Associations Between Antecedent and Consequent\n\n\n\nfeature importance\nfeature attribution / influence\nrules\n\n\n\nexemplars (prototypes & criticisms)"
+    "objectID": "slides/1_introduction/humans.html#why",
+    "href": "slides/1_introduction/humans.html#why",
+    "title": "Human-Centred Explainability",
+    "section": "Why?",
+    "text": "Why?\n\nEasy to understand (sparse by default)\nCommon in everyday life\nAvailable in diverse formats (e.g., textual or visual)\nActionable from a technical perspective\nCompliant with regulatory frameworks (e.g., GDPR) (Wachter, Mittelstadt, and Russell 2017)\n\n\n\nTechnical actionability stems from counterfactuals prescribing a change in the data point that leads to a different prediction"
   },
   {
-    "objectID": "slides/1_introduction/intro_deux.html#contrasts-and-differences",
-    "href": "slides/1_introduction/intro_deux.html#contrasts-and-differences",
-    "title": "Introduction to Machine Learning Explainability",
-    "section": "Contrasts and Differences",
-    "text": "Contrasts and Differences\n\n(non-causal) counterfactuals\ni.e., contrastive statements\nprototypes & criticisms"
+    "objectID": "slides/1_introduction/humans.html#example",
+    "href": "slides/1_introduction/humans.html#example",
+    "title": "Human-Centred Explainability",
+    "section": "Example",
+    "text": "Example\n\n\n\n\n\nHad you been 10 years younger,\nyour loan application would be accepted."
   },
   {
-    "objectID": "slides/1_introduction/intro_deux.html#causal-mechanisms",
-    "href": "slides/1_introduction/intro_deux.html#causal-mechanisms",
-    "title": "Introduction to Machine Learning Explainability",
-    "section": "Causal Mechanisms",
-    "text": "Causal Mechanisms\n\ncausal counterfactuals\ncausal chains\nfull causal model"
+    "objectID": "slides/1_introduction/humans.html#duck-test",
+    "href": "slides/1_introduction/humans.html#duck-test",
+    "title": "Human-Centred Explainability",
+    "section": "Duck Test",
+    "text": "Duck Test\n\n\nIf it looks like a duck, swims like a duck, and quacks like a duck, then it probably is a duck.\n\n\n\n\nCounterfactuals are not necessarily causal!"
   },
   {
-    "objectID": "slides/1_introduction/intro_deux.html#permutation-feature-importance",
-    "href": "slides/1_introduction/intro_deux.html#permutation-feature-importance",
-    "title": "Introduction to Machine Learning Explainability",
-    "section": "Permutation Feature Importance",
-    "text": "Permutation Feature Importance\n\n\n\n\n\n\n\nhttps://www.kaggle.com/code/dansbecker/permutation-importance"
+    "objectID": "slides/1_introduction/humans.html#actionability",
+    "href": "slides/1_introduction/humans.html#actionability",
+    "title": "Human-Centred Explainability",
+    "section": "Actionability",
+    "text": "Actionability\n\n\nHad you been 10 years younger,\nyour loan application would be accepted.\n\n\n\n\n\nHad you paid back one of your credit cards,\nyour loan application would be accepted.\n\n\n\nEvolution of human-centredness: non-actionable → actionable → feasible → provided through algorithmic recourse"
   },
   {
-    "objectID": "slides/1_introduction/intro_deux.html#individual-conditional-expectation-partial-dependence",
-    "href": "slides/1_introduction/intro_deux.html#individual-conditional-expectation-partial-dependence",
-    "title": "Introduction to Machine Learning Explainability",
-    "section": "Individual Conditional Expectation &  Partial Dependence",
-    "text": "Individual Conditional Expectation &  Partial Dependence"
+    "objectID": "slides/1_introduction/humans.html#feasibility",
+    "href": "slides/1_introduction/humans.html#feasibility",
+    "title": "Human-Centred Explainability",
+    "section": "Feasibility",
+    "text": "Feasibility\n\n\n\n\n\n\n\n\nIs the generated instance realistic, i.e., from the data distribution?\nCan it be reached from the explained data point?\n\n\n\n(Poyiadzi et al. 2020)"
   },
   {
-    "objectID": "slides/1_introduction/intro_deux.html#face-counterfactuals",
-    "href": "slides/1_introduction/intro_deux.html#face-counterfactuals",
-    "title": "Introduction to Machine Learning Explainability",
-    "section": "FACE Counterfactuals",
-    "text": "FACE Counterfactuals\n\n\n\n\n\n\n\nPoyiadzi, Sokol, Santos-Rodriguez, De Bie and Flach, 2020. FACE: Feasible and actionable counterfactual explanations"
+    "objectID": "slides/1_introduction/humans.html#algorithmic-recourse",
+    "href": "slides/1_introduction/humans.html#algorithmic-recourse",
+    "title": "Human-Centred Explainability",
+    "section": "Algorithmic Recourse",
+    "text": "Algorithmic Recourse\n\nWhere to go and how to get there\nA sequence of steps (actions) guiding the explainee towards the desired goal with explanations phrased as actionable recommendations\n\n\n\n\n\nIndependent manipulation of individual attributes is undesirable – think feature correlation\nInstead, these actions can be modelled as (causal) interventions\n\n\n\n\naction – independent shift in feature values\n\n\n\n\n(Karimi et al. 2022)"
   },
   {
-    "objectID": "slides/1_introduction/intro_deux.html#rulefit",
-    "href": "slides/1_introduction/intro_deux.html#rulefit",
-    "title": "Introduction to Machine Learning Explainability",
-    "section": "RuleFit",
-    "text": "RuleFit\n\n\n\n\n\n\n\nhttps://christophm.github.io/interpretable-ml-book/rulefit.html"
+    "objectID": "slides/1_introduction/humans.html#human-explainability",
+    "href": "slides/1_introduction/humans.html#human-explainability",
+    "title": "Human-Centred Explainability",
+    "section": "Human Explainability",
+    "text": "Human Explainability\n\n\nBi-directional explanatory process\nQuestioning and explanatory utterances\nConversational"
+  },
+  {
+    "objectID": "slides/1_introduction/humans.html#interactive-explainability",
+    "href": "slides/1_introduction/humans.html#interactive-explainability",
+    "title": "Human-Centred Explainability",
+    "section": "Interactive Explainability",
+    "text": "Interactive Explainability\n\n\nOne of the tenets of human-centred explainability\nLargely neglected and unavailable (Schneider and Handali 2019)"
+  },
+  {
+    "objectID": "slides/1_introduction/humans.html#conversational-explainability",
+    "href": "slides/1_introduction/humans.html#conversational-explainability",
+    "title": "Human-Centred Explainability",
+    "section": "Conversational Explainability",
+    "text": "Conversational Explainability\n\n\nInteractive personalisation and tuning of the explanations\nGuiding the explainer to retrieve tailored insights"
+  },
+  {
+    "objectID": "slides/1_introduction/humans.html#naïve-realisation",
+    "href": "slides/1_introduction/humans.html#naïve-realisation",
+    "title": "Human-Centred Explainability",
+    "section": "Naïve Realisation",
+    "text": "Naïve Realisation\nDialogue-based personalisation\n\n\n\nWhy was my loan application denied?\n\n\n\nInstead of increasing my income. Is there anything I can do about my outstanding debt to get this loan approved?\n\n\n\n\nBecause of your income. Had you earned £5,000 more, it would have been granted.\n\n\n\nIf you cancel one of your three credit cards, you will receive the loan.\n\n\n\n\n\n(Sokol and Flach 2020; Sokol and Flach 2018)"
+  },
+  {
+    "objectID": "slides/1_introduction/humans.html#interactive-social",
+    "href": "slides/1_introduction/humans.html#interactive-social",
+    "title": "Human-Centred Explainability",
+    "section": "Interactive ≠ Social",
+    "text": "Interactive ≠ Social\n\n\nInteractivity is insufficient, e.g., static explanation + dynamic user interface\nVehicle to personalise content (and other aspects)\nBespoke explanatory experience driven by context"
+  },
+  {
+    "objectID": "slides/1_introduction/humans.html#summary",
+    "href": "slides/1_introduction/humans.html#summary",
+    "title": "Human-Centred Explainability",
+    "section": "Summary",
+    "text": "Summary\n\n\nProducing explanations is necessary but insufficient for human-centred explainability\n\n\n\nThese insights need to be relevant and comprehensible (context) to explainees"
+  },
+  {
+    "objectID": "slides/1_introduction/humans.html#summary-meta-subs.ctd",
+    "href": "slides/1_introduction/humans.html#summary-meta-subs.ctd",
+    "title": "Human-Centred Explainability",
+    "section": "Summary    ",
+    "text": "Summary    \n\n\nExplainers are socio-technical constructs, hence we should strive for seamless integration with humans as well as technical correctness and soundness"
+  },
+  {
+    "objectID": "slides/1_introduction/humans.html#summary-meta-subs.ctd-1",
+    "href": "slides/1_introduction/humans.html#summary-meta-subs.ctd-1",
+    "title": "Human-Centred Explainability",
+    "section": "Summary    ",
+    "text": "Summary    \n\n\n\nEach (real-life) explainability scenario is unique and requires a bespoke solution"
+  },
+  {
+    "objectID": "slides/1_introduction/humans.html#summary-meta-subs.ctd-2",
+    "href": "slides/1_introduction/humans.html#summary-meta-subs.ctd-2",
+    "title": "Human-Centred Explainability",
+    "section": "Summary    ",
+    "text": "Summary    \n\n\n\n\n\n\n\n\n(The Blind Men and the Elephant)"
+  },
+  {
+    "objectID": "slides/1_introduction/humans.html#bibliography",
+    "href": "slides/1_introduction/humans.html#bibliography",
+    "title": "Human-Centred Explainability",
+    "section": "Bibliography",
+    "text": "Bibliography\n\n\nBuchholz, Oliver. 2022. “A Means-End Account of Explainable Artificial Intelligence.” arXiv Preprint arXiv:2208.04638.\n\n\nKarimi, Amir-Hossein, Gilles Barthe, Bernhard Schölkopf, and Isabel Valera. 2022. “A Survey of Algorithmic Recourse: Contrastive Explanations and Consequential Recommendations.” ACM Computing Surveys 55 (5): 1–29.\n\n\nKulesza, Todd, Margaret Burnett, Weng-Keen Wong, and Simone Stumpf. 2015. “Principles of Explanatory Debugging to Personalize Interactive Machine Learning.” In Proceedings of the 20th International Conference on Intelligent User Interfaces, 126–37.\n\n\nMiller, Tim. 2019. “Explanation in Artificial Intelligence: Insights from the Social Sciences.” Artificial Intelligence 267: 1–38.\n\n\nMiller, Tim, Piers Howe, and Liz Sonenberg. 2017. “Explainable AI: Beware of Inmates Running the Asylum or: How i Learnt to Stop Worrying and Love the Social and Behavioural Sciences.” arXiv Preprint arXiv:1712.00547.\n\n\nPoyiadzi, Rafael, Kacper Sokol, Raul Santos-Rodriguez, Tijl De Bie, and Peter Flach. 2020. “FACE: Feasible and Actionable Counterfactual Explanations.” In Proceedings of the AAAI/ACM Conference on AI, Ethics, and Society, 344–50.\n\n\nRozenblit, Leonid, and Frank Keil. 2002. “The Misunderstood Limits of Folk Science: An Illusion of Explanatory Depth.” Cognitive Science 26 (5): 521–62.\n\n\nSchneider, Johannes, and Joshua Peter Handali. 2019. “Personalized Explanation for Machine Learning: A Conceptualization.”\n\n\nSokol, Kacper, and Peter Flach. 2020. “One Explanation Does Not Fit All: The Promise of Interactive Explanations for Machine Learning Transparency.” KI-Künstliche Intelligenz 34 (2): 235–50.\n\n\nSokol, Kacper, and Peter A Flach. 2018. “Glass-Box: Explaining AI Decisions with Counterfactual Statements Through Conversation with a Voice-Enabled Virtual Assistant.” In IJCAI, 5868–70.\n\n\nWachter, Sandra, Brent Mittelstadt, and Chris Russell. 2017. “Counterfactual Explanations Without Opening the Black Box: Automated Decisions and the GDPR.” Harv. JL & Tech. 31: 841."
+  },
+  {
+    "objectID": "slides/1_introduction/humans.html#questions",
+    "href": "slides/1_introduction/humans.html#questions",
+    "title": "Human-Centred Explainability",
+    "section": "Questions",
+    "text": "Questions\n\n\n\n\n\nkacper.sokol@rmit.edu.au  k.sokol@bristol.ac.uk"
   },
   {
     "objectID": "slides/1_introduction/course.html#about-me",
@@ -564,7 +942,7 @@
     "href": "slides/1_introduction/course.html#scope-meta-subs.ctd",
     "title": "Machine Learning Explainability",
     "section": "Scope    ",
-    "text": "Scope    \n\nA brief overview of data explainability\n\nData as an (implicit) model\nData summarisation and description\nDimensionality reduction"
+    "text": "Scope    \n\nA brief overview of data explainability\n\nData as an (implicit) model\nData summarisation and description\nDimensionality reduction (e.g., t-SNE)\nExemplars, prototypes and criticisms"
   },
   {
     "objectID": "slides/1_introduction/course.html#scope-meta-subs.ctd-1",
@@ -637,11 +1015,39 @@
     "text": "Tools\n💽 Interactive visualisation / reporting / dashboarding / presentation software\n\nStreamlit\nPlotly Dash\nShiny for Python and R\nQuarto\n\n\n\ntools that may be used for the project presentation / delivery"
   },
   {
+    "objectID": "slides/1_introduction/course.html#permutation-feature-importance",
+    "href": "slides/1_introduction/course.html#permutation-feature-importance",
+    "title": "Machine Learning Explainability",
+    "section": "Permutation Feature Importance",
+    "text": "Permutation Feature Importance\n\n\n\n\n\n\n\n()     https://www.kaggle.com/code/dansbecker/permutation-importance"
+  },
+  {
+    "objectID": "slides/1_introduction/course.html#individual-conditional-expectation-partial-dependence",
+    "href": "slides/1_introduction/course.html#individual-conditional-expectation-partial-dependence",
+    "title": "Machine Learning Explainability",
+    "section": "Individual Conditional Expectation &  Partial Dependence",
+    "text": "Individual Conditional Expectation &  Partial Dependence\n\n\n\n\n\n\n\n()     ()"
+  },
+  {
+    "objectID": "slides/1_introduction/course.html#face-counterfactuals",
+    "href": "slides/1_introduction/course.html#face-counterfactuals",
+    "title": "Machine Learning Explainability",
+    "section": "FACE Counterfactuals",
+    "text": "FACE Counterfactuals\n\n\n\n\n\n\n\n()     (Poyiadzi et al. 2020)"
+  },
+  {
+    "objectID": "slides/1_introduction/course.html#rulefit",
+    "href": "slides/1_introduction/course.html#rulefit",
+    "title": "Machine Learning Explainability",
+    "section": "RuleFit",
+    "text": "RuleFit\n\n\n\n\n\n\n\n\n()     https://christophm.github.io/interpretable-ml-book/rulefit.html"
+  },
+  {
     "objectID": "slides/1_introduction/course.html#bibliography",
     "href": "slides/1_introduction/course.html#bibliography",
     "title": "Machine Learning Explainability",
     "section": "Bibliography",
-    "text": "Bibliography"
+    "text": "Bibliography\n\n\nPoyiadzi, Rafael, Kacper Sokol, Raul Santos-Rodriguez, Tijl De Bie, and Peter Flach. 2020. “FACE: Feasible and Actionable Counterfactual Explanations.” In Proceedings of the AAAI/ACM Conference on AI, Ethics, and Society, 344–50."
   },
   {
     "objectID": "slides/1_introduction/course.html#questions",

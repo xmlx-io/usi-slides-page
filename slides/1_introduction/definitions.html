@@ -10,7 +10,7 @@
   <meta name="generator" content="quarto-1.2.313">
 
   <meta name="author" content="Kacper Sokol">
-  <title>Machine Learning Explainability: Exploring Automated Decision-Making Through Transparent Modelling and Peeking Inside Black Boxes - Machine Learning Explainability</title>
+  <title>Machine Learning Explainability: Exploring Automated Decision-Making Through Transparent Modelling and Peeking Inside Black Boxes - Defining Explainability</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -337,14 +337,16 @@
       margin-right: 0; 
     }
   </style>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+  <script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
 </head>
 <body class="quarto-dark">
   <div class="reveal">
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">Machine Learning Explainability</h1>
-  <p class="subtitle"></p><p>Exploring Automated Decision-Making Through Transparent Modelling and<br> Peeking Inside Black Boxes</p><p></p>
+  <h1 class="title">Defining Explainability</h1>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
@@ -358,471 +360,112 @@ Kacper Sokol
 <nav role="doc-toc"> 
 <h2 id="toc-title">Topics</h2>
 <ul>
-<li><a href="#/introduction" id="/toc-introduction">Introduction</a></li>
-<li><a href="#/organisational-details" id="/toc-organisational-details">Organisational Details</a></li>
-<li><a href="#/about-the-course" id="/toc-about-the-course">About the Course</a></li>
-<li><a href="#/examples-of-explanations" id="/toc-examples-of-explanations">Examples of Explanations</a></li>
+<li><a href="#/nomenclature" id="/toc-nomenclature">Nomenclature</a></li>
+<li><a href="#/what-is-explainability" id="/toc-what-is-explainability">What Is Explainability?</a></li>
+<li><a href="#/defining-explainability" id="/toc-defining-explainability">Defining Explainability</a></li>
+<li><a href="#/examples" id="/toc-examples">Examples</a></li>
 <li><a href="#/wrap-up" id="/toc-wrap-up">Wrap Up</a></li>
 </ul>
 </nav>
 </section>
 <section>
-<section id="introduction" class="title-slide slide level1 center">
-<h1>Introduction</h1>
+<section id="nomenclature" class="title-slide slide level1 center">
+<h1>Nomenclature</h1>
 
 </section>
-<section id="about-me" class="slide level2">
-<h2>About Me</h2>
-<p><br></p>
-<h3 id="education">Education</h3>
-<ul>
-<li>Master of Engineering in Mathematics and Computer Science <br>(<em>University of Bristol</em>)</li>
-<li>Doctor of Philosophy in Computer Science – Artificial Intelligence and Machine Learning <br>(<em>University of Bristol</em>)</li>
-</ul>
-</section>
-<section id="about-me-meta-subs.ctd" class="slide level2">
-<h2>About Me &nbsp;&nbsp;&nbsp;</h2>
-<p><br></p>
-<h3 id="work-experience">Work Experience</h3>
-<ul>
-<li>Research Fellow, <br>ARC Centre of Excellence for Automated Decision-Making and Society <br>(<em>RMIT University</em>)</li>
-<li>Honorary Research Fellow, <br>Intelligent Systems Laboratory <br>(<em>University of Bristol</em>)</li>
-</ul>
-</section>
-<section id="about-me-meta-subs.ctd-1" class="slide level2">
-<h2>About Me &nbsp;&nbsp;&nbsp;</h2>
-<p><br></p>
-<h3 id="work-experience-meta-subs.ctd">Work Experience &nbsp;&nbsp;&nbsp;</h3>
-<ul>
-<li>Senior Research Associate, <br>TAILOR: European Union’s AI Research Excellence Centre <br>(<em>University of Bristol</em>)</li>
-<li>Research Associate, <br>Human-Centred Artificial Intelligence <em>in collaboration with THALES</em> <br>(<em>University of Bristol</em>)</li>
-<li>Research Assistant, <br>REFrAMe <br>(<em>University of Bristol</em>)</li>
-</ul>
-</section>
-<section id="about-me-meta-subs.ctd-2" class="slide level2">
-<h2>About Me &nbsp;&nbsp;&nbsp;</h2>
-<p><br></p>
-<h3 id="work-experience-meta-subs.ctd-1">Work Experience &nbsp;&nbsp;&nbsp;</h3>
-<ul>
-<li>Visiting Research Fellow, <br>AI and Humanity Summer Cluster, Simons Institute for the Theory of Computing <br>(<em>UC Berkeley</em>)</li>
-<li>Visiting Researcher, <br>Ubiquitous Computing Research Group <br>(<em>Università della Svizzera italiana</em>)</li>
-<li>Visiting Researcher, <br>Machine Learning research group <br>(<em>University of Tartu</em>)</li>
-</ul>
-</section>
-<section id="about-me-meta-subs.ctd-3" class="slide level2">
-<h2>About Me &nbsp;&nbsp;&nbsp;</h2>
-<p><br></p>
-<h3 id="research">Research</h3>
-<ul>
-<li><p>AI &amp; ML transparency, interpretability and explainability</p></li>
-<li><p>Taxonomy of XAI &amp; IML</p></li>
-<li><p>Human-centred, interactive and personalised XAI &amp; IML</p></li>
-</ul>
-</section>
-<section id="about-me-meta-subs.ctd-4" class="slide level2">
-<h2>About Me &nbsp;&nbsp;&nbsp;</h2>
-<p><br></p>
-<h3 id="research-meta-subs.ctd">Research &nbsp;&nbsp;&nbsp;</h3>
-<ul>
-<li>Robustness, accountability, modularity and parameterisation of XAI &amp; IML</li>
-<li>Post-hoc methods, e.g., surrogates</li>
-</ul>
-</section>
-<section id="about-me-meta-subs.ctd-5" class="slide level2">
-<h2>About Me &nbsp;&nbsp;&nbsp;</h2>
-<p><br></p>
-<h3 id="research-meta-subs.ctd-1">Research &nbsp;&nbsp;&nbsp;</h3>
-<ul>
-<li><p>XAI &amp; IML open-source software</p></li>
-<li><p>XAI &amp; IML freely available, online, interactive training materials</p></li>
-</ul>
-</section>
-<section id="about-you" class="slide level2">
-<h2>About You</h2>
-<ul>
-<li>Who are you?</li>
-<li>What’s your background?</li>
-<li>Why are you taking this course?</li>
-<li>What do you expect to get out of this course?</li>
-</ul>
-<aside class="notes">
-<ul>
-<li>Round of introductions</li>
-</ul>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-<!-- #%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#% --->
-</section></section>
-<section>
-<section id="organisational-details" class="title-slide slide level1 center">
-<h1>Organisational Details</h1>
-
-</section>
-<section id="schedule" class="slide level2">
-<h2>Schedule</h2>
-<ul>
-<li><p><strong>When:</strong> 2 weeks – w/c 6<sup>th</sup> and 13<sup>th</sup> of February 2023</p></li>
-<li><p><strong>What:</strong> 10 sessions comprising of</p>
-<ul>
-<li>45-minute lecture</li>
-<li>45-minute supervised lab session (<em>project / assignment / coursework</em>)</li>
-<li>45-minute open office (<em>general questions &amp; project discussions</em>)</li>
-</ul></li>
-<li><p><strong>Time Commitment:</strong> 20 hours (<em>self-study</em>)</p></li>
-</ul>
-<aside class="notes">
-<ul>
-<li>We may use the last session for project presentations</li>
-</ul>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section>
-<section id="schedule-meta-subs.ctd" class="slide level2">
-<h2>Schedule &nbsp;&nbsp;&nbsp;</h2>
-<ul>
-<li><p><strong>Where:</strong></p>
-<table style="width:99%;">
-<colgroup>
-<col style="width: 33%">
-<col style="width: 33%">
-<col style="width: 33%">
-</colgroup>
-<thead>
-<tr class="header">
-<th><strong>What</strong></th>
-<th><strong>Time</strong></th>
-<th><strong>Location</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>lecture</td>
-<td>TBC</td>
-<td>TBC</td>
-</tr>
-<tr class="even">
-<td>lab</td>
-<td>TBC</td>
-<td>TBC</td>
-</tr>
-<tr class="odd">
-<td>open office</td>
-<td>TBC</td>
-<td>TBC</td>
-</tr>
-</tbody>
-</table></li>
-</ul>
-</section>
-<section id="prerequisites" class="slide level2">
-<h2>Prerequisites</h2>
-<ul>
-<li>Python programming</li>
-<li>Basic mathematical concepts (relevant to machine learning)</li>
-<li>Machine learning techniques for tabular data</li>
-<li><span class="emoji" data-emoji="star">⭐</span> Prior experience with machine learning approaches for images and text (e.g., deep learning) or other forms of data modelling (e.g., time series forecasting, reinforcement learning) if you decide to pursue a project in this direction</li>
-</ul>
-</section>
-<section id="resources" class="slide level2">
-<h2>Resources</h2>
-<p><br></p>
-<ul>
-<li><p><strong>Online Slides</strong></p>
-<ul>
-<li><a href="https://usi.xmlx.io/">usi.xmlx.io</a></li>
-<li><a href="https://xmlx-io.github.io/usi-slides-mirror">xmlx-io.github.io/usi-slides-mirror</a></li>
-</ul></li>
-<li><p><strong>GitHub Repository</strong></p>
-<ul>
-<li><a href="https://github.com/xmlx-io/usi-slides-source">github.com/xmlx-io/usi-slides-source</a> (<em>raw slides source</em>)</li>
-<li><a href="https://github.com/xmlx-io/usi-slides-mirror">github.com/xmlx-io/usi-slides</a> (<em>html slides source</em>)</li>
-<li><a href="https://github.com/xmlx-io/usi-slides-mirror">github.com/xmlx-io/usi-slides-mirror</a> (<em>html slides source mirror</em>)</li>
-</ul></li>
-</ul>
-</section>
-<section id="resources-meta-subs.ctd" class="slide level2">
-<h2>Resources &nbsp;&nbsp;&nbsp;</h2>
-<p><br></p>
-<h3 id="slides">Slides</h3>
-<ul>
-<li>Written in Markdown</li>
-<li>Built with <a href="https://quarto.org/">Quarto</a> into <a href="https://revealjs.com/">reveal.js</a> (web-based slides)</li>
-<li>Computational elements and figures coded in Python (with matplotlib)</li>
-<li>Source can be compiled into Jupyter Notebooks (to experiment, modify, adapt and reuse the code chunks)</li>
-</ul>
-<aside class="notes">
-<ul>
-<li>If you struggle to convert these, let me know and I will help you out</li>
-</ul>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-<!-- #%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#% --->
-</section></section>
-<section>
-<section id="about-the-course" class="title-slide slide level1 center">
-<h1>About the Course</h1>
-
-</section>
-<section id="motivation-fa-minus-square" class="slide level2">
-<h2>Motivation &nbsp;&nbsp;&nbsp;</h2>
-<p><br></p>
-<ul>
-<li><p>Wealth of XAI and IML learning resources…</p></li>
-<li><p>…but mostly limited to</p>
-<ul>
-<li><strong>summary descriptions</strong></li>
-<li><strong>code examples</strong></li>
-<li><strong>explanation examples</strong></li>
-<li><strong>interpretation tips</strong></li>
-</ul></li>
-</ul>
-</section>
-<section id="motivation-fa-plus-square" class="slide level2">
-<h2>Motivation &nbsp;&nbsp;&nbsp;</h2>
-<p><br></p>
-<ul>
-<li><strong>Deconstruct</strong> each method</li>
-<li>Inspect its <strong>assumptions</strong> and <strong>operationalisation</strong></li>
-<li><strong>Learn to tune</strong> explainers for the problem at hand</li>
-<li><strong>Learn to interpret</strong> explanations in view of their theoretical properties and (<em>limitations of</em>) algorithmic implementation</li>
-</ul>
-<hr>
-<ul>
-<li>Develop <strong>critical thinking</strong> about XAI and IML techniques</li>
-</ul>
-</section>
-<section id="general-learning-objectives" class="slide level2">
-<h2>General Learning Objectives</h2>
-<ul>
-<li>Understand the landscape of AI and ML explainability techniques</li>
-<li>Identify explainability needs of data-driven machine learning systems</li>
-<li>Recognise the capabilities and limitations of explainability approaches, both in general and in view of specific use cases</li>
-<li><span class="emoji" data-emoji="star">⭐</span> Apply these skills to real-life AI and ML problems</li>
-<li><span class="emoji" data-emoji="star">⭐</span> Communicate explainability findings through interactive reports and dashboards</li>
-</ul>
-</section>
-<section id="practical-learning-objectives" class="slide level2">
-<h2>Practical Learning Objectives</h2>
-<ul>
-<li>Identify self-contained algorithmic components of explainers and understand their functions</li>
-<li>Connect these building blocks to the explainability requirements unique to the investigated predictive system</li>
-<li>Select appropriate algorithmic components and tune them to the problem at hand</li>
-<li>Evaluate these building blocks (in this specific context) independently and when joined together to form the final explainer</li>
-<li>Interpret the resulting explanations in view of the uncovered properties and limitations of the bespoke explainability algorithm</li>
-</ul>
-<aside class="notes">
-<ul>
-<li>Specific to explainability approaches</li>
-</ul>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section>
-<section id="scope" class="slide level2">
-<h2>Scope</h2>
-<p><br></p>
-<h3 id="introduction-to-explainability">Introduction to explainability</h3>
-<ul>
-<li>History of explainability</li>
-<li>Types of explanations</li>
-<li>Ante-hoc vs.&nbsp;post-hoc discussion, and information lineage (endogenous and exogenous sources of explanatory information)</li>
-<li>Multi-class explainability</li>
-<li>Taxonomy and classification of explainability approaches</li>
-<li>Defining explainability</li>
-<li>Human-centred perspective</li>
-<li>Evaluation of explainability techniques</li>
-</ul>
-</section>
-<section id="scope-meta-subs.ctd" class="slide level2">
-<h2>Scope &nbsp;&nbsp;&nbsp;</h2>
-<p><br></p>
-<h3 id="a-brief-overview-of-data-explainability">A brief overview of data explainability</h3>
-<ul>
-<li>Data as an (implicit) model</li>
-<li>Data summarisation and description</li>
-<li>Dimensionality reduction (e.g., t-SNE)</li>
-<li>Exemplars, prototypes and criticisms</li>
-</ul>
-</section>
-<section id="scope-meta-subs.ctd-1" class="slide level2">
-<h2>Scope &nbsp;&nbsp;&nbsp;</h2>
-<p><br></p>
-<h3 id="transparent-modelling">Transparent modelling</h3>
-<ul>
-<li>Linear models</li>
-<li>Logistic models</li>
-<li>Generalised additive models</li>
-<li>Decision trees</li>
-<li>Rule lists and sets; scoped rules</li>
-<li><span class="math inline">\(k\)</span>-nearest neighbours and <span class="math inline">\(k\)</span>-means</li>
-</ul>
-</section>
-<section id="scope-meta-subs.ctd-2" class="slide level2">
-<h2>Scope &nbsp;&nbsp;&nbsp;</h2>
-<p><br></p>
-<h3 id="feature-importance">Feature importance</h3>
-<ul>
-<li>Partial Dependence-based feature importance</li>
-<li>Permutation Importance</li>
-<li>Feature Interaction</li>
-</ul>
-</section>
-<section id="scope-meta-subs.ctd-3" class="slide level2">
-<h2>Scope &nbsp;&nbsp;&nbsp;</h2>
-<p><br></p>
-<h3 id="feature-influence">Feature influence</h3>
-<ul>
-<li><p>Individual Conditional Expectation</p></li>
-<li><p>Partial Dependence</p></li>
-<li><p>Marginal Effect</p></li>
-<li><p>Accumulated Local Effect</p></li>
-<li><p>Meta-approaches</p>
-<ul>
-<li>LIME (liner surrogate)</li>
-<li>SHAP</li>
-</ul></li>
-</ul>
-</section>
-<section id="scope-meta-subs.ctd-4" class="slide level2">
-<h2>Scope &nbsp;&nbsp;&nbsp;</h2>
-<p><br></p>
-<h3 id="instance-based-explanations">Instance-based explanations</h3>
-<ul>
-<li>Exemplar explanations</li>
-<li>Counterfactuals</li>
-<li>Prototypes and criticisms</li>
-</ul>
-</section>
-<section id="scope-meta-subs.ctd-5" class="slide level2">
-<h2>Scope &nbsp;&nbsp;&nbsp;</h2>
-<p><br></p>
-<h3 id="meta-explainers">Meta-explainers</h3>
-<ul>
-<li><p>surrogate explainers</p>
-<ul>
-<li>local, cohort and global</li>
-<li>linear and tree-based</li>
-</ul></li>
-<li><p>rules</p>
-<ul>
-<li>ANCHOR</li>
-<li>RuleFit</li>
-</ul></li>
-<li><p>SHAP</p></li>
-</ul>
-</section>
-<section id="coursework" class="slide level2">
-<h2>Coursework</h2>
-<ol type="1">
-<li><p><strong>Bring-your-own-project</strong></p></li>
-<li><p><strong>Explain a predictive model</strong> (you are working with)</p>
-<ul>
-<li>develop a bespoke explainability suite for a predictive model of your choice (e.g., for a project you are currently working on, or a model accessible via an API)</li>
-<li>use multiple explainability techniques and identify the sources of explanation (dis)agreements</li>
-</ul></li>
-</ol>
-</section>
-<section id="coursework-meta-subs.ctd" class="slide level2">
-<h2>Coursework &nbsp;&nbsp;&nbsp;</h2>
-<ol start="4" type="1">
-<li><p><strong>Dissect an explainability method</strong> – choose an explainability method, identify its core (algorithmic) building blocks and articulate its assumptions, exploring how these different aspects affect the explanations</p></li>
-<li><p><strong>Build a model-specific or model-agnostic explainer or a transparent model</strong></p>
-<ul>
-<li>new explainability technique (from existing building blocks)</li>
-<li>new composition of an existing explainability technique</li>
-<li>new visualisation of an explanation type</li>
-</ul></li>
-</ol>
-</section>
-<section id="coursework-meta-subs.ctd-1" class="slide level2">
-<h2>Coursework &nbsp;&nbsp;&nbsp;</h2>
-<ul>
-<li>Individual or in small groups</li>
-<li>Projects to be presented or demoed in the last class</li>
-<li><a href="https://gist.github.com/So-Cool/0d3de6085c7c3caf1bdb8e0bf081c2ba#projects-pencil2tentative">Some project ideas</a></li>
-</ul>
-<aside class="notes">
-<ul>
-<li>Let’s discuss project ideas</li>
-<li>If you want to brainstorm, we can discuss during office hours</li>
-<li>We may use the final session for project presentation and discussion</li>
-</ul>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section>
-<section id="coursework-meta-subs.ctd-2" class="slide level2">
-<h2>Coursework &nbsp;&nbsp;&nbsp;</h2>
+<section id="black-box" class="slide level2">
+<h2>Black Box</h2>
 <blockquote>
-<p><strong>Objective:</strong> The journey is more important than the outcome</p>
+<p>A system or automated process whose <strong>internal workings are opaque</strong> to the observer – its operation may only be traced by analysing its behaviour through its inputs and outputs</p>
 </blockquote>
-<ul>
-<li><p>Reproducibility of the results (research best practice, open science)</p></li>
-<li><p>Quality of the investigation</p></li>
-<li><p>Due diligence</p>
-<ul>
-<li>Assumptions</li>
-<li>Choices (theoretical, algorithmic, implementation and otherwise)</li>
-<li>Justifications</li>
-</ul></li>
-<li><p><del>Project results</del></p></li>
-</ul>
 </section>
-<section id="tools" class="slide level2">
-<h2>Tools</h2>
-<p><span class="emoji" data-emoji="minidisc">💽</span> Interactive visualisation / reporting / dashboarding / presentation software</p>
-<ul>
-<li><a href="https://streamlit.io/">Streamlit</a></li>
-<li><a href="https://dash.plotly.com/">Plotly Dash</a></li>
-<li>Shiny for <a href="https://shiny.rstudio.com/py/">Python</a> and <a href="https://shiny.rstudio.com/">R</a></li>
-<li><a href="https://quarto.org/">Quarto</a></li>
-</ul>
+<section id="black-box-meta-subs.ctd" class="slide level2">
+<h2>Black Box &nbsp;&nbsp;&nbsp;</h2>
+<p>Sources of opaqueness:</p>
+<ol type="1">
+<li>a proprietary system, which may be <strong>transparent to its creators</strong>, but operates as a black box</li>
+<li>a system that is <strong>too complex</strong> to be comprehend by <strong>any human</strong></li>
+</ol>
+
+<aside><div>
+<p><span class="citation" data-cites="rudin2019stop">(<a href="#/bibliography" role="doc-biblioref" onclick="">Rudin 2019</a>)</span></p>
+</div></aside></section>
+<section id="black-box-meta-subs.ctd-1" class="slide level2">
+<h2>Black Box &nbsp;&nbsp;&nbsp;</h2>
+<blockquote>
+<p>Spectrum of opaqueness determined by the context (audience, purpose, etc.)</p>
+</blockquote>
+<p><img data-src="../../assets/figures/blackboxiness.svg" style="width:75.0%" alt="Shades of black-boxiness"></p>
+
 <aside class="notes">
 <ul>
-<li>tools that may be used for the project presentation / delivery</li>
+<li>Instead of binary yes/no opaque, it seems more appropriate to have a continuous scale</li>
+</ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+<aside><div>
+<p><span class="citation" data-cites="sokol2021explainability">(<a href="#/bibliography" role="doc-biblioref" onclick="">Sokol and Flach 2021</a>)</span></p>
+</div></aside></section>
+<section id="transparency-interpretability-explainability" class="slide level2">
+<h2>Transparency, Interpretability, Explainability, …</h2>
+<div class="cell" data-fig-width="55%" data-execution_count="2">
+<div class="cell-output cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="definitions_files/figure-revealjs/cell-3-output-1.png" alt="ML explainability terms" width="614" height="317"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="transparency-interpretability-explainability-meta-subs.ctd" class="slide level2">
+<h2>Transparency, Interpretability, Explainability, … &nbsp;&nbsp;&nbsp;</h2>
+<div class="columns">
+<div class="column" style="width:25%;">
+<ul>
+<li>explainability</li>
+<li>intelligibility</li>
+<li>simulatability</li>
+<li>sensemaking</li>
+<li>cause</li>
+</ul>
+</div><div class="column" style="width:25%;">
+<ul>
+<li>observability</li>
+<li>comprehensibility</li>
+<li>explicitness</li>
+<li>insight</li>
+</ul>
+</div><div class="column" style="width:25%;">
+<ul>
+<li>transparency</li>
+<li>understandability</li>
+<li>justification</li>
+<li>evidence</li>
+</ul>
+</div><div class="column" style="width:25%;">
+<ul>
+<li>explicability</li>
+<li>interpretability</li>
+<li>rationalisation</li>
+<li>reason</li>
+</ul>
+</div>
+</div>
+<aside class="notes">
+<ul>
+<li><p>A lot of different terms are used interchangeably</p></li>
+<li><p>They are (re)defined in a large number of papers</p></li>
+<li><p>We will try to organise this catalogue of words</p></li>
 </ul>
 <style type="text/css">
         span.MJX_Assistive_MathML {
@@ -838,65 +481,548 @@ Kacper Sokol
 <!-- #%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#% --->
 </section></section>
 <section>
-<section id="examples-of-explanations" class="title-slide slide level1 center">
-<h1>Examples of Explanations</h1>
+<section id="what-is-explainability" class="title-slide slide level1 center">
+<h1>What Is Explainability?</h1>
 
 </section>
-<section id="permutation-feature-importance" class="slide level2">
-<h2>Permutation Feature Importance</h2>
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="../../assets/figures/pfi.png" style="width:95.0%" alt="PFI"></p>
-</figure>
-</div>
+<section id="lack-of-a-universally-accepted-definition" class="slide level2">
+<h2>Lack of a universally accepted definition</h2>
+<blockquote>
+<p>Interpretability is the degree to which a human can understand the cause of a decision</p>
+</blockquote>
+<blockquote>
+<p>Explanation is an answer to a “Why?” question</p>
+</blockquote>
 
 <aside><div>
-<p>(<a href="../3_feature-based/pfi.html"></a>) &nbsp;&nbsp;&nbsp; <a href="https://www.kaggle.com/code/dansbecker/permutation-importance" class="uri">https://www.kaggle.com/code/dansbecker/permutation-importance</a></p>
+<p><span class="citation" data-cites="miller2019explanation biran2017explanation">(<a href="#/bibliography" role="doc-biblioref" onclick="">Miller 2019</a>; <a href="#/bibliography" role="doc-biblioref" onclick="">Biran and Cotton 2017</a>)</span></p>
 </div></aside></section>
-<section id="individual-conditional-expectation-partial-dependence" class="slide level2">
-<h2>Individual Conditional Expectation &amp; <br> Partial Dependence</h2>
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="../../assets/figures/ice-pd.png" style="width:75.0%" alt="PFI"></p>
-</figure>
-</div>
+<section id="lack-of-a-universally-accepted-definition-meta-subs.ctd" class="slide level2">
+<h2>Lack of a universally accepted definition &nbsp;&nbsp;&nbsp;</h2>
+<blockquote>
+<p>Explanations should answer “Why?” and “Why-should?” questions until such questions can no longer be asked</p>
+</blockquote>
 
 <aside><div>
-<p>(<a href="../3_feature-based/ice.html"></a>) &nbsp;&nbsp;&nbsp; (<a href="../3_feature-based/pd.html"></a>)</p>
+<p><span class="citation" data-cites="gilpin2018explaining">(<a href="#/bibliography" role="doc-biblioref" onclick="">Gilpin et al. 2018</a>)</span></p>
 </div></aside></section>
-<section id="face-counterfactuals" class="slide level2">
-<h2>FACE Counterfactuals</h2>
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="../../assets/figures/face.png" style="width:40.0%" alt="FACE"></p>
-</figure>
-</div>
+<section id="lack-of-a-universally-accepted-definition-meta-subs.ctd-1" class="slide level2">
+<h2>Lack of a universally accepted definition &nbsp;&nbsp;&nbsp;</h2>
+<blockquote>
+<p>Explanations “giv[e] a reason for a prediction” and answer “how a system arrives at its prediction”</p>
+</blockquote>
+<blockquote>
+<p>Justifications “put an explanation in a context” and convey “why we should believe that the prediction is correct”</p>
+</blockquote>
+
+<aside class="notes">
+<ul>
+<li>justifications do not necessarily communicate how the system truly works</li>
+</ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+<aside><div>
+<p><span class="citation" data-cites="biran2014justification">(<a href="#/bibliography" role="doc-biblioref" onclick="">Biran and McKeown 2014</a>)</span></p>
+</div></aside></section>
+<section id="lack-of-a-universally-accepted-definition-meta-subs.ctd-2" class="slide level2">
+<h2>Lack of a universally accepted definition &nbsp;&nbsp;&nbsp;</h2>
+<blockquote>
+<p>Transparency is a <em>passive</em> characteristic of a model that allows humans to make sense of it on different levels</p>
+</blockquote>
+<blockquote>
+<p>Explainability is an <em>active</em> characteristic of a model that is achieved through actions and procedures employed (by the model) to clarify its functioning for a certain audience</p>
+</blockquote>
 
 <aside><div>
-<p>(<a href="../4_instance-based/counterfactuals.html"></a>) &nbsp;&nbsp;&nbsp; <span class="citation" data-cites="poyiadzi2020face">(<a href="#/bibliography" role="doc-biblioref" onclick="">Poyiadzi et al. 2020</a>)</span></p>
+<p><span class="citation" data-cites="arrieta2020explainable">(<a href="#/bibliography" role="doc-biblioref" onclick="">Arrieta et al. 2020</a>)</span></p>
 </div></aside></section>
-<section id="rulefit" class="slide level2">
-<h2>RuleFit</h2>
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="../../assets/figures/rulefit.png" style="width:50.0%" alt="RuleFit"></p>
-</figure>
-</div>
+<section id="lack-of-a-universally-accepted-definition-meta-subs.ctd-3" class="slide level2">
+<h2>Lack of a universally accepted definition &nbsp;&nbsp;&nbsp;</h2>
+<blockquote>
+<p>Interpretability is the degree to which a human can consistently predict the model’s result</p>
+</blockquote>
 
+<aside><div>
+<p><span class="citation" data-cites="kim2016examples">(<a href="#/bibliography" role="doc-biblioref" onclick="">Kim, Khanna, and Koyejo 2016</a>)</span></p>
+</div></aside></section>
+<section id="lack-of-a-universally-accepted-definition-meta-subs.ctd-4" class="slide level2">
+<h2>Lack of a universally accepted definition &nbsp;&nbsp;&nbsp;</h2>
+<blockquote>
+<p>Transparency is the ability of a human to comprehend the (ante-hoc) mechanism employed by a predictive model on three levels</p>
+</blockquote>
+
+<div class="fragment">
+<ul>
+<li class="fragment"><strong>decomposability</strong> – appreciation of individual components (input, parameterisation and computation) that constitute a predictive system</li>
+<li class="fragment"><strong>algorithmic transparency</strong> – understanding the modelling process embodied by a predictive algorithm</li>
+<li class="fragment"><strong>simulatability</strong> enables humans to simulate a decisive process in vivo at the level of the entire model</li>
+</ul>
+</div>
+<aside><div>
+<p><span class="citation" data-cites="lipton2018mythos">(<a href="#/bibliography" role="doc-biblioref" onclick="">Lipton 2018</a>)</span></p>
+</div></aside></section>
+<section id="lack-of-a-universally-accepted-definition-meta-subs.ctd-5" class="slide level2">
+<h2>Lack of a universally accepted definition &nbsp;&nbsp;&nbsp;</h2>
+<p>Marr’s three-level hierarchy of understanding information processing devices</p>
+<ol type="1">
+<li><strong>computational theory</strong> – abstract specification of the problem at hand and the overall goal.</li>
+<li><strong>representation and algorithm</strong> – implementation details and selection of an appropriate representation</li>
+<li><strong>hardware implementation</strong> – physical realisation of the explained problem</li>
+</ol>
+
+<aside class="notes">
+<ul>
+<li>These three tiers are only loosely related</li>
+<li>Some phenomena may be explained at only one or two of them</li>
+<li>Identify which of these levels need to be covered in each individual case to arrive at understanding</li>
+</ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+<aside><div>
+<p><span class="citation" data-cites="marr1982vision">(<a href="#/bibliography" role="doc-biblioref" onclick="">Marr 1982</a>)</span></p>
+</div></aside></section>
+<section id="lack-of-a-universally-accepted-definition-meta-subs.ctd-6" class="slide level2">
+<h2>Lack of a universally accepted definition &nbsp;&nbsp;&nbsp;</h2>
+<p>Understanding why birds fly cannot be achieved by only studying their feathers:</p>
+<blockquote>
+<p>In order to understand bird flight, we have to understand aerodynamics; only then do the structure of feathers and the different shapes of birds’ wings make sense.</p>
+</blockquote>
+</section>
+<section id="lack-of-a-universally-accepted-definition-meta-subs.ctd-7" class="slide level2">
+<h2>Lack of a universally accepted definition &nbsp;&nbsp;&nbsp;</h2>
+<p>Fidelity-based understanding</p>
+<ul>
+<li><strong>completeness</strong> – how truthful the understanding is overall (<em>generality</em>)</li>
+<li><strong>soundness</strong> – how accurate the understanding is for a particular phenomenon (<em>specificity</em>)</li>
+</ul>
+
+<aside class="notes">
+<ul>
+<li><p>Complete understanding can be applied to other domains</p></li>
+<li><p>The depth of understanding, i.e., the level of (over)simplification</p></li>
+<li><p>completeness without soundness is likely to be too broad, hence uninformative</p></li>
+<li><p>the opposite can be too specific to the same effect</p></li>
+</ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+<aside><div>
+<p><span class="citation" data-cites="kulesza2013too">(<a href="#/bibliography" role="doc-biblioref" onclick="">Kulesza et al. 2013</a>)</span></p>
+</div></aside></section>
+<section id="lack-of-a-universally-accepted-definition-meta-subs.ctd-8" class="slide level2">
+<h2>Lack of a universally accepted definition &nbsp;&nbsp;&nbsp;</h2>
+<p>Mental models withing the completeness–soundness landscape</p>
+<ul>
+<li><strong>functional</strong> – operationalisation without understanding</li>
+<li><strong>structural</strong> – appreciation of the underlying mechanism</li>
+</ul>
+
+<aside class="notes">
+<ul>
+<li>Electricity and light bulb scenario</li>
+</ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+<aside><div>
+<p><span class="citation" data-cites="kulesza2013too">(<a href="#/bibliography" role="doc-biblioref" onclick="">Kulesza et al. 2013</a>)</span></p>
+</div></aside></section>
+<section id="approaches-to-defining-xml-concepts" class="slide level2">
+<h2>Approaches to defining XML concepts</h2>
+<ul>
+<li>no definition</li>
+<li>inherently intuitive – <em>You know it when you see it!</em></li>
+<li>assuming terms are synonymous</li>
+</ul>
+</section>
+<section id="approaches-to-defining-xml-concepts-meta-subs.ctd" class="slide level2">
+<h2>Approaches to defining XML concepts &nbsp;&nbsp;&nbsp;</h2>
+<ul>
+<li><p>circular or tautological definitions</p>
+<ul>
+<li>“something is explainable when we can interpret it”</li>
+<li>“interpretability is making sense of ML models”</li>
+<li>“interpretable systems are explainable if their operations can be understood by humans”</li>
+<li>“intelligibility is the possibility to comprehended something”</li>
+</ul></li>
+<li><p>dictionary definitions</p>
+<ul>
+<li>to interpret is “to explain […] the meaning of”</li>
+<li>to explain is to “present in understandable terms”</li>
+</ul></li>
+</ul>
+</section>
+<section id="approaches-to-defining-xml-concepts-meta-subs.ctd-1" class="slide level2">
+<h2>Approaches to defining XML concepts &nbsp;&nbsp;&nbsp;</h2>
+<ul>
+<li><p>hierarchical and ontological definitions</p>
+<ul>
+<li>creating a web of connections</li>
+</ul></li>
+<li><p>component-based – pairings between keywords and technical component or properties</p>
+<ul>
+<li>data are understandable; models are transparent; predictions are explainable</li>
+<li>interpretability is determined by fidelity, brevity and relevance of the insights</li>
+</ul></li>
+</ul>
+<aside class="notes">
+<ul>
+<li>hierarchies and ontologies are difficult to parse, follow and apply</li>
+</ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section></section>
+<section>
+<section id="defining-explainability" class="title-slide slide level1 center">
+<h1>Defining Explainability</h1>
+
+</section>
+<section id="human-agnostic-definitions" class="slide level2">
+<h2>Human-agnostic definitions</h2>
+<ul>
+<li>(technical) desiderata of explainers</li>
+<li>(abstract) properties of explanations</li>
+</ul>
+</section>
+<section id="human-centred-definitions" class="slide level2">
+<h2>Human-centred definitions</h2>
+<ul>
+<li>the role and needs of (human) explainees</li>
+<li>the goal of explanations (with respect to explainees)</li>
+</ul>
+<div class="fragment">
+<br>
+<hr>
+<p><br></p>
+<ul>
+<li>The Chinese Room Theorem <span class="citation" data-cites="searle1980minds">(<a href="#/bibliography" role="doc-biblioref" onclick="">Searle 1980</a>)</span></li>
+</ul>
+<aside class="notes">
+<ul>
+<li>problem with simulatability</li>
+<li>replication-based definitions, more broadly</li>
+</ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</div>
+</section>
+<section id="terminology-key-concepts" class="slide level2">
+<h2>Terminology &amp; Key Concepts</h2>
+<ul>
+<li><strong>Transparency</strong> – <em>insight</em> (of arbitrary complexity) into operation of a system</li>
+<li><strong>Background Knowledge</strong> – implicit or explicit <em>exogenous information</em> encompassing (operational) <em>context</em> such as application area, stakeholder and audience (domain expertise)</li>
+<li><strong>Reasoning</strong> – <em>algorithmic</em> or <em>mental processing</em> of information</li>
+</ul>
+</section>
+<section id="definition" class="slide level2">
+<h2>Definition</h2>
+<p><span class="math display">\[
+\texttt{Explainability} \; =
+\]</span> <span class="math display">\[
+\underbrace{ \texttt{Reasoning} \left( \texttt{Transparency} \; | \; \texttt{Background Knowledge} \right)}_{\textit{understanding}}
+\]</span></p>
+
+<aside class="notes">
+<ul>
+<li>Explainability is a socially-grounded technology</li>
+<li>It provides insights that lead to understanding</li>
+<li>Understanding largely depends upon the explanation recipients, who come with a diverse range of background knowledge, experience, mental models and expectations (context)</li>
+<li>It is a process – a loop</li>
+</ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+<aside><div>
+<p><span class="citation" data-cites="sokol2021explainability">(<a href="#/bibliography" role="doc-biblioref" onclick="">Sokol and Flach 2021</a>)</span></p>
+</div></aside></section>
+<section id="goal" class="slide level2">
+<h2>Goal</h2>
+<p><br></p>
+<blockquote>
+<p>Explainability → <strong>explainee</strong> walking away with <strong>understanding</strong></p>
+</blockquote>
+<aside class="notes">
+<ul>
+<li>This notion both conceptualises explainability and fixes its evaluation criterion (as we will see in the next module)</li>
+<li>Note that it is not about <strong>task completion</strong> but <strong>understanding</strong></li>
+<li>Recall The Chinese Room Argument</li>
+</ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="understanding-explainability-transparency" class="slide level2">
+<h2>Understanding, explainability &amp; transparency</h2>
+<p><br></p>
+<blockquote>
+<p>A <strong>continuous spectrum</strong> rather than a binary property</p>
+</blockquote>
+<p><br></p>
+
+<img data-src="../../assets/figures/blackboxiness.svg" style="width:75.0%" alt="Shades of black-boxiness" class="r-stretch"><aside class="notes">
+<ul>
+<li><strong>Explainability is not a binary property; it is a continuous spectrum</strong></li>
+</ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 <!-- #%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#% --->
-<aside><div>
-<p>(<a href="../5_meta/rulefit.html"></a>) &nbsp;&nbsp;&nbsp; <a href="https://christophm.github.io/interpretable-ml-book/rulefit.html" class="uri">https://christophm.github.io/interpretable-ml-book/rulefit.html</a></p>
-</div></aside></section></section>
+</section></section>
+<section>
+<section id="examples" class="title-slide slide level1 center">
+<h1>Examples</h1>
+<aside class="notes">
+<ul>
+<li>transparency is different from explainability – both overcome opaqueness, but only the latter leads to understanding</li>
+</ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="linear-models" class="slide level2">
+<h2>Linear Models</h2>
+<p><span class="math display">\[
+f(\mathbf{x}) = 0.2 \;\; + \;\; 0.25 \times x_1 \;\; + \;\; 0.7 \times x_4 \;\; - \;\; 0.2 \times x_5 \;\; - \;\; 0.9 \times x_7
+\]</span></p>
+<p><br></p>
+<p><span class="math display">\[
+\mathbf{x} = (0.4, \ldots, 1, \frac{1}{2}, \ldots \frac{1}{3})
+\]</span></p>
+<div class="fragment">
+<p><br></p>
+<p><span class="math display">\[
+f(\mathbf{x}) = 0.2 \;\; \underbrace{+0.1}_{x_1} \;\; \underbrace{+0.7}_{x_4} \;\; \underbrace{-0.1}_{x_5} \;\; \underbrace{-0.3}_{x_7} \;\; = \;\; 0.6
+\]</span></p>
+<aside class="notes">
+<ul>
+<li><p>linear models are transparent given a reasonable number of features</p></li>
+<li><p>with the right ML and domain background knowledge they become explainable</p>
+<ul>
+<li>normalised features</li>
+<li>effect of feature correlation</li>
+<li>meaning of features and coefficients</li>
+</ul></li>
+</ul>
+<p>– the explainee can reason about their properties, leading to an explanation based on understanding - visualisation can help – refer back to XXX</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</div>
+</section>
+<section id="linear-models-meta-subs.ctd" class="slide level2">
+<h2>Linear Models &nbsp;&nbsp;&nbsp;</h2>
+
+<img data-src="definitions_files/figure-revealjs/cell-4-output-1.png" class="r-stretch quarto-figure-center"></section>
+<section id="linear-models-meta-subs.ctd-1" class="slide level2">
+<h2>Linear Models &nbsp;&nbsp;&nbsp;</h2>
+
+<img data-src="../../assets/figures/force-plot-x.svg" style="width:100.0%" alt="Force plot explanation" class="r-stretch quarto-figure-center"></section>
+<section id="decision-trees" class="slide level2">
+<h2>Decision Trees</h2>
+<div class="cell" data-execution_count="5">
+<div class="cell-output cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="definitions_files/figure-revealjs/cell-6-output-1.png" width="614" height="426"></p>
+</figure>
+</div>
+</div>
+</div>
+<aside class="notes">
+<ul>
+<li>visualisation of a shallow decision tree can be considered both transparent, and arguably explainable assuming that the explainee understands how to navigate its structure (ML background knowledge) and the features are meaningful (domain background knowledge);</li>
+<li>people were shown to believe that the feature used by the root-node split is the most important attribute <span class="citation" data-cites="bell2022s">(<a href="#/bibliography" role="doc-biblioref" onclick="">Bell et al. 2022</a>)</span></li>
+<li>it is up to the explainee to reason about these insights</li>
+</ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="decision-trees-meta-subs.ctd" class="slide level2">
+<h2>Decision Trees &nbsp;&nbsp;&nbsp;</h2>
+<div class="cell" data-execution_count="6">
+<div class="cell-output cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="definitions_files/figure-revealjs/cell-7-output-1.png" width="614" height="426"></p>
+</figure>
+</div>
+</div>
+</div>
+<aside class="notes">
+<ul>
+<li><p>when the size of a tree increases, its visualisation loses the explanatory power because many explainees become unable to process and reason about its structure</p></li>
+<li><p>restoring the explainability of a deep tree requires delegating the reasoning process to an algorithm that can digest its structure and output sought after insights in a concise representation</p></li>
+<li><p>for explaining a prediction, the tree structure can be traversed to identify a similar instance with a different prediction, e.g., as encoded by two neighbouring leaves with a shared parent</p></li>
+</ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+<!-- #%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#% --->
+</section></section>
 <section>
 <section id="wrap-up" class="title-slide slide level1 center">
 <h1>Wrap Up</h1>
 
 </section>
+<section id="summary" class="slide level2">
+<h2>Summary</h2>
+<ul>
+<li>Explainability is an elusive concept</li>
+<li>Its definition relies on the broadly-understood context</li>
+<li>It should be human-centred and goal-driven</li>
+<li>It should lead to understanding</li>
+</ul>
+</section>
 <section id="bibliography" class="slide level2 smaller scrollable">
 <h2>Bibliography</h2>
 <div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography">
-<div id="ref-poyiadzi2020face" class="csl-entry" role="doc-biblioentry">
-Poyiadzi, Rafael, Kacper Sokol, Raul Santos-Rodriguez, Tijl De Bie, and Peter Flach. 2020. <span>“<span>FACE</span>: <span>Feasible</span> and Actionable Counterfactual Explanations.”</span> In <em>Proceedings of the AAAI/ACM Conference on AI, Ethics, and Society</em>, 344–50.
+<div id="ref-arrieta2020explainable" class="csl-entry" role="doc-biblioentry">
+Arrieta, Alejandro Barredo, Natalia Dı́az-Rodrı́guez, Javier Del Ser, Adrien Bennetot, Siham Tabik, Alberto Barbado, Salvador Garcı́a, et al. 2020. <span>“Explainable Artificial Intelligence (<span>XAI</span>): <span>Concepts</span>, Taxonomies, Opportunities and Challenges Toward Responsible <span>AI</span>.”</span> <em>Information Fusion</em> 58: 82–115.
+</div>
+<div id="ref-bell2022s" class="csl-entry" role="doc-biblioentry">
+Bell, Andrew, Ian Solano-Kamaiko, Oded Nov, and Julia Stoyanovich. 2022. <span>“It’s Just Not That Simple: <span>An</span> Empirical Study of the Accuracy-Explainability Trade-Off in Machine Learning for Public Policy.”</span> In <em>2022 ACM Conference on Fairness, Accountability, and Transparency</em>, 248–66.
+</div>
+<div id="ref-biran2017explanation" class="csl-entry" role="doc-biblioentry">
+Biran, Or, and Courtenay Cotton. 2017. <span>“Explanation and Justification in Machine Learning: <span>A</span> Survey.”</span> In <em>IJCAI-17 Workshop on Explainable AI (XAI)</em>, 8:8–13. 1.
+</div>
+<div id="ref-biran2014justification" class="csl-entry" role="doc-biblioentry">
+Biran, Or, and Kathleen McKeown. 2014. <span>“Justification Narratives for Individual Classifications.”</span> In <em>Proceedings of the AutoML Workshop at ICML</em>, 2014:1–7.
+</div>
+<div id="ref-gilpin2018explaining" class="csl-entry" role="doc-biblioentry">
+Gilpin, Leilani H, David Bau, Ben Z Yuan, Ayesha Bajwa, Michael Specter, and Lalana Kagal. 2018. <span>“Explaining Explanations: <span>An</span> Overview of Interpretability of Machine Learning.”</span> In <em>2018 IEEE 5<sup>th</sup> International Conference on Data Science and Advanced Analytics (DSAA)</em>, 80–89. IEEE.
+</div>
+<div id="ref-kim2016examples" class="csl-entry" role="doc-biblioentry">
+Kim, Been, Rajiv Khanna, and Oluwasanmi O Koyejo. 2016. <span>“Examples Are Not Enough, Learn to Criticize! <span>Criticism</span> for Interpretability.”</span> In <em>Advances in Neural Information Processing Systems</em>, 2280–88.
+</div>
+<div id="ref-kulesza2013too" class="csl-entry" role="doc-biblioentry">
+Kulesza, Todd, Simone Stumpf, Margaret Burnett, Sherry Yang, Irwin Kwan, and Weng-Keen Wong. 2013. <span>“Too Much, Too Little, or Just Right? <span>Ways</span> Explanations Impact End Users’ Mental Models.”</span> In <em>Visual Languages and Human-Centric Computing (VL/HCC), 2013 IEEE Symposium on</em>, 3–10. IEEE.
+</div>
+<div id="ref-lipton2018mythos" class="csl-entry" role="doc-biblioentry">
+Lipton, Zachary C. 2018. <span>“The Mythos of Model Interpretability.”</span> <em>Communications of the ACM</em> 16 (3): 30:31–57. <a href="https://doi.org/10.1145/3236386.3241340">https://doi.org/10.1145/3236386.3241340</a>.
+</div>
+<div id="ref-marr1982vision" class="csl-entry" role="doc-biblioentry">
+Marr, David. 1982. <em>Vision: <span>A</span> Computational Investigation into the Human Representation and Processing of Visual Information</em>. The MIT Press.
+</div>
+<div id="ref-miller2019explanation" class="csl-entry" role="doc-biblioentry">
+Miller, Tim. 2019. <span>“Explanation in Artificial Intelligence: <span>Insights</span> from the Social Sciences.”</span> <em>Artificial Intelligence</em> 267: 1–38.
+</div>
+<div id="ref-rudin2019stop" class="csl-entry" role="doc-biblioentry">
+Rudin, Cynthia. 2019. <span>“Stop Explaining Black Box Machine Learning Models for High Stakes Decisions and Use Interpretable Models Instead.”</span> <em>Nature Machine Intelligence</em> 1 (5): 206–15.
+</div>
+<div id="ref-searle1980minds" class="csl-entry" role="doc-biblioentry">
+Searle, John R. 1980. <span>“Minds, Brains, and Programs.”</span> <em>Behavioral and Brain Sciences</em> 3 (3): 417–24.
+</div>
+<div id="ref-sokol2021explainability" class="csl-entry" role="doc-biblioentry">
+Sokol, Kacper, and Peter Flach. 2021. <span>“Explainability Is in the Mind of the Beholder: <span>Establishing</span> the Foundations of Explainable Artificial Intelligence.”</span> <em>arXiv Preprint arXiv:2112.14466</em>.
 </div>
 </div>
 </section>
@@ -911,6 +1037,7 @@ Poyiadzi, Rafael, Kacper Sokol, Raul Santos-Rodriguez, Tijl De Bie, and Peter Fl
 </div></aside></section>
 <section class="slide level2">
 
+<p>&nbsp;</p>
 
 <div class="footer footer-default">
 

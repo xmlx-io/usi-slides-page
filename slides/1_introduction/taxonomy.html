@@ -10,7 +10,7 @@
   <meta name="generator" content="quarto-1.2.313">
 
   <meta name="author" content="Kacper Sokol">
-  <title>Machine Learning Explainability: Exploring Automated Decision-Making Through Transparent Modelling and Peeking Inside Black Boxes - Introduction to Machine Learning Explainability</title>
+  <title>Machine Learning Explainability: Exploring Automated Decision-Making Through Transparent Modelling and Peeking Inside Black Boxes - Taxonomy of Explainable ML</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -27,6 +27,25 @@
       width: 0.8em;
       margin: 0 0.8em 0.2em -1.6em;
       vertical-align: middle;
+    }
+    div.csl-bib-body { }
+    div.csl-entry {
+      clear: both;
+    }
+    .hanging div.csl-entry {
+      margin-left:2em;
+      text-indent:-2em;
+    }
+    div.csl-left-margin {
+      min-width:2em;
+      float:left;
+    }
+    div.csl-right-inline {
+      margin-left:2em;
+      padding-left:1em;
+    }
+    div.csl-indent {
+      margin-left: 2em;
     }
   </style>
   <link rel="stylesheet" href="../../site_libs/revealjs/dist/theme/quarto.css" id="theme">
@@ -324,8 +343,8 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">Introduction to <br>Machine Learning Explainability</h1>
-  <p class="subtitle">Part I</p>
+  <h1 class="title">Taxonomy of Explainable ML</h1>
+  <p class="subtitle">(Explainability Fact Sheets)</p>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
@@ -339,16 +358,21 @@ Kacper Sokol
 <nav role="doc-toc"> 
 <h2 id="toc-title">Topics</h2>
 <ul>
-<li><a href="#/taxonomy-of-explainable-ai" id="/toc-taxonomy-of-explainable-ai">Taxonomy of Explainable AI</a></li>
-<li><a href="#/what-is-explainability" id="/toc-what-is-explainability">What Is Explainability?</a></li>
-<li><a href="#/evaluating-explainability" id="/toc-evaluating-explainability">Evaluating Explainability</a></li>
+<li><a href="#/dimensions-of-explainability" id="/toc-dimensions-of-explainability">Dimensions of Explainability</a></li>
+<li><a href="#/f-functional-requirements" id="/toc-f-functional-requirements">[F] Functional Requirements</a></li>
+<li><a href="#/u-usability-requirements" id="/toc-u-usability-requirements">[U] Usability Requirements</a></li>
+<li><a href="#/o-operational-requirements" id="/toc-o-operational-requirements">[O] Operational Requirements</a></li>
+<li><a href="#/s-safety-requirements" id="/toc-s-safety-requirements">[S] Safety Requirements</a></li>
+<li><a href="#/v-validation-requirements" id="/toc-v-validation-requirements">[V] Validation Requirements</a></li>
+<li><a href="#/examples" id="/toc-examples">Examples</a></li>
+<li><a href="#/wrap-up" id="/toc-wrap-up">Wrap Up</a></li>
 </ul>
 </nav>
 </section>
 <section>
-<section id="taxonomy-of-explainable-ai" class="title-slide slide level1 center">
-<h1>Taxonomy of Explainable AI</h1>
-<p><strong>(Explainability Fact Sheets)</strong></p>
+<section id="dimensions-of-explainability" class="title-slide slide level1 center">
+<h1>Dimensions of Explainability</h1>
+
 </section>
 <section class="slide level2">
 
@@ -362,7 +386,7 @@ Kacper Sokol
 </ol>
 
 <aside><div>
-<p>Sokol and Flach, 2020. Explainability Fact Sheets: A Framework for Systematic Assessment of Explainable Approaches</p>
+<p><span class="citation" data-cites="sokol2020explainability">(<a href="#/bibliography" role="doc-biblioref" onclick="">Sokol and Flach 2020</a>)</span></p>
 </div></aside></section>
 <section class="slide level2">
 
@@ -400,10 +424,13 @@ inspection, compliance, impact &amp; certification</li>
 </section>
 <section id="running-example-counterfactual-explanations" class="slide level2">
 <h2>Running Example: Counterfactual Explanations</h2>
+<p><br></p>
 <div class="columns">
 <div class="column" style="width:50%;">
+<p><br></p>
 <blockquote>
-<p>Had you been <strong>10 years younger</strong>, your loan application would be <strong>accepted</strong>.</p>
+<p>Had you been <strong>10 years younger</strong>,<br>
+your loan application would be <strong>accepted</strong>.</p>
 </blockquote>
 </div><div class="column" style="width:45%;">
 <div class="quarto-figure quarto-figure-center">
@@ -413,12 +440,18 @@ inspection, compliance, impact &amp; certification</li>
 </div>
 </div>
 </div>
+<!-- #%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#% --->
 <!--
 ## (F) Functional Requirements
 -->
+</section></section>
+<section>
+<section id="f-functional-requirements" class="title-slide slide level1 center">
+<h1>[F] Functional Requirements</h1>
+
 </section>
-<section id="f-functional-requirements" class="slide level2">
-<h2>(F) Functional Requirements</h2>
+<section class="slide level2">
+
 <div class="columns">
 <div class="column" style="width:50%;">
 <ul>
@@ -574,12 +607,18 @@ inspection, compliance, impact &amp; certification</li>
 </tr>
 
 </tbody></table>
+<!-- #%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#% --->
 <!--
 ## (U) Usability Requirements
 -->
+</section></section>
+<section>
+<section id="u-usability-requirements" class="title-slide slide level1 center">
+<h1>[U] Usability Requirements</h1>
+
 </section>
-<section id="u-usability-requirements" class="slide level2">
-<h2>(U) Usability Requirements</h2>
+<section class="slide level2">
+
 <div class="columns">
 <div class="column" style="width:50%;">
 <ul>
@@ -731,12 +770,18 @@ inspection, compliance, impact &amp; certification</li>
 </tr>
 
 </tbody></table>
+<!-- #%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#% --->
 <!--
 ## (O) Operational Requirements
 -->
+</section></section>
+<section>
+<section id="o-operational-requirements" class="title-slide slide level1 center">
+<h1>[O] Operational Requirements</h1>
+
 </section>
-<section id="o-operational-requirements" class="slide level2">
-<h2>(O) Operational Requirements</h2>
+<section class="slide level2">
+
 <div class="columns">
 <div class="column" style="width:50%;">
 <ul>
@@ -898,12 +943,18 @@ inspection, compliance, impact &amp; certification</li>
 </tr>
 
 </tbody></table>
+<!-- #%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#% --->
 <!--
 ## (S) Safety Requirements
 -->
+</section></section>
+<section>
+<section id="s-safety-requirements" class="title-slide slide level1 center">
+<h1>[S] Safety Requirements</h1>
+
 </section>
-<section id="s-safety-requirements" class="slide level2">
-<h2>(S) Safety Requirements</h2>
+<section class="slide level2">
+
 <ul>
 <li><strong>S1</strong> Information Leakage</li>
 <li><strong>S2</strong> Explanation Misuse</li>
@@ -949,12 +1000,18 @@ inspection, compliance, impact &amp; certification</li>
 </tr>
 
 </tbody></table>
+<!-- #%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#% --->
 <!--
 ## (V) Validation Requirements
 -->
+</section></section>
+<section>
+<section id="v-validation-requirements" class="title-slide slide level1 center">
+<h1>[V] Validation Requirements</h1>
+
 </section>
-<section id="v-validation-requirements" class="slide level2">
-<h2>(V) Validation Requirements</h2>
+<section class="slide level2">
+
 <ul>
 <li><strong>V1</strong> User Studies</li>
 <li><strong>V2</strong> Synthetic Experiments</li>
@@ -984,13 +1041,16 @@ inspection, compliance, impact &amp; certification</li>
 </tr>
 
 </tbody></table>
-</section>
-<section id="examples" class="slide level2">
-<h2>Examples</h2>
-</section>
-<section class="slide level2">
+<!-- #%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#% --->
+</section></section>
+<section>
+<section id="examples" class="title-slide slide level1 center">
+<h1>Examples</h1>
 
-<h3 id="researchers"><span class="emoji" data-emoji="woman_scientist">👩‍🔬</span> &nbsp; Researcher’s &nbsp; <span class="emoji" data-emoji="tophat">🎩</span></h3>
+</section>
+<section id="researchers" class="slide level2">
+<h2><span class="emoji" data-emoji="woman_scientist">👩‍🔬</span> &nbsp; Researcher’s &nbsp; <span class="emoji" data-emoji="tophat">🎩</span></h2>
+<p><br></p>
 <ul>
 <li><span class="emoji" data-emoji="mag">🔍</span> only works with predictive models that <strong>output numbers</strong> (<strong>F2</strong> <em>Problem Type</em>)
 <ul>
@@ -999,20 +1059,19 @@ inspection, compliance, impact &amp; certification</li>
 </ul></li>
 </ul>
 </section>
-<section class="slide level2">
-
+<section id="researchers-meta-subs.ctd" class="slide level2">
+<h2><span class="emoji" data-emoji="woman_scientist">👩‍🔬</span> &nbsp; Researcher’s &nbsp; <span class="emoji" data-emoji="tophat">🎩</span> &nbsp;&nbsp;&nbsp;</h2>
+<p><br></p>
 <ul>
 <li><span class="emoji" data-emoji="mag">🔍</span> only works with <strong>numerical features</strong> (<strong>F8</strong> <em>Compatible Feature Types</em>)
 <ul>
 <li>If data have categorical features, is applying one-hot encoding suitable?</li>
 </ul></li>
 </ul>
-<!--
-### :woman_scientist: &nbsp; Researcher's &nbsp; :tophat:
--->
 </section>
-<section class="slide level2">
-
+<section id="researchers-meta-subs.ctd-1" class="slide level2">
+<h2><span class="emoji" data-emoji="woman_scientist">👩‍🔬</span> &nbsp; Researcher’s &nbsp; <span class="emoji" data-emoji="tophat">🎩</span> &nbsp;&nbsp;&nbsp;</h2>
+<p><br></p>
 <ul>
 <li><span class="emoji" data-emoji="mag">🔍</span> is <strong>model agnostic</strong> (<strong>F6</strong> <em>Applicable Model Class</em>)
 <ul>
@@ -1024,8 +1083,9 @@ inspection, compliance, impact &amp; certification</li>
   - Can :mag: be retro-fitted?
 -->
 </section>
-<section class="slide level2">
-
+<section id="researchers-meta-subs.ctd-2" class="slide level2">
+<h2><span class="emoji" data-emoji="woman_scientist">👩‍🔬</span> &nbsp; Researcher’s &nbsp; <span class="emoji" data-emoji="tophat">🎩</span> &nbsp;&nbsp;&nbsp;</h2>
+<p><br></p>
 <ul>
 <li><p><span class="emoji" data-emoji="mag">🔍</span> has nice <strong>theoretical properties</strong> (<strong>F9</strong> <em>Caveats and Assumptions</em>)</p>
 <blockquote>
@@ -1037,16 +1097,17 @@ inspection, compliance, impact &amp; certification</li>
 </ul></li>
 </ul>
 </section>
-<section class="slide level2">
-
-<h3 id="engineers"><span class="emoji" data-emoji="man_technologist">👨‍💻</span> &nbsp; Engineer’s &nbsp; <span class="emoji" data-emoji="tophat">🎩</span></h3>
+<section id="engineers" class="slide level2">
+<h2><span class="emoji" data-emoji="man_technologist">👨‍💻</span> &nbsp; Engineer’s &nbsp; <span class="emoji" data-emoji="tophat">🎩</span></h2>
+<p><br></p>
 <ul>
 <li><span class="emoji" data-emoji="mag">🔍</span> explains <strong>song recommendations</strong> (<strong>O7</strong> <em>Function of the Explanation</em>)</li>
 <li><span class="emoji" data-emoji="mag">🔍</span> explains how users’ <strong>listening habits</strong> and <strong>interactions</strong> with the service influence the recommendations (<strong>O10</strong> <em>Provenance</em> &amp; <strong>U5</strong> <em>Actionability</em>)</li>
 </ul>
 </section>
-<section class="slide level2">
-
+<section id="engineers-meta-subs.ctd" class="slide level2">
+<h2><span class="emoji" data-emoji="man_technologist">👨‍💻</span> &nbsp; Engineer’s &nbsp; <span class="emoji" data-emoji="tophat">🎩</span> &nbsp;&nbsp;&nbsp;</h2>
+<p><br></p>
 <ul>
 <li>How does <span class="emoji" data-emoji="mag">🔍</span> scale? (<strong>F5</strong> <em>Computational Complexity</em>)
 <ul>
@@ -1054,12 +1115,10 @@ inspection, compliance, impact &amp; certification</li>
 <li>Will the computational complexity of the algorithm introduce any <strong>lags</strong>?</li>
 </ul></li>
 </ul>
-<!--
-### :man_technologist: &nbsp; Engineer's &nbsp; :tophat:
--->
 </section>
-<section class="slide level2">
-
+<section id="engineers-meta-subs.ctd-1" class="slide level2">
+<h2><span class="emoji" data-emoji="man_technologist">👨‍💻</span> &nbsp; Engineer’s &nbsp; <span class="emoji" data-emoji="tophat">🎩</span> &nbsp;&nbsp;&nbsp;</h2>
+<p><br></p>
 <ul>
 <li><strong>Music listeners</strong> are the recipients of the explanations (<strong>O6</strong> <em>Explanation Audience</em>)
 <ul>
@@ -1068,17 +1127,18 @@ inspection, compliance, impact &amp; certification</li>
 <li>They should be familiar with <strong>general music concepts</strong> (genre, pace, etc.) to appreciate the explanations (<strong>O4</strong> <em>Explanation Domain</em>)</li>
 </ul>
 </section>
-<section class="slide level2">
-
+<section id="engineers-meta-subs.ctd-2" class="slide level2">
+<h2><span class="emoji" data-emoji="man_technologist">👨‍💻</span> &nbsp; Engineer’s &nbsp; <span class="emoji" data-emoji="tophat">🎩</span> &nbsp;&nbsp;&nbsp;</h2>
+<p><br></p>
 <ul>
 <li>The explanations will be delivered as <strong>snippets of text</strong> (<strong>O2</strong> <em>Explanatory Medium</em>)</li>
 <li>They will include a single <strong>piece of information</strong> (<strong>U11</strong> <em>Parsimony</em>)</li>
 <li>They are <strong>one-directional</strong> communication (<strong>O3</strong> <em>System Interaction</em> &amp; <strong>U4</strong> <em>Interactiveness</em>)</li>
 </ul>
 </section>
-<section class="slide level2">
-
-<h3 id="auditors"><span class="emoji" data-emoji="female_detective">🕵️‍♀️</span> &nbsp; Auditor’s &nbsp; <span class="emoji" data-emoji="tophat">🎩</span></h3>
+<section id="auditors-meta-subs.ctd" class="slide level2">
+<h2><span class="emoji" data-emoji="female_detective">🕵️‍♀️</span> &nbsp; Auditor’s &nbsp; <span class="emoji" data-emoji="tophat">🎩</span> &nbsp;&nbsp;&nbsp;</h2>
+<p><br></p>
 <ul>
 <li>Are the explanations <strong>sound</strong> (<strong>U1</strong>) and <strong>complete</strong> (<strong>U2</strong>)?
 <ul>
@@ -1091,8 +1151,9 @@ inspection, compliance, impact &amp; certification</li>
 </ul></li>
 </ul>
 </section>
-<section class="slide level2">
-
+<section id="auditors-meta-subs.ctd-1" class="slide level2">
+<h2><span class="emoji" data-emoji="female_detective">🕵️‍♀️</span> &nbsp; Auditor’s &nbsp; <span class="emoji" data-emoji="tophat">🎩</span> &nbsp;&nbsp;&nbsp;</h2>
+<p><br></p>
 <ul>
 <li>Will I get the <strong>same explanation</strong> tomorrow? (<strong>S3</strong> <em>Explanation Invariance</em>)
 <ul>
@@ -1100,12 +1161,10 @@ inspection, compliance, impact &amp; certification</li>
 <li>Random effects within the <span class="emoji" data-emoji="mag">🔍</span> algorithm</li>
 </ul></li>
 </ul>
-<!--
-### :female_detective: &nbsp; Auditor's &nbsp; :tophat:
--->
 </section>
-<section class="slide level2">
-
+<section id="auditors-meta-subs.ctd-2" class="slide level2">
+<h2><span class="emoji" data-emoji="female_detective">🕵️‍♀️</span> &nbsp; Auditor’s &nbsp; <span class="emoji" data-emoji="tophat">🎩</span> &nbsp;&nbsp;&nbsp;</h2>
+<p><br></p>
 <ul>
 <li>Does the explainer <strong>leak any sensitive information</strong>? (<strong>S1</strong> <em>Information Leakage</em>)
 <ul>
@@ -1117,8 +1176,9 @@ inspection, compliance, impact &amp; certification</li>
 <li>Why don’t I <strong>“round up”</strong> my income the next time? (<strong>S2</strong> <em>Explanation Misuse</em>)</li>
 </ul>
 </section>
-<section class="slide level2">
-
+<section id="auditors-meta-subs.ctd-3" class="slide level2">
+<h2><span class="emoji" data-emoji="female_detective">🕵️‍♀️</span> &nbsp; Auditor’s &nbsp; <span class="emoji" data-emoji="tophat">🎩</span> &nbsp;&nbsp;&nbsp;</h2>
+<p><br></p>
 <ul>
 <li>Was <span class="emoji" data-emoji="mag">🔍</span> <strong>validated</strong> for the problem class that it is being deployed on? (<strong>V2</strong> <em>Synthetic Validation</em>)</li>
 <li>Does <span class="emoji" data-emoji="mag">🔍</span> <strong>improve users’ understanding</strong>? (<strong>V1</strong> <em>User Studies</em>)</li>
@@ -1126,12 +1186,22 @@ inspection, compliance, impact &amp; certification</li>
 </section>
 <section id="lime-explainability-fact-sheet" class="slide level2">
 <h2>LIME Explainability Fact Sheet</h2>
+<p><br></p>
 
-<img data-src="../../assets/figures/lime_fact-sheet.png" style="width:75.0%" alt="LIME explainability fact sheet" class="r-stretch quarto-figure-center"></section>
+<!-- #%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#% --->
+<img data-src="../../assets/figures/lime_fact-sheet.png" style="width:75.0%" alt="LIME explainability fact sheet" class="r-stretch quarto-figure-center"></section></section>
+<section>
+<section id="wrap-up" class="title-slide slide level1 center">
+<h1>Wrap Up</h1>
+
+</section>
 <section id="challenges" class="slide level2">
 <h2>Challenges</h2>
 <ul>
 <li>The desiderata list is neither <strong>exhaustive</strong> nor <strong>prescriptive</strong></li>
+</ul>
+<div class="fragment">
+<ul>
 <li>Some properties are <strong>incompatible</strong> or <strong>competing</strong> – choose wisely and justify your choices
 <ul>
 <li>Should I focus more on property F42 or F44?</li>
@@ -1141,119 +1211,59 @@ inspection, compliance, impact &amp; certification</li>
 <ul>
 <li>E.g., coherence with the user’s mental model</li>
 </ul></li>
+</ul>
+</div>
+<div class="fragment">
+<ul>
 <li>The taxonomy <strong>does not define explainability</strong></li>
 </ul>
-</section></section>
-<section>
-<section id="what-is-explainability" class="title-slide slide level1 center">
-<h1>What Is Explainability?</h1>
-<p><strong>(You know it when you see it!)</strong></p>
+<aside class="notes">
+<ul>
+<li>We will try to define explainability in a separate module</li>
+</ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</div>
 </section>
-<section id="lack-of-a-universally-accepted-definition" class="slide level2">
-<h2>Lack of a universally accepted definition</h2>
-<!-- **Explainability lacks a universally accepted definition** -->
+<section id="summary" class="slide level2">
+<h2>Summary</h2>
 <ul>
-<li><strong>Simulatability</strong><br>
-(<em>Lipton, 2018. The mythos of model interpretability</em>)</li>
-<li><strong>The Chinese Room Theorem</strong><br>
-(<em>Searle, 1980. Minds, brains, and programs</em>)</li>
-<li><strong>Mental Models</strong><br>
-(<em>Kulesza et al., 2013. Too much, too little, or just right? Ways explanations impact end users’ mental models</em>)
-<ul>
-<li><strong>Functional</strong> – operationalisation without understanding</li>
-<li><strong>Structural</strong> – appreciation of the underlying mechanism</li>
-</ul></li>
+<li>Explainability is characterised by a <em>broad range</em> of <em>diverse</em> properties</li>
+<li>Desiderata include <em>social</em> and <em>technical</em> aspects of explainability</li>
+<li>Having a readily available list of properties helps to better design XML systems</li>
 </ul>
 </section>
-<section id="defining-explainability" class="slide level2">
-<h2>Defining explainability</h2>
-<p><span class="math display">\[
-\texttt{Explainability} \; =
-\]</span> <span class="math display">\[
-\underbrace{ \texttt{Reasoning} \left( \texttt{Transparency} \; | \; \texttt{Background Knowledge} \right)}_{\textit{understanding}}
-\]</span></p>
-<ul>
-<li><em>Transparency</em> – <strong>insight</strong> (of arbitrary complexity) into operation of a system</li>
-<li><em>Background Knowledge</em> – implicit or explicit <strong>exogenous information</strong></li>
-<li><em>Reasoning</em> – <strong>algorithmic</strong> or <strong>mental processing</strong> of information</li>
-</ul>
+<section id="bibliography" class="slide level2 smaller scrollable">
+<h2>Bibliography</h2>
+<div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography">
+<div id="ref-sokol2020explainability" class="csl-entry" role="doc-biblioentry">
+Sokol, Kacper, and Peter Flach. 2020. <span>“Explainability Fact Sheets: <span>A</span> Framework for Systematic Assessment of Explainable Approaches.”</span> In <em>Proceedings of the 2020 Conference on Fairness, Accountability, and Transparency</em>, 56–67.
+</div>
+</div>
+</section>
+<section id="questions" class="slide level2">
+<h2>Questions</h2>
+<center style="font-size: 750%;">
+<p></p>
+</center>
 
 <aside><div>
-<p>Sokol and Flach, 2021. Explainability Is in the Mind of the Beholder: Establishing the Foundations of Explainable Artificial Intelligence</p>
+<p><a href="mailto:kacper.sokol@rmit.edu.au">kacper.sokol@rmit.edu.au</a> <br> <a href="mailto:k.sokol@bristol.ac.uk">k.sokol@bristol.ac.uk</a></p>
 </div></aside></section>
 <section class="slide level2">
 
-<blockquote>
-<p>Explainability → <strong>explainee</strong> walking away with <strong>understanding</strong></p>
-</blockquote>
-</section>
-<section id="understanding-explainability-transparency" class="slide level2">
-<h2>Understanding, explainability &amp; transparency</h2>
-<!-- **Explainability is not a binary property; it is a continuous spectrum.** -->
-<p><br></p>
-<p>A <strong>continuous spectrum</strong> rather than a binary property</p>
-<p><br></p>
+<p>&nbsp;</p>
 
-<img data-src="../../assets/figures/blackboxiness.svg" style="width:75.0%" alt="Shades of black-boxiness" class="r-stretch"></section></section>
-<section>
-<section id="evaluating-explainability" class="title-slide slide level1 center">
-<h1>Evaluating Explainability</h1>
-
-</section>
-<section id="automated-decision-making" class="slide level2">
-<h2>Automated Decision-making</h2>
-<!-- **Automated Decision-making** -->
-<p><br></p>
-
-<img data-src="../../assets/figures/val-automated-decisions.svg" style="width:75.0%" alt="Automated decision-making workflow" class="r-stretch"></section>
-<section id="naïve-view" class="slide level2">
-<h2>Naïve view</h2>
-<p><br></p>
-
-<img data-src="../../assets/figures/val-current.svg" style="width:75.0%" alt="Current validation" class="r-stretch"></section>
-<section id="evaluation-tiers" class="slide level2">
-<h2>Evaluation Tiers</h2>
-<table>
-<thead>
-<tr class="header">
-<th></th>
-<th>Humans</th>
-<th>Task</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Application-grounded Evaluation</td>
-<td>Real Humans</td>
-<td>Real Tasks</td>
-</tr>
-<tr class="even">
-<td>Human-grounded Evaluation</td>
-<td>Real Humans</td>
-<td>Simple Tasks</td>
-</tr>
-<tr class="odd">
-<td>Functionally-grounded Evaluation</td>
-<td>No Real Humans</td>
-<td>Proxy Tasks</td>
-</tr>
-</tbody>
-</table>
-
-<aside><div>
-<p>Kim and Doshi-Velez, 2017. Towards A Rigorous Science of Interpretable Machine Learning</p>
-</div></aside></section>
-<section id="explanatory-insight-presentation-medium" class="slide level2">
-<h2>Explanatory insight &amp; presentation medium</h2>
-<p><br></p>
-
-<img data-src="../../assets/figures/val-proposed1.svg" style="width:50.0%" alt="Proposed validation 1" class="r-stretch quarto-figure-center"></section>
-<section id="phenomenon-explanation" class="slide level2">
-<h2>Phenomenon &amp; explanation</h2>
-<p><br></p>
-
-
-<img data-src="../../assets/figures/val-proposed2.svg" style="width:25.0%" alt="Proposed validation 2" class="r-stretch quarto-figure-center"><div class="footer footer-default">
+<div class="footer footer-default">
 
 </div>
 </section></section>

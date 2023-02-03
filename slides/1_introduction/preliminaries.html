@@ -359,7 +359,6 @@ Kacper Sokol
 <ul>
 <li><a href="#/brief-history-of-explainability" id="/toc-brief-history-of-explainability">Brief History of Explainability</a></li>
 <li><a href="#/why-we-need-explainability" id="/toc-why-we-need-explainability">Why We Need Explainability</a></li>
-<li><a href="#/example-of-explainability" id="/toc-example-of-explainability">Example of Explainability</a></li>
 <li><a href="#/explanation-types" id="/toc-explanation-types">Explanation Types</a></li>
 <li><a href="#/important-developments" id="/toc-important-developments">Important Developments</a></li>
 <li><a href="#/useful-resources" id="/toc-useful-resources">Useful Resources</a></li>
@@ -594,34 +593,6 @@ Kacper Sokol
 <p><span class="citation" data-cites="langer1978mindlessness">(<a href="#/bibliography" role="doc-biblioref" onclick="">Langer, Blank, and Chanowitz 1978</a>)</span></p>
 </div></aside></section></section>
 <section>
-<section id="example-of-explainability" class="title-slide slide level1 center">
-<h1>Example of Explainability</h1>
-
-</section>
-<section class="slide level2">
-
-<p><span class="math display">\[
-f(\mathbf{x}) = 0.2 \;\; + \;\; 0.25 \times x_1 \;\; + \;\; 0.7 \times x_4 \;\; - \;\; 0.2 \times x_5 \;\; - \;\; 0.9 \times x_7
-\]</span> <br> <span class="math display">\[
-\mathbf{x} = (0.4, \ldots, 1, \frac{1}{2}, \ldots \frac{1}{3})
-\]</span></p>
-<div class="fragment">
-<p><br></p>
-<p><span class="math display">\[
-f(\mathbf{x}) = 0.2 \;\; \underbrace{+0.1}_{x_1} \;\; \underbrace{+0.7}_{x_4} \;\; \underbrace{-0.1}_{x_5} \;\; \underbrace{-0.3}_{x_7} \;\; = \;\; 0.6
-\]</span></p>
-</div>
-</section>
-<section class="slide level2">
-
-
-<img data-src="preliminaries_files/figure-revealjs/cell-6-output-1.png" class="r-stretch quarto-figure-center"></section>
-<section class="slide level2">
-
-
-<!-- #%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#% --->
-<img data-src="../../assets/figures/force-plot-x.svg" style="width:100.0%" alt="Force plot explanation" class="r-stretch quarto-figure-center"></section></section>
-<section>
 <section id="explanation-types" class="title-slide slide level1 center">
 <h1>Explanation Types</h1>
 <aside class="notes">
@@ -649,7 +620,8 @@ f(\mathbf{x}) = 0.2 \;\; \underbrace{+0.1}_{x_1} \;\; \underbrace{+0.7}_{x_4} \;
 </ul>
 <aside class="notes">
 <ul>
-<li>These techniques can be <strong>model-specific</strong> or <strong>model-agnostic</strong> (based on input–output paris / observations)</li>
+<li><p><strong>Post-hoc</strong> build an understandable model of the relation between <em>inputs</em> and <em>outputs</em></p></li>
+<li><p>These techniques can be <strong>model-specific</strong> or <strong>model-agnostic</strong> (based on input–output paris / observations)</p></li>
 </ul>
 <style type="text/css">
         span.MJX_Assistive_MathML {
@@ -691,6 +663,33 @@ f(\mathbf{x}) = 0.2 \;\; \underbrace{+0.1}_{x_1} \;\; \underbrace{+0.7}_{x_4} \;
           display:block!important;
       }</style></aside>
 </section>
+<section id="explanation-domain" class="slide level2">
+<h2>Explanation Domain</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><strong>Original domain</strong><br>
+<img data-src="../../assets/figures/img_exp_og.png" style="width:55.0%" data-fig-align="center" alt="Original domain"></p>
+</div><div class="column" style="width:50%;">
+<p><strong>Transformed domain</strong><br>
+<img data-src="../../assets/figures/img_exp_bar.png" style="width:50.0%" data-fig-align="center" alt="Transformed domain"></p>
+</div>
+</div>
+<aside class="notes">
+<ul>
+<li>Explanation domain is linked to explanation provenance</li>
+</ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
 <section id="explanation-types-1" class="slide level2">
 <h2>Explanation Types</h2>
 <ul>
@@ -705,7 +704,87 @@ f(\mathbf{x}) = 0.2 \;\; \underbrace{+0.1}_{x_1} \;\; \underbrace{+0.7}_{x_4} \;
 </ul>
 <aside class="notes">
 <ul>
-<li><p>The categories are not clear cut; a <strong>linear model</strong> explained through its coefficients is both <strong>model-based</strong> and <strong>feature-based</strong></p></li>
+<li>The categories are not clear cut; a <strong>linear model</strong> explained through its coefficients is both <strong>model-based</strong> and <strong>feature-based</strong></li>
+</ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</div>
+</section>
+<section id="explanation-family" class="slide level2">
+<h2>Explanation Family</h2>
+<ul>
+<li><strong>associations between antecedent and consequent</strong></li>
+</ul>
+<div class="columns">
+<div class="column" style="width:65%;">
+<ul>
+<li>feature importance</li>
+<li>feature attribution / influence</li>
+<li>rules</li>
+</ul>
+</div><div class="column fragment" style="width:35%;">
+<ul>
+<li>exemplars (prototypes &amp; criticisms)</li>
+</ul>
+</div>
+</div>
+<aside class="notes">
+<ul>
+<li>Alternative classification of explanation types</li>
+</ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="explanation-family-meta-subs.ctd" class="slide level2">
+<h2>Explanation Family &nbsp;&nbsp;&nbsp;</h2>
+<ul>
+<li><p><strong>contrasts and differences</strong></p>
+<ul>
+<li>(non-causal) counterfactuals<br>
+i.e., contrastive statements</li>
+<li>prototypes &amp; criticisms</li>
+</ul></li>
+</ul>
+</section>
+<section id="explanation-family-meta-subs.ctd-1" class="slide level2">
+<h2>Explanation Family &nbsp;&nbsp;&nbsp;</h2>
+<ul>
+<li><p><strong>causal mechanisms</strong></p>
+<ul>
+<li>causal counterfactuals</li>
+<li>causal chains</li>
+<li>full causal model</li>
+</ul></li>
+</ul>
+</section>
+<section id="explanatory-medium" class="slide level2">
+<h2>Explanatory Medium</h2>
+<ul>
+<li>(statistical / numerical) summarisation</li>
+<li>visualisation</li>
+<li>textualisation</li>
+<li>formal argumentation</li>
+</ul>
+<aside class="notes">
+<ul>
 <li><p>These insights can be <strong>communicated via different media</strong> (as we will see later)</p>
 <ul>
 <li>numerical summarisation – a single number or their collection (e.g., a table)</li>
@@ -724,7 +803,17 @@ f(\mathbf{x}) = 0.2 \;\; \underbrace{+0.1}_{x_1} \;\; \underbrace{+0.7}_{x_4} \;
           overflow: hidden!important;
           display:block!important;
       }</style></aside>
-</div>
+</section>
+<section id="communication-of-explanations" class="slide level2">
+<h2>Communication of Explanations</h2>
+<ul>
+<li><p>Static artefact</p></li>
+<li><p>Interactive (explanatory) protocol</p>
+<ul>
+<li><del>interactive interface</del></li>
+<li>interactive explanation</li>
+</ul></li>
+</ul>
 </section>
 <section id="explainability-scope" class="slide level2">
 <h2>Explainability Scope</h2>

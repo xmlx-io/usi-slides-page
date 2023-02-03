@@ -10,7 +10,7 @@
   <meta name="generator" content="quarto-1.2.313">
 
   <meta name="author" content="Kacper Sokol">
-  <title>Machine Learning Explainability: Exploring Automated Decision-Making Through Transparent Modelling and Peeking Inside Black Boxes - Introduction to Machine Learning Explainability</title>
+  <title>Machine Learning Explainability: Exploring Automated Decision-Making Through Transparent Modelling and Peeking Inside Black Boxes - Human-Centred Explainability</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -27,6 +27,25 @@
       width: 0.8em;
       margin: 0 0.8em 0.2em -1.6em;
       vertical-align: middle;
+    }
+    div.csl-bib-body { }
+    div.csl-entry {
+      clear: both;
+    }
+    .hanging div.csl-entry {
+      margin-left:2em;
+      text-indent:-2em;
+    }
+    div.csl-left-margin {
+      min-width:2em;
+      float:left;
+    }
+    div.csl-right-inline {
+      margin-left:2em;
+      padding-left:1em;
+    }
+    div.csl-indent {
+      margin-left: 2em;
     }
   </style>
   <link rel="stylesheet" href="../../site_libs/revealjs/dist/theme/quarto.css" id="theme">
@@ -324,8 +343,7 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">Introduction to <br>Machine Learning Explainability</h1>
-  <p class="subtitle">Part II</p>
+  <h1 class="title">Human-Centred Explainability</h1>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
@@ -339,183 +357,443 @@ Kacper Sokol
 <nav role="doc-toc"> 
 <h2 id="toc-title">Topics</h2>
 <ul>
-<li><a href="#/classification-of-explanations" id="/toc-classification-of-explanations">Classification of Explanations</a></li>
-<li><a href="#/explanation-modalities" id="/toc-explanation-modalities">Explanation Modalities</a></li>
-<li><a href="#/examples-of-explanations" id="/toc-examples-of-explanations">Examples of Explanations</a></li>
-<li><a href="#/data-explainability" id="/toc-data-explainability">Data Explainability</a></li>
-<li><a href="#/transparent-modelling" id="/toc-transparent-modelling">Transparent Modelling</a></li>
-<li><a href="#/post-hoc-explainability" id="/toc-post-hoc-explainability">Post-hoc Explainability</a></li>
+<li><a href="#/inmates-running-the-asylum" id="/toc-inmates-running-the-asylum">Inmates Running the Asylum</a></li>
+<li><a href="#/contrastive-statements" id="/toc-contrastive-statements">Contrastive Statements</a></li>
+<li><a href="#/social-process" id="/toc-social-process">Social Process</a></li>
+<li><a href="#/wrap-up" id="/toc-wrap-up">Wrap Up</a></li>
 </ul>
 </nav>
 </section>
 <section>
-<section id="classification-of-explanations" class="title-slide slide level1 center">
-<h1>Classification of Explanations</h1>
+<section id="inmates-running-the-asylum" class="title-slide slide level1 center">
+<h1>Inmates Running the Asylum</h1>
 
 </section>
-<section class="slide level2">
-
-<p><strong>O1</strong> Explanation Family</p>
+<section id="operational-vacuum" class="slide level2">
+<h2>Operational Vacuum</h2>
 <ul>
-<li>associations between antecedent and consequent</li>
-<li>contrasts and differences</li>
-<li>causal mechanisms</li>
+<li>Focused on technology</li>
+<li>Little consideration for the real world</li>
+<li>Implicit target audience – researchers and technologists</li>
 </ul>
-<!-- # Types of Explanations -->
-</section>
-<section id="associations-between-antecedent-and-consequent" class="slide level2">
-<h2>Associations Between Antecedent and Consequent</h2>
-<div class="columns">
-<div class="column" style="width:65%;">
-<ul>
-<li>feature importance</li>
-<li>feature attribution / influence</li>
-<li>rules</li>
-</ul>
-</div><div class="column fragment" style="width:35%;">
-<ul>
-<li>exemplars (prototypes &amp; criticisms)</li>
-</ul>
-</div>
-</div>
-</section>
-<section id="contrasts-and-differences" class="slide level2">
-<h2>Contrasts and Differences</h2>
-<ul>
-<li>(non-causal) counterfactuals<br>
-i.e., contrastive statements</li>
-<li>prototypes &amp; criticisms</li>
-</ul>
-</section>
-<section id="causal-mechanisms" class="slide level2">
-<h2>Causal Mechanisms</h2>
-<ul>
-<li>causal counterfactuals</li>
-<li>causal chains</li>
-<li>full causal model</li>
-</ul>
-</section></section>
-<section>
-<section id="explanation-modalities" class="title-slide slide level1 center">
-<h1>Explanation Modalities</h1>
-
-</section>
-<section class="slide level2">
-
-<p><strong>O2</strong> Explanatory Medium</p>
-<ul>
-<li>(statistical / numerical) summarisation</li>
-<li>visualisation</li>
-<li>textualisation</li>
-<li>formal argumentation</li>
-</ul>
-</section>
-<section class="slide level2">
-
-<p><strong>O4</strong> Explanation Domain</p>
-<div class="columns">
-<div class="column" style="width:50%;">
-<p><strong>Original domain</strong><br>
-<img data-src="../../assets/figures/img_exp_og.png" style="width:55.0%" data-fig-align="center" alt="Original domain"></p>
-</div><div class="column" style="width:50%;">
-<p><strong>Transformed domain</strong><br>
-<img data-src="../../assets/figures/img_exp_bar.png" style="width:50.0%" data-fig-align="center" alt="Transformed domain"></p>
-</div>
-</div>
-</section>
-<section class="slide level2">
-
-<p>(<strong>O3</strong> <em>System Interaction</em> &amp; <strong>U4</strong> <em>Interactiveness</em>]</p>
-<p><br></p>
-<p>Provided within a static or interactive protocol</p>
-<ul>
-<li><del>interactive interface</del></li>
-<li>interactive explanation</li>
-</ul>
-</section></section>
-<section>
-<section id="examples-of-explanations" class="title-slide slide level1 center">
-<h1>Examples of Explanations</h1>
-
-</section>
-<section id="permutation-feature-importance" class="slide level2">
-<h2>Permutation Feature Importance</h2>
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="../../assets/figures/pfi.png" style="width:95.0%" alt="PFI"></p>
-</figure>
-</div>
+<blockquote>
+<p>Example use case: <em>explanatory debugging</em> <span class="citation" data-cites="kulesza2015principles">(<a href="#/bibliography" role="doc-biblioref" onclick="">Kulesza et al. 2015</a>)</span></p>
+</blockquote>
 
 <aside><div>
-<p><a href="https://www.kaggle.com/code/dansbecker/permutation-importance" class="uri">https://www.kaggle.com/code/dansbecker/permutation-importance</a></p>
+<p><span class="citation" data-cites="miller2017explainable">(<a href="#/bibliography" role="doc-biblioref" onclick="">Miller, Howe, and Sonenberg 2017</a>)</span></p>
 </div></aside></section>
-<section id="individual-conditional-expectation-partial-dependence" class="slide level2">
-<h2>Individual Conditional Expectation &amp; <br> Partial Dependence</h2>
+<section id="whos-at-the-other-end" class="slide level2">
+<h2>Who’s at the Other End?</h2>
+<ul>
+<li><p>Explanations arise to</p>
+<ul>
+<li>address inconsistency with the <strong>explainee’s</strong> beliefs, expectations or mental model, e.g., an unexpected ML prediction causing a disagreement</li>
+<li>support learning or provide information needed by an <strong>explainee</strong> to solve a problem or complete a task</li>
+</ul></li>
+<li><p>Delivered at a request of a <strong>human explainee</strong></p></li>
+</ul>
+<blockquote>
+<p>An explanation is an answer to a “Why?” question <span class="citation" data-cites="miller2019explanation">(<a href="#/bibliography" role="doc-biblioref" onclick="">Miller 2019</a>)</span></p>
+</blockquote>
+<aside class="notes">
+<ul>
+<li><p>Building up on the human-centred revolution mentioned in the <em>preliminaries</em> and the collection of human-centred properties listed in the taxonomy</p></li>
+<li><p>More definitions of explainability to follow in the <em>definitions</em> section</p></li>
+<li><p>Who the recipient is – making explanations human-centred</p></li>
+</ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="enter-human-centred-agenda" class="slide level2">
+<h2>Enter Human-Centred Agenda</h2>
+<p>Humans expect the explanations to be <span class="citation" data-cites="miller2019explanation">(<a href="#/bibliography" role="doc-biblioref" onclick="">Miller 2019</a>)</span></p>
+<ol type="1">
+<li><strong>contrastive</strong></li>
+<li>selective</li>
+<li>not overly technical</li>
+<li><strong>social</strong></li>
+</ol>
+<aside class="notes">
+<ul>
+<li>selective – just enough information to address the explanatory needs, as opposed to a full causal account</li>
+<li>non-technical – communicating specific probabilities of events may not be helpful</li>
+<li>explanations as a social process – bidirectional, interactive, communication-based</li>
+</ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="composing-an-explanation" class="slide level2">
+<h2>Composing an Explanation</h2>
+<ul>
+<li><strong>topic</strong> – what should be explained</li>
+<li><strong>stakeholder</strong> – to whom something should be explained</li>
+<li><strong>goal</strong> – why something should be explained</li>
+<li><strong>instrument</strong> – how something should be explained</li>
+</ul>
 
-<img data-src="../../assets/figures/ice-pd.png" style="width:75.0%" alt="PFI" class="r-stretch quarto-figure-center"></section>
-<section id="face-counterfactuals" class="slide level2">
-<h2>FACE Counterfactuals</h2>
+<aside><div>
+<p><span class="citation" data-cites="buchholz2022means">(<a href="#/bibliography" role="doc-biblioref" onclick="">Buchholz 2022</a>)</span></p>
+</div></aside></section>
+<section id="complications" class="slide level2">
+<h2>Complications</h2>
+<ul>
+<li>Diversity of human goals and expectations</li>
+<li>Human biases, e.g., The Illusion of Explanatory Depth <span class="citation" data-cites="rozenblit2002misunderstood">(<a href="#/bibliography" role="doc-biblioref" onclick="">Rozenblit and Keil 2002</a>)</span></li>
+</ul>
+<div class="fragment">
+<hr>
+<p>Counterfactual explanations are specific to a data point</p>
+<blockquote>
+<p>Have you been 5 years older, your loan application would be accepted.</p>
+</blockquote>
+<aside class="notes">
+<ul>
+<li><p>People believe that they understand more than they actually do</p></li>
+<li><p>Overconfidence may lead people to generalise a counterfactual explanation beyond the instance for which it was generated (to unseen and possibly unrelated cases)</p></li>
+</ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+<!-- #%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#% --->
+</div>
+</section></section>
+<section>
+<section id="contrastive-statements" class="title-slide slide level1 center">
+<h1>Contrastive Statements</h1>
+
+</section>
+<section id="why" class="slide level2">
+<h2>Why?</h2>
+<ul>
+<li>Easy to understand (sparse by default)</li>
+<li>Common in everyday life</li>
+<li>Available in diverse formats (e.g., textual or visual)</li>
+<li>Actionable from a <em>technical perspective</em></li>
+<li>Compliant with regulatory frameworks (e.g., GDPR) <span class="citation" data-cites="wachter2017counterfactual">(<a href="#/bibliography" role="doc-biblioref" onclick="">Wachter, Mittelstadt, and Russell 2017</a>)</span></li>
+</ul>
+<aside class="notes">
+<ul>
+<li>Technical actionability stems from counterfactuals prescribing a change in the data point that leads to a different prediction</li>
+</ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="example" class="slide level2">
+<h2>Example</h2>
+<p><br></p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><br></p>
+<blockquote>
+<p>Had you been <strong>10 years younger</strong>,<br>
+your loan application would be <strong>accepted</strong>.</p>
+</blockquote>
+</div><div class="column" style="width:45%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="../../assets/figures/img_cf.svg" style="width:100.0%" alt="Example of an image counterfactual explanation"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="duck-test" class="slide level2">
+<h2>Duck Test</h2>
+<p><br></p>
+<blockquote>
+<p>If it looks like a duck, swims like a duck, and quacks like a duck, then it probably is a duck.</p>
+</blockquote>
+<div class="fragment">
+<p><br></p>
+<ul>
+<li><strong>Counterfactuals are not necessarily causal!</strong></li>
+</ul>
+</div>
+</section>
+<section id="actionability" class="slide level2">
+<h2>Actionability</h2>
+<p><br></p>
+<blockquote>
+<p>Had you been <strong>10 years younger</strong>,<br>
+your loan application would be <strong>accepted</strong>.</p>
+</blockquote>
+<p><br></p>
+<hr>
+<p><br></p>
+<blockquote>
+<p>Had you <strong>paid back one of your credit cards</strong>,<br>
+your loan application would be <strong>accepted</strong>.</p>
+</blockquote>
+<aside class="notes">
+<ul>
+<li>Evolution of human-centredness: non-actionable → actionable → feasible → provided through algorithmic recourse</li>
+</ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="feasibility" class="slide level2">
+<h2>Feasibility</h2>
 <div class="quarto-figure quarto-figure-center">
 <figure>
 <p><img data-src="../../assets/figures/face.png" style="width:40.0%" alt="FACE"></p>
 </figure>
 </div>
 
+<aside class="notes">
+<ul>
+<li>Is the generated instance realistic, i.e., from the data distribution?</li>
+<li>Can it be reached from the explained data point?</li>
+</ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 <aside><div>
-<p>Poyiadzi, Sokol, Santos-Rodriguez, De Bie and Flach, 2020. FACE: Feasible and actionable counterfactual explanations</p>
+<p><span class="citation" data-cites="poyiadzi2020face">(<a href="#/bibliography" role="doc-biblioref" onclick="">Poyiadzi et al. 2020</a>)</span></p>
 </div></aside></section>
-<section id="rulefit" class="slide level2">
-<h2>RuleFit</h2>
+<section id="algorithmic-recourse" class="slide level2">
+<h2>Algorithmic Recourse</h2>
+<ul>
+<li><strong>Where</strong> to go and <strong>how</strong> to get there</li>
+<li>A sequence of steps (actions) guiding the explainee towards the desired goal with explanations phrased as actionable recommendations</li>
+</ul>
+<br>
+<hr>
+<p><br></p>
+<ul>
+<li>Independent manipulation of individual attributes is <strong>undesirable</strong> – think feature <em>correlation</em></li>
+<li>Instead, these actions can be modelled as (causal) <strong>interventions</strong></li>
+</ul>
+
+<aside class="notes">
+<ul>
+<li>action – independent shift in feature values</li>
+</ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+<!-- #%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#% --->
+<aside><div>
+<p><span class="citation" data-cites="karimi2022survey">(<a href="#/bibliography" role="doc-biblioref" onclick="">Karimi et al. 2022</a>)</span></p>
+</div></aside></section></section>
+<section>
+<section id="social-process" class="title-slide slide level1 center">
+<h1>Social Process</h1>
+
+</section>
+<section id="human-explainability" class="slide level2">
+<h2>Human Explainability</h2>
+<p><br></p>
+<ul>
+<li><strong>Bi-directional</strong> explanatory process</li>
+<li><strong>Questioning</strong> and <strong>explanatory</strong> utterances</li>
+<li><strong>Conversational</strong></li>
+</ul>
+</section>
+<section id="interactive-explainability" class="slide level2">
+<h2>Interactive Explainability</h2>
+<p><br></p>
+<ul>
+<li>One of the tenets of human-centred explainability</li>
+<li>Largely neglected and unavailable <span class="citation" data-cites="schneider2019personalized">(<a href="#/bibliography" role="doc-biblioref" onclick="">Schneider and Handali 2019</a>)</span></li>
+</ul>
+</section>
+<section id="conversational-explainability" class="slide level2">
+<h2>Conversational Explainability</h2>
+<p><br></p>
+<ul>
+<li>Interactive personalisation and tuning of the explanations</li>
+<li>Guiding the explainer to retrieve tailored insights</li>
+</ul>
+</section>
+<section id="naïve-realisation" class="slide level2">
+<h2>Naïve Realisation</h2>
+<p>Dialogue-based personalisation</p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<blockquote>
+<p>Why was my loan application denied?</p>
+</blockquote>
+<p><br></p>
+<blockquote>
+<p>Instead of increasing my <strong>income</strong>. Is there anything I can do about my <strong>outstanding debt</strong> to get this loan approved?</p>
+</blockquote>
+</div><div class="column" style="width:50%;">
+<p><br></p>
+<blockquote>
+<p>Because of your income. Had you earned £5,000 more, it would have been granted.</p>
+</blockquote>
+<p><br><br></p>
+<blockquote>
+<p>If you cancel one of your three <strong>credit cards</strong>, you will receive the loan.</p>
+</blockquote>
+</div>
+</div>
+
+<aside><div>
+<p><span class="citation" data-cites="sokol2020one sokol2018glass">(<a href="#/bibliography" role="doc-biblioref" onclick="">Sokol and Flach 2020</a>; <a href="#/bibliography" role="doc-biblioref" onclick="">Sokol and Flach 2018</a>)</span></p>
+</div></aside></section>
+<section id="interactive-social" class="slide level2">
+<h2>Interactive ≠ Social</h2>
+<p><br></p>
+<ul>
+<li><p>Interactivity is insufficient, e.g., static explanation + dynamic user interface</p></li>
+<li><p>Vehicle to personalise content (and other aspects)</p></li>
+<li><p>Bespoke explanatory experience driven by context</p></li>
+</ul>
+<!-- #%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#% --->
+</section></section>
+<section>
+<section id="wrap-up" class="title-slide slide level1 center">
+<h1>Wrap Up</h1>
+
+</section>
+<section id="summary" class="slide level2">
+<h2>Summary</h2>
+<p><br></p>
+<blockquote>
+<p>Producing explanations is <strong>necessary</strong> but <strong>insufficient</strong> for human-centred explainability</p>
+</blockquote>
+<div class="fragment">
+<blockquote>
+<p>These insights need to be relevant and comprehensible (<em>context</em>) to explainees</p>
+</blockquote>
+</div>
+</section>
+<section id="summary-meta-subs.ctd" class="slide level2">
+<h2>Summary &nbsp;&nbsp;&nbsp;</h2>
+<p><br></p>
+<blockquote>
+<p>Explainers are <strong>socio-technical</strong> constructs, hence we should strive for <strong>seamless integration with humans</strong> as well as <strong>technical correctness and soundness</strong></p>
+</blockquote>
+</section>
+<section id="summary-meta-subs.ctd-1" class="slide level2">
+<h2>Summary &nbsp;&nbsp;&nbsp;</h2>
+<p><br></p>
+<!-- properties must be considered on a case-by-case basis -->
+<blockquote>
+<p>Each (real-life) explainability scenario is <strong>unique</strong> and requires a <strong>bespoke solution</strong></p>
+</blockquote>
+</section>
+<section id="summary-meta-subs.ctd-2" class="slide level2">
+<h2>Summary &nbsp;&nbsp;&nbsp;</h2>
+<p><br></p>
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="../../assets/figures/rulefit.png" style="width:50.0%" alt="RuleFit"></p>
+<p><img data-src="../../assets/figures/elephant.svg" style="width:55.0%" alt="The Blind Men and the Elephant"></p>
 </figure>
 </div>
 
 <aside><div>
-<p><a href="https://christophm.github.io/interpretable-ml-book/rulefit.html" class="uri">https://christophm.github.io/interpretable-ml-book/rulefit.html</a></p>
-</div></aside></section></section>
-<section>
-<section id="data-explainability" class="title-slide slide level1 center">
-<h1>Data Explainability</h1>
-
+<p>(The Blind Men and the Elephant)</p>
+</div></aside></section>
+<section id="bibliography" class="slide level2 smaller scrollable">
+<h2>Bibliography</h2>
+<div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography">
+<div id="ref-buchholz2022means" class="csl-entry" role="doc-biblioentry">
+Buchholz, Oliver. 2022. <span>“A Means-End Account of Explainable Artificial Intelligence.”</span> <em>arXiv Preprint arXiv:2208.04638</em>.
+</div>
+<div id="ref-karimi2022survey" class="csl-entry" role="doc-biblioentry">
+Karimi, Amir-Hossein, Gilles Barthe, Bernhard Schölkopf, and Isabel Valera. 2022. <span>“A Survey of Algorithmic Recourse: <span>Contrastive</span> Explanations and Consequential Recommendations.”</span> <em>ACM Computing Surveys</em> 55 (5): 1–29.
+</div>
+<div id="ref-kulesza2015principles" class="csl-entry" role="doc-biblioentry">
+Kulesza, Todd, Margaret Burnett, Weng-Keen Wong, and Simone Stumpf. 2015. <span>“Principles of Explanatory Debugging to Personalize Interactive Machine Learning.”</span> In <em>Proceedings of the 20th International Conference on Intelligent User Interfaces</em>, 126–37.
+</div>
+<div id="ref-miller2019explanation" class="csl-entry" role="doc-biblioentry">
+Miller, Tim. 2019. <span>“Explanation in Artificial Intelligence: <span>Insights</span> from the Social Sciences.”</span> <em>Artificial Intelligence</em> 267: 1–38.
+</div>
+<div id="ref-miller2017explainable" class="csl-entry" role="doc-biblioentry">
+Miller, Tim, Piers Howe, and Liz Sonenberg. 2017. <span>“Explainable <span>AI</span>: <span>Beware</span> of Inmates Running the Asylum or: <span>How</span> i Learnt to Stop Worrying and Love the Social and Behavioural Sciences.”</span> <em>arXiv Preprint arXiv:1712.00547</em>.
+</div>
+<div id="ref-poyiadzi2020face" class="csl-entry" role="doc-biblioentry">
+Poyiadzi, Rafael, Kacper Sokol, Raul Santos-Rodriguez, Tijl De Bie, and Peter Flach. 2020. <span>“<span>FACE</span>: <span>Feasible</span> and Actionable Counterfactual Explanations.”</span> In <em>Proceedings of the AAAI/ACM Conference on AI, Ethics, and Society</em>, 344–50.
+</div>
+<div id="ref-rozenblit2002misunderstood" class="csl-entry" role="doc-biblioentry">
+Rozenblit, Leonid, and Frank Keil. 2002. <span>“The Misunderstood Limits of Folk Science: <span>An</span> Illusion of Explanatory Depth.”</span> <em>Cognitive Science</em> 26 (5): 521–62.
+</div>
+<div id="ref-schneider2019personalized" class="csl-entry" role="doc-biblioentry">
+Schneider, Johannes, and Joshua Peter Handali. 2019. <span>“Personalized Explanation for Machine Learning: <span>A</span> Conceptualization.”</span>
+</div>
+<div id="ref-sokol2020one" class="csl-entry" role="doc-biblioentry">
+Sokol, Kacper, and Peter Flach. 2020. <span>“One Explanation Does Not Fit All: <span>The</span> Promise of Interactive Explanations for Machine Learning Transparency.”</span> <em>KI-K<span>ü</span>nstliche Intelligenz</em> 34 (2): 235–50.
+</div>
+<div id="ref-sokol2018glass" class="csl-entry" role="doc-biblioentry">
+Sokol, Kacper, and Peter A Flach. 2018. <span>“<span>Glass-Box</span>: <span>Explaining</span> <span>AI</span> Decisions with Counterfactual Statements Through Conversation with a Voice-Enabled Virtual Assistant.”</span> In <em>IJCAI</em>, 5868–70.
+</div>
+<div id="ref-wachter2017counterfactual" class="csl-entry" role="doc-biblioentry">
+Wachter, Sandra, Brent Mittelstadt, and Chris Russell. 2017. <span>“Counterfactual Explanations Without Opening the Black Box: <span>Automated</span> Decisions and the <span>GDPR</span>.”</span> <em>Harv. JL &amp; Tech.</em> 31: 841.
+</div>
+</div>
 </section>
-<section class="slide level2">
+<section id="questions" class="slide level2">
+<h2>Questions</h2>
+<center style="font-size: 750%;">
+<p></p>
+</center>
 
-<ul>
-<li>Data as an (implicit) model</li>
-<li>Data summarisation and description</li>
-<li><del>Exemplars, prototypes and criticisms</del></li>
-<li><del>Dimensionality reduction (e.g., t-SNE)</del></li>
-</ul>
-</section></section>
-<section>
-<section id="transparent-modelling" class="title-slide slide level1 center">
-<h1>Transparent Modelling</h1>
-
-</section>
-<section class="slide level2">
-
-<ul>
-<li>Rule lists and sets</li>
-<li>Linear models <!-- (and generalised additive models) --></li>
-<li>Decision trees</li>
-<li><span class="math inline">\(k\)</span>-nearest neighbours and <span class="math inline">\(k\)</span>-means</li>
-</ul>
-</section></section>
-<section>
-<section id="post-hoc-explainability" class="title-slide slide level1 center">
-<h1>Post-hoc Explainability</h1>
-
-</section>
-<section class="slide level2">
-
-<p>Understandable model of the relation between <em>inputs</em> and <em>outputs</em></p>
-<ul>
-<li>SHAP</li>
-<li>LIME</li>
-</ul>
-</section>
+<aside><div>
+<p><a href="mailto:kacper.sokol@rmit.edu.au">kacper.sokol@rmit.edu.au</a> <br> <a href="mailto:k.sokol@bristol.ac.uk">k.sokol@bristol.ac.uk</a></p>
+</div></aside></section>
 <section class="slide level2">
 
 <p>&nbsp;</p>
