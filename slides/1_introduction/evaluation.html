@@ -410,9 +410,24 @@ Kacper Sokol
 </table>
 
 <aside class="notes">
+<ol type="1">
+<li><p>Evaluate the XML system in a <strong>real-life scenario</strong></p>
 <ul>
-<li>TODO</li>
-</ul>
+<li>domain expertise</li>
+<li>good experimental setup</li>
+</ul></li>
+<li><p>Evaluate the XML system in a <strong>simplified scenario</strong></p>
+<ul>
+<li>lay people instead of domain experts</li>
+<li>cost reduction and bigger pool of test subjects</li>
+</ul></li>
+<li><p>Evaluate the XML system in a <strong>numerical proxy scenario</strong></p>
+<ul>
+<li>when the overall class of explanations has already been evaluated with humans</li>
+<li><strong>caveat:</strong> what is a class of explanations – we will see that as separation in a moment</li>
+<li>e.g., depth or width for decision trees</li>
+</ul></li>
+</ol>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -429,25 +444,104 @@ Kacper Sokol
 </div></aside></section>
 <section id="numerical-evaluation" class="slide level2">
 <h2>Numerical Evaluation</h2>
-<p>TODO: surrogates + fidelity</p>
-<p>Application level evaluation (real task): Put the explanation into the product and have it tested by the end user. Imagine fracture detection software with a machine learning component that locates and marks fractures in X-rays. At the application level, radiologists would test the fracture detection software directly to evaluate the model. This requires a good experimental setup and an understanding of how to assess quality. A good baseline for this is always how good a human would be at explaining the same decision.</p>
-<p>Human level evaluation (simple task) is a simplified application level evaluation. The difference is that these experiments are not carried out with the domain experts, but with laypersons. This makes experiments cheaper (especially if the domain experts are radiologists) and it is easier to find more testers. An example would be to show a user different explanations and the user would choose the best one.</p>
-<p>Function level evaluation (proxy task) does not require humans. This works best when the class of model used has already been evaluated by someone else in a human level evaluation. For example, it might be known that the end users understand decision trees. In this case, a proxy for explanation quality may be the depth of the tree. Shorter trees would get a better explainability score. It would make sense to add the constraint that the predictive performance of the tree remains good and does not decrease too much compared to a larger tree.</p>
-<p>The next chapter focuses on the evaluation of explanations for individual predictions on the function level. What are the relevant properties of explanations that we would consider for their evaluation?</p>
+<div class="cell" data-fig-width="55%" data-execution_count="5">
+<div class="cell-output cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="evaluation_files/figure-revealjs/cell-6-output-1.png" alt="Global fidelity" width="466" height="463"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="numerical-evaluation-meta-subs.ctd" class="slide level2">
+<h2>Numerical Evaluation &nbsp;&nbsp;&nbsp;</h2>
+<div class="cell" data-fig-width="55%" data-execution_count="6">
+<div class="cell-output cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="evaluation_files/figure-revealjs/cell-7-output-1.png" alt="Local fidelity" width="466" height="463"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="numerical-evaluation-meta-subs.ctd-1" class="slide level2">
+<h2>Numerical Evaluation &nbsp;&nbsp;&nbsp;</h2>
+<div class="cell" data-fig-width="55%" data-execution_count="7">
+<div class="cell-output cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="evaluation_files/figure-revealjs/cell-8-output-1.png" alt="Surrogate fidelity" width="466" height="463"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="numerical-evaluation-meta-subs.ctd-2" class="slide level2">
+<h2>Numerical Evaluation &nbsp;&nbsp;&nbsp;</h2>
+<div class="cell" data-fig-width="55%" data-execution_count="8">
+<div class="cell-output cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="evaluation_files/figure-revealjs/cell-9-output-1.png" alt="Black-box fidelity" width="466" height="463"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="desiderata-based-evaluation" class="slide level2">
+<h2>Desiderata-based Evaluation</h2>
+<ul>
+<li>Interactiveness (U4)</li>
+<li>Actionability (U5)</li>
+<li>Novelty (U8)</li>
+<li>…</li>
+</ul>
+<p><br></p>
+<blockquote>
+<p><a href="taxonomy.html"></a> &nbsp;&nbsp;&nbsp; See the <em>taxonomy</em> module for a review of explainability desiderata.</p>
+</blockquote>
 </section>
 <section id="human-based-evaluation" class="slide level2">
 <h2>Human-based Evaluation</h2>
 <ul>
-<li>Human centred-shift may have <em>overcompensated</em></li>
-<li>it is important but remember these are socio-technical so should be treated as such.</li>
-<li>evaluating sumulatabilty – nope</li>
-<li>taks-completion is gauging simulatability</li>
+<li>Evaluating simulatability is insufficient</li>
+<li>Same for task-completion</li>
 </ul>
+<div class="fragment">
+<ul>
+<li>We need to assess <strong>understanding</strong></li>
+</ul>
+<aside class="notes">
+<ul>
+<li>As per our definition, we need to assess understanding</li>
+<li>Understanding is context-dependent</li>
+</ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</div>
 </section></section>
 <section>
 <section id="way-forward" class="title-slide slide level1 center">
 <h1>Way Forward</h1>
 
+</section>
+<section id="beyond-human-centred-evaluation" class="slide level2">
+<h2>Beyond Human-centred Evaluation</h2>
+<ul>
+<li>Shift towards human-centred explainability may have <em>overcompensated</em></li>
+<li>These are socio-<strong>technical</strong> systems – both aspects should be accounted for</li>
+</ul>
 </section>
 <section id="automated-decision-making" class="slide level2">
 <h2>Automated Decision-making</h2>
@@ -469,9 +563,8 @@ Kacper Sokol
 <h2>Phenomenon &amp; explanation</h2>
 <p><br></p>
 
-<img data-src="../../assets/figures/val-proposed2.svg" style="width:25.0%" alt="Proposed validation 2" class="r-stretch quarto-figure-center"><p>TODO: correctness of prediction</p>
 <!-- #%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#% --->
-</section></section>
+<img data-src="../../assets/figures/val-proposed2.svg" style="width:25.0%" alt="Proposed validation 2" class="r-stretch quarto-figure-center"></section></section>
 <section>
 <section id="wrap-up" class="title-slide slide level1 center">
 <h1>Wrap Up</h1>
@@ -480,12 +573,13 @@ Kacper Sokol
 <section id="summary" class="slide level2">
 <h2>Summary</h2>
 <ul>
-<li><p>Evaluation is task-specific</p></li>
+<li><p>Evaluation is task-specific and context-dependent</p></li>
 <li><p>It should account for both aspect of XML systems</p>
 <ul>
 <li>Technical – the algorithms generating insights</li>
-<li>Social – the TODO</li>
+<li>Social – the explanatory artefacts and communication media</li>
 </ul></li>
+<li><p>Overall, it should assess human understanding</p></li>
 </ul>
 </section>
 <section id="bibliography" class="slide level2 smaller scrollable">

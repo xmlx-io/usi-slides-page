@@ -879,21 +879,56 @@
     "href": "slides/1_introduction/evaluation.html#evaluation-tiers",
     "title": "Evaluating Explainability",
     "section": "Evaluation Tiers",
-    "text": "Evaluation Tiers\n\n\n\n\nHumans\nTask\n\n\n\n\nApplication-grounded Evaluation\nReal Humans\nReal Tasks\n\n\nHuman-grounded Evaluation\nReal Humans\nSimple Tasks\n\n\nFunctionally-grounded Evaluation\nNo Real Humans\nProxy Tasks\n\n\n\n\n\n\nTODO\n\n\n\n(Doshi-Velez and Kim 2017)"
+    "text": "Evaluation Tiers\n\n\n\n\nHumans\nTask\n\n\n\n\nApplication-grounded Evaluation\nReal Humans\nReal Tasks\n\n\nHuman-grounded Evaluation\nReal Humans\nSimple Tasks\n\n\nFunctionally-grounded Evaluation\nNo Real Humans\nProxy Tasks\n\n\n\n\n\n\nEvaluate the XML system in a real-life scenario\n\ndomain expertise\ngood experimental setup\n\nEvaluate the XML system in a simplified scenario\n\nlay people instead of domain experts\ncost reduction and bigger pool of test subjects\n\nEvaluate the XML system in a numerical proxy scenario\n\nwhen the overall class of explanations has already been evaluated with humans\ncaveat: what is a class of explanations – we will see that as separation in a moment\ne.g., depth or width for decision trees\n\n\n\n\n(Doshi-Velez and Kim 2017)"
   },
   {
     "objectID": "slides/1_introduction/evaluation.html#numerical-evaluation",
     "href": "slides/1_introduction/evaluation.html#numerical-evaluation",
     "title": "Evaluating Explainability",
     "section": "Numerical Evaluation",
-    "text": "Numerical Evaluation\nTODO: surrogates + fidelity\nApplication level evaluation (real task): Put the explanation into the product and have it tested by the end user. Imagine fracture detection software with a machine learning component that locates and marks fractures in X-rays. At the application level, radiologists would test the fracture detection software directly to evaluate the model. This requires a good experimental setup and an understanding of how to assess quality. A good baseline for this is always how good a human would be at explaining the same decision.\nHuman level evaluation (simple task) is a simplified application level evaluation. The difference is that these experiments are not carried out with the domain experts, but with laypersons. This makes experiments cheaper (especially if the domain experts are radiologists) and it is easier to find more testers. An example would be to show a user different explanations and the user would choose the best one.\nFunction level evaluation (proxy task) does not require humans. This works best when the class of model used has already been evaluated by someone else in a human level evaluation. For example, it might be known that the end users understand decision trees. In this case, a proxy for explanation quality may be the depth of the tree. Shorter trees would get a better explainability score. It would make sense to add the constraint that the predictive performance of the tree remains good and does not decrease too much compared to a larger tree.\nThe next chapter focuses on the evaluation of explanations for individual predictions on the function level. What are the relevant properties of explanations that we would consider for their evaluation?"
+    "text": "Numerical Evaluation"
+  },
+  {
+    "objectID": "slides/1_introduction/evaluation.html#numerical-evaluation-meta-subs.ctd",
+    "href": "slides/1_introduction/evaluation.html#numerical-evaluation-meta-subs.ctd",
+    "title": "Evaluating Explainability",
+    "section": "Numerical Evaluation    ",
+    "text": "Numerical Evaluation"
+  },
+  {
+    "objectID": "slides/1_introduction/evaluation.html#numerical-evaluation-meta-subs.ctd-1",
+    "href": "slides/1_introduction/evaluation.html#numerical-evaluation-meta-subs.ctd-1",
+    "title": "Evaluating Explainability",
+    "section": "Numerical Evaluation    ",
+    "text": "Numerical Evaluation"
+  },
+  {
+    "objectID": "slides/1_introduction/evaluation.html#numerical-evaluation-meta-subs.ctd-2",
+    "href": "slides/1_introduction/evaluation.html#numerical-evaluation-meta-subs.ctd-2",
+    "title": "Evaluating Explainability",
+    "section": "Numerical Evaluation    ",
+    "text": "Numerical Evaluation"
+  },
+  {
+    "objectID": "slides/1_introduction/evaluation.html#desiderata-based-evaluation",
+    "href": "slides/1_introduction/evaluation.html#desiderata-based-evaluation",
+    "title": "Evaluating Explainability",
+    "section": "Desiderata-based Evaluation",
+    "text": "Desiderata-based Evaluation\n\nInteractiveness (U4)\nActionability (U5)\nNovelty (U8)\n…\n\n\n\n     See the taxonomy module for a review of explainability desiderata."
   },
   {
     "objectID": "slides/1_introduction/evaluation.html#human-based-evaluation",
     "href": "slides/1_introduction/evaluation.html#human-based-evaluation",
     "title": "Evaluating Explainability",
     "section": "Human-based Evaluation",
-    "text": "Human-based Evaluation\n\nHuman centred-shift may have overcompensated\nit is important but remember these are socio-technical so should be treated as such.\nevaluating sumulatabilty – nope\ntaks-completion is gauging simulatability"
+    "text": "Human-based Evaluation\n\nEvaluating simulatability is insufficient\nSame for task-completion\n\n\n\nWe need to assess understanding\n\n\n\nAs per our definition, we need to assess understanding\nUnderstanding is context-dependent"
+  },
+  {
+    "objectID": "slides/1_introduction/evaluation.html#beyond-human-centred-evaluation",
+    "href": "slides/1_introduction/evaluation.html#beyond-human-centred-evaluation",
+    "title": "Evaluating Explainability",
+    "section": "Beyond Human-centred Evaluation",
+    "text": "Beyond Human-centred Evaluation\n\nShift towards human-centred explainability may have overcompensated\nThese are socio-technical systems – both aspects should be accounted for"
   },
   {
     "objectID": "slides/1_introduction/evaluation.html#automated-decision-making",
@@ -921,14 +956,14 @@
     "href": "slides/1_introduction/evaluation.html#phenomenon-explanation",
     "title": "Evaluating Explainability",
     "section": "Phenomenon & explanation",
-    "text": "Phenomenon & explanation\n\n\nTODO: correctness of prediction"
+    "text": "Phenomenon & explanation"
   },
   {
     "objectID": "slides/1_introduction/evaluation.html#summary",
     "href": "slides/1_introduction/evaluation.html#summary",
     "title": "Evaluating Explainability",
     "section": "Summary",
-    "text": "Summary\n\nEvaluation is task-specific\nIt should account for both aspect of XML systems\n\nTechnical – the algorithms generating insights\nSocial – the TODO"
+    "text": "Summary\n\nEvaluation is task-specific and context-dependent\nIt should account for both aspect of XML systems\n\nTechnical – the algorithms generating insights\nSocial – the explanatory artefacts and communication media\n\nOverall, it should assess human understanding"
   },
   {
     "objectID": "slides/1_introduction/evaluation.html#bibliography",
