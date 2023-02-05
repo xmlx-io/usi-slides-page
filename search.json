@@ -816,35 +816,70 @@
     "href": "slides/1_introduction/data.html#iris",
     "title": "Data Sets and Models",
     "section": "Iris",
+    "text": "Iris\n\n                 \n\n\n(Fisher 1936)"
+  },
+  {
+    "objectID": "slides/1_introduction/data.html#iris-meta-subs.ctd",
+    "href": "slides/1_introduction/data.html#iris-meta-subs.ctd",
+    "title": "Data Sets and Models",
+    "section": "Iris    ",
     "text": "Iris"
   },
   {
-    "objectID": "slides/1_introduction/data.html#mnst",
-    "href": "slides/1_introduction/data.html#mnst",
+    "objectID": "slides/1_introduction/data.html#iris-meta-subs.ctd-1",
+    "href": "slides/1_introduction/data.html#iris-meta-subs.ctd-1",
     "title": "Data Sets and Models",
-    "section": "MNSt",
-    "text": "MNSt"
+    "section": "Iris    ",
+    "text": "Iris"
+  },
+  {
+    "objectID": "slides/1_introduction/data.html#iris-meta-subs.ctd-2",
+    "href": "slides/1_introduction/data.html#iris-meta-subs.ctd-2",
+    "title": "Data Sets and Models",
+    "section": "Iris    ",
+    "text": "Iris"
+  },
+  {
+    "objectID": "slides/1_introduction/data.html#mnist",
+    "href": "slides/1_introduction/data.html#mnist",
+    "title": "Data Sets and Models",
+    "section": "MNIST",
+    "text": "MNIST\n\n\n\n\n\n\n\n\n\n\n\n(LeCun 1998)"
   },
   {
     "objectID": "slides/1_introduction/data.html#imagenet",
     "href": "slides/1_introduction/data.html#imagenet",
     "title": "Data Sets and Models",
     "section": "ImageNet",
-    "text": "ImageNet"
+    "text": "ImageNet\n\n                                  \n\n\n\n(Deng et al. 2009)"
+  },
+  {
+    "objectID": "slides/1_introduction/data.html#decision-trees",
+    "href": "slides/1_introduction/data.html#decision-trees",
+    "title": "Data Sets and Models",
+    "section": "Decision Trees",
+    "text": "Decision Trees\nTODO\nsklearn.tree.DecisionTreeClassifier()"
+  },
+  {
+    "objectID": "slides/1_introduction/data.html#svms",
+    "href": "slides/1_introduction/data.html#svms",
+    "title": "Data Sets and Models",
+    "section": "SVMs",
+    "text": "SVMs\nTODO\nsklearn.svm.SVC(probability=True)"
+  },
+  {
+    "objectID": "slides/1_introduction/data.html#linear-svms",
+    "href": "slides/1_introduction/data.html#linear-svms",
+    "title": "Data Sets and Models",
+    "section": "Linear SVMs",
+    "text": "Linear SVMs\nTODO\nsklearn.svm.SVC(probability=True, kernel=‘linear’)"
   },
   {
     "objectID": "slides/1_introduction/data.html#todo",
     "href": "slides/1_introduction/data.html#todo",
     "title": "Data Sets and Models",
     "section": "TODO",
-    "text": "TODO"
-  },
-  {
-    "objectID": "slides/1_introduction/data.html#todo-1",
-    "href": "slides/1_introduction/data.html#todo-1",
-    "title": "Data Sets and Models",
-    "section": "TODO",
-    "text": "TODO\nDescribe the data sets used for the slides their characteristics\ne.g., correlation of features in Iris data set (Fisher 1936)\nand some synthetic data\nprobabilistic classification 1 of 3 classes crisp classification\nthe underlying model doesnt really matter but we use linear and non-linear SVMs and deicsion trees"
+    "text": "TODO\nprobabilistic classification 1 of 3 classes crisp classification but we use linear and non-linear SVMs and decision trees"
   },
   {
     "objectID": "slides/1_introduction/data.html#summary",
@@ -858,7 +893,7 @@
     "href": "slides/1_introduction/data.html#bibliography",
     "title": "Data Sets and Models",
     "section": "Bibliography",
-    "text": "Bibliography\n\n\nFisher, Ronald A. 1936. “The Use of Multiple Measurements in Taxonomic Problems.” Annals of Eugenics 7 (2): 179–88."
+    "text": "Bibliography\n\n\nDeng, Jia, Wei Dong, Richard Socher, Li-Jia Li, Kai Li, and Li Fei-Fei. 2009. “ImageNet: A Large-Scale Hierarchical Image Database.” In 2009 IEEE Conference on Computer Vision and Pattern Recognition, 248–55. IEEE.\n\n\nFisher, Ronald A. 1936. “The Use of Multiple Measurements in Taxonomic Problems.” Annals of Eugenics 7 (2): 179–88.\n\n\nLeCun, Yann. 1998. “The MNIST Database of Handwritten Digits.” Http://Yann.lecun.com/Exdb/Mnist/."
   },
   {
     "objectID": "slides/1_introduction/data.html#questions",
@@ -1047,7 +1082,7 @@
     "href": "slides/1_introduction/course.html#schedule-meta-subs.ctd",
     "title": "Machine Learning Explainability",
     "section": "Schedule    ",
-    "text": "Schedule    \n\nWhere:\n\n\n\n\n\n\n\n\nWhat\nTime\nLocation\n\n\n\n\nlecture\nTBC\nTBC\n\n\nlab\nTBC\nTBC\n\n\nopen office\nTBC\nTBC"
+    "text": "Schedule    \n\nWhere:\n\n\n\n\n\n\n\n\n\nWhat\nTime\nLocation (week 1)\nLocation (week 2)\n\n\n\n\nlecture\n9.30–10.15am\nD0.03\nD1.14\n\n\ndiscussion\n10.15–10.30am\nD0.03\nD1.14\n\n\nlab\n10.30–11.30am\nD0.03\nD1.14\n\n\nopen office\n11.30am–12pm\nD0.03\nD1.14"
   },
   {
     "objectID": "slides/1_introduction/course.html#prerequisites",

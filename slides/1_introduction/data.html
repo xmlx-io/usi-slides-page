@@ -371,21 +371,81 @@ Kacper Sokol
 </section>
 <section id="iris" class="slide level2">
 <h2>Iris</h2>
-</section>
-<section id="mnst" class="slide level2">
-<h2>MNSt</h2>
-</section>
+<p><br></p>
+<p><img data-src="../../assets/figures/iris.png" style="width:25.0%" data-fig-align="center" alt="Iris Data Set"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <img data-src="../../assets/figures/iris-classes.jpeg" style="width:65.0%" data-fig-align="center" alt="Iris Classes"></p>
+
+<aside><div>
+<p><span class="citation" data-cites="fisher1936use">(<a href="#/bibliography" role="doc-biblioref" onclick="">Fisher 1936</a>)</span></p>
+</div></aside></section>
+<section id="iris-meta-subs.ctd" class="slide level2">
+<h2>Iris &nbsp;&nbsp;&nbsp;</h2>
+
+<img data-src="data_files/figure-revealjs/cell-5-output-1.png" alt="Iris feature correlation" class="r-stretch quarto-figure-center"></section>
+<section id="iris-meta-subs.ctd-1" class="slide level2">
+<h2>Iris &nbsp;&nbsp;&nbsp;</h2>
+
+<img data-src="data_files/figure-revealjs/cell-6-output-1.png" alt="Iris feature and target correlation" class="r-stretch quarto-figure-center"></section>
+<section id="iris-meta-subs.ctd-2" class="slide level2">
+<h2>Iris &nbsp;&nbsp;&nbsp;</h2>
+
+<img data-src="data_files/figure-revealjs/cell-7-output-1.png" alt="Iris data distribution" class="r-stretch quarto-figure-center"></section>
+<section id="mnist" class="slide level2">
+<h2>MNIST</h2>
+<div class="cell" data-fig-width="55%" data-execution_count="8">
+<div class="cell-output cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="data_files/figure-revealjs/cell-9-output-1.png" alt="MNIST data sample"></p>
+</figure>
+</div>
+</div>
+</div>
+
+<aside><div>
+<p><span class="citation" data-cites="lecun1998mnist">(<a href="#/bibliography" role="doc-biblioref" onclick="">LeCun 1998</a>)</span></p>
+</div></aside></section>
 <section id="imagenet" class="slide level2">
 <h2>ImageNet</h2>
+<p><br></p>
+<p><img data-src="https://raw.githubusercontent.com/EliSchwartz/imagenet-sample-images/master/n01580077_jay.JPEG" style="width:25.0%" data-fig-align="center" alt="ImageNet sample 1"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <img data-src="https://raw.githubusercontent.com/EliSchwartz/imagenet-sample-images/master/n01514668_cock.JPEG" style="width:25.0%" data-fig-align="center" alt="ImageNet sample 2"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <img data-src="https://raw.githubusercontent.com/EliSchwartz/imagenet-sample-images/master/n01440764_tench.JPEG" style="width:25.0%" data-fig-align="center" alt="ImageNet sample 3"></p>
+
 <!-- #%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#% --->
-</section></section>
+<aside><div>
+<p><span class="citation" data-cites="deng2009imagenet">(<a href="#/bibliography" role="doc-biblioref" onclick="">Deng et al. 2009</a>)</span></p>
+</div></aside></section></section>
 <section>
 <section id="models" class="title-slide slide level1 center">
 <h1>Models</h1>
-
+<aside class="notes">
+<ul>
+<li>The underlying model does not really matter</li>
+</ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
-<section id="todo" class="slide level2">
-<h2>TODO</h2>
+<section id="decision-trees" class="slide level2">
+<h2>Decision Trees</h2>
+<p>TODO</p>
+<p>sklearn.tree.DecisionTreeClassifier()</p>
+</section>
+<section id="svms" class="slide level2">
+<h2>SVMs</h2>
+<p>TODO</p>
+<p>sklearn.svm.SVC(probability=True)</p>
+</section>
+<section id="linear-svms" class="slide level2">
+<h2>Linear SVMs</h2>
+<p>TODO</p>
+<p>sklearn.svm.SVC(probability=True, kernel=‘linear’)</p>
 <!-- #%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#% --->
 </section></section>
 <section>
@@ -393,13 +453,9 @@ Kacper Sokol
 <h1>Set Up</h1>
 
 </section>
-<section id="todo-1" class="slide level2">
+<section id="todo" class="slide level2">
 <h2>TODO</h2>
-<p>Describe the data sets used for the slides their characteristics</p>
-<p>e.g., correlation of features in Iris data set <span class="citation" data-cites="fisher1936use">(<a href="#/bibliography" role="doc-biblioref" onclick="">Fisher 1936</a>)</span></p>
-<p>and some synthetic data</p>
-<p>probabilistic classification 1 of 3 classes crisp classification</p>
-<p>the underlying model doesnt really matter but we use linear and non-linear SVMs and deicsion trees</p>
+<p>probabilistic classification 1 of 3 classes crisp classification but we use linear and non-linear SVMs and decision trees</p>
 <!-- #%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#% --->
 </section></section>
 <section>
@@ -416,8 +472,14 @@ Kacper Sokol
 <section id="bibliography" class="slide level2 smaller scrollable">
 <h2>Bibliography</h2>
 <div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography">
+<div id="ref-deng2009imagenet" class="csl-entry" role="doc-biblioentry">
+Deng, Jia, Wei Dong, Richard Socher, Li-Jia Li, Kai Li, and Li Fei-Fei. 2009. <span>“<span>ImageNet</span>: <span>A</span> Large-Scale Hierarchical Image Database.”</span> In <em>2009 IEEE Conference on Computer Vision and Pattern Recognition</em>, 248–55. IEEE.
+</div>
 <div id="ref-fisher1936use" class="csl-entry" role="doc-biblioentry">
 Fisher, Ronald A. 1936. <span>“The Use of Multiple Measurements in Taxonomic Problems.”</span> <em>Annals of Eugenics</em> 7 (2): 179–88.
+</div>
+<div id="ref-lecun1998mnist" class="csl-entry" role="doc-biblioentry">
+LeCun, Yann. 1998. <span>“The <span>MNIST</span> Database of Handwritten Digits.”</span> <em>Http://Yann.lecun.com/Exdb/Mnist/</em>.
 </div>
 </div>
 </section>
