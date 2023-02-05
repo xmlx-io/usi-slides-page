@@ -858,35 +858,35 @@
     "href": "slides/1_introduction/data.html#decision-trees",
     "title": "Data Sets and Models",
     "section": "Decision Trees",
-    "text": "Decision Trees\nTODO\nsklearn.tree.DecisionTreeClassifier()"
-  },
-  {
-    "objectID": "slides/1_introduction/data.html#svms",
-    "href": "slides/1_introduction/data.html#svms",
-    "title": "Data Sets and Models",
-    "section": "SVMs",
-    "text": "SVMs\nTODO\nsklearn.svm.SVC(probability=True)"
+    "text": "Decision Trees"
   },
   {
     "objectID": "slides/1_introduction/data.html#linear-svms",
     "href": "slides/1_introduction/data.html#linear-svms",
     "title": "Data Sets and Models",
     "section": "Linear SVMs",
-    "text": "Linear SVMs\nTODO\nsklearn.svm.SVC(probability=True, kernel=‘linear’)"
+    "text": "Linear SVMs"
   },
   {
-    "objectID": "slides/1_introduction/data.html#todo",
-    "href": "slides/1_introduction/data.html#todo",
+    "objectID": "slides/1_introduction/data.html#svms",
+    "href": "slides/1_introduction/data.html#svms",
     "title": "Data Sets and Models",
-    "section": "TODO",
-    "text": "TODO\nprobabilistic classification 1 of 3 classes crisp classification but we use linear and non-linear SVMs and decision trees"
+    "section": "SVMs",
+    "text": "SVMs"
+  },
+  {
+    "objectID": "slides/1_introduction/data.html#set-up",
+    "href": "slides/1_introduction/data.html#set-up",
+    "title": "Data Sets and Models",
+    "section": "Set Up",
+    "text": "Set Up\n\nProbabilistic classification (with 3 classes for the Iris data set)\nCrisp classification\n\n\n\n\n\nDiscretise a numerical feature to get a categorical attribute"
   },
   {
     "objectID": "slides/1_introduction/data.html#summary",
     "href": "slides/1_introduction/data.html#summary",
     "title": "Data Sets and Models",
     "section": "Summary",
-    "text": "Summary\n\nTODO"
+    "text": "Summary\n\n\nData\n\nIris\nMNIST\nImageNet\n\n\nModels\n\nDecision Trees\nLinear SVMs\nRBF SVMs"
   },
   {
     "objectID": "slides/1_introduction/data.html#bibliography",

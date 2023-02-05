@@ -337,6 +337,9 @@
       margin-right: 0; 
     }
   </style>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+  <script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
 </head>
 <body class="quarto-dark">
   <div class="reveal">
@@ -359,7 +362,6 @@ Kacper Sokol
 <ul>
 <li><a href="#/data-sets" id="/toc-data-sets">Data Sets</a></li>
 <li><a href="#/models" id="/toc-models">Models</a></li>
-<li><a href="#/set-up" id="/toc-set-up">Set Up</a></li>
 <li><a href="#/wrap-up" id="/toc-wrap-up">Wrap Up</a></li>
 </ul>
 </nav>
@@ -434,28 +436,28 @@ Kacper Sokol
 </section>
 <section id="decision-trees" class="slide level2">
 <h2>Decision Trees</h2>
-<p>TODO</p>
-<p>sklearn.tree.DecisionTreeClassifier()</p>
-</section>
-<section id="svms" class="slide level2">
-<h2>SVMs</h2>
-<p>TODO</p>
-<p>sklearn.svm.SVC(probability=True)</p>
-</section>
+
+<img data-src="data_files/figure-revealjs/cell-11-output-1.png" alt="Decision tree" class="r-stretch quarto-figure-center"></section>
 <section id="linear-svms" class="slide level2">
 <h2>Linear SVMs</h2>
-<p>TODO</p>
-<p>sklearn.svm.SVC(probability=True, kernel=‘linear’)</p>
-<!-- #%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#% --->
-</section></section>
-<section>
-<section id="set-up" class="title-slide slide level1 center">
-<h1>Set Up</h1>
 
-</section>
-<section id="todo" class="slide level2">
-<h2>TODO</h2>
-<p>probabilistic classification 1 of 3 classes crisp classification but we use linear and non-linear SVMs and decision trees</p>
+<img data-src="data_files/figure-revealjs/cell-14-output-1.png" alt="Linear SVM" class="r-stretch quarto-figure-center"></section>
+<section id="svms" class="slide level2">
+<h2>SVMs</h2>
+
+<img data-src="data_files/figure-revealjs/cell-16-output-1.png" alt="Radial Basis Function SVM" class="r-stretch quarto-figure-center"></section>
+<section id="set-up" class="slide level2">
+<h2>Set Up</h2>
+<ul>
+<li>Probabilistic classification (with 3 classes for the Iris data set)</li>
+<li>Crisp classification</li>
+</ul>
+<br>
+<hr>
+<p><br></p>
+<ul>
+<li>Discretise a numerical feature to get a categorical attribute</li>
+</ul>
 <!-- #%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#% --->
 </section></section>
 <section>
@@ -465,9 +467,23 @@ Kacper Sokol
 </section>
 <section id="summary" class="slide level2">
 <h2>Summary</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p>Data</p>
 <ul>
-<li>TODO</li>
+<li>Iris</li>
+<li>MNIST</li>
+<li>ImageNet</li>
 </ul>
+</div><div class="column" style="width:50%;">
+<p>Models</p>
+<ul>
+<li>Decision Trees</li>
+<li>Linear SVMs</li>
+<li>RBF SVMs</li>
+</ul>
+</div>
+</div>
 </section>
 <section id="bibliography" class="slide level2 smaller scrollable">
 <h2>Bibliography</h2>
