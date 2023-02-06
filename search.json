@@ -175,6 +175,34 @@
     "text": "XAI process\n A generic eXplainable Artificial Intelligence process is beyond our reach at the moment\n\nXAI Taxonomy spanning social and technical desiderata:\n• Functional • Operational • Usability • Safety • Validation •\n(Sokol and Flach, 2020. Explainability Fact Sheets: A Framework for Systematic Assessment of Explainable Approaches)\nFramework for black-box explainers\n(Henin and Le Métayer, 2019. Towards a generic framework for black-box explanations of algorithmic decision systems)"
   },
   {
+    "objectID": "slides/1_introduction/preliminaries.html#permutation-feature-importance",
+    "href": "slides/1_introduction/preliminaries.html#permutation-feature-importance",
+    "title": "XML Preliminaries",
+    "section": "Permutation Feature Importance",
+    "text": "Permutation Feature Importance\n\n\n\n\n\n\n\n\n\n()     https://www.kaggle.com/code/dansbecker/permutation-importance"
+  },
+  {
+    "objectID": "slides/1_introduction/preliminaries.html#individual-conditional-expectation-partial-dependence",
+    "href": "slides/1_introduction/preliminaries.html#individual-conditional-expectation-partial-dependence",
+    "title": "XML Preliminaries",
+    "section": "Individual Conditional Expectation & Partial Dependence",
+    "text": "Individual Conditional Expectation & Partial Dependence\n\n\n\n\n\n\n\n()     ()"
+  },
+  {
+    "objectID": "slides/1_introduction/preliminaries.html#face-counterfactuals",
+    "href": "slides/1_introduction/preliminaries.html#face-counterfactuals",
+    "title": "XML Preliminaries",
+    "section": "FACE Counterfactuals",
+    "text": "FACE Counterfactuals\n\n\n\n\n\n\n\n()     (Poyiadzi et al. 2020)"
+  },
+  {
+    "objectID": "slides/1_introduction/preliminaries.html#rulefit",
+    "href": "slides/1_introduction/preliminaries.html#rulefit",
+    "title": "XML Preliminaries",
+    "section": "RuleFit",
+    "text": "RuleFit\n\n\n\n\n\n\n\n\n\n\n()     https://christophm.github.io/interpretable-ml-book/rulefit.html"
+  },
+  {
     "objectID": "slides/1_introduction/preliminaries.html#books",
     "href": "slides/1_introduction/preliminaries.html#books",
     "title": "XML Preliminaries",
@@ -207,7 +235,7 @@
     "href": "slides/1_introduction/preliminaries.html#bibliography",
     "title": "XML Preliminaries",
     "section": "Bibliography",
-    "text": "Bibliography\n\n\nBelle, Vaishak, and Ioannis Papantonis. 2021. “Principles and Practice of Explainable Machine Learning.” Frontiers in Big Data, 39.\n\n\nDoshi-Velez, Finale, and Been Kim. 2017. “Towards a Rigorous Science of Interpretable Machine Learning.” arXiv Preprint arXiv:1702.08608.\n\n\nGuidotti, Riccardo, Anna Monreale, Salvatore Ruggieri, Franco Turini, Fosca Giannotti, and Dino Pedreschi. 2018. “A Survey of Methods for Explaining Black Box Models.” ACM Computing Surveys (CSUR) 51 (5): 1–42.\n\n\nLanger, Ellen J, Arthur Blank, and Benzion Chanowitz. 1978. “The Mindlessness of Ostensibly Thoughtful Action: The Role of ‘Placebic’ Information in Interpersonal Interaction.” Journal of Personality and Social Psychology 36 (6): 635.\n\n\nMiller, Tim. 2019. “Explanation in Artificial Intelligence: Insights from the Social Sciences.” Artificial Intelligence 267: 1–38.\n\n\nRudin, Cynthia. 2019. “Stop Explaining Black Box Machine Learning Models for High Stakes Decisions and Use Interpretable Models Instead.” Nature Machine Intelligence 1 (5): 206–15.\n\n\nSokol, Kacper, and Peter Flach. 2020a. “Explainability Fact Sheets: A Framework for Systematic Assessment of Explainable Approaches.” In Proceedings of the 2020 Conference on Fairness, Accountability, and Transparency, 56–67.\n\n\n———. 2020b. “LIMEtree: Interactively Customisable Explanations Based on Local Surrogate Multi-Output Regression Trees.” arXiv Preprint arXiv:2005.01427.\n\n\n———. 2021. “Explainability Is in the Mind of the Beholder: Establishing the Foundations of Explainable Artificial Intelligence.” arXiv Preprint arXiv:2112.14466."
+    "text": "Bibliography\n\n\nBelle, Vaishak, and Ioannis Papantonis. 2021. “Principles and Practice of Explainable Machine Learning.” Frontiers in Big Data, 39.\n\n\nDoshi-Velez, Finale, and Been Kim. 2017. “Towards a Rigorous Science of Interpretable Machine Learning.” arXiv Preprint arXiv:1702.08608.\n\n\nGuidotti, Riccardo, Anna Monreale, Salvatore Ruggieri, Franco Turini, Fosca Giannotti, and Dino Pedreschi. 2018. “A Survey of Methods for Explaining Black Box Models.” ACM Computing Surveys (CSUR) 51 (5): 1–42.\n\n\nLanger, Ellen J, Arthur Blank, and Benzion Chanowitz. 1978. “The Mindlessness of Ostensibly Thoughtful Action: The Role of ‘Placebic’ Information in Interpersonal Interaction.” Journal of Personality and Social Psychology 36 (6): 635.\n\n\nMiller, Tim. 2019. “Explanation in Artificial Intelligence: Insights from the Social Sciences.” Artificial Intelligence 267: 1–38.\n\n\nPoyiadzi, Rafael, Kacper Sokol, Raul Santos-Rodriguez, Tijl De Bie, and Peter Flach. 2020. “FACE: Feasible and Actionable Counterfactual Explanations.” In Proceedings of the AAAI/ACM Conference on AI, Ethics, and Society, 344–50.\n\n\nRudin, Cynthia. 2019. “Stop Explaining Black Box Machine Learning Models for High Stakes Decisions and Use Interpretable Models Instead.” Nature Machine Intelligence 1 (5): 206–15.\n\n\nSokol, Kacper, and Peter Flach. 2020a. “Explainability Fact Sheets: A Framework for Systematic Assessment of Explainable Approaches.” In Proceedings of the 2020 Conference on Fairness, Accountability, and Transparency, 56–67.\n\n\n———. 2020b. “LIMEtree: Interactively Customisable Explanations Based on Local Surrogate Multi-Output Regression Trees.” arXiv Preprint arXiv:2005.01427.\n\n\n———. 2021. “Explainability Is in the Mind of the Beholder: Establishing the Foundations of Explainable Artificial Intelligence.” arXiv Preprint arXiv:2112.14466."
   },
   {
     "objectID": "slides/1_introduction/preliminaries.html#questions",
@@ -1075,14 +1103,14 @@
     "href": "slides/1_introduction/course.html#schedule",
     "title": "Machine Learning Explainability",
     "section": "Schedule",
-    "text": "Schedule\n\nWhen: 2 weeks – w/c 6th and 13th of February 2023\nWhat: 10 sessions comprising of\n\n45-minute lecture\n45-minute supervised lab session (project / assignment / coursework)\n45-minute open office (general questions & project discussions)\n\nTime Commitment: 20 hours (self-study)\n\n\n\nWe may use the last session for project presentations"
+    "text": "Schedule\n\nWhen: 2 weeks – w/c 6th and 13th of February 2023\nWhat: 10 sessions comprising of\n\n45-minute lecture\n45-minute supervised lab session (project / assignment / coursework)\n30-minute open office (general questions & project discussions)\n\nTime Commitment: 20 hours (self-study)\n\n\n\nWe may use the last session for project presentations"
   },
   {
     "objectID": "slides/1_introduction/course.html#schedule-meta-subs.ctd",
     "href": "slides/1_introduction/course.html#schedule-meta-subs.ctd",
     "title": "Machine Learning Explainability",
     "section": "Schedule    ",
-    "text": "Schedule    \n\nWhere:\n\n\n\n\n\n\n\n\n\nWhat\nTime\nLocation (week 1)\nLocation (week 2)\n\n\n\n\nlecture\n9.30–10.15am\nD0.03\nD1.14\n\n\ndiscussion\n10.15–10.30am\nD0.03\nD1.14\n\n\nlab\n10.30–11.30am\nD0.03\nD1.14\n\n\nopen office\n11.30am–12pm\nD0.03\nD1.14"
+    "text": "Schedule    \n\nWhere:\n\n\n\n\n\n\n\n\n\nWhat\nTime\nLocation (week 1)\nLocation (week 2)\n\n\n\n\nlecture\n9.30–10.15am\nD0.03\nD1.14\n\n\ndiscussion\n10.15–10.30am\nD0.03\nD1.14\n\n\nlab\n10.30–11.15am\nD0.03\nD1.14\n\n\nopen office\n11.30am–12pm\nD0.03\nD1.14"
   },
   {
     "objectID": "slides/1_introduction/course.html#prerequisites",
@@ -1138,7 +1166,7 @@
     "href": "slides/1_introduction/course.html#scope",
     "title": "Machine Learning Explainability",
     "section": "Scope",
-    "text": "Scope\n\nIntroduction to explainability\n\nHistory of explainability\nTypes of explanations\nAnte-hoc vs. post-hoc discussion, and information lineage (endogenous and exogenous sources of explanatory information)\nMulti-class explainability\nTaxonomy and classification of explainability approaches\nDefining explainability\nHuman-centred perspective\nEvaluation of explainability techniques"
+    "text": "Scope\n\nIntroduction to explainability\n\n\n\nHistory of explainability\nTypes of explanations\nAnte-hoc vs. post-hoc discussion, and information lineage (endogenous and exogenous sources of explanatory information)\nMulti-class explainability\n\n\n\nTaxonomy and classification of explainability approaches\nDefining explainability\nHuman-centred perspective\nEvaluation of explainability techniques\nModels and data used for this course"
   },
   {
     "objectID": "slides/1_introduction/course.html#scope-meta-subs.ctd",
@@ -1159,28 +1187,28 @@
     "href": "slides/1_introduction/course.html#scope-meta-subs.ctd-2",
     "title": "Machine Learning Explainability",
     "section": "Scope    ",
-    "text": "Scope    \n\nFeature importance\n\nPartial Dependence-based feature importance\nPermutation Importance\nFeature Interaction"
+    "text": "Scope    \n\nFeature importance\n\nPermutation Importance\nPartial Dependence-based feature importance\nMeta-approaches\n\nLIME-based feature importance\nSHAP-based feature importance"
   },
   {
     "objectID": "slides/1_introduction/course.html#scope-meta-subs.ctd-3",
     "href": "slides/1_introduction/course.html#scope-meta-subs.ctd-3",
     "title": "Machine Learning Explainability",
     "section": "Scope    ",
-    "text": "Scope    \n\nFeature influence\n\nIndividual Conditional Expectation\nPartial Dependence\nMarginal Effect\nAccumulated Local Effect\nMeta-approaches\n\nLIME (liner surrogate)\nSHAP"
+    "text": "Scope    \n\nFeature influence\n\nIndividual Conditional Expectation\nPartial Dependence\nMarginal Effect\nAccumulated Local Effect\nMeta-approaches\n\nLIME (linear surrogate)\nSHAP"
   },
   {
     "objectID": "slides/1_introduction/course.html#scope-meta-subs.ctd-4",
     "href": "slides/1_introduction/course.html#scope-meta-subs.ctd-4",
     "title": "Machine Learning Explainability",
     "section": "Scope    ",
-    "text": "Scope    \n\nInstance-based explanations\n\nExemplar explanations\nCounterfactuals\nPrototypes and criticisms"
+    "text": "Scope    \n\nMeta-explainers\n\nsurrogate explainers\n\nlocal, cohort and global\nlinear and tree-based\n\nrules\n\nANCHOR\nRuleFit\n\nSHAP"
   },
   {
     "objectID": "slides/1_introduction/course.html#scope-meta-subs.ctd-5",
     "href": "slides/1_introduction/course.html#scope-meta-subs.ctd-5",
     "title": "Machine Learning Explainability",
     "section": "Scope    ",
-    "text": "Scope    \n\nMeta-explainers\n\nsurrogate explainers\n\nlocal, cohort and global\nlinear and tree-based\n\nrules\n\nANCHOR\nRuleFit\n\nSHAP"
+    "text": "Scope    \n\nInstance-based explanations\n\nExemplar explanations\nCounterfactuals\nPrototypes and criticisms"
   },
   {
     "objectID": "slides/1_introduction/course.html#coursework",
@@ -1218,39 +1246,11 @@
     "text": "Tools\n💽 Interactive visualisation / reporting / dashboarding / presentation software\n\nStreamlit\nPlotly Dash\nShiny for Python and R\nQuarto\n\n\n\ntools that may be used for the project presentation / delivery"
   },
   {
-    "objectID": "slides/1_introduction/course.html#permutation-feature-importance",
-    "href": "slides/1_introduction/course.html#permutation-feature-importance",
-    "title": "Machine Learning Explainability",
-    "section": "Permutation Feature Importance",
-    "text": "Permutation Feature Importance\n\n\n\n\n\n\n\n()     https://www.kaggle.com/code/dansbecker/permutation-importance"
-  },
-  {
-    "objectID": "slides/1_introduction/course.html#individual-conditional-expectation-partial-dependence",
-    "href": "slides/1_introduction/course.html#individual-conditional-expectation-partial-dependence",
-    "title": "Machine Learning Explainability",
-    "section": "Individual Conditional Expectation &  Partial Dependence",
-    "text": "Individual Conditional Expectation &  Partial Dependence\n\n\n\n\n\n\n\n()     ()"
-  },
-  {
-    "objectID": "slides/1_introduction/course.html#face-counterfactuals",
-    "href": "slides/1_introduction/course.html#face-counterfactuals",
-    "title": "Machine Learning Explainability",
-    "section": "FACE Counterfactuals",
-    "text": "FACE Counterfactuals\n\n\n\n\n\n\n\n()     (Poyiadzi et al. 2020)"
-  },
-  {
-    "objectID": "slides/1_introduction/course.html#rulefit",
-    "href": "slides/1_introduction/course.html#rulefit",
-    "title": "Machine Learning Explainability",
-    "section": "RuleFit",
-    "text": "RuleFit\n\n\n\n\n\n\n\n\n()     https://christophm.github.io/interpretable-ml-book/rulefit.html"
-  },
-  {
     "objectID": "slides/1_introduction/course.html#bibliography",
     "href": "slides/1_introduction/course.html#bibliography",
     "title": "Machine Learning Explainability",
     "section": "Bibliography",
-    "text": "Bibliography\n\n\nPoyiadzi, Rafael, Kacper Sokol, Raul Santos-Rodriguez, Tijl De Bie, and Peter Flach. 2020. “FACE: Feasible and Actionable Counterfactual Explanations.” In Proceedings of the AAAI/ACM Conference on AI, Ethics, and Society, 344–50."
+    "text": "Bibliography"
   },
   {
     "objectID": "slides/1_introduction/course.html#questions",
