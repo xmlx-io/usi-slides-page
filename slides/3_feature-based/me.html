@@ -6,7 +6,9 @@
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../../site_libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
+<link href="../../site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.2.313">
 
   <meta name="author" content="Kacper Sokol">
@@ -341,7 +343,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
   <script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
 </head>
-<body class="quarto-dark">
+<body class="quarto-light">
   <div class="reveal">
     <div class="slides">
 
@@ -392,7 +394,7 @@ Kacper Sokol
 <h2>Rationale</h2>
 <p><br></p>
 <blockquote>
-<p>ME improves upon <a href="pd.html"> Partial Dependence (PD)</a> <span class="citation" data-cites="friedman2001greedy">(<a href="#/bibliography" role="doc-biblioref" onclick="">Friedman 2001</a>)</span> by ensuring that the influence estimates are based on <strong>realistic instances</strong> (thus respecting <em>feature correlation</em>), making the explanatory insights more truthful.</p>
+<p>ME improves upon <a href="pd.html"><i class="fa-solid fa-person-chalkboard" aria-label="person-chalkboard"></i> Partial Dependence (PD)</a> <span class="citation" data-cites="friedman2001greedy">(<a href="#/bibliography" role="doc-biblioref" onclick="">Friedman 2001</a>)</span> by ensuring that the influence estimates are based on <strong>realistic instances</strong> (thus respecting <em>feature correlation</em>), making the explanatory insights more truthful.</p>
 </blockquote>
 <p><br></p>
 <div class="callout callout-caution callout-captioned callout-style-default">
@@ -460,7 +462,7 @@ Kacper Sokol
 </table>
 </section>
 <section id="method-properties-meta-subs.ctd" class="slide level2">
-<h2>Method Properties &nbsp;&nbsp;&nbsp;</h2>
+<h2>Method Properties &nbsp;&nbsp;&nbsp;<i class="fa-solid fa-arrow-alt-circle-up" aria-label="arrow-alt-circle-up"></i></h2>
 <p><br></p>
 <table>
 <colgroup>
@@ -526,7 +528,7 @@ Kacper Sokol
 </div>
 </section>
 <section id="computing-me-meta-subs.ctd" class="slide level2">
-<h2>Computing ME &nbsp;&nbsp;&nbsp;</h2>
+<h2>Computing ME &nbsp;&nbsp;&nbsp;<i class="fa-solid fa-arrow-alt-circle-up" aria-label="arrow-alt-circle-up"></i></h2>
 <p><br></p>
 <div class="callout callout-caution callout-captioned callout-style-default">
 <div class="callout-body">
@@ -549,7 +551,7 @@ Kacper Sokol
 </div>
 </section>
 <section id="computing-me-meta-subs.ctd-1" class="slide level2">
-<h2>Computing ME &nbsp;&nbsp;&nbsp;</h2>
+<h2>Computing ME &nbsp;&nbsp;&nbsp;<i class="fa-solid fa-arrow-alt-circle-up" aria-label="arrow-alt-circle-up"></i></h2>
 <p><br></p>
 <div class="callout callout-tip callout-captioned callout-style-default">
 <div class="callout-body">
@@ -573,7 +575,7 @@ Kacper Sokol
 <li>for <strong>probabilistic classifiers</strong> (per class) and <strong>regressors</strong> <strong>average</strong> the response of the model across all the instances collected for each value (<strong>exact</strong>) or bin (<strong>relaxed</strong>) of the explained feature; visualise ME as a line</li>
 </ul></li>
 </ol>
-<p>&nbsp;&nbsp;&nbsp; Since the values of the explained feature may <strong>not be uniformly distributed</strong> in the underlying data set, a <strong>rug plot</strong> showing the distribution of its feature values for <strong>strict</strong> ME or a <strong>histogram</strong> representing the number of instances per bin in <strong>relaxed</strong> ME can help in interpreting the explanation.</p>
+<p><i class="fa-solid fa-star" aria-label="star"></i>&nbsp;&nbsp;&nbsp; Since the values of the explained feature may <strong>not be uniformly distributed</strong> in the underlying data set, a <strong>rug plot</strong> showing the distribution of its feature values for <strong>strict</strong> ME or a <strong>histogram</strong> representing the number of instances per bin in <strong>relaxed</strong> ME can help in interpreting the explanation.</p>
 </div>
 </div>
 </div>
@@ -585,7 +587,7 @@ Kacper Sokol
 
 </section>
 <section id="formulation-fa-square-root-alt" class="slide level2">
-<h2>Formulation &nbsp;&nbsp;&nbsp;</h2>
+<h2>Formulation &nbsp;&nbsp;&nbsp;<i class="fa-solid fa-square-root-alt" aria-label="square-root-alt"></i></h2>
 <p><span class="math display">\[
 X_{\mathit{ME}} \subseteq \mathcal{X}
 \]</span></p>
@@ -606,7 +608,7 @@ V_i = \{ x_i : x \in X_{\mathit{ME}} \}
 \]</span></p>
 </section>
 <section id="formulation-fa-square-root-alt-meta-subs.ctd" class="slide level2">
-<h2>Formulation &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;</h2>
+<h2>Formulation &nbsp;&nbsp;&nbsp;<i class="fa-solid fa-square-root-alt" aria-label="square-root-alt"></i> &nbsp;&nbsp;&nbsp;<i class="fa-solid fa-arrow-alt-circle-up" aria-label="arrow-alt-circle-up"></i></h2>
 <p><br></p>
 <p>Based on the ICE notation <span class="citation" data-cites="goldstein2015peeking">(<a href="#/bibliography" role="doc-biblioref" onclick="">Goldstein et al. 2015</a>)</span></p>
 <p><br></p>
@@ -639,7 +641,7 @@ V_i = \{ x_i : x \in X_{\mathit{ME}} \}
       }</style></aside>
 </section>
 <section id="approximation-fa-desktop" class="slide level2">
-<h2>Approximation &nbsp;&nbsp;&nbsp;</h2>
+<h2>Approximation &nbsp;&nbsp;&nbsp;<i class="fa-solid fa-desktop" aria-label="desktop"></i></h2>
 <p><br></p>
 <p><span class="math display">\[
 \mathit{ME}_i \approx
@@ -734,15 +736,15 @@ or
 
 <img data-src="me_files/figure-revealjs/cell-26-output-1.png" alt="Relaxed ME of a single class for two correlated features" class="r-stretch quarto-figure-center"></section>
 <section id="feature-correlation-meta-subs.ctd" class="slide level2">
-<h2>Feature Correlation &nbsp;&nbsp;&nbsp;</h2>
+<h2>Feature Correlation &nbsp;&nbsp;&nbsp;<i class="fa-solid fa-arrow-alt-circle-up" aria-label="arrow-alt-circle-up"></i></h2>
 
 <img data-src="me_files/figure-revealjs/cell-27-output-1.png" alt="PD of a single class for two correlated features" class="r-stretch quarto-figure-center"></section>
 <section id="feature-correlation-meta-subs.ctd-1" class="slide level2">
-<h2>Feature Correlation &nbsp;&nbsp;&nbsp;</h2>
+<h2>Feature Correlation &nbsp;&nbsp;&nbsp;<i class="fa-solid fa-arrow-alt-circle-up" aria-label="arrow-alt-circle-up"></i></h2>
 
 <img data-src="me_files/figure-revealjs/cell-28-output-1.png" alt="Model coefficients for the selected class" class="r-stretch quarto-figure-center"></section>
 <section id="feature-correlation-meta-subs.ctd-2" class="slide level2">
-<h2>Feature Correlation &nbsp;&nbsp;&nbsp;</h2>
+<h2>Feature Correlation &nbsp;&nbsp;&nbsp;<i class="fa-solid fa-arrow-alt-circle-up" aria-label="arrow-alt-circle-up"></i></h2>
 
 <img data-src="me_files/figure-revealjs/cell-29-output-1.png" alt="Iris feature correlation" class="r-stretch quarto-figure-center"><aside class="notes">
 <ul>
@@ -770,14 +772,14 @@ or
 
 </section>
 <section id="pros-fa-plus-square" class="slide level2">
-<h2>Pros &nbsp;&nbsp;&nbsp;</h2>
+<h2>Pros &nbsp;&nbsp;&nbsp;<i class="fa-solid fa-plus-square" aria-label="plus-square"></i></h2>
 <ul>
 <li><strong>Easy to generate and interpret</strong></li>
 <li>Based on <strong>real data</strong></li>
 </ul>
 </section>
 <section id="cons-fa-minus-square" class="slide level2">
-<h2>Cons &nbsp;&nbsp;&nbsp;</h2>
+<h2>Cons &nbsp;&nbsp;&nbsp;<i class="fa-solid fa-minus-square" aria-label="minus-square"></i></h2>
 <ul>
 <li>Assumes <strong>feature independence</strong>, which is often unreasonable and heavily biases the influence measurements</li>
 <li>May be <strong>unreliable for certain values</strong> of the explained feature when there is a low number of data points with that value (<strong>strict</strong>) or in a relevant bin (<strong>relaxed</strong>); this impacts the reliability of influence estimates (average perdiction of the explained model for that value or range of values)</li>
@@ -787,7 +789,7 @@ or
 </ul>
 </section>
 <section id="caveats-fa-skull" class="slide level2">
-<h2>Caveats &nbsp;&nbsp;&nbsp;</h2>
+<h2>Caveats &nbsp;&nbsp;&nbsp;<i class="fa-solid fa-skull" aria-label="skull"></i></h2>
 <ul>
 <li>The measurements may be sensitive to different binning approaches for <strong>relaxed</strong> ME</li>
 <li>Computational complexity: <span class="math inline">\(\mathcal{O} \left( n \right)\)</span>, where <span class="math inline">\(n\)</span> is the number of instances in the designated data set</li>
@@ -804,23 +806,23 @@ or
 <p><br></p>
 <h3 id="accumulated-local-effect-ale">Accumulated Local Effect (ALE)</h3>
 <blockquote>
-<p><a href="ale.html"></a> &nbsp;&nbsp;&nbsp; An evolved version of (relaxed) ME that is less prone to being affected by feature correlation. It communicates the influence of a specific feature value on the model’s prediction by quantifying the average (accumulated) difference between the predictions at the boundaries of a (small) <strong>fixed interval</strong> around the selected feature value <span class="citation" data-cites="apley2020visualizing">(<a href="#/bibliography" role="doc-biblioref" onclick="">Apley and Zhu 2020</a>)</span>. It is calculated by replacing the value of the explained feature with the interval boundaries for <strong>instances found in the designated data set</strong> whose value of this feature is within the specified range.</p>
+<p><a href="ale.html"><i class="fa-solid fa-person-chalkboard" aria-label="person-chalkboard"></i></a> &nbsp;&nbsp;&nbsp; An evolved version of (relaxed) ME that is less prone to being affected by feature correlation. It communicates the influence of a specific feature value on the model’s prediction by quantifying the average (accumulated) difference between the predictions at the boundaries of a (small) <strong>fixed interval</strong> around the selected feature value <span class="citation" data-cites="apley2020visualizing">(<a href="#/bibliography" role="doc-biblioref" onclick="">Apley and Zhu 2020</a>)</span>. It is calculated by replacing the value of the explained feature with the interval boundaries for <strong>instances found in the designated data set</strong> whose value of this feature is within the specified range.</p>
 </blockquote>
 </section>
 <section id="related-techniques-meta-subs.ctd" class="slide level2">
-<h2>Related Techniques &nbsp;&nbsp;&nbsp;</h2>
+<h2>Related Techniques &nbsp;&nbsp;&nbsp;<i class="fa-solid fa-arrow-alt-circle-up" aria-label="arrow-alt-circle-up"></i></h2>
 <p><br></p>
 <h3 id="individual-conditional-expectation-ice">Individual Conditional Expectation (ICE)</h3>
 <blockquote>
-<p><a href="ice.html"></a> &nbsp;&nbsp;&nbsp; It communicates the influence of a specific feature value on the model’s prediction by <strong>fixing the value of this feature</strong> across a designated range for a selected data point <span class="citation" data-cites="goldstein2015peeking">(<a href="#/bibliography" role="doc-biblioref" onclick="">Goldstein et al. 2015</a>)</span>. It is an instance-focused (local) “variant” of <em>Partial Dependence</em>.</p>
+<p><a href="ice.html"><i class="fa-solid fa-person-chalkboard" aria-label="person-chalkboard"></i></a> &nbsp;&nbsp;&nbsp; It communicates the influence of a specific feature value on the model’s prediction by <strong>fixing the value of this feature</strong> across a designated range for a selected data point <span class="citation" data-cites="goldstein2015peeking">(<a href="#/bibliography" role="doc-biblioref" onclick="">Goldstein et al. 2015</a>)</span>. It is an instance-focused (local) “variant” of <em>Partial Dependence</em>.</p>
 </blockquote>
 </section>
 <section id="related-techniques-meta-subs.ctd-1" class="slide level2">
-<h2>Related Techniques &nbsp;&nbsp;&nbsp;</h2>
+<h2>Related Techniques &nbsp;&nbsp;&nbsp;<i class="fa-solid fa-arrow-alt-circle-up" aria-label="arrow-alt-circle-up"></i></h2>
 <p><br></p>
 <h3 id="partial-dependence-pd">Partial Dependence (PD)</h3>
 <blockquote>
-<p><a href="pd.html"></a> &nbsp;&nbsp;&nbsp; It communicates the average influence of a specific feature value on the model’s prediction by <strong>fixing the value of this feature</strong> across a designated range for a set of instances. It is a model-focused (global) “variant” of <em>Individual Conditional Expectation</em>, which is calculated by <strong>averaging</strong> ICE across a collection of data points <span class="citation" data-cites="friedman2001greedy">(<a href="#/bibliography" role="doc-biblioref" onclick="">Friedman 2001</a>)</span>.</p>
+<p><a href="pd.html"><i class="fa-solid fa-person-chalkboard" aria-label="person-chalkboard"></i></a> &nbsp;&nbsp;&nbsp; It communicates the average influence of a specific feature value on the model’s prediction by <strong>fixing the value of this feature</strong> across a designated range for a set of instances. It is a model-focused (global) “variant” of <em>Individual Conditional Expectation</em>, which is calculated by <strong>averaging</strong> ICE across a collection of data points <span class="citation" data-cites="friedman2001greedy">(<a href="#/bibliography" role="doc-biblioref" onclick="">Friedman 2001</a>)</span>.</p>
 </blockquote>
 </section>
 <section id="implementations" class="slide level2">
@@ -832,8 +834,8 @@ or
 </colgroup>
 <thead>
 <tr class="header">
-<th style="text-align: left;"> Python</th>
-<th style="text-align: left;"> R</th>
+<th style="text-align: left;"><i class="fa-brands fa-python" aria-label="python"></i> Python</th>
+<th style="text-align: left;"><i class="fa-brands fa-r-project" aria-label="r-project"></i> R</th>
 </tr>
 </thead>
 <tbody>

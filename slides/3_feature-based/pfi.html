@@ -6,7 +6,9 @@
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../../site_libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
+<link href="../../site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.2.313">
 
   <meta name="author" content="Kacper Sokol">
@@ -341,7 +343,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
   <script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
 </head>
-<body class="quarto-dark">
+<body class="quarto-light">
   <div class="reveal">
     <div class="slides">
 
@@ -392,7 +394,7 @@ Kacper Sokol
 <h2>Rationale</h2>
 <p><br></p>
 <blockquote>
-<p>PFI was originally introduced for <a href="../2_glass-box/dt.html"> Random Forests</a> <span class="citation" data-cites="breiman2001random">(<a href="#/bibliography" role="doc-biblioref" onclick="">Breiman 2001</a>)</span> and later generalised to a model-agnostic technique under the name of <em>Model Reliance</em> <span class="citation" data-cites="fisher2019all">(<a href="#/bibliography" role="doc-biblioref" onclick="">Fisher, Rudin, and Dominici 2019</a>)</span>.</p>
+<p>PFI was originally introduced for <a href="../2_glass-box/dt.html"><i class="fa-solid fa-person-chalkboard" aria-label="person-chalkboard"></i> Random Forests</a> <span class="citation" data-cites="breiman2001random">(<a href="#/bibliography" role="doc-biblioref" onclick="">Breiman 2001</a>)</span> and later generalised to a model-agnostic technique under the name of <em>Model Reliance</em> <span class="citation" data-cites="fisher2019all">(<a href="#/bibliography" role="doc-biblioref" onclick="">Fisher, Rudin, and Dominici 2019</a>)</span>.</p>
 </blockquote>
 </section>
 <section id="toy-example" class="slide level2">
@@ -453,7 +455,7 @@ Kacper Sokol
 </table>
 </section>
 <section id="method-properties-meta-subs.ctd" class="slide level2">
-<h2>Method Properties &nbsp;&nbsp;&nbsp;</h2>
+<h2>Method Properties &nbsp;&nbsp;&nbsp;<i class="fa-solid fa-arrow-alt-circle-up" aria-label="arrow-alt-circle-up"></i></h2>
 <p><br></p>
 <table>
 <colgroup>
@@ -514,7 +516,7 @@ Kacper Sokol
 </div>
 </section>
 <section id="computing-pfi-meta-subs.ctd" class="slide level2">
-<h2>Computing PFI &nbsp;&nbsp;&nbsp;</h2>
+<h2>Computing PFI &nbsp;&nbsp;&nbsp;<i class="fa-solid fa-arrow-alt-circle-up" aria-label="arrow-alt-circle-up"></i></h2>
 <p><br></p>
 <div class="callout callout-caution callout-captioned callout-style-default">
 <div class="callout-body">
@@ -548,7 +550,7 @@ Kacper Sokol
 </div>
 </section>
 <section id="computing-pfi-meta-subs.ctd-1" class="slide level2">
-<h2>Computing PFI &nbsp;&nbsp;&nbsp;</h2>
+<h2>Computing PFI &nbsp;&nbsp;&nbsp;<i class="fa-solid fa-arrow-alt-circle-up" aria-label="arrow-alt-circle-up"></i></h2>
 <p><br></p>
 <div class="callout callout-tip callout-captioned callout-style-default">
 <div class="callout-body">
@@ -579,7 +581,7 @@ Kacper Sokol
 
 </section>
 <section id="formulation-fa-square-root-alt" class="slide level2">
-<h2>Formulation &nbsp;&nbsp;&nbsp;</h2>
+<h2>Formulation &nbsp;&nbsp;&nbsp;<i class="fa-solid fa-square-root-alt" aria-label="square-root-alt"></i></h2>
 <p><br></p>
 <p><span class="math display">\[
 I_{\textit{PFI}}^{j} =
@@ -603,7 +605,7 @@ I_{\textit{PFI}}^{j} =
       }</style></aside>
 </section>
 <section id="performance-change-quantification-fa-desktop" class="slide level2">
-<h2>Performance Change Quantification &nbsp;&nbsp;&nbsp;</h2>
+<h2>Performance Change Quantification &nbsp;&nbsp;&nbsp;<i class="fa-solid fa-desktop" aria-label="desktop"></i></h2>
 <p><br></p>
 <div class="columns">
 <div class="column" style="width:50%;">
@@ -670,7 +672,7 @@ I_{\textit{PFI}}^{j} =
 </blockquote>
 </section>
 <section id="pfi-based-on-training-data-meta-subs.ctd" class="slide level2">
-<h2>PFI Based on Training Data &nbsp;&nbsp;&nbsp;</h2>
+<h2>PFI Based on Training Data &nbsp;&nbsp;&nbsp;<i class="fa-solid fa-arrow-alt-circle-up" aria-label="arrow-alt-circle-up"></i></h2>
 
 <img data-src="pfi_files/figure-revealjs/cell-9-output-1.png" alt="PFI based on training data" class="r-stretch quarto-figure-center"><aside class="notes">
 <ul>
@@ -697,7 +699,7 @@ I_{\textit{PFI}}^{j} =
 </blockquote>
 </section>
 <section id="pfi-based-on-test-data-meta-subs.ctd" class="slide level2">
-<h2>PFI Based on Test Data &nbsp;&nbsp;&nbsp;</h2>
+<h2>PFI Based on Test Data &nbsp;&nbsp;&nbsp;<i class="fa-solid fa-arrow-alt-circle-up" aria-label="arrow-alt-circle-up"></i></h2>
 
 <img data-src="pfi_files/figure-revealjs/cell-10-output-1.png" alt="PFI based on test data" class="r-stretch quarto-figure-center"><aside class="notes">
 <ul>
@@ -722,13 +724,13 @@ I_{\textit{PFI}}^{j} =
 <h3 id="pd-based-feature-importance">PD-based Feature Importance</h3>
 <p><br></p>
 <blockquote>
-<p>We can measure feature importance with alternative techniques such as <a href="./pd.html"> Partial Dependence</a>-based feature importance. This metric may not pick up the <strong>random feature’s lack of predictive power</strong> since PD generates <em>unrealistic instances</em> that could follow the spurious pattern found in the training data.</p>
+<p>We can measure feature importance with alternative techniques such as <a href="./pd.html"><i class="fa-solid fa-person-chalkboard" aria-label="person-chalkboard"></i> Partial Dependence</a>-based feature importance. This metric may not pick up the <strong>random feature’s lack of predictive power</strong> since PD generates <em>unrealistic instances</em> that could follow the spurious pattern found in the training data.</p>
 </blockquote>
 </section>
 <section id="other-measures-of-feature-importance-meta-subs.ctd" class="slide level2">
-<h2>Other Measures of Feature Importance &nbsp;&nbsp;&nbsp;</h2>
+<h2>Other Measures of Feature Importance &nbsp;&nbsp;&nbsp;<i class="fa-solid fa-arrow-alt-circle-up" aria-label="arrow-alt-circle-up"></i></h2>
 <p><br></p>
-<h3 id="pd-based-feature-importance-meta-subs.ctd">PD-based Feature Importance &nbsp;&nbsp;&nbsp;</h3>
+<h3 id="pd-based-feature-importance-meta-subs.ctd">PD-based Feature Importance &nbsp;&nbsp;&nbsp;<i class="fa-solid fa-arrow-alt-circle-up" aria-label="arrow-alt-circle-up"></i></h3>
 
 <img data-src="pfi_files/figure-revealjs/cell-12-output-1.png" alt="PD-based feature importance (training data)" class="r-stretch quarto-figure-center"><aside class="notes">
 <ul>
@@ -747,23 +749,23 @@ I_{\textit{PFI}}^{j} =
       }</style></aside>
 </section>
 <section id="other-measures-of-feature-importance-meta-subs.ctd-1" class="slide level2">
-<h2>Other Measures of Feature Importance &nbsp;&nbsp;&nbsp;</h2>
+<h2>Other Measures of Feature Importance &nbsp;&nbsp;&nbsp;<i class="fa-solid fa-arrow-alt-circle-up" aria-label="arrow-alt-circle-up"></i></h2>
 <p><br></p>
-<h3 id="pd-based-feature-importance-meta-subs.ctd-1">PD-based Feature Importance &nbsp;&nbsp;&nbsp;</h3>
+<h3 id="pd-based-feature-importance-meta-subs.ctd-1">PD-based Feature Importance &nbsp;&nbsp;&nbsp;<i class="fa-solid fa-arrow-alt-circle-up" aria-label="arrow-alt-circle-up"></i></h3>
 
 <img data-src="pfi_files/figure-revealjs/cell-14-output-1.png" alt="PD-based feature importance (test data)" class="r-stretch quarto-figure-center"></section>
 <section id="other-measures-of-feature-importance-meta-subs.ctd-2" class="slide level2">
-<h2>Other Measures of Feature Importance &nbsp;&nbsp;&nbsp;</h2>
+<h2>Other Measures of Feature Importance &nbsp;&nbsp;&nbsp;<i class="fa-solid fa-arrow-alt-circle-up" aria-label="arrow-alt-circle-up"></i></h2>
 <p><br></p>
-<h3 id="pd-based-feature-importance-meta-subs.ctd-2">PD-based Feature Importance &nbsp;&nbsp;&nbsp;</h3>
+<h3 id="pd-based-feature-importance-meta-subs.ctd-2">PD-based Feature Importance &nbsp;&nbsp;&nbsp;<i class="fa-solid fa-arrow-alt-circle-up" aria-label="arrow-alt-circle-up"></i></h3>
 
 <img data-src="pfi_files/figure-revealjs/cell-16-output-1.png" alt="PD-based feature importance (all data)" class="r-stretch quarto-figure-center"></section>
 <section id="other-measures-of-feature-importance-meta-subs.ctd-3" class="slide level2">
-<h2>Other Measures of Feature Importance &nbsp;&nbsp;&nbsp;</h2>
+<h2>Other Measures of Feature Importance &nbsp;&nbsp;&nbsp;<i class="fa-solid fa-arrow-alt-circle-up" aria-label="arrow-alt-circle-up"></i></h2>
 <p><br></p>
 <h3 id="tree-based-feature-importance">Tree-based Feature Importance</h3>
 <blockquote>
-<p>Since the underlying predictive model (the one being explained) is a <a href="../2_glass-box/dt.html"> Decision Tree</a>, we have access to its <strong>native estimate of feature importance</strong>. It conveys the overall <strong>decrease in the chosen impurity metric</strong> for all splits based on a given feature, by default calculated over the training data.</p>
+<p>Since the underlying predictive model (the one being explained) is a <a href="../2_glass-box/dt.html"><i class="fa-solid fa-person-chalkboard" aria-label="person-chalkboard"></i> Decision Tree</a>, we have access to its <strong>native estimate of feature importance</strong>. It conveys the overall <strong>decrease in the chosen impurity metric</strong> for all splits based on a given feature, by default calculated over the training data.</p>
 </blockquote>
 <p><br> <br></p>
 <div class="callout callout-important callout-captioned callout-style-default">
@@ -781,8 +783,8 @@ I_{\textit{PFI}}^{j} =
 </div>
 </section>
 <section id="other-measures-of-feature-importance-meta-subs.ctd-4" class="slide level2">
-<h2>Other Measures of Feature Importance &nbsp;&nbsp;&nbsp;</h2>
-<h3 id="tree-based-feature-importance-meta-subs.ctd">Tree-based Feature Importance &nbsp;&nbsp;&nbsp;</h3>
+<h2>Other Measures of Feature Importance &nbsp;&nbsp;&nbsp;<i class="fa-solid fa-arrow-alt-circle-up" aria-label="arrow-alt-circle-up"></i></h2>
+<h3 id="tree-based-feature-importance-meta-subs.ctd">Tree-based Feature Importance &nbsp;&nbsp;&nbsp;<i class="fa-solid fa-arrow-alt-circle-up" aria-label="arrow-alt-circle-up"></i></h3>
 
 <img data-src="pfi_files/figure-revealjs/cell-17-output-1.png" alt="Tree-based feature importance" class="r-stretch quarto-figure-center"><aside class="notes">
 <ul>
@@ -951,7 +953,7 @@ I_{\textit{PFI}}^{j} =
 
 </section>
 <section id="pros-fa-plus-square" class="slide level2">
-<h2>Pros &nbsp;&nbsp;&nbsp;</h2>
+<h2>Pros &nbsp;&nbsp;&nbsp;<i class="fa-solid fa-plus-square" aria-label="plus-square"></i></h2>
 <ul>
 <li><strong>Easy to generate and interpret</strong></li>
 <li><strong>All of the features can be explained at the same time</strong></li>
@@ -960,7 +962,7 @@ I_{\textit{PFI}}^{j} =
 </ul>
 </section>
 <section id="cons-fa-minus-square" class="slide level2">
-<h2>Cons &nbsp;&nbsp;&nbsp;</h2>
+<h2>Cons &nbsp;&nbsp;&nbsp;<i class="fa-solid fa-minus-square" aria-label="minus-square"></i></h2>
 <ul>
 <li>Requires <strong>access to ground truth</strong> (i.e., data and their labels)</li>
 <li>Influenced by <strong>randomness of permuting feature values</strong> (somewhat abated by repeating the calculation mulitple times at the expense of extra compute)</li>
@@ -968,7 +970,7 @@ I_{\textit{PFI}}^{j} =
 </ul>
 </section>
 <section id="cons-fa-minus-square-meta-subs.ctd" class="slide level2">
-<h2>Cons &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;</h2>
+<h2>Cons &nbsp;&nbsp;&nbsp;<i class="fa-solid fa-minus-square" aria-label="minus-square"></i> &nbsp;&nbsp;&nbsp;<i class="fa-solid fa-arrow-alt-circle-up" aria-label="arrow-alt-circle-up"></i></h2>
 <ul>
 <li><p>Assumes <strong>feature independence</strong>, which is often unreasonable</p></li>
 <li><p>May not reflect the true feature importance since it is based upon the predictive ability of the model for <strong>unrealistic instances</strong></p></li>
@@ -992,7 +994,7 @@ I_{\textit{PFI}}^{j} =
       }</style></aside>
 </section>
 <section id="caveats-fa-skull" class="slide level2">
-<h2>Caveats &nbsp;&nbsp;&nbsp;</h2>
+<h2>Caveats &nbsp;&nbsp;&nbsp;<i class="fa-solid fa-skull" aria-label="skull"></i></h2>
 <ul>
 <li><p>PFI is parameterised by:</p>
 <ul>
@@ -1019,34 +1021,34 @@ I_{\textit{PFI}}^{j} =
 <p><br></p>
 <h3 id="built-in-feature-importance">Built-in Feature Importance</h3>
 <blockquote>
-<p>Many data-driven predictive models come equipped with some variant of feature importance. This includes <a href="../2_glass-box/dt.html"> Decision Trees</a> and <a href="../2_glass-box/lm.html"> Linear Models</a> among many others.</p>
+<p>Many data-driven predictive models come equipped with some variant of feature importance. This includes <a href="../2_glass-box/dt.html"><i class="fa-solid fa-person-chalkboard" aria-label="person-chalkboard"></i> Decision Trees</a> and <a href="../2_glass-box/lm.html"><i class="fa-solid fa-person-chalkboard" aria-label="person-chalkboard"></i> Linear Models</a> among many others.</p>
 </blockquote>
 </section>
 <section id="related-techniques-meta-subs.ctd" class="slide level2">
-<h2>Related Techniques &nbsp;&nbsp;&nbsp;</h2>
+<h2>Related Techniques &nbsp;&nbsp;&nbsp;<i class="fa-solid fa-arrow-alt-circle-up" aria-label="arrow-alt-circle-up"></i></h2>
 <p><br></p>
 <h3 id="partial-dependence-based-pd-feature-importance">Partial Dependence-based (PD) Feature Importance</h3>
 <blockquote>
-<p><a href="pd.html#/pd-based-feature-importance"></a> &nbsp;&nbsp;&nbsp; <em>Partial Dependence</em> captures the <strong>average response of a predictive model</strong> for a <strong>collection of instances</strong> when <strong>varying one of their features</strong> <span class="citation" data-cites="friedman2001greedy">(<a href="#/bibliography" role="doc-biblioref" onclick="">Friedman 2001</a>)</span>. By assessing <strong>flatness</strong> of these curves we can derive a feature importance measurement <span class="citation" data-cites="greenwell2018simple">(<a href="#/bibliography" role="doc-biblioref" onclick="">Greenwell, Boehmke, and McCarthy 2018</a>)</span>.</p>
+<p><a href="pd.html#/pd-based-feature-importance"><i class="fa-solid fa-person-chalkboard" aria-label="person-chalkboard"></i></a> &nbsp;&nbsp;&nbsp; <em>Partial Dependence</em> captures the <strong>average response of a predictive model</strong> for a <strong>collection of instances</strong> when <strong>varying one of their features</strong> <span class="citation" data-cites="friedman2001greedy">(<a href="#/bibliography" role="doc-biblioref" onclick="">Friedman 2001</a>)</span>. By assessing <strong>flatness</strong> of these curves we can derive a feature importance measurement <span class="citation" data-cites="greenwell2018simple">(<a href="#/bibliography" role="doc-biblioref" onclick="">Greenwell, Boehmke, and McCarthy 2018</a>)</span>.</p>
 </blockquote>
 </section>
 <section id="related-techniques-meta-subs.ctd-1" class="slide level2">
-<h2>Related Techniques &nbsp;&nbsp;&nbsp;</h2>
+<h2>Related Techniques &nbsp;&nbsp;&nbsp;<i class="fa-solid fa-arrow-alt-circle-up" aria-label="arrow-alt-circle-up"></i></h2>
 <p><br></p>
 <h3 id="shapley-additive-explanations-based-shap-feature-importance">SHapley Additive exPlanations-based (SHAP) Feature Importance</h3>
 <blockquote>
-<p><a href="../5_meta/shap.html"></a> &nbsp;&nbsp;&nbsp; <em>SHapley Additive exPlanations</em> explains a prediction of a selected instance by using <em>Shapley values</em> to computing the contribution of each individual feature to this outcome <span class="citation" data-cites="lundberg2017unified">(<a href="#/bibliography" role="doc-biblioref" onclick="">Lundberg and Lee 2017</a>)</span>. It comes with various <em>aggregation mechanisms</em> that allow to transform individual explanations into global, model-based insights such as <em>feature importance</em>.</p>
+<p><a href="../5_meta/shap.html"><i class="fa-solid fa-person-chalkboard" aria-label="person-chalkboard"></i></a> &nbsp;&nbsp;&nbsp; <em>SHapley Additive exPlanations</em> explains a prediction of a selected instance by using <em>Shapley values</em> to computing the contribution of each individual feature to this outcome <span class="citation" data-cites="lundberg2017unified">(<a href="#/bibliography" role="doc-biblioref" onclick="">Lundberg and Lee 2017</a>)</span>. It comes with various <em>aggregation mechanisms</em> that allow to transform individual explanations into global, model-based insights such as <em>feature importance</em>.</p>
 </blockquote>
 </section>
 <section id="related-techniques-meta-subs.ctd-2" class="slide level2">
-<h2>Related Techniques &nbsp;&nbsp;&nbsp;</h2>
+<h2>Related Techniques &nbsp;&nbsp;&nbsp;<i class="fa-solid fa-arrow-alt-circle-up" aria-label="arrow-alt-circle-up"></i></h2>
 <p><br></p>
 <h3 id="local-interpretable-model-agnostic-explanations-based-lime-feature-importance">Local Interpretable Model-agnostic Explanations-based (LIME) Feature Importance</h3>
 <blockquote>
-<p><a href="../5_meta/lime.html"></a> &nbsp;&nbsp;&nbsp; <em>Local Interpretable Model-agnostic Explanations</em> is a surrogate explainer that fits a linear model to data (expressed in an interpretable representaion) sampled in the neighbourhood of an instance selected to be explained <span class="citation" data-cites="ribeiro2016should">(<a href="#/bibliography" role="doc-biblioref" onclick="">Ribeiro, Singh, and Guestrin 2016</a>)</span>. This local, inherently transparent model simplifies the black-box decision boundary in the selected sub-space, making it human-comprehensible. Given that these explanations are based on <strong>coefficients of the surrogate linear model</strong>, they can also be interpreted as (interpretable) feature importance.</p>
+<p><a href="../5_meta/lime.html"><i class="fa-solid fa-person-chalkboard" aria-label="person-chalkboard"></i></a> &nbsp;&nbsp;&nbsp; <em>Local Interpretable Model-agnostic Explanations</em> is a surrogate explainer that fits a linear model to data (expressed in an interpretable representaion) sampled in the neighbourhood of an instance selected to be explained <span class="citation" data-cites="ribeiro2016should">(<a href="#/bibliography" role="doc-biblioref" onclick="">Ribeiro, Singh, and Guestrin 2016</a>)</span>. This local, inherently transparent model simplifies the black-box decision boundary in the selected sub-space, making it human-comprehensible. Given that these explanations are based on <strong>coefficients of the surrogate linear model</strong>, they can also be interpreted as (interpretable) feature importance.</p>
 </blockquote>
 <!--
-## Related Techniques    {{< fa arrow-alt-circle-up >}}
+## Related Techniques    
 
 <br>
 
@@ -1064,8 +1066,8 @@ I_{\textit{PFI}}^{j} =
 </colgroup>
 <thead>
 <tr class="header">
-<th style="text-align: left;"> Python</th>
-<th style="text-align: left;"> R</th>
+<th style="text-align: left;"><i class="fa-brands fa-python" aria-label="python"></i> Python</th>
+<th style="text-align: left;"><i class="fa-brands fa-r-project" aria-label="r-project"></i> R</th>
 </tr>
 </thead>
 <tbody>

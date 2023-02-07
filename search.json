@@ -39,7 +39,7 @@
     "href": "slides/1_introduction/preliminaries.html#expectations-mismatch",
     "title": "XML Preliminaries",
     "section": "Expectations Mismatch",
-    "text": "Expectations Mismatch\n\nWe tend to request explanations mostly when a phenomenon disagrees with our expectations.\nFor example, an ML model behaves unlike we envisaged and outputs an unexpected prediction."
+    "text": "Expectations Mismatch\n\nWe tend to request explanations mostly when a phenomenon disagrees with our expectations.  For example, an ML model behaves unlike we envisaged and outputs an unexpected prediction."
   },
   {
     "objectID": "slides/1_introduction/preliminaries.html#stakeholders",
@@ -74,7 +74,7 @@
     "href": "slides/1_introduction/preliminaries.html#pitfalls",
     "title": "XML Preliminaries",
     "section": "Pitfalls",
-    "text": "Pitfalls\n\n\n\n\n\n\n\n\n\n\n\n\nThe danger of “empty explanations” – statements that look like explanations (…because…) but carry no meaningful explanation\nWhen asking for a favor, providing a reason increases the chances of success\n\n\n“Excuse me, I have 5 pages. May I use the Xerox machine?” (request only)\n“Excuse me, I have 5 pages. May I use the xerox machine, because I’m in a rush?” (request with a real reason)\n“Excuse me, I have 5 pages. May I use the xerox machine, because I have to make copies?” (request with a fake reason)\n\n\n\n\n(Langer, Blank, and Chanowitz 1978)"
+    "text": "Pitfalls\nCopy machine study done by Langer, Blank, and Chanowitz (1978):\n\n\n\nThe danger of “empty explanations” – statements that look like explanations (…because…) but carry no meaningful explanation\nWhen asking for a favor, providing a reason increases the chances of success\n\n\n“Excuse me, I have 5 pages. May I use the Xerox machine?” (request only)\n“Excuse me, I have 5 pages. May I use the xerox machine, because I’m in a rush?” (request with a real reason)\n“Excuse me, I have 5 pages. May I use the xerox machine, because I have to make copies?” (request with a fake reason)"
   },
   {
     "objectID": "slides/1_introduction/preliminaries.html#explainability-source",
@@ -179,7 +179,7 @@
     "href": "slides/1_introduction/preliminaries.html#permutation-feature-importance",
     "title": "XML Preliminaries",
     "section": "Permutation Feature Importance",
-    "text": "Permutation Feature Importance\n\n\n\n\n\n\n\n\n\n()     https://www.kaggle.com/code/dansbecker/permutation-importance"
+    "text": "Permutation Feature Importance\n\n\n\n\n\n\n\n()     https://www.kaggle.com/code/dansbecker/permutation-importance"
   },
   {
     "objectID": "slides/1_introduction/preliminaries.html#individual-conditional-expectation-partial-dependence",
@@ -200,7 +200,7 @@
     "href": "slides/1_introduction/preliminaries.html#rulefit",
     "title": "XML Preliminaries",
     "section": "RuleFit",
-    "text": "RuleFit\n\n\n\n\n\n\n\n\n\n\n()     https://christophm.github.io/interpretable-ml-book/rulefit.html"
+    "text": "RuleFit\n\n\n\n\n\n\n\n\n()     https://christophm.github.io/interpretable-ml-book/rulefit.html"
   },
   {
     "objectID": "slides/1_introduction/preliminaries.html#books",
@@ -669,7 +669,7 @@
     "href": "slides/1_introduction/taxonomy.html#summary",
     "title": "Taxonomy of Explainable ML",
     "section": "Summary",
-    "text": "Summary\n\nExplainability is characterised by a broad range of diverse properties\nDesiderata include social and technical aspects of explainability\nHaving a readily available list of properties helps to better design XML systems"
+    "text": "Summary\n\nExplainability is characterised by a broad range of diverse properties\nStriking the right ballance may be challenging\nDesiderata include social and technical aspects of explainability\nHaving a readily available list of properties helps to better design XML systems"
   },
   {
     "objectID": "slides/1_introduction/taxonomy.html#bibliography",
@@ -1061,14 +1061,14 @@
     "href": "slides/1_introduction/course.html#about-me-meta-subs.ctd-1",
     "title": "Machine Learning Explainability",
     "section": "About Me    ",
-    "text": "About Me    \n\nWork Experience    \n\nSenior Research Associate, TAILOR: European Union’s AI Research Excellence Centre (University of Bristol)\nResearch Associate, Human-Centred Artificial Intelligence in collaboration with THALES (University of Bristol)\nResearch Assistant, REFrAMe (University of Bristol)"
+    "text": "About Me    \n\nWork Experience    \n\n\n\nSenior Research Associate, TAILOR: European Union’s AI Research Excellence Centre (University of Bristol)\nResearch Associate, Human-Centred Artificial Intelligence in collaboration with THALES (University of Bristol)\n\n\n\nResearch Assistant, REFrAMe (University of Bristol)"
   },
   {
     "objectID": "slides/1_introduction/course.html#about-me-meta-subs.ctd-2",
     "href": "slides/1_introduction/course.html#about-me-meta-subs.ctd-2",
     "title": "Machine Learning Explainability",
     "section": "About Me    ",
-    "text": "About Me    \n\nWork Experience    \n\nVisiting Research Fellow, AI and Humanity Summer Cluster, Simons Institute for the Theory of Computing (UC Berkeley)\nVisiting Researcher, Ubiquitous Computing Research Group (Università della Svizzera italiana)\nVisiting Researcher, Machine Learning research group (University of Tartu)"
+    "text": "About Me    \n\nWork Experience    \n\n\n\nVisiting Research Fellow, AI and Humanity Summer Cluster, Simons Institute for the Theory of Computing (UC Berkeley)\nVisiting Researcher, Ubiquitous Computing Research Group (Università della Svizzera italiana)\n\n\n\nVisiting Researcher, Machine Learning research group (University of Tartu)"
   },
   {
     "objectID": "slides/1_introduction/course.html#about-me-meta-subs.ctd-3",

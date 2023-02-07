@@ -6,7 +6,9 @@
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../../site_libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
+<link href="../../site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.2.313">
 
   <meta name="author" content="Kacper Sokol">
@@ -341,7 +343,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
   <script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
 </head>
-<body class="quarto-dark">
+<body class="quarto-light">
   <div class="reveal">
     <div class="slides">
 
@@ -451,7 +453,7 @@ Kacper Sokol
 </table>
 </section>
 <section id="method-properties-meta-subs.ctd" class="slide level2">
-<h2>Method Properties &nbsp;&nbsp;&nbsp;</h2>
+<h2>Method Properties &nbsp;&nbsp;&nbsp;<i class="fa-solid fa-arrow-alt-circle-up" aria-label="arrow-alt-circle-up"></i></h2>
 <p><br></p>
 <table>
 <colgroup>
@@ -517,7 +519,7 @@ Kacper Sokol
 </div>
 </section>
 <section id="computing-ice-meta-subs.ctd" class="slide level2">
-<h2>Computing ICE &nbsp;&nbsp;&nbsp;</h2>
+<h2>Computing ICE &nbsp;&nbsp;&nbsp;<i class="fa-solid fa-arrow-alt-circle-up" aria-label="arrow-alt-circle-up"></i></h2>
 <p><br></p>
 <div class="callout callout-caution callout-captioned callout-style-default">
 <div class="callout-body">
@@ -540,7 +542,7 @@ Kacper Sokol
 </div>
 </section>
 <section id="computing-ice-meta-subs.ctd-1" class="slide level2">
-<h2>Computing ICE &nbsp;&nbsp;&nbsp;</h2>
+<h2>Computing ICE &nbsp;&nbsp;&nbsp;<i class="fa-solid fa-arrow-alt-circle-up" aria-label="arrow-alt-circle-up"></i></h2>
 <p><br></p>
 <div class="callout callout-tip callout-captioned callout-style-default">
 <div class="callout-body">
@@ -556,7 +558,7 @@ Kacper Sokol
 <li>Predict the augmented data</li>
 <li>For each explained instance plot a line that represents the response of the explained model across the entire spectrum of the explained feature</li>
 </ol>
-<p>&nbsp;&nbsp;&nbsp; Since the values of the explained feature may <strong>not be uniformly distributed</strong> in the underlying data set, a <strong>rug plot</strong> showing the distribution of its feature values can help in interpreting the explanation.</p>
+<p><i class="fa-solid fa-star" aria-label="star"></i>&nbsp;&nbsp;&nbsp; Since the values of the explained feature may <strong>not be uniformly distributed</strong> in the underlying data set, a <strong>rug plot</strong> showing the distribution of its feature values can help in interpreting the explanation.</p>
 </div>
 </div>
 </div>
@@ -568,7 +570,7 @@ Kacper Sokol
 
 </section>
 <section id="formulation-fa-square-root-alt" class="slide level2">
-<h2>Formulation &nbsp;&nbsp;&nbsp;</h2>
+<h2>Formulation &nbsp;&nbsp;&nbsp;<i class="fa-solid fa-square-root-alt" aria-label="square-root-alt"></i></h2>
 <p><span class="math display">\[
 X_{\mathit{ICE}} \subseteq \mathcal{X}
 \]</span></p>
@@ -584,7 +586,7 @@ f \left( x_{\setminus i} , x_i=V_i \right) \;\; \forall \; x \in X_{\mathit{ICE}
 \]</span></p>
 </section>
 <section id="formulation-fa-square-root-alt-meta-subs.ctd" class="slide level2">
-<h2>Formulation &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;</h2>
+<h2>Formulation &nbsp;&nbsp;&nbsp;<i class="fa-solid fa-square-root-alt" aria-label="square-root-alt"></i> &nbsp;&nbsp;&nbsp;<i class="fa-solid fa-arrow-alt-circle-up" aria-label="arrow-alt-circle-up"></i></h2>
 <p><br></p>
 <p>Original notation <span class="citation" data-cites="goldstein2015peeking">(<a href="#/bibliography" role="doc-biblioref" onclick="">Goldstein et al. 2015</a>)</span></p>
 <p><br></p>
@@ -662,7 +664,7 @@ or
 </blockquote>
 </section>
 <section id="derivative-ice-meta-subs.ctd" class="slide level2">
-<h2>Derivative ICE &nbsp;&nbsp;&nbsp;</h2>
+<h2>Derivative ICE &nbsp;&nbsp;&nbsp;<i class="fa-solid fa-arrow-alt-circle-up" aria-label="arrow-alt-circle-up"></i></h2>
 <p><br></p>
 <p><span class="math display">\[
 f \left( x_{\setminus i} , x_i \right) =
@@ -729,11 +731,11 @@ g \left( x_{S} \right) + h \left( x_{C} \right)
 
 <img data-src="ice_files/figure-revealjs/cell-16-output-1.png" alt="Likelihood of ICE instances belonging to the Iris data set" class="r-stretch quarto-figure-center"></section>
 <section id="out-of-distribution-impossible-instances-meta-subs.ctd" class="slide level2">
-<h2>Out-of-distribution (Impossible) Instances &nbsp;&nbsp;&nbsp;</h2>
+<h2>Out-of-distribution (Impossible) Instances &nbsp;&nbsp;&nbsp;<i class="fa-solid fa-arrow-alt-circle-up" aria-label="arrow-alt-circle-up"></i></h2>
 
 <img data-src="ice_files/figure-revealjs/cell-18-output-1.png" alt="Likelihood of ICE instances belonging to the Iris data set" class="r-stretch quarto-figure-center"></section>
 <section id="out-of-distribution-impossible-instances-meta-subs.ctd-1" class="slide level2">
-<h2>Out-of-distribution (Impossible) Instances &nbsp;&nbsp;&nbsp;</h2>
+<h2>Out-of-distribution (Impossible) Instances &nbsp;&nbsp;&nbsp;<i class="fa-solid fa-arrow-alt-circle-up" aria-label="arrow-alt-circle-up"></i></h2>
 
 <img data-src="ice_files/figure-revealjs/cell-20-output-1.png" alt="Likelihood of ICE instances belonging to the Iris data set" class="r-stretch quarto-figure-center"><aside class="notes">
 <p>Note the gaps in the feature range, which is due to how scikit-learn computes the range for ICE calculation.</p>
@@ -750,7 +752,7 @@ g \left( x_{S} \right) + h \left( x_{C} \right)
       }</style></aside>
 </section>
 <section id="out-of-distribution-impossible-instances-meta-subs.ctd-2" class="slide level2">
-<h2>Out-of-distribution (Impossible) Instances &nbsp;&nbsp;&nbsp;</h2>
+<h2>Out-of-distribution (Impossible) Instances &nbsp;&nbsp;&nbsp;<i class="fa-solid fa-arrow-alt-circle-up" aria-label="arrow-alt-circle-up"></i></h2>
 
 <img data-src="ice_files/figure-revealjs/cell-22-output-1.png" alt="Likelihood of ICE instances belonging to the Iris data set" class="r-stretch quarto-figure-center"></section>
 <section id="feature-correlation" class="slide level2">
@@ -758,7 +760,7 @@ g \left( x_{S} \right) + h \left( x_{C} \right)
 
 <img data-src="ice_files/figure-revealjs/cell-24-output-1.png" alt="ICE for all features of a single class" class="r-stretch quarto-figure-center"></section>
 <section id="feature-correlation-meta-subs.ctd" class="slide level2">
-<h2>Feature Correlation &nbsp;&nbsp;&nbsp;</h2>
+<h2>Feature Correlation &nbsp;&nbsp;&nbsp;<i class="fa-solid fa-arrow-alt-circle-up" aria-label="arrow-alt-circle-up"></i></h2>
 
 <img data-src="ice_files/figure-revealjs/cell-25-output-1.png" alt="Model coefficients for the selected class" class="r-stretch quarto-figure-center"><aside class="notes">
 <ul>
@@ -779,7 +781,7 @@ g \left( x_{S} \right) + h \left( x_{C} \right)
       }</style></aside>
 </section>
 <section id="feature-correlation-meta-subs.ctd-1" class="slide level2">
-<h2>Feature Correlation &nbsp;&nbsp;&nbsp;</h2>
+<h2>Feature Correlation &nbsp;&nbsp;&nbsp;<i class="fa-solid fa-arrow-alt-circle-up" aria-label="arrow-alt-circle-up"></i></h2>
 
 <img data-src="ice_files/figure-revealjs/cell-26-output-1.png" alt="Iris feature correlation" class="r-stretch quarto-figure-center"></section>
 <section id="target-correlation" class="slide level2">
@@ -791,7 +793,7 @@ g \left( x_{S} \right) + h \left( x_{C} \right)
 
 <img data-src="ice_files/figure-revealjs/cell-29-output-1.png" alt="ICE for all features of a single class" class="r-stretch quarto-figure-center"></section>
 <section id="feature-2-1-correlation-small-meta-subs.ctd" class="slide level2">
-<h2>Feature 2 &amp; 1 Correlation (small) &nbsp;&nbsp;&nbsp;</h2>
+<h2>Feature 2 &amp; 1 Correlation (small) &nbsp;&nbsp;&nbsp;<i class="fa-solid fa-arrow-alt-circle-up" aria-label="arrow-alt-circle-up"></i></h2>
 
 <img data-src="ice_files/figure-revealjs/cell-30-output-1.png" alt="Model coefficients for the selected class" class="r-stretch quarto-figure-center"><aside class="notes">
 <ul>
@@ -815,7 +817,7 @@ g \left( x_{S} \right) + h \left( x_{C} \right)
 
 <img data-src="ice_files/figure-revealjs/cell-32-output-1.png" alt="ICE for all features of a single class" class="r-stretch quarto-figure-center"></section>
 <section id="feature-2-3-correlation-medium-meta-subs.ctd" class="slide level2">
-<h2>Feature 2 &amp; 3 Correlation (medium) &nbsp;&nbsp;&nbsp;</h2>
+<h2>Feature 2 &amp; 3 Correlation (medium) &nbsp;&nbsp;&nbsp;<i class="fa-solid fa-arrow-alt-circle-up" aria-label="arrow-alt-circle-up"></i></h2>
 
 <img data-src="ice_files/figure-revealjs/cell-33-output-1.png" alt="Model coefficients for the selected class" class="r-stretch quarto-figure-center"></section>
 <section id="feature-2-4-correlation-medium" class="slide level2">
@@ -823,7 +825,7 @@ g \left( x_{S} \right) + h \left( x_{C} \right)
 
 <img data-src="ice_files/figure-revealjs/cell-35-output-1.png" alt="ICE for all features of a single class" class="r-stretch quarto-figure-center"></section>
 <section id="feature-2-4-correlation-medium-meta-subs.ctd" class="slide level2">
-<h2>Feature 2 &amp; 4 Correlation (medium) &nbsp;&nbsp;&nbsp;</h2>
+<h2>Feature 2 &amp; 4 Correlation (medium) &nbsp;&nbsp;&nbsp;<i class="fa-solid fa-arrow-alt-circle-up" aria-label="arrow-alt-circle-up"></i></h2>
 
 <img data-src="ice_files/figure-revealjs/cell-36-output-1.png" alt="Model coefficients for the selected class" class="r-stretch quarto-figure-center"></section>
 <section id="feature-3-4-correlation-high" class="slide level2">
@@ -831,7 +833,7 @@ g \left( x_{S} \right) + h \left( x_{C} \right)
 
 <img data-src="ice_files/figure-revealjs/cell-38-output-1.png" alt="ICE for all features of a single class" class="r-stretch quarto-figure-center"></section>
 <section id="feature-3-4-correlation-high-meta-subs.ctd" class="slide level2">
-<h2>Feature 3 &amp; 4 Correlation (high) &nbsp;&nbsp;&nbsp;</h2>
+<h2>Feature 3 &amp; 4 Correlation (high) &nbsp;&nbsp;&nbsp;<i class="fa-solid fa-arrow-alt-circle-up" aria-label="arrow-alt-circle-up"></i></h2>
 
 <!-- #%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#% --->
 <img data-src="ice_files/figure-revealjs/cell-39-output-1.png" alt="Model coefficients for the selected class" class="r-stretch quarto-figure-center"></section></section>
@@ -841,14 +843,14 @@ g \left( x_{S} \right) + h \left( x_{C} \right)
 
 </section>
 <section id="pros-fa-plus-square" class="slide level2">
-<h2>Pros &nbsp;&nbsp;&nbsp;</h2>
+<h2>Pros &nbsp;&nbsp;&nbsp;<i class="fa-solid fa-plus-square" aria-label="plus-square"></i></h2>
 <ul>
 <li><strong>Easy to generate and interpret</strong></li>
 <li>Spanning multiple instances allows to capture the diversity (heterogeneity) of the model’s behaviour</li>
 </ul>
 </section>
 <section id="cons-fa-minus-square" class="slide level2">
-<h2>Cons &nbsp;&nbsp;&nbsp;</h2>
+<h2>Cons &nbsp;&nbsp;&nbsp;<i class="fa-solid fa-minus-square" aria-label="minus-square"></i></h2>
 <ul>
 <li>Assumes <strong>feature independence</strong>, which is often unreasonable</li>
 <li>ICE may not reflect the true behaviour of the model since it displays the behaviour of the model for <strong>unrealistic instances</strong></li>
@@ -857,7 +859,7 @@ g \left( x_{S} \right) + h \left( x_{C} \right)
 </ul>
 </section>
 <section id="caveats-fa-skull" class="slide level2">
-<h2>Caveats &nbsp;&nbsp;&nbsp;</h2>
+<h2>Caveats &nbsp;&nbsp;&nbsp;<i class="fa-solid fa-skull" aria-label="skull"></i></h2>
 <ul>
 <li>Averaging ICEs gives <em>Partial Dependence (PD)</em></li>
 <li>Generating ICEs may be computationally expensive for <em>large sets of data</em> and <em>wide feature intervals</em> with a <em>small “inspection” step</em></li>
@@ -877,30 +879,30 @@ g \left( x_{S} \right) + h \left( x_{C} \right)
 <section id="causal-interpretation" class="slide level2">
 <h2>Causal Interpretation</h2>
 <p>Under certain (quite restrictive) assumptions, ICE is admissible to a causal interpretation <span class="citation" data-cites="zhao2021causal">(<a href="#/bibliography" role="doc-biblioref" onclick="">Zhao and Hastie 2021</a>)</span>.</p>
-<p>See <a href="pd.html#/causal-interpretation"> Causal Interpretation of Partial Dependence (PD)</a> for more detail.</p>
+<p>See <a href="pd.html#/causal-interpretation"><i class="fa-solid fa-person-chalkboard" aria-label="person-chalkboard"></i> Causal Interpretation of Partial Dependence (PD)</a> for more detail.</p>
 </section>
 <section id="related-techniques" class="slide level2">
 <h2>Related Techniques</h2>
 <p><br></p>
 <h3 id="partial-dependence-pd">Partial Dependence (PD)</h3>
 <blockquote>
-<p><a href="pd.html"></a> &nbsp;&nbsp;&nbsp; Model-focused (global) “version” of <em>Individual Conditional Expectation</em>, which is calculated by <strong>averaging</strong> ICE across a collection of data points <span class="citation" data-cites="friedman2001greedy">(<a href="#/bibliography" role="doc-biblioref" onclick="">Friedman 2001</a>)</span>. It communicates the average influence of a specific feature value on the model’s prediction by <strong>fixing the value of this feature</strong> across a designated set of instances.</p>
+<p><a href="pd.html"><i class="fa-solid fa-person-chalkboard" aria-label="person-chalkboard"></i></a> &nbsp;&nbsp;&nbsp; Model-focused (global) “version” of <em>Individual Conditional Expectation</em>, which is calculated by <strong>averaging</strong> ICE across a collection of data points <span class="citation" data-cites="friedman2001greedy">(<a href="#/bibliography" role="doc-biblioref" onclick="">Friedman 2001</a>)</span>. It communicates the average influence of a specific feature value on the model’s prediction by <strong>fixing the value of this feature</strong> across a designated set of instances.</p>
 </blockquote>
 </section>
 <section id="related-techniques-meta-subs.ctd" class="slide level2">
-<h2>Related Techniques &nbsp;&nbsp;&nbsp;</h2>
+<h2>Related Techniques &nbsp;&nbsp;&nbsp;<i class="fa-solid fa-arrow-alt-circle-up" aria-label="arrow-alt-circle-up"></i></h2>
 <p><br></p>
 <h3 id="marginal-effect-marginal-plots-or-m-plots">Marginal Effect (Marginal Plots or M-Plots)</h3>
 <blockquote>
-<p><a href="m.html"></a> &nbsp;&nbsp;&nbsp; It communicates the influence of a specific feature value – or similar values, i.e., an interval around the selected value – on the model’s prediction by <strong>only considering relevant instances</strong> found in the designated data set. It is calculated as <strong>the average prediction of these instances</strong>.</p>
+<p><a href="m.html"><i class="fa-solid fa-person-chalkboard" aria-label="person-chalkboard"></i></a> &nbsp;&nbsp;&nbsp; It communicates the influence of a specific feature value – or similar values, i.e., an interval around the selected value – on the model’s prediction by <strong>only considering relevant instances</strong> found in the designated data set. It is calculated as <strong>the average prediction of these instances</strong>.</p>
 </blockquote>
 </section>
 <section id="related-techniques-meta-subs.ctd-1" class="slide level2">
-<h2>Related Techniques &nbsp;&nbsp;&nbsp;</h2>
+<h2>Related Techniques &nbsp;&nbsp;&nbsp;<i class="fa-solid fa-arrow-alt-circle-up" aria-label="arrow-alt-circle-up"></i></h2>
 <p><br></p>
 <h3 id="accumulated-local-effect-ale">Accumulated Local Effect (ALE)</h3>
 <blockquote>
-<p><a href="ale.html"></a> &nbsp;&nbsp;&nbsp; It communicates the influence of a specific feature value on the model’s prediction by quantifying the average (accumulated) difference between the predictions at the boundaries of a (small) <strong>fixed interval</strong> around the selected feature value <span class="citation" data-cites="apley2020visualizing">(<a href="#/bibliography" role="doc-biblioref" onclick="">Apley and Zhu 2020</a>)</span>. It is calculated by replacing the value of the explained feature with the interval boundaries for <strong>instances found in the designated data set</strong> whose value of this feature is within the specified range.</p>
+<p><a href="ale.html"><i class="fa-solid fa-person-chalkboard" aria-label="person-chalkboard"></i></a> &nbsp;&nbsp;&nbsp; It communicates the influence of a specific feature value on the model’s prediction by quantifying the average (accumulated) difference between the predictions at the boundaries of a (small) <strong>fixed interval</strong> around the selected feature value <span class="citation" data-cites="apley2020visualizing">(<a href="#/bibliography" role="doc-biblioref" onclick="">Apley and Zhu 2020</a>)</span>. It is calculated by replacing the value of the explained feature with the interval boundaries for <strong>instances found in the designated data set</strong> whose value of this feature is within the specified range.</p>
 </blockquote>
 </section>
 <section id="implementations" class="slide level2">
@@ -912,8 +914,8 @@ g \left( x_{S} \right) + h \left( x_{C} \right)
 </colgroup>
 <thead>
 <tr class="header">
-<th style="text-align: left;"> Python</th>
-<th style="text-align: left;"> R</th>
+<th style="text-align: left;"><i class="fa-brands fa-python" aria-label="python"></i> Python</th>
+<th style="text-align: left;"><i class="fa-brands fa-r-project" aria-label="r-project"></i> R</th>
 </tr>
 </thead>
 <tbody>

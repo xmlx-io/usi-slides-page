@@ -6,7 +6,9 @@
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../../site_libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
+<link href="../../site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.2.313">
 
   <meta name="author" content="Kacper Sokol">
@@ -338,7 +340,7 @@
     }
   </style>
 </head>
-<body class="quarto-dark">
+<body class="quarto-light">
   <div class="reveal">
     <div class="slides">
 
@@ -436,8 +438,7 @@ Kacper Sokol
 <section id="expectations-mismatch" class="slide level2">
 <h2>Expectations Mismatch</h2>
 <blockquote>
-<p>We tend to <strong>request explanations</strong> mostly when a phenomenon disagrees with our expectations.</p>
-<p>For example, an ML model behaves unlike we envisaged and outputs an unexpected prediction.</p>
+<p>We tend to <strong>request explanations</strong> mostly when a phenomenon disagrees with our expectations. <br><br> For example, an ML model behaves unlike we envisaged and outputs an unexpected prediction.</p>
 </blockquote>
 </section>
 <section id="stakeholders" class="slide level2">
@@ -558,17 +559,9 @@ Kacper Sokol
 </section>
 <section id="pitfalls" class="slide level2">
 <h2>Pitfalls</h2>
-<div class="cell" data-fig-width="55%" data-execution_count="4">
-<div class="cell-output cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="preliminaries_files/figure-revealjs/cell-5-output-1.png" alt="The copy machine study"></p>
-</figure>
-</div>
-</div>
-</div>
+<p>Copy machine study done by <span class="citation" data-cites="langer1978mindlessness">Langer, Blank, and Chanowitz (<a href="#/bibliography" role="doc-biblioref" onclick="">1978</a>)</span>:</p>
 
-<aside class="notes">
+<img data-src="preliminaries_files/figure-revealjs/cell-5-output-1.png" alt="The copy machine study" class="r-stretch quarto-figure-center"><aside class="notes">
 <ul>
 <li><p>The danger of “empty explanations” – statements that look like explanations (…because…) but carry no meaningful explanation</p></li>
 <li><p>When asking for a favor, providing a reason increases the chances of success</p></li>
@@ -590,9 +583,7 @@ Kacper Sokol
           display:block!important;
       }</style></aside>
 <!-- #%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#% --->
-<aside><div>
-<p><span class="citation" data-cites="langer1978mindlessness">(<a href="#/bibliography" role="doc-biblioref" onclick="">Langer, Blank, and Chanowitz 1978</a>)</span></p>
-</div></aside></section></section>
+</section></section>
 <section>
 <section id="explanation-types" class="title-slide slide level1 center">
 <h1>Explanation Types</h1>
@@ -639,7 +630,7 @@ Kacper Sokol
 <section id="explanation-provenance" class="slide level2">
 <h2>Explanation Provenance</h2>
 <blockquote>
-<p><a href="definitions.html"></a> &nbsp;&nbsp;&nbsp; <strong>Ante-hoc</strong> does not necessarily entail <strong>explainable</strong> or <strong>human-understandable</strong></p>
+<p><a href="definitions.html"><i class="fa-solid fa-person-chalkboard" aria-label="person-chalkboard"></i></a> &nbsp;&nbsp;&nbsp; <strong>Ante-hoc</strong> does not necessarily entail <strong>explainable</strong> or <strong>human-understandable</strong></p>
 </blockquote>
 <ul>
 <li><strong>endogenous</strong> explanation – based on human-comprehensible concepts operated on by a transparent model</li>
@@ -755,7 +746,7 @@ Kacper Sokol
       }</style></aside>
 </section>
 <section id="explanation-family-meta-subs.ctd" class="slide level2">
-<h2>Explanation Family &nbsp;&nbsp;&nbsp;</h2>
+<h2>Explanation Family &nbsp;&nbsp;&nbsp;<i class="fa-solid fa-arrow-alt-circle-up" aria-label="arrow-alt-circle-up"></i></h2>
 <ul>
 <li><p><strong>contrasts and differences</strong></p>
 <ul>
@@ -766,7 +757,7 @@ i.e., contrastive statements</li>
 </ul>
 </section>
 <section id="explanation-family-meta-subs.ctd-1" class="slide level2">
-<h2>Explanation Family &nbsp;&nbsp;&nbsp;</h2>
+<h2>Explanation Family &nbsp;&nbsp;&nbsp;<i class="fa-solid fa-arrow-alt-circle-up" aria-label="arrow-alt-circle-up"></i></h2>
 <ul>
 <li><p><strong>causal mechanisms</strong></p>
 <ul>
@@ -1047,16 +1038,14 @@ i.e., contrastive statements</li>
 </section>
 <section id="permutation-feature-importance" class="slide level2">
 <h2>Permutation Feature Importance</h2>
-<div style="background-color:#FAF9F6;">
 <div class="quarto-figure quarto-figure-center">
 <figure>
 <p><img data-src="../../assets/figures/pfi.png" style="width:95.0%" alt="PFI"></p>
 </figure>
 </div>
-</div>
 
 <aside><div>
-<p>(<a href="../3_feature-based/pfi.html"></a>) &nbsp;&nbsp;&nbsp; <a href="https://www.kaggle.com/code/dansbecker/permutation-importance" class="uri">https://www.kaggle.com/code/dansbecker/permutation-importance</a></p>
+<p>(<a href="../3_feature-based/pfi.html"><i class="fa-solid fa-person-chalkboard" aria-label="person-chalkboard"></i></a>) &nbsp;&nbsp;&nbsp; <a href="https://www.kaggle.com/code/dansbecker/permutation-importance" class="uri">https://www.kaggle.com/code/dansbecker/permutation-importance</a></p>
 </div></aside></section>
 <section id="individual-conditional-expectation-partial-dependence" class="slide level2">
 <h2>Individual Conditional Expectation &amp; Partial Dependence</h2>
@@ -1067,7 +1056,7 @@ i.e., contrastive statements</li>
 </div>
 
 <aside><div>
-<p>(<a href="../3_feature-based/ice.html"></a>) &nbsp;&nbsp;&nbsp; (<a href="../3_feature-based/pd.html"></a>)</p>
+<p>(<a href="../3_feature-based/ice.html"><i class="fa-solid fa-person-chalkboard" aria-label="person-chalkboard"></i></a>) &nbsp;&nbsp;&nbsp; (<a href="../3_feature-based/pd.html"><i class="fa-solid fa-person-chalkboard" aria-label="person-chalkboard"></i></a>)</p>
 </div></aside></section>
 <section id="face-counterfactuals" class="slide level2">
 <h2>FACE Counterfactuals</h2>
@@ -1078,21 +1067,19 @@ i.e., contrastive statements</li>
 </div>
 
 <aside><div>
-<p>(<a href="../4_instance-based/counterfactuals.html"></a>) &nbsp;&nbsp;&nbsp; <span class="citation" data-cites="poyiadzi2020face">(<a href="#/bibliography" role="doc-biblioref" onclick="">Poyiadzi et al. 2020</a>)</span></p>
+<p>(<a href="../4_instance-based/counterfactuals.html"><i class="fa-solid fa-person-chalkboard" aria-label="person-chalkboard"></i></a>) &nbsp;&nbsp;&nbsp; <span class="citation" data-cites="poyiadzi2020face">(<a href="#/bibliography" role="doc-biblioref" onclick="">Poyiadzi et al. 2020</a>)</span></p>
 </div></aside></section>
 <section id="rulefit" class="slide level2">
 <h2>RuleFit</h2>
-<div style="background-color:#FAF9F6;">
 <div class="quarto-figure quarto-figure-center">
 <figure>
 <p><img data-src="../../assets/figures/rulefit.png" style="width:50.0%" alt="RuleFit"></p>
 </figure>
 </div>
-</div>
 
 <!-- #%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#%#% --->
 <aside><div>
-<p>(<a href="../5_meta/rulefit.html"></a>) &nbsp;&nbsp;&nbsp; <a href="https://christophm.github.io/interpretable-ml-book/rulefit.html" class="uri">https://christophm.github.io/interpretable-ml-book/rulefit.html</a></p>
+<p>(<a href="../5_meta/rulefit.html"><i class="fa-solid fa-person-chalkboard" aria-label="person-chalkboard"></i></a>) &nbsp;&nbsp;&nbsp; <a href="https://christophm.github.io/interpretable-ml-book/rulefit.html" class="uri">https://christophm.github.io/interpretable-ml-book/rulefit.html</a></p>
 </div></aside></section></section>
 <section>
 <section id="useful-resources" class="title-slide slide level1 center">
@@ -1102,7 +1089,7 @@ i.e., contrastive statements</li>
 <section id="books" class="slide level2">
 <h2><span class="emoji" data-emoji="book">📖</span> &nbsp; Books</h2>
 <ul>
-<li><a href="https://github.com/christophM/iml/">Survey of machine learning interpretability</a> in form of an online book</li>
+<li><a href="https://christophm.github.io/interpretable-ml-book/">Survey of machine learning interpretability</a> in form of an online book</li>
 <li>Overview of <a href="https://ema.drwhy.ai/">explanatory model analysis</a> published as an online book <!--
 - [Hands-on machine learning explainability][xml] online book
   (*URL to follow*)
@@ -1196,7 +1183,7 @@ Sokol, Kacper, and Peter Flach. 2020a. <span>“Explainability Fact Sheets: <spa
 <section id="questions" class="slide level2">
 <h2>Questions</h2>
 <center style="font-size: 750%;">
-<p></p>
+<p><i class="fa-solid fa-clipboard-question" aria-label="clipboard-question"></i></p>
 </center>
 
 <aside><div>
