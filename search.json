@@ -623,29 +623,29 @@
     "text": "👨‍💻   Engineer’s   🎩    \n\n\nThe explanations will be delivered as snippets of text (O2 Explanatory Medium)\nThey will include a single piece of information (U11 Parsimony)\nThey are one-directional communication (O3 System Interaction & U4 Interactiveness)"
   },
   {
+    "objectID": "slides/1_introduction/taxonomy.html#auditors",
+    "href": "slides/1_introduction/taxonomy.html#auditors",
+    "title": "Taxonomy of Explainable ML",
+    "section": "🕵️‍♀️   Auditor’s   🎩",
+    "text": "🕵️‍♀️   Auditor’s   🎩\n\n\nAre the explanations sound (U1) and complete (U2)?\n\nDo they agree with the predictive model?\nAre they coherent with the overall behaviour of the model?\n\nAre the explanations placed in a context? (U3 Contextfullness)\n\n“This explanation only applies to songs of this particular band.”"
+  },
+  {
     "objectID": "slides/1_introduction/taxonomy.html#auditors-meta-subs.ctd",
     "href": "slides/1_introduction/taxonomy.html#auditors-meta-subs.ctd",
     "title": "Taxonomy of Explainable ML",
     "section": "🕵️‍♀️   Auditor’s   🎩    ",
-    "text": "🕵️‍♀️   Auditor’s   🎩    \n\n\nAre the explanations sound (U1) and complete (U2)?\n\nDo they agree with the predictive model?\nAre they coherent with the overall behaviour of the model?\n\nAre the explanations placed in a context? (U3 Contextfullness)\n\n“This explanation only applies to songs of this particular band.”"
+    "text": "🕵️‍♀️   Auditor’s   🎩    \n\n\nWill I get the same explanation tomorrow? (S3 Explanation Invariance)\n\nConfidence of the predictive model\nRandom effects within the 🔍 algorithm"
   },
   {
     "objectID": "slides/1_introduction/taxonomy.html#auditors-meta-subs.ctd-1",
     "href": "slides/1_introduction/taxonomy.html#auditors-meta-subs.ctd-1",
     "title": "Taxonomy of Explainable ML",
     "section": "🕵️‍♀️   Auditor’s   🎩    ",
-    "text": "🕵️‍♀️   Auditor’s   🎩    \n\n\nWill I get the same explanation tomorrow? (S3 Explanation Invariance)\n\nConfidence of the predictive model\nRandom effects within the 🔍 algorithm"
+    "text": "🕵️‍♀️   Auditor’s   🎩    \n\n\nDoes the explainer leak any sensitive information? (S1 Information Leakage)\n\n→explanation←\n“Had you been older than 30, your loan application would have been approved.”\n→context←\n“This age threshold applies to people whose annual income is upwards of £25,000.”\n\nWhy don’t I “round up” my income the next time? (S2 Explanation Misuse)"
   },
   {
     "objectID": "slides/1_introduction/taxonomy.html#auditors-meta-subs.ctd-2",
     "href": "slides/1_introduction/taxonomy.html#auditors-meta-subs.ctd-2",
-    "title": "Taxonomy of Explainable ML",
-    "section": "🕵️‍♀️   Auditor’s   🎩    ",
-    "text": "🕵️‍♀️   Auditor’s   🎩    \n\n\nDoes the explainer leak any sensitive information? (S1 Information Leakage)\n\n→explanation←\n“Had you been older than 30, your loan application would have been approved.”\n→context←\n“This age threshold applies to people whose annual income is upwards of £25,000.”\n\nWhy don’t I “round up” my income the next time? (S2 Explanation Misuse)"
-  },
-  {
-    "objectID": "slides/1_introduction/taxonomy.html#auditors-meta-subs.ctd-3",
-    "href": "slides/1_introduction/taxonomy.html#auditors-meta-subs.ctd-3",
     "title": "Taxonomy of Explainable ML",
     "section": "🕵️‍♀️   Auditor’s   🎩    ",
     "text": "🕵️‍♀️   Auditor’s   🎩    \n\n\nWas 🔍 validated for the problem class that it is being deployed on? (V2 Synthetic Validation)\nDoes 🔍 improve users’ understanding? (V1 User Studies)"
@@ -1256,6 +1256,545 @@
     "objectID": "slides/1_introduction/course.html#questions",
     "href": "slides/1_introduction/course.html#questions",
     "title": "Machine Learning Explainability",
+    "section": "Questions",
+    "text": "Questions\n\n\n\n\n\nkacper.sokol@rmit.edu.au  k.sokol@bristol.ac.uk"
+  },
+  {
+    "objectID": "slides/2_glass-box/tree.html#model-synopsis",
+    "href": "slides/2_glass-box/tree.html#model-synopsis",
+    "title": "Decision Trees",
+    "section": "Model Synopsis",
+    "text": "Model Synopsis\n\n\nA decision tree predicts the target by applying logical conditions to the input features, until a terminal node, i.e., a leaf, is reached. The (sequential) structure makes the model transparent. A prediction is estimated as the average value (regression) or majority class (crisp classification) of the training instances based on which this leaf was built.\n\n\n\n\n\nThe learning algorithm chooses a feature based on its ability to decrease the impurity of the data (subsets) after a split is made.\n\n\n\nRefer to ML textbooks for more details about decision trees (Flach 2012)."
+  },
+  {
+    "objectID": "slides/2_glass-box/tree.html#model-synopsis-meta-subs.ctd",
+    "href": "slides/2_glass-box/tree.html#model-synopsis-meta-subs.ctd",
+    "title": "Decision Trees",
+    "section": "Model Synopsis    ",
+    "text": "Model Synopsis    \n\n\nDecision trees can be interpreted though: model visualisation / textualisation, feature importance, exemplars, what-ifs, rules, and counterfactuals."
+  },
+  {
+    "objectID": "slides/2_glass-box/tree.html#toy-example",
+    "href": "slides/2_glass-box/tree.html#toy-example",
+    "title": "Decision Trees",
+    "section": "Toy Example",
+    "text": "Toy Example"
+  },
+  {
+    "objectID": "slides/2_glass-box/tree.html#toy-example-meta-subs.ctd",
+    "href": "slides/2_glass-box/tree.html#toy-example-meta-subs.ctd",
+    "title": "Decision Trees",
+    "section": "Toy Example    ",
+    "text": "Toy Example"
+  },
+  {
+    "objectID": "slides/2_glass-box/tree.html#explanation-properties",
+    "href": "slides/2_glass-box/tree.html#explanation-properties",
+    "title": "Decision Trees",
+    "section": "Explanation Properties",
+    "text": "Explanation Properties\n\n\n\n\n\n\n\n\nProperty\nClassification and Regression Trees (CART)\n\n\n\n\nrelation\nante-hoc\n\n\ncompatibility\nclassification and regression trees (CART)\n\n\nmodelling\nregression and crisp & probabilistic classification\n\n\nscope\nglobal, cohort and local\n\n\ntarget\nmodel, sub-space and prediction"
+  },
+  {
+    "objectID": "slides/2_glass-box/tree.html#explanation-properties-meta-subs.ctd",
+    "href": "slides/2_glass-box/tree.html#explanation-properties-meta-subs.ctd",
+    "title": "Decision Trees",
+    "section": "Explanation Properties    ",
+    "text": "Explanation Properties    \n\n\n\n\n\n\n\n\nProperty\nClassification and Regression Trees (CART)\n\n\n\n\ndata\ntabular\n\n\nfeatures\nnumerical and categorical\n\n\nexplanation\nmodel visualisation, feature influence & importance, rules, exemplars,what-ifs, counterfactuals\n\n\ncaveats\naxis-parallel splits, target linearity"
+  },
+  {
+    "objectID": "slides/2_glass-box/tree.html#model-visualisation",
+    "href": "slides/2_glass-box/tree.html#model-visualisation",
+    "title": "Decision Trees",
+    "section": "Model Visualisation",
+    "text": "Model Visualisation"
+  },
+  {
+    "objectID": "slides/2_glass-box/tree.html#text-representation",
+    "href": "slides/2_glass-box/tree.html#text-representation",
+    "title": "Decision Trees",
+    "section": "Text Representation",
+    "text": "Text Representation\n\n\n|--- petal length (cm) <= 2.45\n|   |--- class: 0\n|--- petal length (cm) >  2.45\n|   |--- petal width (cm) <= 1.75\n|   |   |--- petal length (cm) <= 4.95\n|   |   |   |--- class: 1\n|   |   |--- petal length (cm) >  4.95\n|   |   |   |--- class: 2\n|   |--- petal width (cm) >  1.75\n|   |   |--- class: 2"
+  },
+  {
+    "objectID": "slides/2_glass-box/tree.html#code-representation",
+    "href": "slides/2_glass-box/tree.html#code-representation",
+    "title": "Decision Trees",
+    "section": "Code Representation",
+    "text": "Code Representation\n\n\ndef tree(sepal_length, sepal_width, petal_length, petal_width):\n  if petal_length <= 2.449999988079071:\n    return setosa\n  else:  # if petal_length > 2.449999988079071\n    if petal_width <= 1.75:\n      if petal_length <= 4.950000047683716:\n        return versicolor\n      else:  # if petal_length > 4.950000047683716\n        return virginica\n    else:  # if petal_width > 1.75\n      return virginica"
+  },
+  {
+    "objectID": "slides/2_glass-box/tree.html#feature-importance",
+    "href": "slides/2_glass-box/tree.html#feature-importance",
+    "title": "Decision Trees",
+    "section": "Feature Importance",
+    "text": "Feature Importance\n\nNode \\(n\\) importance \\(i(n)\\) (based on weighted impurity \\(C\\))\n\\[\ni(n) = \\frac{|X_n|}{|X|} C(n)\n     - \\frac{|X_{\\mathit{left}(n)}|}{|X|} C(\\mathit{left}(n))\n     - \\frac{|X_{\\mathit{right}(n)}|}{|X|} C(\\mathit{right}(n))\n\\]\nFeature \\(f\\) importance \\(I(f)\\)\n\\[\nI(f) = \\frac{\\sum_{n_f} i(n_f)}{\\sum_n i(n)}\n\\]\n\n\n\n\\(C_n\\) is impurity of node \\(n\\)\n\\(n_f\\) is a node splitting on feature \\(f\\)\n\\((X_n, Y_n)\\) is a set of data points and their labels \\((x, y)\\) situated within the node \\(n\\)"
+  },
+  {
+    "objectID": "slides/2_glass-box/tree.html#feature-importance-meta-subs.ctd",
+    "href": "slides/2_glass-box/tree.html#feature-importance-meta-subs.ctd",
+    "title": "Decision Trees",
+    "section": "Feature Importance    ",
+    "text": "Feature Importance    \n\nCrisp classification – Gini impurity \\(C^{\\mathit{G}}\\)\n\\[\nC^{\\mathit{G}}(n) = 1 - \\sum_{c \\in C}p_{n}^2(c)\\\\\np_{n}(c) = \\frac{1}{|X_n|} \\sum_{(x, y) \\in (X_n, Y_n)} \\mathbb{1}_{y = c}\n\\]\nRegression or probabilistic classification – mean squared error \\(C^{\\mathit{MSE}}\\)\n\\[\nC^{\\mathit{MSE}}(n) = \\frac{1}{|X_n|} \\sum_{(x, y) \\in (X_n, Y_n)} (y - \\bar{y}_{n})^2 \\\\\n\\bar{y}_{n} = \\frac{1}{|X_n|} \\sum_{(x, y) \\in (X_n, Y_n)} y\n\\]\n\n\n\n\\(C\\) is the set of all the unique labels \\(c\\)"
+  },
+  {
+    "objectID": "slides/2_glass-box/tree.html#feature-importance-meta-subs.ctd-1",
+    "href": "slides/2_glass-box/tree.html#feature-importance-meta-subs.ctd-1",
+    "title": "Decision Trees",
+    "section": "Feature Importance    ",
+    "text": "Feature Importance    \n\n\n\nLay people have been show to assume that the most important feature is the one at the root split of the tree"
+  },
+  {
+    "objectID": "slides/2_glass-box/tree.html#exemplar-explanation",
+    "href": "slides/2_glass-box/tree.html#exemplar-explanation",
+    "title": "Decision Trees",
+    "section": "Exemplar Explanation",
+    "text": "Exemplar Explanation\n\n\n\n\n  \n    \n      \n      sepal length (cm)\n      sepal width (cm)\n      petal length (cm)\n      petal width (cm)\n      tree leaf\n    \n  \n  \n    \n      42\n      4.4\n      3.2\n      1.3\n      0.2\n      1\n    \n  \n\n\n\n\n\n\n\n\n  \n    \n      \n      sepal length (cm)\n      sepal width (cm)\n      petal length (cm)\n      petal width (cm)\n      tree leaf\n    \n  \n  \n    \n      45\n      4.8\n      3.0\n      1.4\n      0.3\n      1\n    \n    \n      46\n      5.1\n      3.8\n      1.6\n      0.2\n      1\n    \n    \n      47\n      4.6\n      3.2\n      1.4\n      0.2\n      1\n    \n    \n      48\n      5.3\n      3.7\n      1.5\n      0.2\n      1\n    \n    \n      49\n      5.0\n      3.3\n      1.4\n      0.2\n      1"
+  },
+  {
+    "objectID": "slides/2_glass-box/tree.html#what-if-explanation",
+    "href": "slides/2_glass-box/tree.html#what-if-explanation",
+    "title": "Decision Trees",
+    "section": "What-if Explanation",
+    "text": "What-if Explanation\n\n\n\n\n  \n    \n      \n      sepal length (cm)\n      sepal width (cm)\n      petal length (cm)\n      petal width (cm)\n      tree leaf\n    \n  \n  \n    \n      42\n      4.4\n      3.2\n      1.3\n      0.2\n      1\n    \n  \n\n\nPredicted as setosa\n\n\n\n\n\n\n  \n    \n      \n      sepal length (cm)\n      sepal width (cm)\n      petal length (cm)\n      petal width (cm)\n      tree leaf\n    \n  \n  \n    \n      0\n      4.4\n      3.2\n      2.7\n      0.2\n      5\n    \n  \n\n\nPredicted as versicolor"
+  },
+  {
+    "objectID": "slides/2_glass-box/tree.html#rule-explanation",
+    "href": "slides/2_glass-box/tree.html#rule-explanation",
+    "title": "Decision Trees",
+    "section": "Rule Explanation",
+    "text": "Rule Explanation\n\n\n\n\n\nif (petal length (cm) <= 2.45)\n    then class: setosa \n\n\nif (petal length (cm) > 2.45)\n  and (petal width (cm) <= 1.75)\n  and (petal length (cm) <= 4.95)\n    then class: versicolor \n\n\n\n\n\n\n\nif (petal length (cm) > 2.45)\n  and (petal width (cm) > 1.75)\n    then class: virginica \n\n\nif (petal length (cm) > 2.45)\n  and (petal width (cm) <= 1.75)\n  and (petal length (cm) > 4.95)\n    then class: virginica"
+  },
+  {
+    "objectID": "slides/2_glass-box/tree.html#counterfactual-explanation",
+    "href": "slides/2_glass-box/tree.html#counterfactual-explanation",
+    "title": "Decision Trees",
+    "section": "Counterfactual Explanation",
+    "text": "Counterfactual Explanation\n\n\nIf petal length (cm) changes from 1.3 to 2.7, the prediction will change from setosa to versicolor.\n\n\n\n\n\n\n\n  \n    \n      \n      sepal length (cm)\n      sepal width (cm)\n      petal length (cm)\n      petal width (cm)\n    \n  \n  \n    \n      42\n      4.4\n      3.2\n      1.3\n      0.2"
+  },
+  {
+    "objectID": "slides/2_glass-box/tree.html#pros-fa-plus-square",
+    "href": "slides/2_glass-box/tree.html#pros-fa-plus-square",
+    "title": "Decision Trees",
+    "section": "Pros    ",
+    "text": "Pros    \n\nTransparent from the outset due to their underlying (sequential) structure – predictions are derived by evaluating a series of logical conditions\nEasy to interpret (given relevant background knowledge)\nFeature correlation is not that much of a problem\nCapable of modelling nonlinear relations\n\n\n\nBecause of purity-based splits feature correlation and interaction are not a major issue"
+  },
+  {
+    "objectID": "slides/2_glass-box/tree.html#cons-fa-minus-square",
+    "href": "slides/2_glass-box/tree.html#cons-fa-minus-square",
+    "title": "Decision Trees",
+    "section": "Cons    ",
+    "text": "Cons    \n\nLimited to axis-parallel splits (unless oblique trees are used)\nThis restriction impacts their ability to model linear relationships (since staggered boundaries must be created)\nIt also causes non-smooth predictions (prediction changes once a threshold is crossed)\n\n\n\nLack of smoothness entails predictive behaviour that is not robust"
+  },
+  {
+    "objectID": "slides/2_glass-box/tree.html#cons-fa-minus-square-meta-subs.ctd",
+    "href": "slides/2_glass-box/tree.html#cons-fa-minus-square-meta-subs.ctd",
+    "title": "Decision Trees",
+    "section": "Cons        ",
+    "text": "Cons        \n\nThe training procedure is greedy, hence the model structure may be unstable\nLarge trees may become overwhelming and incomprehensible, but still transparent\nTree size can be reduced with pruning"
+  },
+  {
+    "objectID": "slides/2_glass-box/tree.html#caveats-fa-skull",
+    "href": "slides/2_glass-box/tree.html#caveats-fa-skull",
+    "title": "Decision Trees",
+    "section": "Caveats    ",
+    "text": "Caveats    \n\nInterpreting large trees may be challenging without further (algorithmic) processing"
+  },
+  {
+    "objectID": "slides/2_glass-box/tree.html#summary",
+    "href": "slides/2_glass-box/tree.html#summary",
+    "title": "Decision Trees",
+    "section": "Summary",
+    "text": "Summary\n\n(Small) decision trees are transparent\nThey offer a wide array of explanatory insights"
+  },
+  {
+    "objectID": "slides/2_glass-box/tree.html#implementations",
+    "href": "slides/2_glass-box/tree.html#implementations",
+    "title": "Decision Trees",
+    "section": "Implementations",
+    "text": "Implementations\n\n\n\n\n\n\n\n Python\n R\n\n\n\n\nscikit-learn\nrpart"
+  },
+  {
+    "objectID": "slides/2_glass-box/tree.html#further-reading",
+    "href": "slides/2_glass-box/tree.html#further-reading",
+    "title": "Decision Trees",
+    "section": "Further Reading",
+    "text": "Further Reading\n\nscikit-learn guide\nInterpretable Machine Learning book\nMachine learning: The art and science of algorithms that make sense of data textbook (Flach 2012)"
+  },
+  {
+    "objectID": "slides/2_glass-box/tree.html#bibliography",
+    "href": "slides/2_glass-box/tree.html#bibliography",
+    "title": "Decision Trees",
+    "section": "Bibliography",
+    "text": "Bibliography\n\n\nFlach, Peter. 2012. Machine Learning: The Art and Science of Algorithms That Make Sense of Data. Cambridge university press."
+  },
+  {
+    "objectID": "slides/2_glass-box/tree.html#questions",
+    "href": "slides/2_glass-box/tree.html#questions",
+    "title": "Decision Trees",
+    "section": "Questions",
+    "text": "Questions\n\n\n\n\n\nkacper.sokol@rmit.edu.au  k.sokol@bristol.ac.uk"
+  },
+  {
+    "objectID": "slides/2_glass-box/linear.html#model-synopsis",
+    "href": "slides/2_glass-box/linear.html#model-synopsis",
+    "title": "Linear Models",
+    "section": "Model Synopsis",
+    "text": "Model Synopsis\n\n\nA linear model predicts the target as a weighted sum of the input features.\n\n\n\nThe independence and additivity of the model’s structure make it transparent. The weights communicate the global (with respect to the entire model) feature influence and importance.\n\n\n\nRefer to ML textbooks for more details about linear models (Flach 2012)."
+  },
+  {
+    "objectID": "slides/2_glass-box/linear.html#toy-example",
+    "href": "slides/2_glass-box/linear.html#toy-example",
+    "title": "Linear Models",
+    "section": "Toy Example",
+    "text": "Toy Example\n\n\\[\nf(\\mathbf{x}) = -1.81 \\;\\; + \\;\\; 0.54 \\times x_1 \\;\\; + \\;\\; 0.34 \\times x_2\n\\]\n\n\\[\\omega_0 = -1.81 \\;\\;\\;\\;\\;\\;\\;\\; \\omega_1 = 0.54 \\;\\;\\;\\;\\;\\;\\;\\; \\omega_2 = 0.34\\]"
+  },
+  {
+    "objectID": "slides/2_glass-box/linear.html#toy-example-meta-subs.ctd",
+    "href": "slides/2_glass-box/linear.html#toy-example-meta-subs.ctd",
+    "title": "Linear Models",
+    "section": "Toy Example    ",
+    "text": "Toy Example"
+  },
+  {
+    "objectID": "slides/2_glass-box/linear.html#explanation-properties",
+    "href": "slides/2_glass-box/linear.html#explanation-properties",
+    "title": "Linear Models",
+    "section": "Explanation Properties",
+    "text": "Explanation Properties\n\n\n\n\n\n\n\n\nProperty\nLinear Models\n\n\n\n\nrelation\nante-hoc\n\n\ncompatibility\nlinear models\n\n\nmodelling\nregression (crisp classification)\n\n\nscope\nglobal and local\n\n\ntarget\nmodel and prediction"
+  },
+  {
+    "objectID": "slides/2_glass-box/linear.html#explanation-properties-meta-subs.ctd",
+    "href": "slides/2_glass-box/linear.html#explanation-properties-meta-subs.ctd",
+    "title": "Linear Models",
+    "section": "Explanation Properties    ",
+    "text": "Explanation Properties    \n\n\n\n\n\n\n\n\nProperty\nLinear Models\n\n\n\n\ndata\ntabular\n\n\nfeatures\nnumerical and (one hot-encoded) categorical\n\n\nexplanation\nmodel visualisation, feature influence & importance\n\n\ncaveats\nfeature correlation, target nonlinearity"
+  },
+  {
+    "objectID": "slides/2_glass-box/linear.html#model-visualisation",
+    "href": "slides/2_glass-box/linear.html#model-visualisation",
+    "title": "Linear Models",
+    "section": "Model Visualisation",
+    "text": "Model Visualisation\n\n\n\nModel visualisation is limited to 2, maybe 3 features"
+  },
+  {
+    "objectID": "slides/2_glass-box/linear.html#model-equation",
+    "href": "slides/2_glass-box/linear.html#model-equation",
+    "title": "Linear Models",
+    "section": "Model Equation",
+    "text": "Model Equation\n\n\\[\nf(\\mathbf{x}) = -1.81 \\;\\; + \\;\\; 0.54 \\times x_1 \\;\\; + \\;\\; 0.34 \\times x_2\n\\]\n\n\\[\\omega_0 = -1.81 \\;\\;\\;\\;\\;\\;\\;\\; \\omega_1 = 0.54 \\;\\;\\;\\;\\;\\;\\;\\; \\omega_2 = 0.34\\]"
+  },
+  {
+    "objectID": "slides/2_glass-box/linear.html#feature-influence-importance",
+    "href": "slides/2_glass-box/linear.html#feature-influence-importance",
+    "title": "Linear Models",
+    "section": "Feature Influence & Importance",
+    "text": "Feature Influence & Importance"
+  },
+  {
+    "objectID": "slides/2_glass-box/linear.html#feature-effect",
+    "href": "slides/2_glass-box/linear.html#feature-effect",
+    "title": "Linear Models",
+    "section": "Feature Effect",
+    "text": "Feature Effect"
+  },
+  {
+    "objectID": "slides/2_glass-box/linear.html#feature-effect-meta-subs.ctd",
+    "href": "slides/2_glass-box/linear.html#feature-effect-meta-subs.ctd",
+    "title": "Linear Models",
+    "section": "Feature Effect    ",
+    "text": "Feature Effect"
+  },
+  {
+    "objectID": "slides/2_glass-box/linear.html#individual-effect",
+    "href": "slides/2_glass-box/linear.html#individual-effect",
+    "title": "Linear Models",
+    "section": "Individual Effect",
+    "text": "Individual Effect"
+  },
+  {
+    "objectID": "slides/2_glass-box/linear.html#individual-effect-meta-subs.ctd",
+    "href": "slides/2_glass-box/linear.html#individual-effect-meta-subs.ctd",
+    "title": "Linear Models",
+    "section": "Individual Effect    ",
+    "text": "Individual Effect    \n\n\\[\\omega_0 = -1.81 \\;\\;\\;\\;\\;\\;\\;\\; \\omega_1 = 0.54 \\;\\;\\;\\;\\;\\;\\;\\; \\omega_2 = 0.34\\]\n\n\\[x_1 = 1.30 \\;\\;\\;\\;\\;\\;\\;\\; x_2 = 0.20\\]"
+  },
+  {
+    "objectID": "slides/2_glass-box/linear.html#individual-effect-meta-subs.ctd-1",
+    "href": "slides/2_glass-box/linear.html#individual-effect-meta-subs.ctd-1",
+    "title": "Linear Models",
+    "section": "Individual Effect    ",
+    "text": "Individual Effect    \n\n\\[\nf(\\mathbf{x}) = -1.81 \\;\\; + \\;\\; \\underbrace{0.54 \\times 1.30}_{x_1} \\;\\; + \\;\\; \\underbrace{0.34 \\times 0.20}_{x_2}\n\\]\n\n\\[\nf(\\mathbf{x}) = -1.81 \\;\\; + \\;\\; \\underbrace{0.70}_{x_1} \\;\\; + \\;\\; \\underbrace{0.07}_{x_2}\n\\]"
+  },
+  {
+    "objectID": "slides/2_glass-box/linear.html#individual-effect-meta-subs.ctd-2",
+    "href": "slides/2_glass-box/linear.html#individual-effect-meta-subs.ctd-2",
+    "title": "Linear Models",
+    "section": "Individual Effect    ",
+    "text": "Individual Effect    \n\n\n\n\n\n  Visualization omitted, Javascript library not loaded!\n  Have you run `initjs()` in this notebook? If this notebook was from another\n  user you must also trust this notebook (File -> Trust notebook). If you are viewing\n  this notebook on github the Javascript has been stripped for security. If you are using\n  JupyterLab this error is because a JupyterLab extension has not yet been written."
+  },
+  {
+    "objectID": "slides/2_glass-box/linear.html#textualisation",
+    "href": "slides/2_glass-box/linear.html#textualisation",
+    "title": "Linear Models",
+    "section": "Textualisation",
+    "text": "Textualisation\n\n\nIncreasing petal length (cm) by 1, increases the prediction by 0.54, ceteris paribus.\nIncreasing petal width (cm) by 1, increases the prediction by 0.34, ceteris paribus.\n\n\n\nFor categorical features:\n\nChanging feature \\(x_i\\) from foil (\\(0\\)) to fact (\\(1\\)) increases the prediction by \\(\\omega_k\\), ceteris paribus."
+  },
+  {
+    "objectID": "slides/2_glass-box/linear.html#feature-interaction",
+    "href": "slides/2_glass-box/linear.html#feature-interaction",
+    "title": "Linear Models",
+    "section": "Feature Interaction",
+    "text": "Feature Interaction\n\n\nManually introducing feature interaction terms allows linear models to account for such phenomena.\n\n\n\\[\nf(\\mathbf{x}) = \\omega_0 + \\omega_1 x_1 + \\cdots + \\omega_n x_n +\n\\underbrace{\\omega_{n+1} x_4 x_6}_{\\textit{interaction}}\n\\]"
+  },
+  {
+    "objectID": "slides/2_glass-box/linear.html#generalized-linear-models",
+    "href": "slides/2_glass-box/linear.html#generalized-linear-models",
+    "title": "Linear Models",
+    "section": "Generalized Linear Models",
+    "text": "Generalized Linear Models\n\n\nGeneralized Linear Models (GLMs) allow to model alternative (to Gaussian) distributions of the prediction target.\n\n\n\\[\ng(\\mathbb{E}_Y(y|\\mathbf{x})) = \\omega_0 + \\omega_1 x_1 + \\cdots + \\omega_n x_n\n\\]\n\n\n\nThe relationship is modelled by the link function \\(g\\)\nThis allows “the magnitude of the variance of each measurement to be a function of its predicted value”\n\n\n\n(Nelder and Wedderburn 1972)"
+  },
+  {
+    "objectID": "slides/2_glass-box/linear.html#generalized-additive-models",
+    "href": "slides/2_glass-box/linear.html#generalized-additive-models",
+    "title": "Linear Models",
+    "section": "Generalized Additive Models",
+    "text": "Generalized Additive Models\n\n\nGeneralized Additive Models (GAMs) allow to model nonlinear relationships – a weighted sum is replaced by a sum of arbitrary functions.\n\n\n\\[\ng(\\mathbb{E}_Y(y|\\mathbf{x})) = \\omega_0 + f_1(x_1) + \\cdots + f_n(x_n)\n\\]\n\n\nExtension to model nonlinear relationships\nInstead of a weighted sum, a sum of arbitrary functions"
+  },
+  {
+    "objectID": "slides/2_glass-box/linear.html#many-more",
+    "href": "slides/2_glass-box/linear.html#many-more",
+    "title": "Linear Models",
+    "section": "Many More",
+    "text": "Many More\n\n\nThis list is far from comprehensive and exhaustive."
+  },
+  {
+    "objectID": "slides/2_glass-box/linear.html#feature-selection",
+    "href": "slides/2_glass-box/linear.html#feature-selection",
+    "title": "Linear Models",
+    "section": "Feature Selection",
+    "text": "Feature Selection\n\n\nLarge models may become overwhelming and incomprehensible (but still transparent)\n\n\n\nAchieved with feature selection or sparse linear models\n\n\n\\[\nf(\\mathbf{x}) = 0.2 \\;\\;\n              + \\;\\; 0.25 \\times x_1 \\;\\;\n              - \\;\\; 0.47 \\times x_2 \\;\\;\n              + \\;\\; 0.01 \\times x_3 \\;\\;\n              + \\;\\; 0.70 \\times x_4 \\\\\n              - \\;\\; 0.20 \\times x_5 \\;\\;\n              - \\;\\; 0.33 \\times x_6 \\;\\;\n              - \\;\\; 0.90 \\times x_7\n\\]"
+  },
+  {
+    "objectID": "slides/2_glass-box/linear.html#incomparability-of-parameters",
+    "href": "slides/2_glass-box/linear.html#incomparability-of-parameters",
+    "title": "Linear Models",
+    "section": "Incomparability of Parameters",
+    "text": "Incomparability of Parameters\n\nThe coefficients are uninformative unless the features are standardised (zero mean, one standard deviation) \\[\n\\mathring{x}_i = \\frac{x_i - \\mu_i}{\\sigma_i}\n\\]\n\n\n\nThe reference point becomes an all-zero instance – a mean-valued data point\nThe intercept communicates the prediction of the reference point\n\n\n\n\n\n\n\nFeasibility of the Reference Instance\n\n\nThe reference point may be out-of-distribution."
+  },
+  {
+    "objectID": "slides/2_glass-box/linear.html#incomparability-of-parameters-meta-subs.ctd",
+    "href": "slides/2_glass-box/linear.html#incomparability-of-parameters-meta-subs.ctd",
+    "title": "Linear Models",
+    "section": "Incomparability of Parameters    ",
+    "text": "Incomparability of Parameters"
+  },
+  {
+    "objectID": "slides/2_glass-box/linear.html#incomparability-of-parameters-meta-subs.ctd-1",
+    "href": "slides/2_glass-box/linear.html#incomparability-of-parameters-meta-subs.ctd-1",
+    "title": "Linear Models",
+    "section": "Incomparability of Parameters    ",
+    "text": "Incomparability of Parameters"
+  },
+  {
+    "objectID": "slides/2_glass-box/linear.html#incomparability-of-parameters-meta-subs.ctd-2",
+    "href": "slides/2_glass-box/linear.html#incomparability-of-parameters-meta-subs.ctd-2",
+    "title": "Linear Models",
+    "section": "Incomparability of Parameters    ",
+    "text": "Incomparability of Parameters"
+  },
+  {
+    "objectID": "slides/2_glass-box/linear.html#incomparability-of-parameters-meta-subs.ctd-3",
+    "href": "slides/2_glass-box/linear.html#incomparability-of-parameters-meta-subs.ctd-3",
+    "title": "Linear Models",
+    "section": "Incomparability of Parameters    ",
+    "text": "Incomparability of Parameters"
+  },
+  {
+    "objectID": "slides/2_glass-box/linear.html#incomparability-of-parameters-meta-subs.ctd-4",
+    "href": "slides/2_glass-box/linear.html#incomparability-of-parameters-meta-subs.ctd-4",
+    "title": "Linear Models",
+    "section": "Incomparability of Parameters    ",
+    "text": "Incomparability of Parameters"
+  },
+  {
+    "objectID": "slides/2_glass-box/linear.html#pros-fa-plus-square",
+    "href": "slides/2_glass-box/linear.html#pros-fa-plus-square",
+    "title": "Linear Models",
+    "section": "Pros    ",
+    "text": "Pros    \n\nTransparent from the outset due to linearity – predictions are a linear combination of features\nEasy to interpret (given relevant background knowledge)"
+  },
+  {
+    "objectID": "slides/2_glass-box/linear.html#cons-fa-minus-square",
+    "href": "slides/2_glass-box/linear.html#cons-fa-minus-square",
+    "title": "Linear Models",
+    "section": "Cons    ",
+    "text": "Cons    \n\nModel linearity entails low complexity, but also low expressivity, hence low predictive power\nFeature interactions / correlations are not accounted for\nPoor modeling ability for nonlinear problems\nDecreased transparency for a large number of features (can be overcome with feature selection)"
+  },
+  {
+    "objectID": "slides/2_glass-box/linear.html#caveats-fa-skull",
+    "href": "slides/2_glass-box/linear.html#caveats-fa-skull",
+    "title": "Linear Models",
+    "section": "Caveats    ",
+    "text": "Caveats    \n\nInterpretability is tricky without feature normalisation\nThe interpretation based on unitary change in feature values ignores feature correlation and may lead to out-of-distribution instances"
+  },
+  {
+    "objectID": "slides/2_glass-box/linear.html#summary",
+    "href": "slides/2_glass-box/linear.html#summary",
+    "title": "Linear Models",
+    "section": "Summary",
+    "text": "Summary\n\n(Small) linear models are transparent\nTheir interpretation should be viewed through their inherent limitations"
+  },
+  {
+    "objectID": "slides/2_glass-box/linear.html#implementations",
+    "href": "slides/2_glass-box/linear.html#implementations",
+    "title": "Linear Models",
+    "section": "Implementations",
+    "text": "Implementations\n\n\n\n\n\n\n\n Python\n R\n\n\n\n\nscikit-learn\nbuilt in"
+  },
+  {
+    "objectID": "slides/2_glass-box/linear.html#further-reading",
+    "href": "slides/2_glass-box/linear.html#further-reading",
+    "title": "Linear Models",
+    "section": "Further Reading",
+    "text": "Further Reading\n\nscikit-learn guide\nInterpretable Machine Learning book\nMachine learning: The art and science of algorithms that make sense of data textbook (Flach 2012)"
+  },
+  {
+    "objectID": "slides/2_glass-box/linear.html#bibliography",
+    "href": "slides/2_glass-box/linear.html#bibliography",
+    "title": "Linear Models",
+    "section": "Bibliography",
+    "text": "Bibliography\n\n\nFlach, Peter. 2012. Machine Learning: The Art and Science of Algorithms That Make Sense of Data. Cambridge university press.\n\n\nNelder, John Ashworth, and Robert WM Wedderburn. 1972. “Generalized Linear Models.” Journal of the Royal Statistical Society: Series A (General) 135 (3): 370–84."
+  },
+  {
+    "objectID": "slides/2_glass-box/linear.html#questions",
+    "href": "slides/2_glass-box/linear.html#questions",
+    "title": "Linear Models",
+    "section": "Questions",
+    "text": "Questions\n\n\n\n\n\nkacper.sokol@rmit.edu.au  k.sokol@bristol.ac.uk"
+  },
+  {
+    "objectID": "slides/2_glass-box/data.html#data-as-a-model",
+    "href": "slides/2_glass-box/data.html#data-as-a-model",
+    "title": "Explaining Data",
+    "section": "Data as a Model",
+    "text": "Data as a Model\n\nRepresentation of some underlying phenomenon – an implicit model\nInherent assumptions as well as measurement limitations and errors\n\n\n\n\n\nCollection influence by factors such as world view and mental model\nPossibly partial and subjective\nEmbedded cultural biases, e.g., “How much is a lot?”"
+  },
+  {
+    "objectID": "slides/2_glass-box/data.html#data-characteristics",
+    "href": "slides/2_glass-box/data.html#data-characteristics",
+    "title": "Explaining Data",
+    "section": "Data Characteristics",
+    "text": "Data Characteristics\n\nSummary statistics\n\nfeature distribution\nper-class feature distribution\nfeature correlation\nclass distribution and ratio"
+  },
+  {
+    "objectID": "slides/2_glass-box/data.html#data-characteristics-meta-subs.ctd",
+    "href": "slides/2_glass-box/data.html#data-characteristics-meta-subs.ctd",
+    "title": "Explaining Data",
+    "section": "Data Characteristics    ",
+    "text": "Data Characteristics    \n\n\n\n\n\n\n  \n    \n      \n      sepal length (cm)\n      sepal width (cm)\n      petal length (cm)\n      petal width (cm)\n    \n  \n  \n    \n      count\n      150.000000\n      150.000000\n      150.000000\n      150.000000\n    \n    \n      mean\n      5.843333\n      3.057333\n      3.758000\n      1.199333\n    \n    \n      std\n      0.828066\n      0.435866\n      1.765298\n      0.762238\n    \n    \n      min\n      4.300000\n      2.000000\n      1.000000\n      0.100000\n    \n    \n      25%\n      5.100000\n      2.800000\n      1.600000\n      0.300000\n    \n    \n      50%\n      5.800000\n      3.000000\n      4.350000\n      1.300000\n    \n    \n      75%\n      6.400000\n      3.300000\n      5.100000\n      1.800000\n    \n    \n      max\n      7.900000\n      4.400000\n      6.900000\n      2.500000"
+  },
+  {
+    "objectID": "slides/2_glass-box/data.html#data-characteristics-meta-subs.ctd-1",
+    "href": "slides/2_glass-box/data.html#data-characteristics-meta-subs.ctd-1",
+    "title": "Explaining Data",
+    "section": "Data Characteristics    ",
+    "text": "Data Characteristics"
+  },
+  {
+    "objectID": "slides/2_glass-box/data.html#data-characteristics-meta-subs.ctd-2",
+    "href": "slides/2_glass-box/data.html#data-characteristics-meta-subs.ctd-2",
+    "title": "Explaining Data",
+    "section": "Data Characteristics    ",
+    "text": "Data Characteristics"
+  },
+  {
+    "objectID": "slides/2_glass-box/data.html#data-characteristics-meta-subs.ctd-3",
+    "href": "slides/2_glass-box/data.html#data-characteristics-meta-subs.ctd-3",
+    "title": "Explaining Data",
+    "section": "Data Characteristics    ",
+    "text": "Data Characteristics"
+  },
+  {
+    "objectID": "slides/2_glass-box/data.html#data-characteristics-meta-subs.ctd-4",
+    "href": "slides/2_glass-box/data.html#data-characteristics-meta-subs.ctd-4",
+    "title": "Explaining Data",
+    "section": "Data Characteristics    ",
+    "text": "Data Characteristics"
+  },
+  {
+    "objectID": "slides/2_glass-box/data.html#data-characteristics-meta-subs.ctd-5",
+    "href": "slides/2_glass-box/data.html#data-characteristics-meta-subs.ctd-5",
+    "title": "Explaining Data",
+    "section": "Data Characteristics    ",
+    "text": "Data Characteristics"
+  },
+  {
+    "objectID": "slides/2_glass-box/data.html#data-characteristics-meta-subs.ctd-6",
+    "href": "slides/2_glass-box/data.html#data-characteristics-meta-subs.ctd-6",
+    "title": "Explaining Data",
+    "section": "Data Characteristics    ",
+    "text": "Data Characteristics    \n\nTransform characteristics and observations into explanations\n\n“The classes are balanced”\n“The data are bimodal”\n“These features are highly correlated”\n\n\n\nStatistics state well defined properties\nThese may not be considered explanations\nData “explanations” can be contrastive and lead to understanding"
+  },
+  {
+    "objectID": "slides/2_glass-box/data.html#data-documentation",
+    "href": "slides/2_glass-box/data.html#data-documentation",
+    "title": "Explaining Data",
+    "section": "Data Documentation",
+    "text": "Data Documentation\n\n\n\nData Statements (Bender and Friedman 2018)\nData Sheets for Data Sets (Gebru et al. 2018)\nNutrition Labels for Data Sets (Holland et al. 2018)\n\n\n\nexperimental setup (implicit assumptions)\ncollection methodology (by whom and for what purpose)\napplied pre-processing (cleaning and aggregation)\nprivacy aspects\ndata owners\n\n\n\n\n\nCharacterise important aspects of data and their collection process"
+  },
+  {
+    "objectID": "slides/2_glass-box/data.html#data-documentation-meta-subs.ctd",
+    "href": "slides/2_glass-box/data.html#data-documentation-meta-subs.ctd",
+    "title": "Explaining Data",
+    "section": "Data Documentation    ",
+    "text": "Data Documentation    \n\nML and AI services (Arnold et al. 2019)\npredictive models (Mitchell et al. 2019)\nprivacy aspects (Kelley et al. 2009)\nranking algorithms (Yang et al. 2018)\nAI explainability (Sokol and Flach 2020)\nalgorithmic impact (Reisman et al. 2018)\n\n\n\nSimilar concepts for other aspects of ML components"
+  },
+  {
+    "objectID": "slides/2_glass-box/data.html#instance-based-explainability",
+    "href": "slides/2_glass-box/data.html#instance-based-explainability",
+    "title": "Explaining Data",
+    "section": "Instance-based Explainability",
+    "text": "Instance-based Explainability\n\n\n\nFor distance-based or neighbour-based you need a similarity metric\nWe will have a look at relevant – instance-based – explainability techniques such as exemplars, prototypes and criticisms later"
+  },
+  {
+    "objectID": "slides/2_glass-box/data.html#dimensionality-reduction",
+    "href": "slides/2_glass-box/data.html#dimensionality-reduction",
+    "title": "Explaining Data",
+    "section": "Dimensionality Reduction",
+    "text": "Dimensionality Reduction\n\nEmbeddings\nProjections\n\n\n\n\nLook into principle component analysis (PCA) as well\n\n\n\n(Van der Maaten and Hinton 2008)"
+  },
+  {
+    "objectID": "slides/2_glass-box/data.html#dimensionality-reduction-meta-subs.ctd",
+    "href": "slides/2_glass-box/data.html#dimensionality-reduction-meta-subs.ctd",
+    "title": "Explaining Data",
+    "section": "Dimensionality Reduction    ",
+    "text": "Dimensionality Reduction"
+  },
+  {
+    "objectID": "slides/2_glass-box/data.html#dimensionality-reduction-meta-subs.ctd-1",
+    "href": "slides/2_glass-box/data.html#dimensionality-reduction-meta-subs.ctd-1",
+    "title": "Explaining Data",
+    "section": "Dimensionality Reduction    ",
+    "text": "Dimensionality Reduction"
+  },
+  {
+    "objectID": "slides/2_glass-box/data.html#summary",
+    "href": "slides/2_glass-box/data.html#summary",
+    "title": "Explaining Data",
+    "section": "Summary",
+    "text": "Summary\n\nExplainability is relevant to data collection and processing\nWe usually have to make some modelling assumptions\nParameterisation may be tricky"
+  },
+  {
+    "objectID": "slides/2_glass-box/data.html#bibliography",
+    "href": "slides/2_glass-box/data.html#bibliography",
+    "title": "Explaining Data",
+    "section": "Bibliography",
+    "text": "Bibliography\n\n\nArnold, Matthew, Rachel KE Bellamy, Michael Hind, Stephanie Houde, Sameep Mehta, Aleksandra Mojsilovic, Ravi Nair, et al. 2019. “FactSheets: Increasing Trust in AI Services Through Supplier’s Declarations of Conformity.” IBM Journal of Research and Development 63 (4/5): 6:1–13. https://doi.org/10.1147/JRD.2019.2942288.\n\n\nBender, Emily M, and Batya Friedman. 2018. “Data Statements for Natural Language Processing: Toward Mitigating System Bias and Enabling Better Science.” Transactions of the Association for Computational Linguistics 6: 587–604. https://doi.org/10.1162/tacl_a_00041.\n\n\nGebru, Timnit, Jamie Morgenstern, Briana Vecchione, Jennifer Wortman Vaughan, Hanna Wallach, Hal Daumé III, and Kate Crawford. 2018. “Datasheets for Datasets.” 5th Workshop on Fairness, Accountability, and Transparency in Machine Learning (FAT/ML 2018) at the 35th International Conference on Machine Learning (ICML 2018), Stockholm, Sweden.\n\n\nHolland, Sarah, Ahmed Hosny, Sarah Newman, Joshua Joseph, and Kasia Chmielinski. 2018. “The Dataset Nutrition Label: A Framework to Drive Higher Data Quality Standards.” arXiv Preprint arXiv:1805.03677.\n\n\nKelley, Patrick Gage, Joanna Bresee, Lorrie Faith Cranor, and Robert W. Reeder. 2009. “A ‘Nutrition Label’ for Privacy.” In Proceedings of the 5th Symposium on Usable Privacy and Security, 4:1–12. SOUPS ’09. New York, NY, USA: ACM. https://doi.org/10.1145/1572532.1572538.\n\n\nMitchell, Margaret, Simone Wu, Andrew Zaldivar, Parker Barnes, Lucy Vasserman, Ben Hutchinson, Elena Spitzer, Inioluwa Deborah Raji, and Timnit Gebru. 2019. “Model Cards for Model Reporting.” In Proceedings of the Conference on Fairness, Accountability, and Transparency, 220–29. ACM.\n\n\nReisman, Dillon, Jason Schultz, Kate Crawford, and Meredith Whittaker. 2018. “Algorithmic Impact Assessments: A Practical Framework for Public Agency Accountability.” AI Now Institute.\n\n\nSokol, Kacper, and Peter Flach. 2020. “Explainability Fact Sheets: A Framework for Systematic Assessment of Explainable Approaches.” In Proceedings of the 2020 Conference on Fairness, Accountability, and Transparency, 56–67.\n\n\nVan der Maaten, Laurens, and Geoffrey Hinton. 2008. “Visualizing Data Using t-SNE.” Journal of Machine Learning Research 9 (11).\n\n\nYang, Ke, Julia Stoyanovich, Abolfazl Asudeh, Bill Howe, HV Jagadish, and Gerome Miklau. 2018. “A Nutritional Label for Rankings.” In Proceedings of the 2018 International Conference on Management of Data, 1773–76. ACM."
+  },
+  {
+    "objectID": "slides/2_glass-box/data.html#questions",
+    "href": "slides/2_glass-box/data.html#questions",
+    "title": "Explaining Data",
     "section": "Questions",
     "text": "Questions\n\n\n\n\n\nkacper.sokol@rmit.edu.au  k.sokol@bristol.ac.uk"
   },
