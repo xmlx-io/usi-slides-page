@@ -380,17 +380,18 @@ Kacper Sokol
 <blockquote>
 <p>A decision tree predicts the target by applying logical conditions to the input features, until a terminal node, i.e., a leaf, is reached. The (sequential) structure makes the model transparent. A prediction is estimated as the average value (<em>regression</em>) or majority class (<em>crisp classification</em>) of the training instances based on which this leaf was built.</p>
 </blockquote>
-<br>
-<hr>
-<p><br></p>
-<blockquote>
-<p>The learning algorithm chooses a feature based on its ability to decrease the impurity of the data (subsets) after a split is made.</p>
-</blockquote>
 
 <aside><div>
 <p>Refer to ML textbooks for more details about decision trees <span class="citation" data-cites="flach2012machine">(<a href="#/bibliography" role="doc-biblioref" onclick="">Flach 2012</a>)</span>.</p>
 </div></aside></section>
 <section id="model-synopsis-meta-subs.ctd" class="slide level2">
+<h2>Model Synopsis &nbsp;&nbsp;&nbsp;<i class="fa-solid fa-arrow-alt-circle-up" aria-label="arrow-alt-circle-up"></i></h2>
+<p><br></p>
+<blockquote>
+<p>The learning algorithm chooses a feature based on its ability to decrease the impurity of the data (subsets) after a split is made.</p>
+</blockquote>
+</section>
+<section id="model-synopsis-meta-subs.ctd-1" class="slide level2">
 <h2>Model Synopsis &nbsp;&nbsp;&nbsp;<i class="fa-solid fa-arrow-alt-circle-up" aria-label="arrow-alt-circle-up"></i></h2>
 <p><br></p>
 <blockquote>
@@ -563,11 +564,6 @@ I(f) = \frac{\sum_{n_f} i(n_f)}{\sum_n i(n)}
 C^{\mathit{G}}(n) = 1 - \sum_{c \in C}p_{n}^2(c)\\
 p_{n}(c) = \frac{1}{|X_n|} \sum_{(x, y) \in (X_n, Y_n)} \mathbb{1}_{y = c}
 \]</span></p></li>
-<li><p>Regression or probabilistic classification – <em>mean squared error</em> <span class="math inline">\(C^{\mathit{MSE}}\)</span></p>
-<p><span class="math display">\[
-C^{\mathit{MSE}}(n) = \frac{1}{|X_n|} \sum_{(x, y) \in (X_n, Y_n)} (y - \bar{y}_{n})^2 \\
-\bar{y}_{n} = \frac{1}{|X_n|} \sum_{(x, y) \in (X_n, Y_n)} y
-\]</span></p></li>
 </ul>
 <aside class="notes">
 <ul>
@@ -586,6 +582,16 @@ C^{\mathit{MSE}}(n) = \frac{1}{|X_n|} \sum_{(x, y) \in (X_n, Y_n)} (y - \bar{y}_
       }</style></aside>
 </section>
 <section id="feature-importance-meta-subs.ctd-1" class="slide level2">
+<h2>Feature Importance &nbsp;&nbsp;&nbsp;<i class="fa-solid fa-arrow-alt-circle-up" aria-label="arrow-alt-circle-up"></i></h2>
+<ul>
+<li><p>Regression or probabilistic classification – <em>mean squared error</em> <span class="math inline">\(C^{\mathit{MSE}}\)</span></p>
+<p><span class="math display">\[
+C^{\mathit{MSE}}(n) = \frac{1}{|X_n|} \sum_{(x, y) \in (X_n, Y_n)} (y - \bar{y}_{n})^2 \\
+\bar{y}_{n} = \frac{1}{|X_n|} \sum_{(x, y) \in (X_n, Y_n)} y
+\]</span></p></li>
+</ul>
+</section>
+<section id="feature-importance-meta-subs.ctd-2" class="slide level2">
 <h2>Feature Importance &nbsp;&nbsp;&nbsp;<i class="fa-solid fa-arrow-alt-circle-up" aria-label="arrow-alt-circle-up"></i></h2>
 
 <img data-src="tree_files/figure-revealjs/cell-13-output-1.png" alt="Bar plot explanation" class="r-stretch quarto-figure-center"><aside class="notes">

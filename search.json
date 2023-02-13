@@ -235,7 +235,7 @@
     "href": "slides/1_introduction/preliminaries.html#bibliography",
     "title": "XML Preliminaries",
     "section": "Bibliography",
-    "text": "Bibliography\n\n\nBelle, Vaishak, and Ioannis Papantonis. 2021. “Principles and Practice of Explainable Machine Learning.” Frontiers in Big Data, 39.\n\n\nDoshi-Velez, Finale, and Been Kim. 2017. “Towards a Rigorous Science of Interpretable Machine Learning.” arXiv Preprint arXiv:1702.08608.\n\n\nGuidotti, Riccardo, Anna Monreale, Salvatore Ruggieri, Franco Turini, Fosca Giannotti, and Dino Pedreschi. 2018. “A Survey of Methods for Explaining Black Box Models.” ACM Computing Surveys (CSUR) 51 (5): 1–42.\n\n\nLanger, Ellen J, Arthur Blank, and Benzion Chanowitz. 1978. “The Mindlessness of Ostensibly Thoughtful Action: The Role of ‘Placebic’ Information in Interpersonal Interaction.” Journal of Personality and Social Psychology 36 (6): 635.\n\n\nMiller, Tim. 2019. “Explanation in Artificial Intelligence: Insights from the Social Sciences.” Artificial Intelligence 267: 1–38.\n\n\nPoyiadzi, Rafael, Kacper Sokol, Raul Santos-Rodriguez, Tijl De Bie, and Peter Flach. 2020. “FACE: Feasible and Actionable Counterfactual Explanations.” In Proceedings of the AAAI/ACM Conference on AI, Ethics, and Society, 344–50.\n\n\nRudin, Cynthia. 2019. “Stop Explaining Black Box Machine Learning Models for High Stakes Decisions and Use Interpretable Models Instead.” Nature Machine Intelligence 1 (5): 206–15.\n\n\nSokol, Kacper, and Peter Flach. 2020a. “Explainability Fact Sheets: A Framework for Systematic Assessment of Explainable Approaches.” In Proceedings of the 2020 Conference on Fairness, Accountability, and Transparency, 56–67.\n\n\n———. 2020b. “LIMEtree: Interactively Customisable Explanations Based on Local Surrogate Multi-Output Regression Trees.” arXiv Preprint arXiv:2005.01427.\n\n\n———. 2021. “Explainability Is in the Mind of the Beholder: Establishing the Foundations of Explainable Artificial Intelligence.” arXiv Preprint arXiv:2112.14466."
+    "text": "Bibliography\n\n\nBelle, Vaishak, and Ioannis Papantonis. 2021. “Principles and Practice of Explainable Machine Learning.” Frontiers in Big Data, 39.\n\n\nDoshi-Velez, Finale, and Been Kim. 2017. “Towards a Rigorous Science of Interpretable Machine Learning.” arXiv Preprint arXiv:1702.08608.\n\n\nGuidotti, Riccardo, Anna Monreale, Salvatore Ruggieri, Franco Turini, Fosca Giannotti, and Dino Pedreschi. 2018. “A Survey of Methods for Explaining Black Box Models.” ACM Computing Surveys (CSUR) 51 (5): 1–42.\n\n\nLanger, Ellen J, Arthur Blank, and Benzion Chanowitz. 1978. “The Mindlessness of Ostensibly Thoughtful Action: The Role of ‘Placebic’ Information in Interpersonal Interaction.” Journal of Personality and Social Psychology 36 (6): 635.\n\n\nMiller, Tim. 2019. “Explanation in Artificial Intelligence: Insights from the Social Sciences.” Artificial Intelligence 267: 1–38.\n\n\nPoyiadzi, Rafael, Kacper Sokol, Raul Santos-Rodriguez, Tijl De Bie, and Peter Flach. 2020. “FACE: Feasible and Actionable Counterfactual Explanations.” In Proceedings of the AAAI/ACM Conference on AI, Ethics, and Society, 344–50.\n\n\nRudin, Cynthia. 2019. “Stop Explaining Black Box Machine Learning Models for High Stakes Decisions and Use Interpretable Models Instead.” Nature Machine Intelligence 1 (5): 206–15.\n\n\nSokol, Kacper, and Peter Flach. 2020a. “Explainability Fact Sheets: A Framework for Systematic Assessment of Explainable Approaches.” In Proceedings of the 2020 Conference on Fairness, Accountability, and Transparency, 56–67.\n\n\n———. 2020b. “LIMEtree: Consistent and Faithful Surrogate Explanations of Multiple Classes.” arXiv Preprint arXiv:2005.01427.\n\n\n———. 2021. “Explainability Is in the Mind of the Beholder: Establishing the Foundations of Explainable Artificial Intelligence.” arXiv Preprint arXiv:2112.14466."
   },
   {
     "objectID": "slides/1_introduction/preliminaries.html#questions",
@@ -1264,11 +1264,18 @@
     "href": "slides/2_glass-box/tree.html#model-synopsis",
     "title": "Decision Trees",
     "section": "Model Synopsis",
-    "text": "Model Synopsis\n\n\nA decision tree predicts the target by applying logical conditions to the input features, until a terminal node, i.e., a leaf, is reached. The (sequential) structure makes the model transparent. A prediction is estimated as the average value (regression) or majority class (crisp classification) of the training instances based on which this leaf was built.\n\n\n\n\n\nThe learning algorithm chooses a feature based on its ability to decrease the impurity of the data (subsets) after a split is made.\n\n\n\nRefer to ML textbooks for more details about decision trees (Flach 2012)."
+    "text": "Model Synopsis\n\n\nA decision tree predicts the target by applying logical conditions to the input features, until a terminal node, i.e., a leaf, is reached. The (sequential) structure makes the model transparent. A prediction is estimated as the average value (regression) or majority class (crisp classification) of the training instances based on which this leaf was built.\n\n\n\nRefer to ML textbooks for more details about decision trees (Flach 2012)."
   },
   {
     "objectID": "slides/2_glass-box/tree.html#model-synopsis-meta-subs.ctd",
     "href": "slides/2_glass-box/tree.html#model-synopsis-meta-subs.ctd",
+    "title": "Decision Trees",
+    "section": "Model Synopsis    ",
+    "text": "Model Synopsis    \n\n\nThe learning algorithm chooses a feature based on its ability to decrease the impurity of the data (subsets) after a split is made."
+  },
+  {
+    "objectID": "slides/2_glass-box/tree.html#model-synopsis-meta-subs.ctd-1",
+    "href": "slides/2_glass-box/tree.html#model-synopsis-meta-subs.ctd-1",
     "title": "Decision Trees",
     "section": "Model Synopsis    ",
     "text": "Model Synopsis    \n\n\nDecision trees can be interpreted though: model visualisation / textualisation, feature importance, exemplars, what-ifs, rules, and counterfactuals."
@@ -1334,11 +1341,18 @@
     "href": "slides/2_glass-box/tree.html#feature-importance-meta-subs.ctd",
     "title": "Decision Trees",
     "section": "Feature Importance    ",
-    "text": "Feature Importance    \n\nCrisp classification – Gini impurity \\(C^{\\mathit{G}}\\)\n\\[\nC^{\\mathit{G}}(n) = 1 - \\sum_{c \\in C}p_{n}^2(c)\\\\\np_{n}(c) = \\frac{1}{|X_n|} \\sum_{(x, y) \\in (X_n, Y_n)} \\mathbb{1}_{y = c}\n\\]\nRegression or probabilistic classification – mean squared error \\(C^{\\mathit{MSE}}\\)\n\\[\nC^{\\mathit{MSE}}(n) = \\frac{1}{|X_n|} \\sum_{(x, y) \\in (X_n, Y_n)} (y - \\bar{y}_{n})^2 \\\\\n\\bar{y}_{n} = \\frac{1}{|X_n|} \\sum_{(x, y) \\in (X_n, Y_n)} y\n\\]\n\n\n\n\\(C\\) is the set of all the unique labels \\(c\\)"
+    "text": "Feature Importance    \n\nCrisp classification – Gini impurity \\(C^{\\mathit{G}}\\)\n\\[\nC^{\\mathit{G}}(n) = 1 - \\sum_{c \\in C}p_{n}^2(c)\\\\\np_{n}(c) = \\frac{1}{|X_n|} \\sum_{(x, y) \\in (X_n, Y_n)} \\mathbb{1}_{y = c}\n\\]\n\n\n\n\\(C\\) is the set of all the unique labels \\(c\\)"
   },
   {
     "objectID": "slides/2_glass-box/tree.html#feature-importance-meta-subs.ctd-1",
     "href": "slides/2_glass-box/tree.html#feature-importance-meta-subs.ctd-1",
+    "title": "Decision Trees",
+    "section": "Feature Importance    ",
+    "text": "Feature Importance    \n\nRegression or probabilistic classification – mean squared error \\(C^{\\mathit{MSE}}\\)\n\\[\nC^{\\mathit{MSE}}(n) = \\frac{1}{|X_n|} \\sum_{(x, y) \\in (X_n, Y_n)} (y - \\bar{y}_{n})^2 \\\\\n\\bar{y}_{n} = \\frac{1}{|X_n|} \\sum_{(x, y) \\in (X_n, Y_n)} y\n\\]"
+  },
+  {
+    "objectID": "slides/2_glass-box/tree.html#feature-importance-meta-subs.ctd-2",
+    "href": "slides/2_glass-box/tree.html#feature-importance-meta-subs.ctd-2",
     "title": "Decision Trees",
     "section": "Feature Importance    ",
     "text": "Feature Importance    \n\n\n\nLay people have been show to assume that the most important feature is the one at the root split of the tree"
@@ -3084,7 +3098,14 @@
     "href": "slides/3_feature-based/pfi.html#selecting-data",
     "title": "Permutation Feature Importance (PFI)/Model Reliance/",
     "section": "Selecting Data",
-    "text": "Selecting Data\n\n\nPFI needs a representative sample of data to output a meaningful explanation\nThe meaning of PFI is decided by the sample of data used for its generation\nSome choices are\n\nTraining Data – instances used to train the explained model\nValidation Data – instances used to evaluate the predictive performance the explained model; also employed for hyperparameter tuning\nTest Data – instances used to estimate the final, unbiased predictive performance of the explained model\nExplainability Data – a separate pool of instances reserved for explaining the behaviour of the model"
+    "text": "Selecting Data\n\n\nPFI needs a representative sample of data to output a meaningful explanation\nThe meaning of PFI is decided by the sample of data used for its generation"
+  },
+  {
+    "objectID": "slides/3_feature-based/pfi.html#selecting-data-meta-subs.ctd",
+    "href": "slides/3_feature-based/pfi.html#selecting-data-meta-subs.ctd",
+    "title": "Permutation Feature Importance (PFI)/Model Reliance/",
+    "section": "Selecting Data    ",
+    "text": "Selecting Data    \n\n\nSome choices are\n\nTraining Data – instances used to train the explained model\nValidation Data – instances used to evaluate the predictive performance the explained model; also employed for hyperparameter tuning\nTest Data – instances used to estimate the final, unbiased predictive performance of the explained model\nExplainability Data – a separate pool of instances reserved for explaining the behaviour of the model"
   },
   {
     "objectID": "slides/3_feature-based/pfi.html#pfi-based-on-training-data",
