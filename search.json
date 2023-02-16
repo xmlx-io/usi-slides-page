@@ -1,5 +1,495 @@
 [
   {
+    "objectID": "slides/5_meta/surrogate.html#explanation-synopsis",
+    "href": "slides/5_meta/surrogate.html#explanation-synopsis",
+    "title": "Surrogate Explainers",
+    "section": "Explanation Synopsis",
+    "text": "Explanation Synopsis\n\n\nSurrogate explainers construct an inherently interpretable model in a desired – local, cohort or global – subspace to approximate a more complex, black-box decision boundary (Sokol et al. 2019)."
+  },
+  {
+    "objectID": "slides/5_meta/surrogate.html#explanation-synopsis-meta-subs.ctd",
+    "href": "slides/5_meta/surrogate.html#explanation-synopsis-meta-subs.ctd",
+    "title": "Surrogate Explainers",
+    "section": "Explanation Synopsis    ",
+    "text": "Explanation Synopsis    \n\n\nBy using different surrogate models we can generate a wide array of explanation types; e.g., counterfactuals with decision trees (van der Waa et al. 2018; Sokol and Flach 2020) and feature influence with linear classifiers (Ribeiro, Singh, and Guestrin 2016)."
+  },
+  {
+    "objectID": "slides/5_meta/surrogate.html#explanation-synopsis-meta-subs.ctd-1",
+    "href": "slides/5_meta/surrogate.html#explanation-synopsis-meta-subs.ctd-1",
+    "title": "Surrogate Explainers",
+    "section": "Explanation Synopsis    ",
+    "text": "Explanation Synopsis"
+  },
+  {
+    "objectID": "slides/5_meta/surrogate.html#explanation-synopsis-meta-subs.ctd-2",
+    "href": "slides/5_meta/surrogate.html#explanation-synopsis-meta-subs.ctd-2",
+    "title": "Surrogate Explainers",
+    "section": "Explanation Synopsis    ",
+    "text": "Explanation Synopsis"
+  },
+  {
+    "objectID": "slides/5_meta/surrogate.html#explanation-synopsis-meta-subs.ctd-3",
+    "href": "slides/5_meta/surrogate.html#explanation-synopsis-meta-subs.ctd-3",
+    "title": "Surrogate Explainers",
+    "section": "Explanation Synopsis    ",
+    "text": "Explanation Synopsis    \n\n\n\n\n\n\n\nInterpretation of the Toy Example\n\n\n\nThe intuition communicated by the toy example may be misleading when dealing with real-life surrogates, which often use an interpretable representation\n(Interpretable representations transform raw features into human-intelligible concepts)\nIn this case surrogates do not directly approximate the behaviour of the underlying black box\nInstead, they capture its behaviour through the prism of concepts encoded by the interpretable representation"
+  },
+  {
+    "objectID": "slides/5_meta/surrogate.html#toy-example-tabular-data-lime-like-linear-surrogate",
+    "href": "slides/5_meta/surrogate.html#toy-example-tabular-data-lime-like-linear-surrogate",
+    "title": "Surrogate Explainers",
+    "section": "Toy Example – Tabular Data (LIME-like Linear Surrogate)",
+    "text": "Toy Example – Tabular Data (LIME-like Linear Surrogate)"
+  },
+  {
+    "objectID": "slides/5_meta/surrogate.html#toy-example-image-data-lime-like-linear-surrogate",
+    "href": "slides/5_meta/surrogate.html#toy-example-image-data-lime-like-linear-surrogate",
+    "title": "Surrogate Explainers",
+    "section": "Toy Example – Image Data (LIME-like Linear Surrogate)",
+    "text": "Toy Example – Image Data (LIME-like Linear Surrogate)"
+  },
+  {
+    "objectID": "slides/5_meta/surrogate.html#toy-example-text-data-lime-like-linear-surrogate",
+    "href": "slides/5_meta/surrogate.html#toy-example-text-data-lime-like-linear-surrogate",
+    "title": "Surrogate Explainers",
+    "section": "Toy Example – Text Data (LIME-like Linear Surrogate)",
+    "text": "Toy Example – Text Data (LIME-like Linear Surrogate)\n\n\n\n\n\n\\(x^\\star_0\\): This\n\n\n\\(x^\\star_1\\): sentence\n\n\n\\(x^\\star_2\\): has\n\n\n\\(x^\\star_3\\): a\n\n\n\\(x^\\star_4\\): positive\n\n\n\\(x^\\star_5\\): sentiment\n\n\n\\(x^\\star_6\\): ,\n\n\n\\(x^\\star_7\\): maybe\n\n\n\\(x^\\star_8\\): ."
+  },
+  {
+    "objectID": "slides/5_meta/surrogate.html#method-properties",
+    "href": "slides/5_meta/surrogate.html#method-properties",
+    "title": "Surrogate Explainers",
+    "section": "Method Properties",
+    "text": "Method Properties\n\n\n\n\n\n\n\n\nProperty\nSurrogate Explainers\n\n\n\n\nrelation\npost-hoc\n\n\ncompatibility\nmodel-agnostic ([semi-]supervised)\n\n\nmodelling\nregression, crisp and probabilistic classification\n\n\nscope\nlocal, cohort, global\n\n\ntarget\nprediction, sub-space, model\n\n\n\n\n\nPost-hoc – can be retrofitted into pre-existing predictors\nModel-agnostic – work with any black box"
+  },
+  {
+    "objectID": "slides/5_meta/surrogate.html#method-properties-meta-subs.ctd",
+    "href": "slides/5_meta/surrogate.html#method-properties-meta-subs.ctd",
+    "title": "Surrogate Explainers",
+    "section": "Method Properties    ",
+    "text": "Method Properties    \n\n\n\n\n\n\n\n\nProperty\nSurrogate Explainers\n\n\n\n\ndata\ntext, image, tabular\n\n\nfeatures\nnumerical and categorical (tabular data)\n\n\nexplanation\ntype depends on the surrogate model\n\n\ncaveats\nrandom sampling, explanation faithfulness & fidelity\n\n\n\n\n\nData-universal – work with image, tabular and text data because of interpretable data representations"
+  },
+  {
+    "objectID": "slides/5_meta/surrogate.html#surrogate-components",
+    "href": "slides/5_meta/surrogate.html#surrogate-components",
+    "title": "Surrogate Explainers",
+    "section": "Surrogate Components",
+    "text": "Surrogate Components\n\n\n\nInterpretable Representation\n\n\n\n\nData Sampling\n\n\n\n\nExplanation Generation"
+  },
+  {
+    "objectID": "slides/5_meta/surrogate.html#surrogate-components-interpretable-representation-fa-recycle",
+    "href": "slides/5_meta/surrogate.html#surrogate-components-interpretable-representation-fa-recycle",
+    "title": "Surrogate Explainers",
+    "section": "Surrogate Components: Interpretable Representation    ",
+    "text": "Surrogate Components: Interpretable Representation    \n\n\nIf desired, data are transformed from their original domain into a human-intelligible representation, which is used to communicate the explanations. This step is required for image and text data, but optional – albeit helpful – for tabular data."
+  },
+  {
+    "objectID": "slides/5_meta/surrogate.html#surrogate-components-interpretable-representation-fa-recycle-meta-subs.ctd",
+    "href": "slides/5_meta/surrogate.html#surrogate-components-interpretable-representation-fa-recycle-meta-subs.ctd",
+    "title": "Surrogate Explainers",
+    "section": "Surrogate Components: Interpretable Representation        ",
+    "text": "Surrogate Components: Interpretable Representation        \n\n\nInterpretable representations tend to be binary spaces encoding presence (fact denoted by \\(1\\)) or absence (foil denoted by \\(0\\)) of certain human-understandable concepts generated for a data point selected to be expalined.\n\n\n\n\n\n\n\n\nOperationalisation of Interpretable Representations\n\n\nSpecifying the foil of an interpretable representation – i.e., the operation linked to switching off a component of the IR by setting its binary value to \\(0\\) – may not always be straightforward, practical or even (computationally) feasible in certain domains, requiring a problem-specific information removal proxy."
+  },
+  {
+    "objectID": "slides/5_meta/surrogate.html#surrogate-components-interpretable-representation-fa-recycle-meta-subs.ctd-1",
+    "href": "slides/5_meta/surrogate.html#surrogate-components-interpretable-representation-fa-recycle-meta-subs.ctd-1",
+    "title": "Surrogate Explainers",
+    "section": "Surrogate Components: Interpretable Representation        ",
+    "text": "Surrogate Components: Interpretable Representation        \n\n\n\nTabular    \n\nDiscretisation of continuous features followed by binarisation.\n\nImage    \n\nSuper-pixel segmentation.\n\nText    \n\nTokenisation such as bag-of-words representation."
+  },
+  {
+    "objectID": "slides/5_meta/surrogate.html#surrogate-components-interpretable-representation-fa-recycle-meta-subs.ctd-2",
+    "href": "slides/5_meta/surrogate.html#surrogate-components-interpretable-representation-fa-recycle-meta-subs.ctd-2",
+    "title": "Surrogate Explainers",
+    "section": "Surrogate Components: Interpretable Representation        ",
+    "text": "Surrogate Components: Interpretable Representation        \nText    \n\n\n\n\n\\(x^\\star_0\\): This\n\n\n\\(x^\\star_1\\): sentence\n\n\n\\(x^\\star_2\\): has\n\n\n\\(x^\\star_3\\): a\n\n\n\\(x^\\star_4\\): positive\n\n\n\\(x^\\star_5\\): sentiment\n\n\n\\(x^\\star_6\\): ,\n\n\n\\(x^\\star_7\\): maybe\n\n\n\\(x^\\star_8\\): .\n\n\n\\[\nx^\\star = [1, 1, 1, 1, 1, 1, 1, 1, 1]\n\\]"
+  },
+  {
+    "objectID": "slides/5_meta/surrogate.html#surrogate-components-interpretable-representation-fa-recycle-meta-subs.ctd-3",
+    "href": "slides/5_meta/surrogate.html#surrogate-components-interpretable-representation-fa-recycle-meta-subs.ctd-3",
+    "title": "Surrogate Explainers",
+    "section": "Surrogate Components: Interpretable Representation        ",
+    "text": "Surrogate Components: Interpretable Representation        \nText        \n\n\n\\[\nx^\\star = [1, 0, 0, 1, 0, 0, 1, 0, 1]\n\\]\n\n\n\n\\(x^\\star_0\\): This\n\n\n\\(x^\\star_1\\):  \n\n\n\\(x^\\star_2\\):  \n\n\n\\(x^\\star_3\\): a\n\n\n\\(x^\\star_4\\):  \n\n\n\\(x^\\star_5\\):  \n\n\n\\(x^\\star_6\\): ,\n\n\n\\(x^\\star_7\\):  \n\n\n\\(x^\\star_8\\): ."
+  },
+  {
+    "objectID": "slides/5_meta/surrogate.html#surrogate-components-interpretable-representation-fa-recycle-meta-subs.ctd-4",
+    "href": "slides/5_meta/surrogate.html#surrogate-components-interpretable-representation-fa-recycle-meta-subs.ctd-4",
+    "title": "Surrogate Explainers",
+    "section": "Surrogate Components: Interpretable Representation        ",
+    "text": "Surrogate Components: Interpretable Representation        \nText        \n\n\n\n\nThis\n\n\n\\(x^\\star_0\\): sentence\n\n\nhas\n\n\na\n\n\n\\(x^\\star_1\\): positive\n\n\n\\(x^\\star_1\\): sentiment\n\n\n,\n\n\n\\(x^\\star_2\\): maybe\n\n\n.\n\n\n\\[\nx^\\star = [1, 1, 1]\n\\]"
+  },
+  {
+    "objectID": "slides/5_meta/surrogate.html#surrogate-components-interpretable-representation-fa-recycle-meta-subs.ctd-5",
+    "href": "slides/5_meta/surrogate.html#surrogate-components-interpretable-representation-fa-recycle-meta-subs.ctd-5",
+    "title": "Surrogate Explainers",
+    "section": "Surrogate Components: Interpretable Representation        ",
+    "text": "Surrogate Components: Interpretable Representation        \nImage    \n\n\n\n\n\n\n\n\n\n\n\n\n\\[\nx^\\star = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]\n\\]"
+  },
+  {
+    "objectID": "slides/5_meta/surrogate.html#surrogate-components-interpretable-representation-fa-recycle-meta-subs.ctd-6",
+    "href": "slides/5_meta/surrogate.html#surrogate-components-interpretable-representation-fa-recycle-meta-subs.ctd-6",
+    "title": "Surrogate Explainers",
+    "section": "Surrogate Components: Interpretable Representation        ",
+    "text": "Surrogate Components: Interpretable Representation        \nImage        \n\n\n\\[\nx^\\star = [1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 1, 0, 1, 1]\n\\]"
+  },
+  {
+    "objectID": "slides/5_meta/surrogate.html#surrogate-components-interpretable-representation-fa-recycle-meta-subs.ctd-7",
+    "href": "slides/5_meta/surrogate.html#surrogate-components-interpretable-representation-fa-recycle-meta-subs.ctd-7",
+    "title": "Surrogate Explainers",
+    "section": "Surrogate Components: Interpretable Representation        ",
+    "text": "Surrogate Components: Interpretable Representation        \nImage        \n\n\n\n\n\n\n\n\n\n\n\n\n\\[\nx^\\star = [1, 1, 1, 1]\n\\]"
+  },
+  {
+    "objectID": "slides/5_meta/surrogate.html#surrogate-components-interpretable-representation-fa-recycle-meta-subs.ctd-8",
+    "href": "slides/5_meta/surrogate.html#surrogate-components-interpretable-representation-fa-recycle-meta-subs.ctd-8",
+    "title": "Surrogate Explainers",
+    "section": "Surrogate Components: Interpretable Representation        ",
+    "text": "Surrogate Components: Interpretable Representation        \nImage        \n\n\n\n\n\n\n\n\n\n\n\n\n\\[\nx^\\star = [1, 1, 1]\n\\]"
+  },
+  {
+    "objectID": "slides/5_meta/surrogate.html#surrogate-components-interpretable-representation-fa-recycle-meta-subs.ctd-9",
+    "href": "slides/5_meta/surrogate.html#surrogate-components-interpretable-representation-fa-recycle-meta-subs.ctd-9",
+    "title": "Surrogate Explainers",
+    "section": "Surrogate Components: Interpretable Representation        ",
+    "text": "Surrogate Components: Interpretable Representation        \nTabular    \n\n\n\n\n\n\n\n\n\n\n\n\n\\[\nx = [1.3, 0.2]\n\\]\n\\[\nx^\\prime = [0, 0]\n\\]"
+  },
+  {
+    "objectID": "slides/5_meta/surrogate.html#surrogate-components-interpretable-representation-fa-recycle-meta-subs.ctd-10",
+    "href": "slides/5_meta/surrogate.html#surrogate-components-interpretable-representation-fa-recycle-meta-subs.ctd-10",
+    "title": "Surrogate Explainers",
+    "section": "Surrogate Components: Interpretable Representation        ",
+    "text": "Surrogate Components: Interpretable Representation        \nTabular        \n\n\n\n\n\n\n\n\n\n\n\n\n\\[\nx^\\star = [1, 1]\n\\]"
+  },
+  {
+    "objectID": "slides/5_meta/surrogate.html#surrogate-components-interpretable-representation-fa-recycle-meta-subs.ctd-11",
+    "href": "slides/5_meta/surrogate.html#surrogate-components-interpretable-representation-fa-recycle-meta-subs.ctd-11",
+    "title": "Surrogate Explainers",
+    "section": "Surrogate Components: Interpretable Representation        ",
+    "text": "Surrogate Components: Interpretable Representation        \nTabular        \n\n\n\\[\nx^\\star = [1, 0]\n\\]"
+  },
+  {
+    "objectID": "slides/5_meta/surrogate.html#surrogate-components-interpretable-representation-fa-recycle-meta-subs.ctd-12",
+    "href": "slides/5_meta/surrogate.html#surrogate-components-interpretable-representation-fa-recycle-meta-subs.ctd-12",
+    "title": "Surrogate Explainers",
+    "section": "Surrogate Components: Interpretable Representation        ",
+    "text": "Surrogate Components: Interpretable Representation        \nTabular        \n\n\n\\[\nx^\\star = [1, 0] \\;\\;\\;\\; \\longrightarrow \\;\\;\\;\\; x = [?, ?]\n\\]"
+  },
+  {
+    "objectID": "slides/5_meta/surrogate.html#surrogate-components-data-sampling-fa-database",
+    "href": "slides/5_meta/surrogate.html#surrogate-components-data-sampling-fa-database",
+    "title": "Surrogate Explainers",
+    "section": "Surrogate Components: Data Sampling    ",
+    "text": "Surrogate Components: Data Sampling    \n\n\nData sampling allows to capture the behaviour of a predictive model in a desired subspace. To this end, a data sample is generated and predicted by the explained model, offering a granular insight into its decision surface."
+  },
+  {
+    "objectID": "slides/5_meta/surrogate.html#surrogate-components-data-sampling-fa-database-meta-subs.ctd",
+    "href": "slides/5_meta/surrogate.html#surrogate-components-data-sampling-fa-database-meta-subs.ctd",
+    "title": "Surrogate Explainers",
+    "section": "Surrogate Components: Data Sampling        ",
+    "text": "Surrogate Components: Data Sampling        \n\n\n\nOriginal Domain\n\n\nTabular data\n\n\nInterpretable Representation\n\n\nTabular data (implicitly global)\nImage data (implicitly local)\nText data (implicitly local)\n\n\n\n\n\nWith the interpretable representation, a complete sample can be generated to improve quality of the surrogate"
+  },
+  {
+    "objectID": "slides/5_meta/surrogate.html#surrogate-components-data-sampling-fa-database-meta-subs.ctd-1",
+    "href": "slides/5_meta/surrogate.html#surrogate-components-data-sampling-fa-database-meta-subs.ctd-1",
+    "title": "Surrogate Explainers",
+    "section": "Surrogate Components: Data Sampling        ",
+    "text": "Surrogate Components: Data Sampling        \nTabular"
+  },
+  {
+    "objectID": "slides/5_meta/surrogate.html#surrogate-components-data-sampling-fa-database-meta-subs.ctd-2",
+    "href": "slides/5_meta/surrogate.html#surrogate-components-data-sampling-fa-database-meta-subs.ctd-2",
+    "title": "Surrogate Explainers",
+    "section": "Surrogate Components: Data Sampling        ",
+    "text": "Surrogate Components: Data Sampling        \nTabular"
+  },
+  {
+    "objectID": "slides/5_meta/surrogate.html#surrogate-components-explanation-generation-fa-lightbulb",
+    "href": "slides/5_meta/surrogate.html#surrogate-components-explanation-generation-fa-lightbulb",
+    "title": "Surrogate Explainers",
+    "section": "Surrogate Components: Explanation Generation    ",
+    "text": "Surrogate Components: Explanation Generation    \n\n\nExplanatory insights are extracted from an inherently transparent model fitted to the sampled data (in interpretable representation), using their black-box predictions as the target."
+  },
+  {
+    "objectID": "slides/5_meta/surrogate.html#surrogate-components-explanation-generation-fa-lightbulb-meta-subs.ctd",
+    "href": "slides/5_meta/surrogate.html#surrogate-components-explanation-generation-fa-lightbulb-meta-subs.ctd",
+    "title": "Surrogate Explainers",
+    "section": "Surrogate Components: Explanation Generation        ",
+    "text": "Surrogate Components: Explanation Generation        \n\n\nAdditional processing steps can be applied to tune and tweak the surrogate model, hence the explanation. For example, the sample can be weighted based on its proximity to the explained instance when dealing with local explanations; and a feature selection procedure may be used to introduce sparsity, therefore improve accessibility and comprehensibility of explanatory insights."
+  },
+  {
+    "objectID": "slides/5_meta/surrogate.html#surrogate-components-explanation-generation-fa-lightbulb-meta-subs.ctd-1",
+    "href": "slides/5_meta/surrogate.html#surrogate-components-explanation-generation-fa-lightbulb-meta-subs.ctd-1",
+    "title": "Surrogate Explainers",
+    "section": "Surrogate Components: Explanation Generation        ",
+    "text": "Surrogate Components: Explanation Generation        \nSample Weighting\n\n\nData Domain\n\nOriginal domain\n(Intermediate) discrete domain (tabular data only)\nBinary interpretable representation\n\n\nDistance Metric\n\nHamming:  \\(L(a, b) = \\frac{1}{N} \\sum_{i = 1}^{N} \\mathbb{1} (a_i \\neq b_i)\\)\nEuclidean:  \\(L(a, b) = \\sqrt{\\sum_{i = 1}^{N} (b_i - a_i)^2}\\)\nCosine:  \\(L(a, b) = \\frac{a \\cdot b}{ \\sqrt{a \\cdot a} \\sqrt{b \\cdot b}}\\)\n\n\nKernel\n\nExponential:  \\(k(d) = \\sqrt{exp\\left(-\\frac{d^2}{w^2}\\right)}\\)"
+  },
+  {
+    "objectID": "slides/5_meta/surrogate.html#surrogate-components-explanation-generation-fa-lightbulb-meta-subs.ctd-2",
+    "href": "slides/5_meta/surrogate.html#surrogate-components-explanation-generation-fa-lightbulb-meta-subs.ctd-2",
+    "title": "Surrogate Explainers",
+    "section": "Surrogate Components: Explanation Generation        ",
+    "text": "Surrogate Components: Explanation Generation        \nSample Weighting"
+  },
+  {
+    "objectID": "slides/5_meta/surrogate.html#surrogate-components-explanation-generation-fa-lightbulb-meta-subs.ctd-3",
+    "href": "slides/5_meta/surrogate.html#surrogate-components-explanation-generation-fa-lightbulb-meta-subs.ctd-3",
+    "title": "Surrogate Explainers",
+    "section": "Surrogate Components: Explanation Generation        ",
+    "text": "Surrogate Components: Explanation Generation        \nSample Weighting"
+  },
+  {
+    "objectID": "slides/5_meta/surrogate.html#surrogate-components-explanation-generation-fa-lightbulb-meta-subs.ctd-4",
+    "href": "slides/5_meta/surrogate.html#surrogate-components-explanation-generation-fa-lightbulb-meta-subs.ctd-4",
+    "title": "Surrogate Explainers",
+    "section": "Surrogate Components: Explanation Generation        ",
+    "text": "Surrogate Components: Explanation Generation        \nTarget Type\n\n\nCrisp Classification\n\nExplicit one-vs-rest:  \\(A\\) and \\(\\neg A\\)\n\n\nProbabilistic Classification\n\nImplicit one-vs-rest:  \\(\\mathbb{P}(A)\\) and \\(1 - \\mathbb{P}(A) = \\mathbb{P}(\\neg A)\\)\n\n\nRegression\n\nNumerical output:  \\(f(x)\\)"
+  },
+  {
+    "objectID": "slides/5_meta/surrogate.html#surrogate-components-explanation-generation-fa-lightbulb-meta-subs.ctd-5",
+    "href": "slides/5_meta/surrogate.html#surrogate-components-explanation-generation-fa-lightbulb-meta-subs.ctd-5",
+    "title": "Surrogate Explainers",
+    "section": "Surrogate Components: Explanation Generation        ",
+    "text": "Surrogate Components: Explanation Generation        \nModelling Multiple Classes\n\n\nSingle Target\nIndependent surrogate models explaining one class at a time:\n\n\\(\\mathbb{P}(A)\\) and \\(\\mathbb{P}(\\neg A)\\)\n\\(\\mathbb{P}(B)\\) and \\(\\mathbb{P}(\\neg B)\\)\netc.\n\n\nMultiple Targets\nA single model explaining a selected subset of classes:\n\n\\(\\mathbb{P}(A)\\)\n\\(\\mathbb{P}(B)\\)\n\\(\\mathbb{P}(C)\\)\n\\(\\mathbb{P}\\left(\\neg (A \\lor B \\lor C)\\right)\\)\n\n\n\n\n\nThis is especially important for probabilistic models\nConsider two examples:\n\n\\(\\mathbb{P}(A) = 0.9\\), \\(\\mathbb{P}(B) = 0.05\\), \\(\\mathbb{P}(C) = 0.05\\)\n\\(\\mathbb{P}(A) = 0.6\\), \\(\\mathbb{P}(B) = 0.3\\), \\(\\mathbb{P}(C) = 0.1\\)"
+  },
+  {
+    "objectID": "slides/5_meta/surrogate.html#surrogate-components-explanation-generation-fa-lightbulb-meta-subs.ctd-6",
+    "href": "slides/5_meta/surrogate.html#surrogate-components-explanation-generation-fa-lightbulb-meta-subs.ctd-6",
+    "title": "Surrogate Explainers",
+    "section": "Surrogate Components: Explanation Generation        ",
+    "text": "Surrogate Components: Explanation Generation        \nSurrogate Model Type\n\n\nLienar\nTree-based\nRule-based\netc."
+  },
+  {
+    "objectID": "slides/5_meta/surrogate.html#computing-surrogates",
+    "href": "slides/5_meta/surrogate.html#computing-surrogates",
+    "title": "Surrogate Explainers",
+    "section": "Computing Surrogates",
+    "text": "Computing Surrogates"
+  },
+  {
+    "objectID": "slides/5_meta/surrogate.html#computing-surrogates-meta-subs.ctd",
+    "href": "slides/5_meta/surrogate.html#computing-surrogates-meta-subs.ctd",
+    "title": "Surrogate Explainers",
+    "section": "Computing Surrogates    ",
+    "text": "Computing Surrogates    \n\n\n\n\n\n\n\nInput\n\n\n\nSelect an instance to be explained (local surrogate)\nSelect the explanation target\n\ncrisp classifiers → one-vs-rest or a subset of classes-vs-rest\nprobabilistic classifiers → (probabilities of) one or multiple classes\nregressors → numerical values"
+  },
+  {
+    "objectID": "slides/5_meta/surrogate.html#computing-surrogates-meta-subs.ctd-1",
+    "href": "slides/5_meta/surrogate.html#computing-surrogates-meta-subs.ctd-1",
+    "title": "Surrogate Explainers",
+    "section": "Computing Surrogates    ",
+    "text": "Computing Surrogates    \n\n\n\n\n\n\n\nParameters\n\n\n\nDefine the interpretable representation\n\ntext → pre-processing and tokenisation\nimage → occlusion proxy, e.g., segmentation granularity and occlusion colour\ntabular → discretisation of numerical features and grouping of categorical attributes"
+  },
+  {
+    "objectID": "slides/5_meta/surrogate.html#computing-surrogates-meta-subs.ctd-2",
+    "href": "slides/5_meta/surrogate.html#computing-surrogates-meta-subs.ctd-2",
+    "title": "Surrogate Explainers",
+    "section": "Computing Surrogates    ",
+    "text": "Computing Surrogates    \n\n\n\n\n\n\n\nParameters\n\n\n\nSpecify sampling strategy\n\noriginal domain (tabular data) → number of instances and sampling objective (scope and target)\ntransformed domain (all data domains) → completeness of the sample\n\nSample weighting → data domain, distance metric, kernel type\nFeature selection (tabular data) – feature selection strategy\nType of the surrogate model and its parameterisation"
+  },
+  {
+    "objectID": "slides/5_meta/surrogate.html#computing-surrogates-meta-subs.ctd-3",
+    "href": "slides/5_meta/surrogate.html#computing-surrogates-meta-subs.ctd-3",
+    "title": "Surrogate Explainers",
+    "section": "Computing Surrogates    ",
+    "text": "Computing Surrogates    \n\n\n\n\n\n\n\nProcedure\n\n\n\nTransform the explained instance into the interpretable representation\nSample data around the explained instance with a given scope\nPredict the sampled data using the black box (transform into the original representation if sampled in the interpretable domain)"
+  },
+  {
+    "objectID": "slides/5_meta/surrogate.html#computing-surrogates-meta-subs.ctd-4",
+    "href": "slides/5_meta/surrogate.html#computing-surrogates-meta-subs.ctd-4",
+    "title": "Surrogate Explainers",
+    "section": "Computing Surrogates    ",
+    "text": "Computing Surrogates    \n\n\n\n\n\n\n\nProcedure    \n\n\n\nCalculate similarities between the explained instance and sampled data by kernelising distances\nOptionally, reduce dimensionality of the interpretable domain\nFit a surrogate model to the (subset of) interpretable feature and black-box predictions of the desired target(s)\nExtract the desired explanation from the surrogate model"
+  },
+  {
+    "objectID": "slides/5_meta/surrogate.html#formulation-optimisation-objective-fa-square-root-alt",
+    "href": "slides/5_meta/surrogate.html#formulation-optimisation-objective-fa-square-root-alt",
+    "title": "Surrogate Explainers",
+    "section": "Formulation: Optimisation Objective    ",
+    "text": "Formulation: Optimisation Objective    \n\n\\[\n\\mathcal{O}(\\mathcal{G}; \\; f) =\n  \\argmin_{g \\in \\mathcal{G}}\n  \\overbrace{\\Omega(g)}^{\\text{complexity}} \\; + \\;\\;\\;\n  \\overbrace{\\mathcal{L}(f, g)}^{\\text{fidelity loss}}\n\\]"
+  },
+  {
+    "objectID": "slides/5_meta/surrogate.html#formulation-complexity-fa-square-root-alt",
+    "href": "slides/5_meta/surrogate.html#formulation-complexity-fa-square-root-alt",
+    "title": "Surrogate Explainers",
+    "section": "Formulation: Complexity    ",
+    "text": "Formulation: Complexity    \n\n\\[\n\\Omega(g) = \\frac{\\sum_{\\theta \\in \\Theta_g} {\\Large\\mathbb{1}} \\left(\\theta\\right)}{|\\Theta_g|}\n\\]\n\n\\[\n\\Omega(g; \\; d) = \\frac{\\text{depth}(g)}{d}\n  \\;\\;\\;\\;\\text{or}\\;\\;\\;\\;\n  \\Omega(g; \\; d) = \\frac{\\text{width}(g)}{2^d}\n\\]"
+  },
+  {
+    "objectID": "slides/5_meta/surrogate.html#formulation-numerical-fidelity-one-class-fa-square-root-alt",
+    "href": "slides/5_meta/surrogate.html#formulation-numerical-fidelity-one-class-fa-square-root-alt",
+    "title": "Surrogate Explainers",
+    "section": "Formulation: Numerical Fidelity (One Class)    ",
+    "text": "Formulation: Numerical Fidelity (One Class)    \n\n\\[\n\\mathcal{L}(f, g ; \\; \\mathring{x}, X^\\prime, \\mathring{c}) =\n  \\sum_{x^\\prime \\in X^\\prime} \\;\n  \\underbrace{\\omega\\left( \\IR(\\mathring{x}), x^\\prime \\right)}_{\\text{weighting factor}}\n  \\; \\times \\;\n  \\underbrace{\\left(f_\\mathring{c}\\left(\\IR^{-1}(x^\\prime)\\right) - g(x^\\prime)\\right)^{2}}_{\\text{individual loss}}\n\\]\n\n\\[\n\\omega\\left(\\IR(\\mathring{x}), x^\\prime \\right) = k\\left(L\\left(\\IR(\\mathring{x}), x^\\prime\\right)\\right)\n\\]\n\\[\n\\omega\\left( \\mathring{x}, x \\right) = k\\left(L\\left(\\mathring{x}, x\\right)\\right)\n\\]"
+  },
+  {
+    "objectID": "slides/5_meta/surrogate.html#formulation-crisp-classification-fidelity-one-class-fa-square-root-alt",
+    "href": "slides/5_meta/surrogate.html#formulation-crisp-classification-fidelity-one-class-fa-square-root-alt",
+    "title": "Surrogate Explainers",
+    "section": "Formulation: Crisp Classification Fidelity (One Class)    ",
+    "text": "Formulation: Crisp Classification Fidelity (One Class)    \n\n\\[\n\\mathcal{L}(f, g ; \\; \\mathring{x}, X^\\prime, \\mathring{c}) =\n  \\sum_{x^\\prime \\in X^\\prime} \\;\n  \\omega\\left( \\IR(\\mathring{x}), x^\\prime \\right)\n  \\; \\times \\;\n  \\underline{ {\\Large\\mathbb{1}} \\left(f_\\mathring{c}\\left(\\IR^{-1}(x^\\prime)\\right), \\; g(x^\\prime)\\right)}\n\\]\n\n\\[\n\\begin{split}\nf_{\\mathring{c}}(x) =\n\\begin{cases}\n  1, & \\text{if} \\;\\; f(x) \\equiv \\mathring{c}\\\\\n  0, & \\text{if} \\;\\; f(x) \\not\\equiv \\mathring{c}\n\\end{cases} \\text{ .}\n\\end{split}\n\\]\n\\[\n\\begin{split}\n{\\Large\\mathbb{1}}\\left(f_{\\mathring{c}}(x), g(x^\\prime)\\right) =\n\\begin{cases}\n  1, & \\text{if} \\;\\; f_{\\mathring{c}}(x) \\equiv g(x^\\prime)\\\\\n  0, & \\text{if} \\;\\; f_{\\mathring{c}}(x) \\not\\equiv g(x^\\prime)\n\\end{cases} \\text{ ,}\n\\end{split}\n\\]"
+  },
+  {
+    "objectID": "slides/5_meta/surrogate.html#formulation-crisp-classification-fidelity-one-class-fa-square-root-alt-meta-subs.ctd",
+    "href": "slides/5_meta/surrogate.html#formulation-crisp-classification-fidelity-one-class-fa-square-root-alt-meta-subs.ctd",
+    "title": "Surrogate Explainers",
+    "section": "Formulation: Crisp Classification Fidelity (One Class)        ",
+    "text": "Formulation: Crisp Classification Fidelity (One Class)        \n\n\n\n\n\\(f(x)\\)\n\\(f_\\beta(x)\\)\n\\(g(x^\\prime)\\)\n\\({\\Large\\mathbb{1}}\\)\n\n\n\n\n\\(\\alpha\\)\n\\(0\\)\n\\(1\\)\n\\(0\\)\n\n\n\\(\\beta\\)\n\\(1\\)\n\\(0\\)\n\\(0\\)\n\n\n\\(\\gamma\\)\n\\(0\\)\n\\(0\\)\n\\(1\\)\n\n\n\\(\\beta\\)\n\\(1\\)\n\\(1\\)\n\\(1\\)\n\n\n\\(\\alpha\\)\n\\(0\\)\n\\(0\\)\n\\(1\\)"
+  },
+  {
+    "objectID": "slides/5_meta/surrogate.html#formulation-crisp-classification-fidelity-multiple-class-fa-square-root-alt",
+    "href": "slides/5_meta/surrogate.html#formulation-crisp-classification-fidelity-multiple-class-fa-square-root-alt",
+    "title": "Surrogate Explainers",
+    "section": "Formulation: Crisp Classification Fidelity (Multiple Class)    ",
+    "text": "Formulation: Crisp Classification Fidelity (Multiple Class)    \n\n\\[\n\\mathcal{L}(f, g ; \\; \\mathring{x}, X^\\prime, \\mathring{C}) =\n  \\sum_{x^\\prime \\in X^\\prime}\n  %\\left(\n    \\omega( \\IR(\\mathring{x}) , x^\\prime )\n    \\; \\times \\;\n    \\underline{\n      \\frac{1}{|\\mathring{C}|}\n      \\sum_{\\mathring{c} \\in \\mathring{C}}\n      {\\Large\\mathbb{1}}\n      \\left(\n        f_\\mathring{c}\\left(\\IR^{-1}(x^\\prime)\\right), \\;\n        g_\\mathring{c}(x^\\prime)\n      \\right)\n    }\n  %\\right)\n\\]"
+  },
+  {
+    "objectID": "slides/5_meta/surrogate.html#formulation-numerical-fidelity-multiple-class-fa-square-root-alt",
+    "href": "slides/5_meta/surrogate.html#formulation-numerical-fidelity-multiple-class-fa-square-root-alt",
+    "title": "Surrogate Explainers",
+    "section": "Formulation: Numerical Fidelity (Multiple Class)    ",
+    "text": "Formulation: Numerical Fidelity (Multiple Class)    \n\n\\[\n\\mathcal{L}(f, g ; \\; \\mathring{x}, X^\\prime, \\mathring{C}) =\n  \\sum_{x^\\prime \\in X^\\prime}\n  %\\left(\n    \\omega( \\IR(\\mathring{x}) , x^\\prime )\n    \\; \\times \\;\n    \\underline{\n      \\frac{1}{2}\n      \\sum_{\\mathring{c} \\in \\mathring{C}}\n      \\left(\n          f_\\mathring{c}\\left(\\IR^{-1}(x^\\prime)\\right) -\n          g_\\mathring{c}(x^\\prime)\n      \\right)^2\n    }\n  %\\right)\n\\]"
+  },
+  {
+    "objectID": "slides/5_meta/surrogate.html#fidelity-based",
+    "href": "slides/5_meta/surrogate.html#fidelity-based",
+    "title": "Surrogate Explainers",
+    "section": "Fidelity-based",
+    "text": "Fidelity-based"
+  },
+  {
+    "objectID": "slides/5_meta/surrogate.html#tabular-data-interpretable-representation",
+    "href": "slides/5_meta/surrogate.html#tabular-data-interpretable-representation",
+    "title": "Surrogate Explainers",
+    "section": "Tabular Data: Interpretable Representation",
+    "text": "Tabular Data: Interpretable Representation"
+  },
+  {
+    "objectID": "slides/5_meta/surrogate.html#tabular-data-sampling",
+    "href": "slides/5_meta/surrogate.html#tabular-data-sampling",
+    "title": "Surrogate Explainers",
+    "section": "Tabular Data: Sampling",
+    "text": "Tabular Data: Sampling"
+  },
+  {
+    "objectID": "slides/5_meta/surrogate.html#one-class-linear-surrogate",
+    "href": "slides/5_meta/surrogate.html#one-class-linear-surrogate",
+    "title": "Surrogate Explainers",
+    "section": "One-class Linear Surrogate",
+    "text": "One-class Linear Surrogate"
+  },
+  {
+    "objectID": "slides/5_meta/surrogate.html#one-class-linear-surrogate-meta-subs.ctd",
+    "href": "slides/5_meta/surrogate.html#one-class-linear-surrogate-meta-subs.ctd",
+    "title": "Surrogate Explainers",
+    "section": "One-class Linear Surrogate    ",
+    "text": "One-class Linear Surrogate"
+  },
+  {
+    "objectID": "slides/5_meta/surrogate.html#one-class-linear-surrogate-meta-subs.ctd-1",
+    "href": "slides/5_meta/surrogate.html#one-class-linear-surrogate-meta-subs.ctd-1",
+    "title": "Surrogate Explainers",
+    "section": "One-class Linear Surrogate    ",
+    "text": "One-class Linear Surrogate"
+  },
+  {
+    "objectID": "slides/5_meta/surrogate.html#multi-class-tree-surrogate",
+    "href": "slides/5_meta/surrogate.html#multi-class-tree-surrogate",
+    "title": "Surrogate Explainers",
+    "section": "Multi-class Tree Surrogate",
+    "text": "Multi-class Tree Surrogate"
+  },
+  {
+    "objectID": "slides/5_meta/surrogate.html#image-data-segmentation-size-occlusion-colour",
+    "href": "slides/5_meta/surrogate.html#image-data-segmentation-size-occlusion-colour",
+    "title": "Surrogate Explainers",
+    "section": "Image Data: Segmentation Size & Occlusion Colour",
+    "text": "Image Data: Segmentation Size & Occlusion Colour"
+  },
+  {
+    "objectID": "slides/5_meta/surrogate.html#image-data-segmentation-size-occlusion-colour-meta-subs.ctd",
+    "href": "slides/5_meta/surrogate.html#image-data-segmentation-size-occlusion-colour-meta-subs.ctd",
+    "title": "Surrogate Explainers",
+    "section": "Image Data: Segmentation Size & Occlusion Colour    ",
+    "text": "Image Data: Segmentation Size & Occlusion Colour    \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNote that linear model’s assumptions are broken – adjacent super-pixels are highly correlated"
+  },
+  {
+    "objectID": "slides/5_meta/surrogate.html#image-data-segmentation-size-occlusion-colour-meta-subs.ctd-1",
+    "href": "slides/5_meta/surrogate.html#image-data-segmentation-size-occlusion-colour-meta-subs.ctd-1",
+    "title": "Surrogate Explainers",
+    "section": "Image Data: Segmentation Size & Occlusion Colour    ",
+    "text": "Image Data: Segmentation Size & Occlusion Colour"
+  },
+  {
+    "objectID": "slides/5_meta/surrogate.html#image-data-segmentation-size-occlusion-colour-meta-subs.ctd-2",
+    "href": "slides/5_meta/surrogate.html#image-data-segmentation-size-occlusion-colour-meta-subs.ctd-2",
+    "title": "Surrogate Explainers",
+    "section": "Image Data: Segmentation Size & Occlusion Colour    ",
+    "text": "Image Data: Segmentation Size & Occlusion Colour"
+  },
+  {
+    "objectID": "slides/5_meta/surrogate.html#tabular-data-incompatibility-of-binarisation-and-linear-models",
+    "href": "slides/5_meta/surrogate.html#tabular-data-incompatibility-of-binarisation-and-linear-models",
+    "title": "Surrogate Explainers",
+    "section": "Tabular Data: Incompatibility of Binarisation and Linear Models",
+    "text": "Tabular Data: Incompatibility of Binarisation and Linear Models"
+  },
+  {
+    "objectID": "slides/5_meta/surrogate.html#tabular-data-incompatibility-of-binarisation-and-linear-models-meta-subs.ctd",
+    "href": "slides/5_meta/surrogate.html#tabular-data-incompatibility-of-binarisation-and-linear-models-meta-subs.ctd",
+    "title": "Surrogate Explainers",
+    "section": "Tabular Data: Incompatibility of Binarisation and Linear Models    ",
+    "text": "Tabular Data: Incompatibility of Binarisation and Linear Models"
+  },
+  {
+    "objectID": "slides/5_meta/surrogate.html#pros-fa-plus-square",
+    "href": "slides/5_meta/surrogate.html#pros-fa-plus-square",
+    "title": "Surrogate Explainers",
+    "section": "Pros    ",
+    "text": "Pros    \n\nA universal inspection mechanism for various subspaces of an arbitrary black-box algorithmic decision process\nHighly customisable\nA single explanatory procedure for image, text and tabular data\nProduces diverse explanation types depending on the utilised surrogate model\nOutputs intuitive explanations for image and text data due to the use of interpretable representations"
+  },
+  {
+    "objectID": "slides/5_meta/surrogate.html#cons-fa-minus-square",
+    "href": "slides/5_meta/surrogate.html#cons-fa-minus-square",
+    "title": "Surrogate Explainers",
+    "section": "Cons    ",
+    "text": "Cons    \n\nInadequate for high-stakes algorithmic decisions because of lacklustre fidelity\nExplanations may be counterintuitive and misleading for a lay audience when applied to tabular data with an interpretable representation"
+  },
+  {
+    "objectID": "slides/5_meta/surrogate.html#caveats-fa-skull",
+    "href": "slides/5_meta/surrogate.html#caveats-fa-skull",
+    "title": "Surrogate Explainers",
+    "section": "Caveats    ",
+    "text": "Caveats    \n\nWhile post-hoc, model-agnostic and data-universal, they must not be treated as a silver bullet\nTheir characteristics allow a single instantiation of a surrogate explainer to be applied to diverse problems, however the quality of the resulting explanations will vary across different problems and data sets\nBuilding them requires an effort since each explainer should be tweaked and tuned to the problem at hand"
+  },
+  {
+    "objectID": "slides/5_meta/surrogate.html#related-techniques",
+    "href": "slides/5_meta/surrogate.html#related-techniques",
+    "title": "Surrogate Explainers",
+    "section": "Related Techniques",
+    "text": "Related Techniques\n\n\nLIME (Ribeiro, Singh, and Guestrin 2016)\nLIMEtree (Sokol and Flach 2020)\nRuleFit (Friedman and Popescu 2008)"
+  },
+  {
+    "objectID": "slides/5_meta/surrogate.html#implementations",
+    "href": "slides/5_meta/surrogate.html#implementations",
+    "title": "Surrogate Explainers",
+    "section": "Implementations",
+    "text": "Implementations\n\n\n\n\n\n\n\n Python\n R\n\n\n\n\nLIME\nlime\n\n\ninterpret\niml\n\n\nSkater\n\n\n\nAIX360"
+  },
+  {
+    "objectID": "slides/5_meta/surrogate.html#further-reading",
+    "href": "slides/5_meta/surrogate.html#further-reading",
+    "title": "Surrogate Explainers",
+    "section": "Further Reading",
+    "text": "Further Reading\n\nbLIMEy paper (Sokol et al. 2019)\nLIME paper (Ribeiro, Singh, and Guestrin 2016)\nLIMEtree paper (Sokol and Flach 2020)\nInterpretable Machine Learning book\nFAT Forensics how-to guide for tabular surrogates and image surrogates, and surrogates tutorial\nTabular surrogates tutorial\nInteractive resources"
+  },
+  {
+    "objectID": "slides/5_meta/surrogate.html#bibliography",
+    "href": "slides/5_meta/surrogate.html#bibliography",
+    "title": "Surrogate Explainers",
+    "section": "Bibliography",
+    "text": "Bibliography\n\n\nFriedman, Jerome H, and Bogdan E Popescu. 2008. “Predictive Learning via Rule Ensembles.” The Annals of Applied Statistics, 916–54.\n\n\nRibeiro, Marco Tulio, Sameer Singh, and Carlos Guestrin. 2016. “‘Why Should I Trust You?’: Explaining the Predictions of Any Classifier.” In Proceedings of the 22nd ACM SIGKDD International Conference on Knowledge Discovery and Data Mining, San Francisco, CA, USA, August 13–17, 2016, 1135–44.\n\n\nSokol, Kacper, and Peter Flach. 2020. “LIMEtree: Consistent and Faithful Surrogate Explanations of Multiple Classes.” arXiv Preprint arXiv:2005.01427.\n\n\nSokol, Kacper, Alexander Hepburn, Raul Santos-Rodriguez, and Peter Flach. 2019. “bLIMEy: Surrogate Prediction Explanations Beyond LIME.” 2019 Workshop on Human-Centric Machine Learning (HCML 2019) at the 33rd Conference on Neural Information Processing Systems (NeurIPS 2019), Vancouver, Canada.\n\n\nvan der Waa, Jasper, Marcel Robeer, Jurriaan van Diggelen, Matthieu Brinkhuis, and Mark Neerincx. 2018. “Contrastive Explanations with Local Foil Trees.” Workshop on Human Interpretability in Machine Learning (WHI 2018) at the 35th International Conference on Machine Learning (ICML 2018), Stockholm, Sweden."
+  },
+  {
     "objectID": "slides/index.html",
     "href": "slides/index.html",
     "title": "Machine Learning Explainability",
@@ -1124,7 +1614,7 @@
     "href": "slides/1_introduction/course.html#resources",
     "title": "Machine Learning Explainability",
     "section": "Resources",
-    "text": "Resources\n\n\nOnline Slides\n\nusi.xmlx.io\nxmlx-io.github.io/usi-slides-mirror\n\nGitHub Repository\n\ngithub.com/xmlx-io/usi-slides-source (raw slides source)\ngithub.com/xmlx-io/usi-slides (html slides source)\ngithub.com/xmlx-io/usi-slides-mirror (html slides source mirror)"
+    "text": "Resources\n\n\nOnline Slides\n\nusi.xmlx.io\nxmlx-io.github.io/usi-slides-mirror\n\nGitHub Repository\n\ngithub.com/xmlx-io/usi-slides (raw slides source)\ngithub.com/xmlx-io/usi-slides-page (html slides source)\ngithub.com/xmlx-io/usi-slides-mirror (html slides source mirror)"
   },
   {
     "objectID": "slides/1_introduction/course.html#resources-meta-subs.ctd",

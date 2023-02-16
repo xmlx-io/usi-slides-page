@@ -1,7 +1,7 @@
 [![View Slides][slides-badge]](https://usi.xmlx.io)
-[![GitHub Release](https://img.shields.io/github/v/release/xmlx-io/usi-slides-source?display_name=tag&logo=github)](https://github.com/xmlx-io/usi-slides-source/releases/latest)  
-[![Slides Licence](https://img.shields.io/badge/slides%20licence-CC%20BY--NC--SA%204.0-lightgrey)](https://github.com/xmlx-io/usi-slides-source/blob/master/LICENCE)
-[![Code Licence](https://img.shields.io/badge/code%20licence-MIT-lightgrey)](https://github.com/xmlx-io/usi-slides-source/blob/master/LICENCE-code)  
+[![GitHub Release](https://img.shields.io/github/v/release/xmlx-io/usi-slides?display_name=tag&logo=github)](https://github.com/xmlx-io/usi-slides/releases/latest)  
+[![Slides Licence](https://img.shields.io/badge/slides%20licence-CC%20BY--NC--SA%204.0-lightgrey)](https://github.com/xmlx-io/usi-slides/blob/master/LICENCE)
+[![Code Licence](https://img.shields.io/badge/code%20licence-MIT-lightgrey)](https://github.com/xmlx-io/usi-slides/blob/master/LICENCE-code)  
 [![Cite BibTeX](https://img.shields.io/badge/cite-bibtex-yellow.svg)](https://usi.xmlx.io/slides/index.html#citing-the-slides)
 
 <!--
@@ -13,16 +13,16 @@ TODO:
 ## Exploring Automated Decision-Making Through Transparent Modelling and Peeking Inside Black Boxes
 
 > This repository hosts and serves (to [GitHub Pages][ghp]) slides whose source
-> can be found in the [xmlx-io/usi-slides-source][gh] GitHub repository.
+> can be found in the [xmlx-io/usi-slides][gh] GitHub repository.
 > Two mirrors are available:
 >
-> - <https://usi.xmlx.io/> served from the [xmlx-io/usi-slides][gh-web] GitHub
->   repository; and
+> - <https://usi.xmlx.io/> served from the [xmlx-io/usi-slides-page][gh-web]
+>   GitHub repository; and
 > - <https://xmlx-io.github.io/usi-slides-mirror/> served from the
 >   [xmlx-io/usi-slides-mirror][gh-mirror] GitHub repository.
 
 [ghp]: https://usi.xmlx.io/
-[gh]: https://github.com/xmlx-io/usi-slides-source
-[gh-web]: https://github.com/xmlx-io/usi-slides
+[gh]: https://github.com/xmlx-io/usi-slides
+[gh-web]: https://github.com/xmlx-io/usi-slides-page
 [gh-mirror]: https://github.com/xmlx-io/usi-slides-mirror
 [slides-badge]: https://img.shields.io/badge/view-slides-blue.svg?logo=data:image/png;base64,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
