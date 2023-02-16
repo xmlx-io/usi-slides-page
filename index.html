@@ -1,8 +1,788 @@
-<html xmlns="http://www.w3.org/1999/xhtml">    
-  <head>      
-    <title>Redirect to slides/5_meta/surrogate.html</title>      
-    <meta http-equiv="refresh" content="0;URL='slides/5_meta/surrogate.html'" />    
-  </head>    
-  <body> 
-  </body>  
-</html>     
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.2.313">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Kacper Sokol">
+
+<title>Machine Learning Explainability: Exploring Automated Decision-Making Through Transparent Modelling and Peeking Inside Black Boxes - Machine Learning Explainability</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
+<link href="site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+    <div class="container-fluid d-flex justify-content-between">
+      <h1 class="quarto-secondary-nav-title">Machine Learning Explainability</h1>
+      <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
+        <i class="bi bi-chevron-right"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Slides</a> 
+    </div>
+      </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">Introduction</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./slides/1_introduction/course.html" class="sidebar-item-text sidebar-link">About the Course</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./slides/1_introduction/preliminaries.html" class="sidebar-item-text sidebar-link">Preliminaries</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./slides/1_introduction/taxonomy.html" class="sidebar-item-text sidebar-link">Taxonomy</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./slides/1_introduction/humans.html" class="sidebar-item-text sidebar-link">Humans</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./slides/1_introduction/definitions.html" class="sidebar-item-text sidebar-link">Definitions</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./slides/1_introduction/evaluation.html" class="sidebar-item-text sidebar-link">Evaluation</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./slides/1_introduction/data.html" class="sidebar-item-text sidebar-link">Data Sets and Models</a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">Transparent Modelling</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./slides/2_glass-box/data.html" class="sidebar-item-text sidebar-link">Data Explainability</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./slides/2_glass-box/linear.html" class="sidebar-item-text sidebar-link">Linear Model</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./slides/2_glass-box/tree.html" class="sidebar-item-text sidebar-link">Decision Tree</a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">Feature-based Explainability</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./slides/3_feature-based/pfi.html" class="sidebar-item-text sidebar-link">Permutation Feature Importance</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./slides/3_feature-based/ice.html" class="sidebar-item-text sidebar-link">Individual Conditional Expectation</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./slides/3_feature-based/pd.html" class="sidebar-item-text sidebar-link">Partial Dependence</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./slides/3_feature-based/me.html" class="sidebar-item-text sidebar-link">Marginal Effect</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./slides/3_feature-based/ale.html" class="sidebar-item-text sidebar-link">Accumulated Local Effect</a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">Meta-Explainers</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./slides/5_meta/surrogate.html" class="sidebar-item-text sidebar-link">Surrogate Explainers</a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#course-summary" id="toc-course-summary" class="nav-link active" data-scroll-target="#course-summary">Course Summary</a></li>
+  <li><a href="#curriculum" id="toc-curriculum" class="nav-link" data-scroll-target="#curriculum">Curriculum</a></li>
+  <li><a href="#projects" id="toc-projects" class="nav-link" data-scroll-target="#projects">Projects</a></li>
+  <li><a href="#schedule" id="toc-schedule" class="nav-link" data-scroll-target="#schedule">Schedule</a></li>
+  <li><a href="#learning-objectives" id="toc-learning-objectives" class="nav-link" data-scroll-target="#learning-objectives">Learning Objectives</a></li>
+  <li><a href="#prerequisites" id="toc-prerequisites" class="nav-link" data-scroll-target="#prerequisites">Prerequisites</a></li>
+  <li><a href="#useful-resources" id="toc-useful-resources" class="nav-link" data-scroll-target="#useful-resources">Useful Resources</a></li>
+  <li><a href="#instructor" id="toc-instructor" class="nav-link" data-scroll-target="#instructor">Instructor</a></li>
+  <li><a href="#citing-the-slides" id="toc-citing-the-slides" class="nav-link" data-scroll-target="#citing-the-slides">Citing the Slides</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title d-none d-lg-block">Machine Learning Explainability</h1>
+<p class="subtitle lead"></p><p>Exploring Automated Decision-Making Through Transparent Modelling and Peeking Inside Black Boxes</p><p></p>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Kacper Sokol </p>
+          </div>
+  </div>
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<p><a href="https://github.com/xmlx-io/usi-slides/releases/latest"><img src="https://img.shields.io/github/v/release/xmlx-io/usi-slides?display_name=tag&amp;logo=github.png" class="img-fluid" alt="GitHub Release"></a><br>
+<a href="https://github.com/xmlx-io/usi-slides/blob/master/LICENCE"><img src="https://img.shields.io/badge/slides%20licence-CC%20BY--NC--SA%204.0-lightgrey" class="img-fluid" alt="Slides Licence"></a> <a href="https://github.com/xmlx-io/usi-slides/blob/master/LICENCE-code"><img src="https://img.shields.io/badge/code%20licence-MIT-lightgrey.png" class="img-fluid" alt="Code Licence"></a><br>
+<a href="https://doi.org/10.5281/zenodo.7646834"><img src="https://zenodo.org/badge/DOI/10.5281/zenodo.7646834.svg" class="img-fluid" alt="DOI"></a> <a href="https://usi.xmlx.io/slides/index.html#citing-the-slides"><img src="https://img.shields.io/badge/cite-bibtex-yellow.svg" class="img-fluid" alt="Cite BibTeX"></a></p>
+<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+View Slides
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>See the sidebar for an index of slides and demos.</p>
+</div>
+</div>
+<div class="callout-tip callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Course Schedule
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The course will be held over two weeks:</p>
+<ul>
+<li>week 1 commencing on the 6<sup>th</sup> and</li>
+<li>week 2 commencing on the 13<sup>th</sup></li>
+</ul>
+<p>of February 2023.</p>
+<table class="table">
+<colgroup>
+<col style="width: 18%">
+<col style="width: 23%">
+<col style="width: 28%">
+<col style="width: 28%">
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>What</strong></th>
+<th><strong>When</strong></th>
+<th><strong>Where</strong> (week 1)</th>
+<th><strong>Where</strong> (week 2)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>lecture</td>
+<td>9.30–10.15am</td>
+<td>D0.03</td>
+<td>D1.14</td>
+</tr>
+<tr class="even">
+<td>discussion</td>
+<td>10.15–10.30am</td>
+<td>D0.03</td>
+<td>D1.14</td>
+</tr>
+<tr class="odd">
+<td>lab</td>
+<td>10.30–11.15am</td>
+<td>D0.03</td>
+<td>D1.14</td>
+</tr>
+<tr class="even">
+<td>open office</td>
+<td>11.30am–12pm</td>
+<td>D0.03</td>
+<td>D1.14</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<section id="course-summary" class="level1">
+<h1>Course Summary</h1>
+<p>Machine learning models require care, attention and a fair amount of tuning to offer accurate, consistent and robust predictive modelling of data. Why should their transparency and explainability be any different? While it is possible to easily generate explanatory insights with methods that are post-hoc and model-agnostic – LIME and SHAP, for example – these can be misleading when output by generic tools and viewed out of (technical or domain) context. Explanations should not be taken at their face value; instead their understanding ought to come from interpreting explanatory insights in view of the implicit caveats and limitations under which they were generated. After all, explainability algorithms are complex entities often built from multiple components that are subject to parameterisation choices and operational assumptions, all of which must be accounted for and configured to yield a truthful and useful explainer. Additionally, since any particular method may only provide partial information about the functioning of a predictive model, embracing diverse insights and appreciating their complementarity – as well as disagreements – can further enhance understanding of an algorithmic decision-making process.</p>
+<p>This course takes an adversarial perspective on artificial intelligence explainability and machine learning interpretability. Instead of reviewing popular approaches used to these ends, it breaks them up into core functional blocks, studies the role and configuration thereof, and reassembles them to create bespoke, well-understood explainers suitable for the problem at hand. The course focuses predominantly on tabular data, with some excursions into image and text explainability whenever a method is agnostic of the data type. The tuition is complemented by a series of hands-on materials for self-study, which allow you to experiment with these techniques and appreciate their inherent complexity, capabilities and limitations. The assignment, on the other hand, requires you to develop a tailor-made explainability suite for a data set and predictive model of your choice, or alternatively analyse an explainability algorithm to identify its core algorithmic building blocks and explore how they affect the resulting explanation. (Note that there is a scope for a bespoke project if you have a well-defined idea in mind.)</p>
+</section>
+<section id="curriculum" class="level1">
+<h1>Curriculum</h1>
+<p>(<em>Reveal the topics covered in each theme by clicking the triangle button</em>.)</p>
+<details>
+<summary>
+<u> Introduction to explainability </u>
+</summary>
+<ul>
+<li>History of explainability</li>
+<li>Types of explanations</li>
+<li>Taxonomy and classification of explainability approaches</li>
+<li>A human-centred perspective</li>
+<li>Ante-hoc vs.&nbsp;post-hoc discussion</li>
+<li>Multi-class explainability</li>
+<li>Defining explainability</li>
+<li>Evaluation of explainability techniques</li>
+</ul>
+</details>
+<details>
+<summary>
+<u> A brief overview of data explainability </u>
+</summary>
+<ul>
+<li>Data as an (implicit) model</li>
+<li>Data summarisation and description</li>
+<li>Dimensionality reduction</li>
+<li>Exemplars, prototypes and criticisms</li>
+</ul>
+</details>
+<details>
+<summary>
+<u> Transparent modelling </u>
+</summary>
+<ul>
+<li>The ante-hoc vs.&nbsp;post-hoc distinction in view of information lineage (i.e., endogenous and exogenous sources of information that form the explanations)</li>
+<li>Rule lists and sets</li>
+<li>Linear models (and generalised additive models)</li>
+<li>Decision trees</li>
+<li><span class="math inline">\(k\)</span>-nearest neighbours and <span class="math inline">\(k\)</span>-means</li>
+</ul>
+</details>
+<details>
+<summary>
+<u> Feature importance </u>
+</summary>
+<ul>
+<li>Permutation Importance</li>
+<li>Feature Interaction</li>
+</ul>
+</details>
+<details>
+<summary>
+<u> Feature influence </u>
+</summary>
+<ul>
+<li>Individual Conditional Expectation</li>
+<li>Partial Dependence</li>
+<li>LIME</li>
+<li>SHAP</li>
+<li>Accumulated Local Effects</li>
+</ul>
+</details>
+<details>
+<summary>
+<u> Exemplars </u>
+</summary>
+<ul>
+<li>Exemplar explanations</li>
+<li>Counterfactuals</li>
+<li>Prototypes and criticisms</li>
+</ul>
+</details>
+<details>
+<summary>
+<u> Rules </u>
+</summary>
+<ul>
+<li>Scoped rules</li>
+<li>ANCHOR</li>
+<li>RuleFit</li>
+</ul>
+</details>
+<details>
+<summary>
+<u> Meta-explainers </u>
+</summary>
+<ul>
+<li>Local, cohort and global surrogates</li>
+</ul>
+</details>
+</section>
+<section id="projects" class="level1">
+<h1>Projects</h1>
+<p>Two types of a (possibly group-based) assignment are envisaged. (<em>However, if you have a well-defined project in mind, you may be allowed to pursue it – in this case talk to the course instructors.</em>)</p>
+<ol type="1">
+<li><p><em>Develop a bespoke explainability suite for a predictive model of your choice.</em> If you are working on a machine learning project that could benefit from explainability, this project presents an opportunity to use the course as a platform to this end. Alternatively, you can explore explainability of a pre-existing model available to download or accessible through a web API.</p></li>
+<li><p><em>Choose an explainability method and identify its core algorithmic building blocks to explore how they affect the final explanations.</em> You are free to explore explainability of inherently transparent models, develop model-specific approaches for an AI or ML technique that interests you, or pursue a model-agnostic technique.</p></li>
+</ol>
+<blockquote class="blockquote">
+<p>For students who would like to learn more about explainable artificial intelligence and interpretable machine learning but cannot dedicate the time necessary to complete the assignment due to other commitments, there is a possibility of a lightweight project. In this case you can choose an explainability method and articulate its assumptions as well as any discrepancies from its (most popular) implementation – possibly based on some of the (interactive) course materials – as long as you present your findings at the end of the course.</p>
+</blockquote>
+<p>The projects will be culminated in presentations and/or demos delivered in front of the entire cohort. The project delivery should focus on reproducibility of the results and quality of the investigation into explainability aspects of the chosen system, therefore <em>the journey is more important than the outcome</em>. Under this purview, all of the assumptions and choices – theoretical, algorithmic, implementation and otherwise – should be made explicit and justified. You are <em>strongly encouraged</em> to prepare and present your findings via one of the dashboarding or interactive reporting/presentation tools (see the list of options <a href="#useful-resources">included below</a>), however this aspect of the project is <em>optional</em>.</p>
+<hr>
+<p><strong>Examples</strong><br>
+(<em>See the description of each example project by clicking the triangle button</em>.)</p>
+<details>
+<summary>
+<u> Identify the sources of explanation (dis)agreements for a given predictive modelling task </u>
+</summary>
+<blockquote class="blockquote">
+<p>For a given data set – e.g., MNIST – one can train a collection of transparent and black-box models; for example, linear classifiers, decision trees, random forests, support vector machines (with different kernels), logistic regressions, perceptrons, neural networks. If the chosen data set lends itself to natural interpretability, i.e., instances (and their features) are understandable to humans, these models can be explained with an array of suitable techniques and their explanations compared and contrasted. Such experiments can help to better understand capabilities and limitations of individual explainability techniques, especially when their composition, configuration and parameterisation is considered. This can lead to practical guidelines on using these explainers and interpreting their results.</p>
+</blockquote>
+</details>
+<details>
+<summary>
+<u> New composition of an existing explainability technique </u>
+</summary>
+<blockquote class="blockquote">
+<p>When functionally independent building blocks of an explainability approach can be isolated, we can tweak or replace them to compose a more robust and accountable technique. Similarly, a well-known explainer can be expanded with a new explanatory artefact or modality, e.g., a counterfactual statement instead of feature importance/influence. Additionally, comparing the explanations output by the default and bespoke methods can help to uncover discrepancies that may be abused in order to generate misleading explanatory insights; for example, explainees can be deceived by presenting them with an explanation based on a specifically crafted sample of data (used with post-hoc methods).</p>
+</blockquote>
+</details>
+<details>
+<summary>
+<u> New explainability technique from existing building blocks </u>
+</summary>
+<blockquote class="blockquote">
+<p>Instead of improving a pre-existing explainability technique, algorithmic components from across the explainability spectrum can become an inspiration to build an entirely new explainer or explainability pipeline.</p>
+</blockquote>
+</details>
+<details>
+<summary>
+<u> Explore the behaviour of a pre-existing model with explainability techniques </u>
+</summary>
+<blockquote class="blockquote">
+<p>Given the success of deep learning in predictive modelling, opaque systems based on ML algorithms often end up in production. While it may be difficult to identify any of their undesirable properties from the outset, these are often discovered (and corrected) throughout the lifespan of such systems. In this space, explainability techniques may help to uncover these characteristic and pinpoint their sources, potentially leading to observations that reveal biases or aid in scientific discoveries. Either of these applications can have significant social impact and benefit, leading to these models being corrected or decommissioned. Sometimes, however, their idiosyncrasies can be observed, but their origin remains unaccounted for. For example, consider the case of machine learning models dealing with chest X-rays, which additionally can detect the race of the patients – something that doctors are incapable of discerning (see <a href="https://www.wired.com/story/these-algorithms-look-x-rays-detect-your-race/">here</a> and <a href="https://dataconomy.com/2022/06/ai-can-tell-peoples-race-from-x-rays/">here</a> for more details). While the reason for this behaviour remains a mystery, a thorough investigation of this, and similar, models with an array of well-understood (post-hoc) explainability techniques may be able to offer important clues.</p>
+</blockquote>
+</details>
+</section>
+<section id="schedule" class="level1">
+<h1>Schedule</h1>
+<p>The course will span <em>two weeks</em>, offering the following tuition each day (<em>ten days total</em>):</p>
+<ul>
+<li>1-hour lecture;</li>
+<li>1-hour supervised lab session (system design and coding); and</li>
+<li>half-an-hour open office (general questions and project discussions).</li>
+</ul>
+<p>The lectures will roughly follow the curriculum outlined above. The envisaged self-study time is around 20 hours, which largely involves completing a project of choice (possibly in small groups).</p>
+</section>
+<section id="learning-objectives" class="level1">
+<h1>Learning Objectives</h1>
+<p><strong>General</strong></p>
+<ul>
+<li>Understand the landscape of AI and ML explainability techniques.</li>
+<li>Identify explainability needs of data-driven machine learning systems.</li>
+<li>Recognise the capabilities and limitations of explainability approaches, both in general and in view of specific use cases.</li>
+<li><span class="emoji" data-emoji="star">⭐</span> Apply these skills to real-life AI and ML problems.</li>
+<li><span class="emoji" data-emoji="star">⭐</span> Communicate explainability findings through interactive reports and dashboards.</li>
+</ul>
+<p><strong>Specific to explainability approaches</strong></p>
+<ul>
+<li>Identify self-contained algorithmic components of explainers and understand their functions.</li>
+<li>Connect these building blocks to the explainability requirements unique to the investigated predictive system.</li>
+<li>Select appropriate algorithmic components and tune them to the problem at hand.</li>
+<li>Evaluate these building blocks (in this specific context) independently and when joined together to form the final explainer.</li>
+<li>Interpret the resulting explanations in view of the uncovered properties and limitations of the bespoke explainability algorithm.</li>
+</ul>
+</section>
+<section id="prerequisites" class="level1">
+<h1>Prerequisites</h1>
+<ul>
+<li>Python programming.</li>
+<li>Familiarity with basic mathematical concepts (relevant to machine learning).</li>
+<li>Knowledge of machine learning techniques for tabular data.</li>
+<li><span class="emoji" data-emoji="star">⭐</span> Prior experience with machine learning approaches for images and text (e.g., deep learning) or other forms of data modelling (e.g., time series forecasting, reinforcement learning) if you decide to pursue a project in this direction.</li>
+</ul>
+</section>
+<section id="useful-resources" class="level1">
+<h1>Useful Resources</h1>
+<ul>
+<li><p><span class="emoji" data-emoji="book">📖</span> Books</p>
+<ul>
+<li><a href="https://christophm.github.io/interpretable-ml-book/">Survey of machine learning interpretability</a> in form of an online book</li>
+<li>Overview of <a href="https://ema.drwhy.ai/">explanatory model analysis</a> published as an online book</li>
+</ul></li>
+<li><p><span class="emoji" data-emoji="memo">📝</span> Papers</p>
+<ul>
+<li>General introduction to <a href="https://arxiv.org/abs/2112.14466">interpretability</a></li>
+<li>Introduction to <a href="https://arxiv.org/abs/1706.07269">human-centred explainability</a></li>
+<li>Critique of <a href="https://www.nature.com/articles/s42256-019-0048-x">post-hoc explainability</a></li>
+<li>Survey of <a href="https://arxiv.org/abs/1802.01933">interpretability techniques</a></li>
+<li><a href="https://arxiv.org/abs/1912.05100">Taxonomy of explainability approaches</a></li>
+</ul></li>
+<li><p><span class="emoji" data-emoji="minidisc">💽</span> Explainability software</p>
+<ul>
+<li>LIME (<a href="https://lime-ml.readthedocs.io/en/latest/">Python</a>, <a href="https://cran.r-project.org/web/packages/lime/vignettes/Understanding_lime.html">R</a>)</li>
+<li>SHAP (<a href="https://shap.readthedocs.io/en/latest/">Python</a>, <a href="https://cran.r-project.org/web/packages/shapr/vignettes/understanding_shapr.html">R</a>)</li>
+<li>Microsoft’s <a href="https://interpret.ml/docs/getting-started">Interpret</a></li>
+<li>Oracle’s <a href="https://oracle.github.io/Skater/overview.html">Skater</a></li>
+<li>IBM’s <a href="https://aix360.readthedocs.io/en/latest/">Explainability 360</a></li>
+<li><a href="https://fat-forensics.org/">FAT Forensics</a></li>
+</ul></li>
+<li><p><span class="emoji" data-emoji="minidisc">💽</span> Interactive dashboarding software</p>
+<ul>
+<li><a href="https://streamlit.io/">Streamlit</a></li>
+<li><a href="https://dash.plotly.com/">Plotly Dash</a></li>
+<li>Shiny for <a href="https://shiny.rstudio.com/py/">Python</a> and <a href="https://shiny.rstudio.com/">R</a></li>
+<li><a href="https://quarto.org/">Quarto</a></li>
+</ul></li>
+</ul>
+</section>
+<section id="instructor" class="level1">
+<h1>Instructor</h1>
+<p><strong>Kacper Sokol</strong> (<em><a href="mailto:Kacper.Sokol@rmit.edu.au" class="email">Kacper.Sokol@rmit.edu.au</a></em>; <em><a href="mailto:K.Sokol@bristol.ac.uk" class="email">K.Sokol@bristol.ac.uk</a></em>)</p>
+<blockquote class="blockquote">
+<p>Kacper is a Research Fellow at the ARC Centre of Excellence for Automated Decision-Making and Society (ADM+S), affiliated with the School of Computing Technologies at RMIT University, Australia, and an Honorary Research Fellow at the Intelligent Systems Laboratory, University of Bristol, United Kingdom.</p>
+<p>His main research focus is transparency – interpretability and explainability – of data-driven predictive systems based on artificial intelligence and machine learning algorithms. In particular, he has done work on enhancing transparency of predictive models with <em>feasible and actionable counterfactual explanations</em> and <em>robust modular surrogate explainers</em>. He has also introduced <em>Explainability Fact Sheets</em> – a comprehensive taxonomy of AI and ML explainers – and prototyped <em>dialogue-driven interactive explainability systems</em>.</p>
+<p>Kacper is the designer and lead developer of <em>FAT Forensics</em> – an open source fairness, accountability and transparency Python toolkit. Additionally, he is the main author of a collection of online interactive <em>training materials about machine learning explainability</em>, created in collaboration with the Alan Turing Institute – the UK’s national institute for data science and artificial intelligence.</p>
+<p>Kacper holds a Master’s degree in Mathematics and Computer Science, and a doctorate in Computer Science from the University of Bristol, United Kingdom. Prior to joining ADM+S he has held numerous research posts at the University of Bristol, working with projects such as REFrAMe, SPHERE and TAILOR – European Union’s AI Research Excellence Centre. Additionally, he was a visiting researcher at the University of Tartu (Estonia); Simons Institute for the Theory of Computing, UC Berkeley (California, USA); and USI – Università della Svizzera italiana (Lugano, Switzerland). In his research, Kacper collaborated with numerous industry partners, such as THALES, and provided consulting services on explainable artificial intelligence and transparent machine learning.</p>
+</blockquote>
+<hr>
+</section>
+<section id="citing-the-slides" class="level1">
+<h1>Citing the Slides</h1>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="https://doi.org/10.5281/zenodo.7646834"><img src="https://zenodo.org/badge/DOI/10.5281/zenodo.7646834.svg" class="img-fluid figure-img"></a></p>
+<p></p><figcaption class="figure-caption">DOI</figcaption><p></p>
+</figure>
+</div>
+<p>If you happen to use these slides, please cite them as follows.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bibtex code-with-copy"><code class="sourceCode bibtex"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="va">@misc</span>{<span class="ot">sokol2023explainable</span>,</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="dt">author</span>={Sokol, Kacper},</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  <span class="dt">title</span>={{eXplainable} {Machine} {Learning} -- {USI} {Course}},</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  <span class="dt">howpublished</span>={<span class="ch">\url</span>{https://usi.xmlx.io/}},</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>  <span class="dt">doi</span>={10.5281/zenodo.7646834},</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>  <span class="dt">year</span>={2023}</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<!-- articles -->
+<!-- books -->
+<!-- papers -->
+<!-- software -->
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>
