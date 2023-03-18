@@ -2,7 +2,7 @@
 [![GitHub Release](https://img.shields.io/github/v/release/xmlx-io/usi-slides?display_name=tag&logo=github)](https://github.com/xmlx-io/usi-slides/releases/latest)  
 [![Slides Licence](https://img.shields.io/badge/slides%20licence-CC%20BY--NC--SA%204.0-lightgrey)](https://github.com/xmlx-io/usi-slides/blob/master/LICENCE)
 [![Code Licence](https://img.shields.io/badge/code%20licence-MIT-lightgrey)](https://github.com/xmlx-io/usi-slides/blob/master/LICENCE-code)  
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.7646834.svg)](https://doi.org/10.5281/zenodo.7646834)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.7646970.svg)](https://doi.org/10.5281/zenodo.7646970)
 [![Cite BibTeX](https://img.shields.io/badge/cite-bibtex-yellow.svg)](https://usi.xmlx.io/slides/index.html#citing-the-slides)
 
 #  Machine Learning Explainability
